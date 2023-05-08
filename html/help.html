@@ -21,16 +21,15 @@
             </span> -->
             <ul class="user alLogin display">
                 <li class="lv">
-                    <span>VIP20</span>
-                    userName
-                </li>
-                <li class="moneyTotal">
-                    <span class="total">9999</span>
-                    <i class="money_arrow"></i>
+                    <p class="level">Thành viên mới</p>
+                    <p class="name">
+                        userName
+                        <span class="total">9999</span>
+                    </p>
                     <ul class="transferInfo">
                         <li class="platform">
                             <div>
-                                <p>BNG娛樂</p>
+                                <p>BNG</p>
                                 <p class="money">
                                     <i class="display"></i>
                                     <span></span>
@@ -57,7 +56,7 @@
                         </li>
                         <li class="platform">
                             <div>
-                                <p>歐博</p>
+                                <p>ALL BET</p>
                                 <p class="money">
                                     <i></i>
                                     <span>0</span>
@@ -111,7 +110,7 @@
                         </li>
                         <li class="platform">
                             <div>
-                                <p>必贏</p>
+                                <p>bWin</p>
                                 <p class="money">
                                     <i></i>
                                     <span>0</span>
@@ -120,7 +119,7 @@
                         </li>
                         <li class="platform">
                             <div>
-                                <p>36588體育</p>
+                                <p>36588</p>
                                 <p class="money">
                                     <i></i>
                                     <span>0</span>
@@ -148,30 +147,28 @@
                     </ul>
                 </li>
                 <li onclick="window.location.href='./deposit.html'">
-                    存款
+                    <i class="deposit_ic"></i>
+                    Nạp tiền
                 </li>
                 <li onclick="window.location.href='./transfer.html'">
-                    轉帳
+                    <i class="transfer_ic"></i>
+                    CHUYỂN ĐIỂM
                 </li>
                 <li onclick="window.location.href='./withdrawal.html'">
-                    提款
+                    <i class="withdrawal_ic"></i>
+                    RÚT TIỀN
                 </li>
                 <li onclick="window.location.href='./member.html'">
-                    會員中心
+                    <i class="member_ic"></i>
+                    Thông tin hội viên
                 </li>
                 <li onclick="window.location.href='./mail.html'">
-                    站內信
+                    <i class="mail_ic"></i>
+                    Thư thông báo
                 </li>
-                <li class="logoutBtn" onclick="window.location.href='../index.html'">
-                    登出
-                </li>
-                <li class="lang">
-                    <select>
-                        <option>繁體中文</option>
-                        <option>简体中文</option>
-                        <option>ENGLISH</option>
-                        <option>日本語</option>
-                    </select>
+                <li onclick="window.location.href='../index.html'">
+                    <i class="exit_ic"></i>
+                    Đăng xuất
                 </li>
             </ul>
         </div>
@@ -179,247 +176,169 @@
             <div class="center">
                 <img class="logo" src="../images/icon/logo.png">
                 <ul>
-                    <li class="menu" onclick="window.location.href='../index.html'">首頁</li>
-                    <li class="sportBtn" onclick="window.location.href='./sportPage.html'">體育賽事</li>
-                    <li class="liveBtn" onclick="window.location.href='./livePage.html'">真人娛樂</li>
-                    <li class="slotBtn" onclick="window.location.href='./slotPage.html'">老虎機</li>
-                    <li class="lotteryBtn" onclick="window.location.href='./lotteryPage.html'">彩票</li>
-                    <li class="fishBtn" onclick="window.location.href='./fishPage.html'">捕魚機</li>
-                    <li class="boardBtn" onclick="window.location.href='./boardPage.html'">棋牌遊戲</li>
-                    <!-- <li class="activeWallet">活動錢包</li> -->
-                    <li class="event" onclick="window.location.href='./event.html'">優惠中心</li>
-                    <li class="vip" onclick="window.location.href='./vip.html'">VIP會員</li>
+                    <li class="menu" onclick="window.location.href='../index.html'">TRANG CHỦ</li>
+                    <li class="sportBtn" onclick="window.location.href='./sportPage.html'">THỂ THAO</li>
+                    <li class="liveBtn" onclick="window.location.href='./livePage.html'">CASINO</li>
+                    <li class="lotteryBtn" onclick="window.location.href='./lotteryPage.html'">XỔ SỐ</li>
+                    <li class="slotBtn" onclick="window.location.href='./slotPage.html'">SLOTS</li>
+                    <li class="fishBtn" onclick="window.location.href='./fishPage.html'">BẮN CÁ</li>
+                    <li class="boardBtn" onclick="window.location.href='./boardPage.html'">GAME BÀI</li>
+                    <li class="event" onclick="window.location.href='./event.html'">KHUYẾN MÃI</li>
                 </ul>
             </div>
         </div>
         <div class="topGameList">
-            <div class="listWrap">
-                <div class="center">
-                    <i class="prev"></i>
-                    <div class="container">
-                        <ul class="sport">
-                            <li onclick="openSportGame()">
-                                <div>
-                                    <img src="../images/partner/sport/36588.png">
-                                </div>
-                                <p>36588體育</p>
-                            </li>
-                        </ul>
-                        <ul class="live">
+             <div class="listWrap">
+                 <div class="center">
+                     <i class="prev"></i>
+                     <div class="container">
+                         <ul class="sport">
+                             <li onclick="openSportGame()">
+                                 <div>
+                                     <img src="../images/partner/sport/36588.png">
+                                 </div>
+                                 <p>36588</p>
+                             </li>
+                         </ul>
+                         <ul class="live">
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_1.png">
                                 </div>
-                                <p>沙龍真人娛樂</p>
+                                <p>SA</p>
                             </li>
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_2.png">
                                 </div>
-                                <p>歐博真人娛樂</p>
+                                <p>All BET</p>
                             </li>
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_3.png">
                                 </div>
-                                <p>DG真人娛樂</p>
+                                <p>DG</p>
                             </li>
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_4.png">
                                 </div>
-                                <p>WM真人娛樂</p>
+                                <p>WM</p>
                             </li>
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_5.png">
                                 </div>
-                                <p>OG真人娛樂</p>
+                                <p>OG</p>
                             </li>
-                            <li onclick="openLiveGame()">
+                         </ul>
+                         <ul class="lottery">
+                            <li onclick="openLotteryGame()">
                                 <div>
-                                    <img src="../images/partner/live/live_7.png">
+                                    <img src="../images/partner/lottery/rwd.png">
                                 </div>
-                                <p>RG真人娛樂</p>
+                                <p>RWD</p>
                             </li>
-                        </ul>
-                        <ul class="slot">
-                            <li onclick="window.location.href='./slotPageInner.html'">
+                         </ul>
+                         <ul class="slot">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
                                     <img src="../images/partner/slot/bng.png">
                                 </div>
-                                <p>BNG電子娛樂</p>
+                                <p>BNG</p>
                                 <div class="fixBox display">
-                                    <p class="title">維護中</p>
+                                    <p class="title">duy trì</p>
                                     <p>2022/03/02 下午2:00 ~</p>
                                     <p>2020/03/02 下午4:00</p>
                                 </div>
                             </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/bwin.png">
-                                </div>
-                                <p>必贏電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/fa.png">
-                                </div>
-                                <p>福星電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/gr.png">
-                                </div>
-                                <p>好路棋牌</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/ifun.png">
-                                </div>
-                                <p>FUN GAME</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/pls.png">
-                                </div>
-                                <p>PLS電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/png.png">
-                                </div>
-                                <p>PNG電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/rsg.png">
-                                </div>
-                                <p>RSG電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/sp.png">
-                                </div>
-                                <p>SimplePlay</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
                                     <img src="../images/partner/slot/tpg.png">
                                 </div>
-                                <p>TPG電子娛樂</p>
+                                <p>TPG</p>
                             </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/slot/ufo.png">
+                                    <img src="../images/partner/slot/rsg.png">
                                 </div>
-                                <p>UFO電子娛樂</p>
+                                <p>RSG</p>
                             </li>
-                        </ul>
-                        <ul class="lottery">
-                           <li onclick="openLotteryGame()">
-                               <div>
-                                   <img src="../images/partner/lottery/sg.png">
-                               </div>
-                               <p>SG88六合、大樂、539</p>
-                           </li>
-                           <li onclick="openLotteryGame()">
-                               <div>
-                                   <img src="../images/partner/lottery/gs.png">
-                               </div>
-                               <p>京彩彩票</p>
-                           </li>
-                           <li onclick="openLotteryGame()">
-                               <div>
-                                   <img src="../images/partner/lottery/rwd.png">
-                               </div>
-                               <p>白鹿電子娛樂</p>
-                           </li>
-                        </ul>
-                        <ul class="fish">
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/fish/bwin.png">
+                                    <img src="../images/partner/slot/bwin.png">
                                 </div>
-                                <p>必贏電子娛樂</p>
+                                <p>bWin</p>
                             </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/fish/fa.png">
+                                    <img src="../images/partner/slot/ifun.png">
                                 </div>
-                                <p>福星電子娛樂</p>
+                                <p>IFUN</p>
                             </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/fish/gr.png">
+                                    <img src="../images/partner/slot/pls.png">
                                 </div>
-                                <p>好路棋牌</p>
+                                <p>PLS</p>
                             </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/fish/rsg.png">
+                                    <img src="../images/partner/slot/sp.png">
                                 </div>
-                                <p>RSG電子娛樂</p>
+                                <p>SP</p>
                             </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/fish/sp.png">
-                                </div>
-                                <p>SimplePlay</p>
-                            </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                         </ul>
+                         <ul class="fish">
+                            <li onclick="window.location.href='../html/fishPage.html'">
                                 <div>
                                     <img src="../images/partner/fish/tpg.png">
                                 </div>
-                                <p>TPG電子娛樂</p>
+                                <p>TPG</p>
                             </li>
-                        </ul>
-                        <ul class="board">
-                            <li onclick="window.location.href='./boardPageInner.html'">
+                            <li onclick="window.location.href='../html/fishPage.html'">
                                 <div>
-                                    <img src="../images/partner/board/big.png">
+                                    <img src="../images/partner/fish/rsg.png">
                                 </div>
-                                <p>大運棋牌</p>
+                                <p>RSG</p>
                             </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
+                            <li onclick="window.location.href='../html/fishPage.html'">
                                 <div>
-                                    <img src="../images/partner/board/bts.png">
+                                    <img src="../images/partner/fish/bwin.png">
                                 </div>
-                                <p>BTS電子娛樂</p>
+                                <p>bWin</p>
                             </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
+                            <li onclick="window.location.href='../html/fishPage.html'">
                                 <div>
-                                    <img src="../images/partner/board/fa.png">
+                                    <img src="../images/partner/fish/sp.png">
                                 </div>
-                                <p>福星電子娛樂</p>
+                                <p>SP</p>
                             </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/board/gr.png">
-                                </div>
-                                <p>好路棋牌</p>
-                            </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/board/ifun.png">
-                                </div>
-                                <p>FUN GAME</p>
-                            </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/board/png.png">
-                                </div>
-                                <p>PNG電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
+                         </ul>
+                         <ul class="board">
+                            <li onclick="window.location.href='../html/boardPage.html'">
                                 <div>
                                     <img src="../images/partner/board/rwd.png">
                                 </div>
-                                <p>白鹿</p>
+                                <p>RWD</p>
                             </li>
-                        </ul>
+                         </ul>
+                     </div>
+                     <i class="next"></i>
+                 </div>
+             </div>
+        </div>
+        <div class="marqueeArea">
+            <div class="center">
+                <div class="marqueeWrap">
+                    <i class="marquee_ic"></i>
+                    <div class="marquee">
+                        <p>TEST</p>
                     </div>
-                    <i class="next"></i>
+                </div>
+                <div class="people">
+                    <i class="people_ic"></i>
+                    9999
                 </div>
             </div>
         </div>
@@ -432,412 +351,435 @@
                         <li class="title active">
                             <p>
                                 <i class="bulb"></i>
-                                新手幫助
+                                Hướng dẫn người chơi
                             </p>
                             <i class="arrow_ic"></i>
                         </li>
                         <li class="box display">
                             <ul>
-                                <li class="forNew_1 active">開戶</li>
-                                <li class="forNew_2">存款</li>
-                                <li class="forNew_3">提款</li>
-                                <li class="forNew_4">轉帳</li>
-                                <li class="forNew_5">優惠規則</li>
-                                <li class="forNew_6">流水限制說明</li>
-                            </ul>
-                        </li>
-                        <li class="title">
-                            <p>
-                                <i class="problem"></i>
-                                常見問題
-                            </p>
-                            <i class="arrow_ic"></i>
-                        </li>
-                        <li class="box">
-                            <ul>
-                                <li class="forQues_1">常見問題</li>
-                                <li class="forQues_2">遠端協助</li>
-                                <li class="forQues_3">聯絡我們</li>
+                                <li class="forNew active">ĐĂNG KÝ</li>
+                                <li class="forNew">NẠP TIỀN</li>
+                                <li class="forNew">RÚT TIỀN</li>
                             </ul>
                         </li>
                         <li class="title">
                             <p>
                                 <i class="aboutUs"></i>
-                                關於我們
+                                Thông tin trang
                             </p>
                             <i class="arrow_ic"></i>
                         </li>
                         <li class="box">
                             <ul>
-                                <li class="forUs_1">服務條款</li>
-                                <li class="forUs_2">隱私政策</li>
-                                <li class="forUs_3">責任博彩</li>
-                                <li class="forUs_4">安全性</li>
-                                <li class="forUs_5">免責聲明</li>
-                                <li class="forUs_6">相關規則</li>
+                                <li class="forQues">Điều khoản phục vụ</li>
+                                <li class="forQues">Chính sách bảo mật</li>
+                                <li class="forQues">Cá cược có trách nhiệm</li>
+                                <li class="forQues">Tính bảo mật</li>
                             </ul>
                         </li>
                         <li class="title">
                             <p>
-                                <i class="app"></i>
-                                下載APP
+                                <i class="downloadIC"></i>
+                                Tải APP
                             </p>
                             <i class="arrow_ic"></i>
                         </li>
                         <li class="box">
                             <ul>
-                                <li class="forApp_1">歐博真人娛樂</li>
-                                <li class="forApp_2">沙龍真人娛樂</li>
-                                <li class="forApp_3">WM真人娛樂</li>
+                                <li class="forApp">ALL BAT</li>
+                                <li class="forApp">SA CASINO</li>
+                                <li class="forApp">WM CASINO</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
                 <div class="helpWrap">
-                    <div class="newHelp_1 display">
-                        <h2>如何註冊賬號？</h2>
+                    <div class="newHelp display">
+                        <h2>Làm cách nào để trở thành hội viên của trangVN99?</h2>
                         <p>
-                            <span>1.點擊網站右上角“登入註冊”的功能鍵</span>
+                            Để trở thành hội viên của trang [VN99] , 
+                            bạn vui lòng chọn mục Trang chủ , 
+                            sau đó chọn ô <span>Đăng ký</span> để tiến hành đăng ký. 
+                            Tên tài khoản đăng ký phải có ít nhất 6 ~ 10 ký tự ( bao gồm chữ và số ) , 
+                            sau khi điền đầy đủ thông tin yêu cầu gồm Họ tên thật, Số điện thoại, Line , 
+                            mã giới thiệu ( nếu có ) bạn vui lòng tích vào ô Đồng ý với các điều khoản và chính sách bảo mật của trang , 
+                            sau đó tiến hành bấm vào ô Xác nhận để tạo tài khoản thành công.
                         </p>
+                        <h2>Quên mật khẩu</h2>
                         <p>
-                            <span>2.進入註冊頁面，填寫用戶名和密碼信息即可成功註冊；</span>
-                        </p>
-                        <p>
-                            <span>3.註冊前請確保您已滿18週歲並已閱讀過我們<a href="#">規則與條款</a>。</span>
-                        </p>
-                        <h2>在網站註冊之後，我的個人資料信息安全有保障嗎？</h2>
-                        <p>
-                            <span>關於客戶賬戶資料安全，以及客戶隱私權，請參考隱私政策。</span>
-                        </p>
-                        <h2>忘記已註冊的用戶名怎麽辦？</h2>
-                        <p>
-                            <span>會員用戶名您可以聯繫我們在線客服團隊，爲您提供必要協助。</span>
-                        </p>
-                        <h2>忘記密碼怎麽辦？</h2>
-                        <p>
-                            <span>1.在上方，點擊“忘記密碼”按鈕；</span>
-                        </p>
-                        <p>
-                            <span>2.進入找回密碼頁面，填寫您的手機號碼獲取新密碼。</span>
-                        </p>
-                        <h2>如何更改賬戶密碼？</h2>
-                        <p>
-                            <span>1.請您登錄賬戶後，點擊用戶名，進入“個人資料”；</span>
-                        </p>
-                        <p>
-                            <span>2.點擊頁面的“修改密碼”，填寫新舊密碼；</span>
-                        </p>
-                        <p>
-                            <span>3.點擊“確認”即可完成修改。</span>
-                        </p>
-                        <h2>登錄賬戶提示被鎖是什麽原因？</h2>
-                        <p>
-                            <span>會員輸入錯誤密碼5次以上，爲了保障會員賬號的安全，系統自動鎖定會員賬號，出現此類問題，建議可以聯繫在線客服團隊進行溝通解除鎖定。</span>
-                        </p>
-                        <h2>我可以申請註銷賬戶嗎？</h2>
-                        <p>
-                            <span>暫時不接受任何理由註銷會員賬戶，您可以與在線客服聯繫申請凍結/停用您的會員賬戶。</span>
-                        </p>
-                        <h2>怎麽申請更改個人資料信息？</h2>
-                        <p>
-                            <span>客戶成功註冊後，可以通過手機、PC、電腦或其他設備修改個人基本資料信息。如遇任何問題，請諮詢我們在線客服團隊。</span>
+                            Nếu bạn quên mật khẩu , 
+                            vui lòng bấm chọn <span>Quên mật khẩu</span> tại giao diện Trang chủ . 
+                            Nhập số điện thoại mà bạn đã mặc định tài khoản trước đó và làm theo các bước yêu cầu để tiến hành lấy lại mật khẩu.
                         </p>
                     </div>
-                    <div class="newHelp_2">
-                        <h2>如何存款到通博(tb588)帳戶?</h2>
-                        <p>首先您需要加入通博(tb588)會員，在您註冊完成後登入通博(tb588)帳戶，即可在通博(tb588)主頁右上角找到存取款按鈕，進入後點擊我要存款，即可找到適合您的存款方式。</p>
-                        <p>目前通博(tb588)娛樂城只接受三種存款方式</p>
+                    <div class="newHelp">
+                        <ul>
+                            <li>
+                                Để nạp tiền vào tài khoản , 
+                                vui lòng chọn mục Nạp tiền và chọn hình thức thanh toán bạn muốn để tiến hành Nạp tiền.
+                            </li>
+                            <li>
+                                Trang hỗ trợ việc Nạp tiền qua thẻ ngân hàng bằng ứng dụng điện thoại , 
+                                thanh toán trực tiếp tại cây ATM và thanh toán tại tại cửa hàng tiện lợi , 
+                                hội viên có thể lựa chọn phương thức nạp tiền thuận tiện nhất để Nạp tiền cho tài khoản của mình.
+                            </li>
+                            <li>
+                                Sau khi chuyển tiền thành công hệ thống sẽ tiến hành xác minh khoản nạp và lên điểm cho hội viên.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="newHelp">
+                        <ul>
+                            <li>
+                                Để thao tác rút tiền, vui lòng chọn mục Rút tiền tại giao diện chính trên trang.
+                            </li>
+                            <li>
+                                Để thuận tiện cho việc rút tiền , 
+                                vui lòng chuyển tất cả các điểm trong ví trò chơi về ví chính sau đó tiến hành thao tác rút tiền.
+                            </li>
+                            <li>
+                                Số tiền muốn rút phải nằm trong khoảng 500 - $149,999.
+                            </li>
+                            <li>
+                                Hội viên cần xác minh chính xác tài khoản ngân hàng thụ hưởng đã mặc định trước đó và số tiền muốn rút , 
+                                sau đó chọn Xác nhận rút tiền và chờ hệ thống kiểm tra xử lý lệnh rút.
+                            </li>
+                            <li>
+                                Hội viên có thể rút tiền miễn phí số lần trong ngày khác nhau dựa theo cấp bậc VIP hiện có , 
+                                nếu vượt quá số lần rút miễn phí sẽ bị tính phí thủ tục 1% ( Vui lòng tham khảo chi tiết VIP )
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="question">
+                        <h2>Tuân thủ các quy định hội viên và các quy định pháp lệnh:</h2>
                         <p>
-                            1. 轉帳匯款：ATM，跨行等存款方式。
-                            <br>
-                            2. 銀行臨櫃匯：需要客戶攜帶您要儲值的現金到各大銀行等金融機構。
-                            <br>
-                            3. 第三方支付。
+                            Sau khi quý khách đăng ký tài khoản hội viên thành công thì sẽ được sử dụng tất cả các dịch vụ của công ty chúng tôi. 
+                            Khi sử dụng các dịch vụ đó, đồng nghĩa quý khách đã đồng ý và tuân thủ theo các quy định mà công ty chúng tôi đề ra như (Quy tắc trò chơi Casino , quy tắc đặt cược thể thao, thông báo , các hạng mục chú ý) và một số pháp lệnh có liên quan. 
+                            Tất cả các dịch vụ liên quan như sản phẩm, dịch vụ khách hàng , 
+                            hệ thống phần mềm, kèo cược, trò chơi, casino, kết cấu mạng của công ty chúng tôi đều được giám sát bởi ủy ban cờ bạc và giải trí của nước Philippines. 
+                            Vì vậy khi quý khách sử dụng những dịch vụ của chúng tôi thì phải tuân thủ theo các pháp lệnh hợp pháp của nước bản địa , 
+                            nếu có vi phạm điều gì đều không thuộc phạm vi trách nhiệm dịch vụ của chúng tôi.
                         </p>
-                    </div>
-                    <div class="newHelp_3">
-                        <h2>我怎麼在我的帳戶提取資金?</h2>
-                        <p>※首次取款需要通過資料驗證※</p>
-                        <p>登入通博帳戶，即可在通博主頁右上角【財務中心】，接著選擇【提款】。</p>
-                        <p>填入提款金額即可進行提款。</p>
-                        <p>申請提款後，提款金額將會鎖定。若無通過帳戶驗證，提款金額將回到中心錢包。提款前請確認帳戶資訊正確以避免提款失敗。</p>
-                        <div class="img online02"></div>
-                        <p>NEWBIE.WITHDRAW.HOW.L1</p>
-                        <p>NEWBIE.WITHDRAW.HOW.L2</p>
-                        <h2>提款常見問題</h2>
-                        <p>Q:可以使用別人的銀行卡進行提款嗎？</p>
-                        <p>A:爲了確保客戶的賬戶資金安全,提款需要使用遊戲,且提款銀行卡姓名必須與註冊姓名一致。</p>
-                        <h2>申請提款需要註意些什麽？</h2>
-                        <p>1. 提款綁定的銀行卡姓名需與遊戲賬戶的註冊姓名一致。</p>
-                        <p>2. 提款綁定的銀行卡信息需要正確。</p>
-                        <p>3. 若您未申請任何紅利優惠,投註滿一倍流水即可申請提款。</p>
-                        <p>4. 若申請首存紅利,則需要滿足優惠活動寫明的有效投註額要求。</p>
-                        <p>5. 全天24小時都可進行提款申請。</p>
-                        <h2>遊戲賬戶裏有錢爲什麽無法提款？</h2>
-                        <p>您需要先將資金從遊戲平臺轉至中心賬戶後才能進行提款操作。</p>
-                        <h2>可以綁定多張銀行卡嗎？</h2>
-                        <p>會員賬戶可以綁定多張銀行卡進行提款操作,在賬戶中心選擇 【 銀行卡管理 】,進行新增添加即可。</p>
-                        <h2>提款爲什麽還需要審核 ？</h2>
-                        <p>提款審核是相關部門在給您辦理出款之前的一個簡單的核實步驟,是爲了確保客戶資金安全,所以需要覈實相關信息。</p>
-                    </div>
-                    <div class="newHelp_4">
-                        <h2>如何轉帳?</h2>
-                        <p>登錄賬號 > 會員中心 > 中心錢包 > 選填錢包及金額</p>
-                        <div class="img online03"></div>
-                        <h2>轉帳常見問題</h2>
-                        <p>1. 爲什麽遊戲賬戶裏有錢，卻提不了款？</p>
-                        <p>您需要先將資金從遊戲錢包轉至中心錢包後才能進行提款操作。</p>
-                        <p>2. 轉賬沒有成功，但是錢卻沒了怎麽辦？</p>
-                        <p>轉賬時請先退出遊戲平臺再操作。如轉賬掉單，請聯繫在線客服查詢補單。</p>
-                    </div>
-                    <div class="newHelp_5">
-                        <h2>優惠活動如何申請？</h2>
-                        <p>登陸賬號後點擊優惠活動或進入會員中心的優惠申請頁面，選擇相應的優惠活動。</p>
-                        <h2>優惠申請成功後一直沒有收到紅利或禮品怎麽辦？</h2>
-                        <p>如果您的優惠申請成功後沒有在指定時間收到禮品，請您可以隨時聯繫在線客服。</p>
-                    </div>
-                    <div class="newHelp_6">
-                        <h2>流水限制 : </h2>
-                        <p>充值金額的一倍。例 : 充值5000，則須完成一倍即5000的有效流水(不包含領取優惠活動的流水限制)，如有領取優惠則以該優惠的流水限制額外做計算。</p>
-                        <h2>有效流水的定義 : </h2>
-                        <p>非平局/平手 的投注，有營利或是虧損的狀態下，不論輸贏都會計算流水。</p>
-                        <p class="remind mar">Q : 領取優惠但未完成流水限制已經輸掉了，怎麼清除流水限制呢?</p>
-                        <p class="remind">A : 注單已全部結算完成，且錢包餘額總和低於10 (包含遊戲館內餘額加總)，在次進行充值，充值完成後，以前的流水限制會自動歸0 。</p>
-                    </div>
-                    <div class="question_1">
-                        <h2>加入會員年齡要求？</h2>
-                        <p>加入通博(tb588)娛樂城，您必須年滿18歲並且同意遵守 條款及條件和 隱私權政策。大多數國家於於法律上對於線上遊戲都有訂定相關的詳細規範，請您務必詳細閱讀並遵守您所在當地的法律條文。</p>
-                        <h2>我該如何存款？</h2>
+                        <h2>Giới thiệu dịch vụ:</h2>
+                        <ul>
+                            <li>
+                                Công ty chúng tôi dựa trên nền tảng dịch vụ chất lượng [An Toàn Uy Tín], [Tiện Lợi Kịp Thời], [Công Bằng Công Chính]. 
+                                Điều tuyệt vời là hội viên không chịu sự gò bó về thời gian mà có thể lên mạng mọi lúc và tham gia một loại trò chơi bất kỳ với tính công bằng tuyệt đối , 
+                                ngoài ra hội viên có thể cảm nhận học hỏi những điều thú vị cùng với những người chơi khác trên thế giới. 
+                                Chúng tôi luôn duy trì một thái độ tôn trọng khách hàng , 
+                                từ đó tìm tòi hiểu biết thêm nhu cầu thực tế để không ngừng phát triển và sáng tạo , 
+                                chúng tôi cảm thấy tự hào về triết lý kinh doanh này. 
+                                Hy vọng sẽ sáng tạo ra một giá trị giải trí mới đồng thời đáp ứng được mục đích phổ cập cho mọi nơi và trở thành một trong những trang web hàng đầu trong lĩnh vực giải trí này.
+                            </li>
+                            <li>
+                                Dịch vụ tiền ảo ngân hàng: công ty chúng tôi cung cấp dịch vụ thanh toán dòng tiền qua mạng , 
+                                khi quý khách đặt mua điểm số thì sẽ được hưởng các dịch vụ phù hợp mà công ty chúng tôi đã cung cấp.
+                            </li>
+                        </ul>
+                        <h2>Nghĩa vụ đăng ký thông tin xác thực:</h2>
                         <p>
-                            資金存入您的通博(tb588)成員帳戶可使用以下方法：
-                            <br>
-                            1. 銀行轉帳存款(網路銀行ATM轉帳或實體自動櫃員機ATM轉帳)。
-                            <br>
-                            2. 虛擬ATM存款(實體自動櫃員機ATM轉帳)。
-                            <br>
-                            3. 超商支付。
+                            Đối với các hạng mục dịch vụ mà công ty chúng tôi đã cung cấp , 
+                            sau khi quý khách đồng ý đăng ký thì vui lòng dựa trên trình tự các mục hướng dẫn để cung cấp thông tin cá nhân một cách chính xác và chân thực nhất ; 
+                            Khi thông tin cá nhân của quý khách không chính xác thì vui lòng cập nhật lại để duy trì thông tin cá nhân chính xác và đầy đủ nhất. 
+                            Nếu thông tin được đăng ký không chính xác hoặc mạo nhận thông tin của người khác mà gây tổn hại đến quyền lợi của người đó hoặc vi phạm pháp luật thì quý khách phải hoàn toàn chịu trách nhiệm trước pháp luật về hành vi đó ; 
+                            Khi quý khách đã cung cấp thông tin cá nhân không chính xác hoặc thông tin cá nhân có sự bất thường mà không chịu cập nhật lại dẫn đến việc không khớp thông tin cá nhân đăng ký lúc ban đầu thì công ty chúng tôi có quyền chấm dứt tư cách và quyền lợi hội viên của quý khách.
                         </p>
+                        <h2>Thay đổi và ngưng cung cấp dịch vụ:</h2>
+                        <ul>
+                            <li>
+                                Dữ liệu đăng nhập của hội viên không chính xác
+                            </li>
+                            <li>
+                                Sử dụng thông tin của người khác để đăng ký dịch vụ này
+                            </li>
+                            <li>
+                                Vi phạm quy định về tính công bằng trò chơi
+                            </li>
+                            <li>
+                                Tham gia các loại trò chơi hoặc các trận đấu mà cố tình lợi dụng các lỗ hỏng của hệ thống hoặc lợi dụng các nhược điểm của trò chơi để gây ảnh hưởng đến kết quả
+                            </li>
+                            <li>
+                                Công ty chúng tôi không cho phép đặt cược không công bằng , 
+                                đặt cược hai bên, không rủi ro. 
+                                Nếu có phát hiện người chơi có vấn đề này, công ty chúng tôi sẽ ngưng quyền sử dụng của người chơi. 
+                                Nếu có bất kỳ tranh luận vấn đề nào, chúng tôi có quyền quyết định cuối cùng. 
+                                Ở bất kỳ tình huống nào, 
+                                sẽ ngưng phục vụ hoặc là chấm dứt phục vụ đối với tài khoản hội viên để tránh gây nên vấn đề phát sinh thiệt hại , 
+                                chúng tôi không chịu trách nhiệm.
+                            </li>
+                            <li>
+                                Hội viên nhiều nhất đăng ký 1 tài khoản đặt cược , 
+                                nếu vượt quá 1 tài khoản đặt cược cùng 1 trận đấu , 
+                                công ty có quyền hạn xét duyệt xóa đơn cược và bảo lưu đơn cược cuối cùng.
+                            </li>
+                        </ul>
+                        <h2>Tạm ngưng hoặc gián đoạn dịch vụ:</h2>
                         <p>
-                            作為我們尊貴的客戶，我們會一直努力讓銀行免收取何任費用，讓你不會被我們收取任何在存款時或從您的帳戶中提款時的費用。
-                            <br>
-                            除非我們特地提前提醒您，您所要求的特定方法進行過量的存提款。
+                            Một trong các trường hợp sau đây , 
+                            trang mạng sẽ không chịu bất cứ trách nhiệm bồi thường nào đối với người chơi:
                         </p>
-                        <h2>我的個人資料安全嗎？</h2>
-                        <p>在這裡我們可確保您的個人資料是安全無虞的，通博(tb588)娛樂城堅持使用最高等級安全措施及最安全的通訊協定（SSL 128位加密標準），並存儲在最安全的作業環境，並且通博(tb588)娛樂城永遠不會向任何第三方人員透露您的各項個人資料，敬請放心。</p>
-                        <h2>太久沒登入忘記密碼了怎麼辦？</h2>
-                        <p>若您忘記您密碼，請點選畫面右上方 [ 忘記密碼? ]，填寫您註冊時所使用的行動電話，系統將會寄一組臨時密碼到您的的手機，使用臨時密碼登入後再至會員中心進行密碼修改。</p>
-                        <h2>通博(tb588)娛樂城支援幾種貨幣呢？</h2>
-                        <p>目前本娛樂城僅支援新台幣，往後將視情況開放人民幣投注。</p>
-                        <h2>通博(tb588)娛樂城最低投注額是多少？</h2>
-                        <p>最低投注額各個項目有所不同，當您打開每一項遊戲時，遊戲畫面會顯示該項遊戲最低投注額。</p>
-                        <h2>加投注後進行派彩需要多久？</h2>
-                        <p>我們為追求賽果正確性，將以官方結果為依據以最快速度進行結算並派彩，唯獨某些賽事可能發生某些突發狀況導致官方無法公佈正確賽果，而該場賽事將可能會延遲結算程序，以至於延誤派彩。</p>
-                        <h2>申請點數出售交易需要多久完成？</h2>
-                        <p>通博(tb588)娛樂城提供24小時，全年無休點數出售交易，並將於您提出交易需求後30分鐘內快速完成。</p>
-                    </div>
-                    <div class="question_2">
-                        <h2>遠端協助</h2>
-                        <h3>步驟一 : 前往<a href="#">Team-Viewer</a>官網,下載遠端協助網址。</h3>
-                        <p>下載後並執行</p>
-                        <div class="img online04"></div>
-                        <p>步驟二 : 進行安裝，安裝教學流程可參照,遠端協助程式安裝教學。</p>
-                        <p>步驟三 : 將您的【遠端協助ID】與【密碼】，提交給客服人員即可爲您進行遠端協助服務。</p>
-                        <div class="img online05"></div>
-                        <h3>遠端協助</h3>
-                        <p>1.下載無需任何費用</p>
-                        <p>2.遠端協助程式使用完畢後即可關閉與卸載，無須擔心安全性問題。</p>
-                        <p>3.可由客服或電腦工程人員爲您遠端操作電腦，妥善協助您查看並解決當前電腦或軟體問題。</p>
-                    </div>
-                    <div class="question_3">
-                        <h2>在線客服</h2>
-                        <p>我們最親切且專業的客服人員，將全天24小時為您提供諮詢及幫助。</p>
-                        <p>代理聯盟Line ID：Slot657</p>
-                        <p>客服信箱：cstb588@gmail.com</p>
-                        <p>客服Line ID：cs_5688</p>
-                        <p>投訴信箱：tbcscomplaint@gmail.com</p>
-                    </div>
-                    <div class="aboutUs_1">
-                        <h2>遵守會員規範及法律規定</h2>
-                        <p>您瞭解您註冊成為會員後，即可使用本公司所提供之各項服務(以下稱本服務)。當會員使用本服務時，即表示除了同意遵守本服務條款外，還同意接受本公司對會員規範(包括各項遊戲規則、球賽投注規則、公告及注意事項等)及相關法令規定之拘束，本公司ALLBET所有產品與客戶服務、軟件系統、網絡架構等相關業務事宜，請使用本服務之會員請遵守使用者當地法令之許可，如有違反之情事恕非本服務之負責範圍。</p>
-                        <h2>服務簡介</h2>
-                        <p>1.本公司旨在創造一個『安全可靠』、『即時便利』、『公平公正』、『專業營運』的優質娛樂服務平台，強調的讓會員不受時空的限制，24小時隨時上線就可以參與一個公平公正的遊戲，亦可以享受到與世界各地玩家切磋的樂趣，我們秉持以客為尊的態度，不斷開發創新及了解客戶需求是本公司引以為傲的經營理念，翼望能創造出嶄新的娛樂價值以及達到多方普及的目的，成為具有領導指標性的娛樂網站。2.虛擬貨幣銀行服務：本公司提供網路金流付費平台，你所購買的點數將可享受符合本公司平台的服務。若您使用虛偽不正之方式進行「儲值」，本公司也將保留隨時終止您會員資格及使用各項服務之權利。</p>
-                        <h2>真實登錄義務</h2>
-                        <p>基於本公司所提供之各項服務，您同意於註冊時依註冊申請程序所提示之項目，登錄您本人正確、真實及完整之個人資料；當您的個人資料有異動時，請立即更新，以維持您個人資料之正確、真實及完整。如因您登錄不實資料或冒用他人名義以致於侵害他人之權利或違法時，應自負法律責任；您並同意您所提供之個人資料不實或個人資料有異動但沒有更新以致於與原登錄之資料不符時，本公司有權隨時終止您的會員資格及使用各項會員服務之權利。</p>
-                        <h2>服務之停止與更改</h2>
-                        <p>1.會員登錄之資料不實。2.使用他人的名義申請本服務。3.違反遊戲公平原則。4.參與遊戲或比賽時，故意鑽研系統漏洞或利用遊戲弱點以影響結果。5.違反本服務條款時。6.本公司不允許不公平的下注方式、雙邊下注、無風險下注及任何無風險解凍之下注方式，如有發現上述問題之玩家，本公司有終止玩家帳號使用之權力。7.會員違反最終用戶授權協議，或是做出任何損害其他會員權益的行為，該會員帳號永久封鎖。如有任何爭議問題，本公司有最終決定權。無論任何情形，就停止或更改服務或終止會員帳戶服務所可能產生之困擾、不便或損害，本服務對任何會員或第三人均不負任何責任。</p>
-                        <h2>服務暫停或中斷</h2>
-                        <p>(一)本公司於下列情形之一時，得暫停或中斷本服務之全部或一部，對於使用者不負擔任何賠償責任：1.對於本服務相關系統設備進行遷移、更換或維護時。2.因不可歸責於本公司所造成服務停止或中斷。3.因不可抗力所造成服務停止或中斷(二)如因本公司對於本網站相關系統設備進行遷移、更換或維護而必須暫停或中斷全部或一部之服務時，本公司於暫停或中斷前將以電子郵件通知或於本網站上公告。(三)對於本服務之暫停或中斷，可能造成您使用上的不便、資料遺失或其他經濟及時間上之損失，您平時應採取適當的防護措施，以保障您的權益。</p>
-                        <h2>保管義務</h2>
-                        <p>會員有義務妥善保管在本網站之帳號與密碼，並為此組帳號與密碼登入系統後所進行之一切活動負責。為維護會員自身權益，請勿將帳號與密碼洩露或提供予第三人知悉，或出借或轉讓他人使用。</p>
-                        <h2>同意各項球賽及遊戲規則</h2>
-                        <p>為避免使用者於本平台投注球賽或遊戲時產生爭議，各項規則於遊戲中心和球賽中心均有詳細說明，請務必詳細閱讀本服務所定之各項規則，會員一經開始使用本服務，即被視為已接受所有之規定。</p>
-                        <h2>會員規範之增訂及修改</h2>
-                        <p>本服務條款如有增訂或修改，您同意自該修訂條款於本網站公告之時起受其拘束，本網站將不對會員個別通知。如您於公告後繼續使用本服務，則視為您已經同意該修訂條款。</p>
-                        <h2>隱私權聲明</h2>
-                        <p>我們致力為客戶保護隱私並提供一個最安全的遊戲平臺，我們在此網站搜集的資料將會為您提供最卓越的服務，我們不會出賣或租賃您的個人資料給第三方，客戶所提供的個人資料均經過SSL128加密技術處理，並儲存在安全的、非公開的作業系統，對於有機會接觸客戶的個人資料的協助夥伴也必需遵守我們訂立的隱私保密規則。</p>
-                        <h2>免責聲明</h2>
-                        <p>部份地區或國家法律尚未明定線上博彩的合法性問題，甚至某些地區或國家已明確規範線上博彩為非法行為。我們無意邀請任何人在這些地區或國家非法使用本服務平台。使用者必需確定在您所居住的地區或國家使用線上博彩是否合法，並負完全的責任，使用本服務之會員請遵守使用者當地法令之許可，如有違反之情事恕非本公司之負責範圍。</p>
-                    </div>
-                    <div class="aboutUs_2">
-                        <h2>隱私政策</h2>
-                        <p>1.我們通博(tb588)致力為客戶保護隱私並提供一個最安全的遊戲平臺，我們在此網站搜集的資料將會為您提供最卓越的服務，我們不會出賣或租賃您的個人資料給第三方，客戶所提供的個人資料均經過SSL128加密技術處理，並儲存在安全的、非公開的作業系統，對於有機會接觸客戶的個人資料的協助夥伴也必需遵守我們訂立的隱私保密規則。</p>
-                        <p>2. 您需要保管好您的帳號和密碼安全。不得允許任何其他人或協力廠商，包括任何未成年人使用或重複使用您的帳戶進行任何網站訪問及投注操作。本公司將有權拒絕支付由此產生的任何獎勵或獎金。您將獨自為協力廠商在帳戶中產生的所有損失負責。</p>
-                        <p>3. 您可能會收到一些定期的電郵，向您更新有關本公司產品的資訊與服務，當本網推出新穎，好玩和有趣的推廣活動，這些電郵就可幫助您充分享受到本網的服務。</p>
+                        <ul>
+                            <li>
+                                Trong trường hợp đang tiến hành di chuyển , 
+                                thay thế hoặc bảo trì các thiết bị hệ thống có liên quan đến dịch vụ của chúng tôi.
+                            </li>
+                            <li>
+                                Bị mất mạng internet nhưng không do công ty chúng tôi gây ra mà dẫn đến tạm ngưng hoặc gián đoạn dịch vụ.
+                            </li>
+                            <li>
+                                Do các yếu tố đặc biệt bất khả kháng dẫn đến tạm ngưng hoặc gián đoạn dịch vụ.
+                            </li>
+                        </ul>
                         <p>
-                            4. 我們的系統會自動記錄瀏覽者的網路IP位址，但我們決不會記錄網站訪問者的電郵位址，而此項主要是用作網站流量統計之用。
-                            <br>
-                            本公司保留權力可自行對隱私政策做出任何修改，此政策如有任何更改均具有約束力，並立即生效。
-                        </p>
-                    </div>
-                    <div class="aboutUs_3">
-                        <h2>責任博彩</h2>
-                        <p>
-                            通博(tb588)遊戲是全心全意致力於高水平的誠信，守信的，正因為如此，完全致力於與世界上更嚴格的規範要求。為此，我們的軟件進行隨機數發生器（RNG）評定的官方認證Quinel中號有限公司進行，並已經發出無論從古拉索EGaming的一個EGaming的許可證和4類許可與馬耳他賭博當局。
-                            <br>
-                            通博(tb588)中BETSOFT GAME的RNG系統已通過QUINEL。QUINEL是一家領先的獨立的，國際認可的檢測實驗室，專業從事遊戲軟件和系統的認證。QUINEL一直服務於遊戲業近10年，擁有實驗室在意大利和馬耳他利用測試，認證和檢驗國際專家在遊戲領域。QUINEL是世界上最值得信賴的測試實驗室之一，通博(tb588)很自豪地介紹我們驚人的3D遊戲與他們的認證支持。
+                            Nếu công ty chúng tôi đối với hệ thống liên quan tiến hành di chuyển , 
+                            thay đổi hoặc bảo trì, và cần tạm ngưng hoặc gián đoán phục vụ , 
+                            chúng tôi sẽ gửi thông báo.
                         </p>
                         <p>
-                            <a href="#">查看通博(tb588)中BETSOFT GAME的Quinel中號有限公司RNG認證</a>
+                            Trường hợp tạm ngưng và gián đoạn dịch vụ có thể sẽ gây ra những bất tiện và tổn thất như mất dữ liệu , 
+                            ảnh hướng đến kinh tế , 
+                            thời gian của quý khách. 
+                            Vì vậy thường ngày quý khách nên chọn những phương án và cách xử lý thích hợp nhằm đảm bảo được quyền lợi của chính mình.
                         </p>
+                        <h2>Nghĩa vụ bảo mật:</h2>
                         <p>
-                            The Malta Gaming Authority (MGA)融合運營商與遊戲立法和實踐的深刻理解商業需求。作為負責在馬耳他的所有遊戲活動治理的單一監管機構，它被許多人認為是全球首選的遠程遊戲調節。管理局提出了一個頂尖的監管環境，再加上技術能力，這使得它能夠提供世界級的服務。
-                            <br>
-                            自1996年以來古拉索 EGaming 的有資格的申請人提供EGaming的許可和IP（信息提供者）合規服務。古拉索島是調節eGaming的服務，歷史悠久，最穩定的供應商之一。他們自豪地提供一些服務的最受推崇的EGaming的運營商和供應商自1996年以來古拉索島許可證提供EGaming的事務管理到服務，軟件和服務提供商的運營商。管轄的單一許可涵蓋了所有形式的互動EGaming的，包括：賭場，體育博彩，交流，彩票，技能和遊戲的機會。
-                            <br>
-                            通博(tb588)建議您:
-                            <br>
-                            1. 把博彩當做一種娛樂休閒項目
-                            <br>
-                            2. 避免連續的損失
-                            <br>
-                            3. 對博彩有自己的認識
-                            <br>
-                            4. 合理安排自己在博彩中的時間和精力
-                            <br>
-                            若想了解更多相關資訊，請您諮詢Gambling Therapy網站聯系：<a href="#">www.gamblingtherapy.org.uk</a>
+                            Quý hội viên phải tự bảo mật thông tin tài khoản và mật khẩu , 
+                            đồng thời chịu trách nhiệm về tất cả các thao tác sau khi tài khoản và mật khẩu được đăng nhập. 
+                            Để đảm bảo quyền lợi của bản thân hội viên, 
+                            xin đừng tiết lộ hoặc cung cấp tài khoản và mật khẩu cho người khác biết và không nên cho mượn hoặc chuyển nhượng cho người khác sử dụng dưới mọi hình thức.
                         </p>
+                        <h2>Đồng ý với các quy tắc của trò chơi và môn bóng thi đấu:</h2>
                         <p>
-                            自我隔離：
-                            <br>
-                            對於一些客戶希望暫時遠離博彩，我們將提供一個自我排除的功能，您可以申請三個月的帳戶關閉。請點擊網頁中的“聯繫我們”，將由專員為您服務。
-                            <br>
-                            年齡限制：
-                            <br>
-                            我們的遊戲規則不允許任何未滿18歲的人士向我們投注或領獎。如果您未滿18歲，請馬上退出網站。
-                            <br>
-                            家長控制：
-                            <br>
-                            對於家裡有未成年人士的客戶，我們鼓勵他們安裝保護兒童軟體，來限制未成年家庭成員接觸成人或賭博網站。此外，我們也確保我們的廣告和促銷宣傳活動並非以未成年人士為物件。
+                            Nhằm tránh tình trạng tranh cãi khi đặt cược vào các loại trò chơi cũng như các môn bóng thi đấu , 
+                            kính mong quý hội viên nên tham khảo chi tiết các quy tắc có liên quan , 
+                            một khi quý hội viên đã bắt đầu sử dụng dịch vụ này thì được xem như là đã đồng ý với tất cả các quy định của chúng tôi.
                         </p>
-                    </div>
-                    <div class="aboutUs_4">
-                        <h2>安全性</h2>
-                        <p>通博(tb588)致力於提供一個合法與規範的網上博彩環境。此外，我們採取一切安全防範措施，安裝了良好的科技設備，保證只為符合條件的玩家提供服務，那些禁止進行網上博彩的地區的使用者是不被允許下注的。</p>
-                        <p>通博(tb588)採用了目前最好的加密技術和防火牆系統保護你的安全、私隱，並保證你享受公平的遊戲。由於採用了企業級別的加密科技(1024位RSA金鑰交換和 448位blowfish)，可以為你的資料提供比一般的商業級別的SSL更高的保護。這一科技目前被世界上主要的金融機構所採用。</p>
-                        <p>所有銀行交易由國際金融機構在高標準的安全和機密的網路中進行。進入玩家帳戶資料也必須有玩家唯一的登錄ID和密碼。</p>
-                        <p>我們決不允許在通博(tb588)的網站上有任何的欺詐行為。任何此類行為將導致帳戶立即被關閉，所有彩金將被沒收，也許還將對該玩家進行民事和/或刑事訴訟。</p>
-                        <p>通博(tb588)本公司將保護玩家的權益永遠放在第一。</p>
-                    </div>
-                    <div class="aboutUs_5">
-                        <h2>免責聲明</h2>
-                        <p>享用通博(tb588)提供的服務是會員本人的意願，其風險應由會員本人承擔。參與我們服務的同時就說明會員認同通博(tb588)所提供的服務是正常、合理、公正、公平的。</p>
-                        <p>如果按照會員當地法律博彩屬不合法行為，通博(tb588)不提倡您參與我們的服務。在博彩被視為不合法行為的任何國家通博(tb588)不提倡其國民加入。如果會員因為參與通博(tb588)的服務而觸犯當地之法律，通博(tb588)不負任何責任。</p>
-                        <p>雖然通博(tb588)盡力確保網站提供24小時服務，但如果出於不可抗拒的因素使您無法訪問網站（例如，服務器遭受攻擊，海底光纜遭到破壞等），通博(tb588)概不負責。或是由於第三方對公司網站和信息提供的服務（比如無線通訊的提供者等）而導致的拖延、違約、或不提供服務的情況，易通博(tb588)不提供擔保也不承擔責任。</p>
+                        <h2>Sửa đổi bổ sung các quy phạm của hội viên:</h2>
                         <p>
-                            通博娛樂不對以下情況承擔責任（無論直接或間接產生）：
-                            <br>
-                            1. 利潤的損失
-                            <br>
-                            2. 生意的損失
-                            <br>
-                            3. 收入的損失
-                            <br>
-                            4. 機會的損失
-                            <br>
-                            5. 數據的損失
-                            <br>
-                            6. 商譽或名譽的損失
-                            <br>
-                            7. 任何特殊的、間接的或後續的損失
+                            Nếu điều khoản dịch vụ có sửa đổi hoặc bổ sung thì quý khách sẽ chịu sự ràng buộc đồng ý với những điều khoản được sửa đổi từ khi có được thông báo từ trang mạng , 
+                            chúng tôi sẽ không gửi thông báo riêng cho từng cá nhân. 
+                            Nếu sau khi nhận được thông báo mà quý khách vẫn tiếp tục sử dụng dịch vụ thì xem như đã đồng ý với những điều khoản được sửa đổi đó.
                         </p>
-                        <p>通博(tb588)對目前所提供的服務不提供任何明示或暗示的擔保，也不對其服務質量，適用性，完整性或精確性提供任何擔保和解釋。</p>
-                        <p>通博(tb588)絕對有權臨時或永久性地立即暫停，終止，修改，刪除或添加服務內容，而無需通知會員，對因其而產生的任何損失通博(tb588)概不負責。</p>
-                        <p>網站內的部分資訊與其發布的日期和時間是相關的。所以，在特定日期時間之後，相關資訊可能已不再準確真實，通博(tb588)亦不承諾會更新該項目，因為其時效性而造成的損失，通博(tb588)亦不負任何責任。</p>
-                    </div>
-                    <div class="aboutUs_6">
-                        <h2>一般條款和規則</h2>
-                        <p>相關規則 請仔細閲讀以下您與通博(tb588)娛樂城有關的法律條款。請仔細閲讀並確保您能完全理解其內容。如果您對您條款約束的權利和義務有任何疑問，請向您所屬法律管轄區域內的法律顧問尋求說明。</p>
-                        <p>1. 在註冊使用《規則與條款》涵蓋的通博(tb588) (統稱為＂通博(tb588)＂，＂tb588.net＂或＂網站＂)服務之前，請您確認您已年滿18歲或以上，您代表並保證您已閲讀，並充分理解和同意接受並遵守這些規則與條款。如果您不希望接受以下規則與條款，您絶不能登記和開立帳戶，您將無法訪問遊戲軟體和得到相應服務。</p>
-                        <p>2. 通博(tb588)所有的產品信息，網站註冊，及提供的任何服務都在接受此《規則與條款》的前提之下。</p>
-                        <p>3. 通博(tb588)保留不時修訂、更新和修改本條規和博彩規則的絶對權利。上述任何修訂、更新或修改將在通博(tb588)網站上的《規則與條款》中公佈。經修訂、更新或修改的本條規和博彩規則於其在博彩網站上公佈時生效。用戶在上述修訂、更新或修改公佈之後繼續通過博彩網站和博彩設備使用、連接和參與博彩服務，視為用戶同意並接受所公佈的經修改或更新的本條規和博彩規則。</p>
-                        <p>4. 這些《規則與條款》代表了您和通博(tb588) 最終的合作協議，並取代所有先前交涉您與通博(tb588)的協議。請您確認，您已閲讀，並同意接受這些條款及細則。</p>
-                        <p>5. 如果您對協定或通博(tb588)娛樂城網站上的協定有質疑及異議，都將以本協定為準。</p>
-                        <p>6. 在允許您參加通博(tb588)娛樂城遊戲活動之前，我們有權要求您提供證明您身份及年齡的有效證明。</p>
-                        <h2>協議</h2>
-                        <p>1. 此協議涵蓋您和我們之間的各項相關協議，這些協議與您使用娛樂場玩真實貨幣遊戲或虛擬貨幣遊戲及其它遊戲相關。</p>
-                        <p>2. 通博(tb588)所有的產品信息，網站註冊，及提供的任何服務都在接受此《規則與條款》的前提之下。</p>
-                        <p>3. 遊戲規則會在tb588.net、軟體及網站中的其它部分列出，其中包括但不限於介紹玩法的規則、錦標賽和所有適用於特定遊戲、事件、錦標賽的其它規則，並且所有這些規則都歸併和包含在本協議規定的條款和條件中。</p>
-                        <h2>法律要求</h2>
-                        <p>1. 只有當您達到所居住國家法律規定的法定年齡，才能使用通博(tb588)娛樂城和tb588.net網站。</p>
-                        <p>2. 如果您未滿 18 歲，在任何情況下均不得使用通博(tb588)娛樂城和tb588.net網站。</p>
-                        <p>3. 有些法律管轄區並未聲明在線賭博的合法性，而有些則明確規定在線賭博為非法。我們並未企圖讓法律禁止區域內的任何人使用娛樂場和網站。通博(tb588)娛樂城和tb588.net網站的可用性並不能解釋為我們提供或鼓勵您在任何國家（包括法律禁止的國家）內使用通博(tb588)娛樂城和tb588.net網站。在適用法律所禁止的任何地方，均不得使用通博(tb588)娛樂城和tb588.net網站。 您同意單獨負責確定在所居住國家使用娛樂場的合法性。</p>
-                        <p>4. 這些《規則與條款》代表了您和通博(tb588) 最終的合作協議，並取代所有先前交涉您與通博(tb588)的協議。請您確認，您已閲讀，並同意接受這些條款及細則。</p>
-                        <p>5. 儘管以上規定適合一般情況，但您無法使用我們的通博(tb588)娛樂城，如果您身處新加坡,台灣,瓜德羅普,以色列，塞浦路斯，愛沙尼亞，保加利亞，美國領土，香港，法國和荷蘭安的列斯群島“被禁止轄區。</p>
-                        <h2>帳戶的使用條款</h2>
-                        <p>1. 如果會員的帳戶有任何問題， 通博(tb588)有權暫停會員的帳戶，直到得出結果。任何爭端必須以書面形式提出並說明的日期，時間和詳細的爭端和通過電子郵件發送至tb588@gmail.com（ALLBET）將採取一切合理步驟對待會員的爭議，直到通過調查，解決一切爭端。</p>
-                        <p>2. 通博(tb588)有理由在任何時候暫停或者取消您的帳戶，恕不另行通知。當取消您的帳戶餘額時，您的帳號仍有餘額，餘額將通過您最初選擇的提款方式退還給您。同時通博(tb588)保留權利清空或沒收您通博(tb588)娛樂城帳戶中的任何獎金或權益。</p>
-                        <p>3. 您需要保管好您的帳號和密碼安全。不得允許任何其他人或第三方，括任何未成年人使用或重複使用您的通博(tb588)帳戶進行任何網站訪問及投注操作。通博(tb588)將有權拒絶支付由此產生的任何獎勵或獎金。您將獨自為第三方在您的通博(tb588)帳戶中產生的所有損失負責。</p>
-                        <p>4. 您同意我們掌握所有的財務出納（存款和取款）。您也同意如果我們有理由認為您有任何嫌疑參與串通,欺詐，非法的活動。我們將保留扣住您付款的權利。</p>
-                        <p>5. 您同意支付任何應該支付給我們的款項，包括通過第三方連結到我們在線娛樂場的支付。同時您同意不會做出任何索回或者取消本應支付給我們的付款，也須負擔因此原因在交易過程中產生的費用。</p>
-                        <p>6. 注意，如果存款和取款需通過電子貨幣包或者信用卡處理，本帳戶訊息必須和您的通博(tb588)娛樂城註冊訊息相符。沒有第三方交易將被允許。</p>
-                        <p>7. 您可以撤回任何當前的可用餘額，資金需要2-4個工作日的時間轉入您的帳戶。任何方式支付，我們將酌情決定是否扣除在交易過程中產生的手續費。</p>
-                        <p>8. 我們將會檢查玩家數據庫，以發現“冬眠”帳戶。任何此帳戶的資金都可以提款。如果您的帳戶被我們認為是冬眠帳戶，我們將會試圖用您的註冊訊息聯繫您，例如電子郵件，手寫的信件或者電話方式。如果我們未能成功的聯繫您，12個月後，您必提供我們證明您身份的要求。</p>
-                        <p>9. 我們保留以同樣方式處理因安全原因被封存的帳戶的權利。如果我們未能成功的取得聯繫超過12個月後，您必須提供我們證明您身份的要求。</p>
-                        <h2>下注規定</h2>
-                        <p>接受且確認下注 玩家帳戶 玩家需存款後方可進行投注。若發現玩家未有成功存款或成功轉帳，其帳戶投注將視為無效。</p>
-                        <h2>確認賭注</h2>
-                        <p>一旦在通博(tb588)網站內投注成功的注單，無法進行取消，唯有通過公告形式告知客戶因投注無效或錯誤的賽果等依照結算規則才可取消注單。</p>
-                        <h2>賭注記錄的準確度</h2>
-                        <p>請您確保您投注時的準確性，我們不會因您在本網站上投注時的出錯或疏忽承擔責任。</p>
-                        <h2>賭注扣除/未結算賭注</h2>
-                        <p>無論結果是否證實，賭注會在您投注的時候扣除。通博(tb588)將不會退還已經投注但還未開彩的注金。投注及彩金將會在遊戲完全結束後結算。如果符合要求，派彩金額將即時計入會員的帳戶。</p>
-                        <h2>賭注派發</h2>
-                        <p>贏得的彩金將自動派發到各個玩家的帳戶內，帳戶更新的彩金不作為贏利或轉帳的依據，如果在審核中發現客戶在帳戶使用中有欺騙或使用不當的行為，通博(tb588)保留將部分贏利取消並依次修正會員各帳戶餘額的權力。</p>
-                        <h2>會員對彩金職責</h2>
-                        <p>任何由於彩金所產生的稅款或其它費用應由會員自己承擔。通博(tb588)遵守相關法律條款，將會扣留會員帳戶中任何數目的餘額並對會員進行通知。所贏金額不可進行轉帳，替換或是用於索取任何其它所贏金額。</p>
-                        <h2>投注</h2>
+                        <h2>Quyền riêng tư:</h2>
                         <p>
-                            最低投注
-                            <br>
-                            最低投注，取決於不同的遊戲。適用於所有遊戲。
+                            Chúng tôi cam kết bảo vệ sự riêng tư của khách hàng để cung cấp các trò chơi mang tính an toàn , 
+                            những thông tin được thu thập được từ trang mạng này sẽ giúp chúng tôi phục vụ quý khách với những dịch vụ tốt nhất. 
+                            Chúng tôi sẽ không bán hoặc cho thuê thông tin của khách hàng cho bên thứ ba , 
+                            những thông tin cá nhân mà khách hàng cung cấp sẽ được xử lý mã hóa bảo mật bằng kỹ thuật SSL128 và thông tin sẽ được lưu trữ rất an toàn , 
+                            không rò rỉ khi thao tác hệ thống. 
+                            Trong trường hợp có cơ hội tiếp xúc với thông tin cá nhân khách hàng mà được sự trợ giúp từ phí đối tác thì vẫn phải tuân theo các điều khoản về riêng tư mà chúng tôi đưa ra.
+                        </p>
+                        <h2>Nội dung từ chối:</h2>
+                        <p>
+                            Một số khu vực quốc gia có những quy định không rõ ràng về tính hợp pháp của cờ bạc trực tuyến , 
+                            thậm chí có quốc gia có quy định hướng dẫn cụ thể loại hình cờ bạc này là bất hợp pháp. 
+                            Chúng tôi không cố ý mời gọi bất kỳ cá nhân nào tham gia sử dụng dịch vụ của chúng tôi trên khu vực và quốc gia có quy định loại hình này là không hợp pháp. 
+                            Cá nhân sử dụng dịch vụ này phải xác định rõ rằng khu vực hoặc quốc gia đang sử dụng dịch vụ là có phi pháp hay không và tự chịu hoàn toàn trách nhiệm. 
+                            Cá nhân sử dụng dịch vụ này nên tuân thủ theo các pháp lệnh có liên quan tại địa phương , 
+                            nếu có điều gì vi phạm thì chúng tôi sẽ không chịu trách nhiệm.
                         </p>
                     </div>
-                    <div class="app_1">
-                        <h2>相關說明</h2>
-                        <p>下載歐博APP，首次需先進入歐博大廳操作下載，APP只需一次性登入</p>
-                        <p>IOS:可參考下載教學說明安裝到主屏幕</p>
-                        <p>安卓:需進入大廳下載APP</p>
-                        <p>詳細說明請點擊"下載教學說明"查看教學影片</p>
-                        <button>下載教學說明</button>
+                    <div class="question">
+                        <h2>Riêng tư</h2>
+                        <ul>
+                            <li>Quy tắc bảo mật:</li>
+                            <p>
+                                Chúng tôi cam kết bảo vệ sự riêng tư của khách hàng để cung cấp các trò chơi mang tính an toàn , 
+                                những thông tin được thu thập được từ trang mạng này sẽ giúp chúng tôi phục vụ quý khách với những dịch vụ tốt nhất. 
+                                Chúng tôi sẽ không bán hoặc cho thuê thông tin của khách hàng cho bên thứ ba , 
+                                những thông tin cá nhân mà khách hàng cung cấp sẽ được xử lý mã hóa bảo mật bằng kỹ thuật SSL128 và thông tin sẽ được lưu trữ rất an toàn , 
+                                không rò rỉ khi thao tác hệ thống. 
+                                Trong trường hợp có cơ hội tiếp xúc với thông tin cá nhân khách hàng mà được sự trợ giúp từ phí đối tác thì vẫn phải tuân theo các điều khoản về riêng tư mà chúng tôi đưa ra.
+                            </p>
+                            <li>Bảo mật tài khoản và mật khẩu:</li>
+                            <p>
+                                Quý khách phải tự bảo mật thông tin tài khoản và mật khẩu của mình. 
+                                Không cho phép bất kỳ người nào hoặc đối tác khách hàng , 
+                                kể cả vị thành niên sử dụng tài khoản của quý khách để thực hiện hỏi đáp và đặt cược trên trang mạng này. 
+                                Nếu xảy ra tình trạng như trên thì công ty chúng tôi có quyền từ chối chi trả tiền thưởng và phần thưởng được phát sinh trong trường hợp này. 
+                                Đồng thời quý khách phải chịu hoàn toàn trách nhiệm trước những tổn thất gây ra cho đối tác của mình.
+                            </p>
+                            <li>Email định kỳ:</li>
+                            <p>
+                                Quý khách có thể sẽ nhận được một số Email được gửi theo định kỳ về việc cập nhật thông tin và dịch vụ của công ty chúng tôi. 
+                                Khi trang mạng chúng tôi có cung cấp thêm các dịch vụ mới thì email này thực sự là một phần hỗ trợ không hề nhỏ cho việc quý khách tận hưởng dịch vụ của chúng tôi.
+                            </p>
+                            <li>Địa chỉ IP:</li>
+                            <p>
+                                Hệ thống của chúng tôi sẽ tự động lưu trữ địa chỉ IP của quý khách , 
+                                nhưng chúng tôi tuyệt đối không lưu trữ địa chỉ mail của bạn , 
+                                điều này chỉ đơn thuần giúp chúng tôi thống kê tổng lưu lượng của trang mạng.
+                            </p>
+                            <li>Quyền bảo lưu:</li>
+                            <p>
+                                Công ty chúng tôi có quyền thay đổi các chính sách riêng tư , 
+                                chính sách riêng tư này nếu có thay đổi đều có tính ràng buộc và có hiệu lực ngay.
+                            </p>
+                        </ul>
                     </div>
-                    <div class="app_2">
-                        <h2>如何下載使用</h2>
-                        <p class="haveBtn">
-                            安卓
-                            <button>下載APP</button>
+                    <div class="question">
+                        <h2>Trách nhiệm cá cược</h2>
+                        <h2>Quan niệm:</h2>
+                        <p>
+                            Đối với đa số người mà nói thì đánh bạc là một thú vui và an nhàn. 
+                            Tuy nhiên , 
+                            đối với một số người khác thì bài bạc là một tiêu cực. Đối với chúng tôi là chơi nhỏ để tiêu khiển , 
+                            quan trọng nhất là không vượt quá giới hạn. 
+                            Chúng tôi hy vọng khách hàng của mình sẽ có được niềm vui khi tiến hành đặt cược , 
+                            đồng thời cũng hy vọng đừng vì đặt cược mà ảnh hưởng đến tình hình tài chính và đời sống của bản thân khách hàng.
                         </p>
-                        <p>1. 進入 SA 平臺，點選左上方 [SA APP]</p>
-                        <p>2. 轉跳到下載頁面，點選 [立即下載]->[確定]-> 如果 play protect 已生效，點擊[仍要安裝]->[開啟]</p>
-                        <p>3. 要關閉 play protect，到手機 [設定]->[生物特徵與安全性]-> [Google Play Protect]->[Play Protect 設定]-> 關閉 [掃描裝置中的安全性威脅]</p>
-                        <p>4. 開啟內置二維碼掃描器，到手機 -> [設定]->[應用程式]->[SA APP]->[權限]->[開啟相機權限]</p>
+                        <h2>Tìm hiểu kiểm soát cá cược:</h2>
+                        <ul>
+                            <li>
+                                Bạn có thể thông qua những loại câu hỏi dưới đây để xác nhận bản thân đã nghiện cá cược hay chưa:
+                            </li>
+                            <ul>
+                                <li>
+                                    Bạn tham gia cá cược vì muốn trốn tránh công việc và việc học phải không?
+                                </li>
+                                <li>
+                                    Bạn tham gia đánh bạc có phải là để trốn tránh nỗi buồn, cuộc sống không vui vẻ phải không?
+                                </li>
+                                <li>
+                                    Khi đặt cược xong, bạn cảm thấy tiếc nuối vì tiền đã mất đi hay là muốn nhanh chóng đặt cược tiếp?
+                                </li>
+                                <li>
+                                    Bạn sẽ tiếp tục đặt cược cho đến khi thua hết tiền rồi mới thôi phải không?
+                                </li>
+                                <li>
+                                    Bạn có cố tình che giấu về việc bạn dành thời gian và tiền bạc cho cá cược hay không?
+                                </li>
+                                <li>
+                                    Bạn đã từng nhận được sự phê bình của người khác về hành vi cá cược của bản thân phải không?
+                                </li>
+                                <li>
+                                    Bạn có phải đã mất đi cảm giác vui thích đối với gia đình, bạn bè hoặc sở thích của mình hay không?
+                                </li>
+                                <li>
+                                    Sau khi thua, bạn có muốn ngay lập tức thắng lại số tiền đã thua không?
+                                </li>
+                                <li>
+                                    Bạn có phải không muốn sử dụng số tiền đặt cược đó vào mục đích khác hay không?
+                                </li>
+                            </ul>
+                            <li>
+                                Tất cả những câu hỏi ở trên mà bạn trả lời là [có] càng nhiều (Có một tiêu chuẩn nào hay không? 
+                                Chẳng hạn từ 5 câu hỏi trở lên bạn trả lời là có thì biểu thị bạn mắc chứng mê cờ bạc) , 
+                                chúng tôi góp ý với bạn như sau:
+                            </li>
+                            <ul>
+                                <li>
+                                    Hãy xem cờ bạc là một thú vui tiêu khiển
+                                </li>
+                                <li>
+                                    Tránh tổn thất liên tiếp
+                                </li>
+                                <li>
+                                    Vui lòng đừng cá cược khi đã nhậu say hoặc tinh thần không tốt
+                                </li>
+                                <li>
+                                    Sắp xếp thời gian chơi bạc một cách hợp lý
+                                </li>
+                            </ul>
+                            <li>
+                                Nếu như muốn biết thêm về thông tin có liên quan, xin vui lòng tham khảo trang web:
+                            </li>
+                            <p>
+                                <span>
+                                    www.gamblingtherapy.org.uk
+                                </span>
+                            </p>
+                            <h2>Tự cách ly:</h2>
+                            <p>
+                                Đối với một số khách hàng muốn tạm thời cách ly cờ bạc một thời gian thì chúng tôi có cung cấp một tính năng để giúp quý khách , 
+                                quý khách có thể liên hệ bộ phận hỗ trợ khách hàng để được giúp đỡ đóng tài khoản của bạn từ 6 tháng đến 5 năm. Hãy bấm vào “Liên Hệ Chúng Tôi” để nhận được sự giúp đỡ từ các chuyên viên.
+                            </p>
+                            <h2>Giới hạn tuổi tác:</h2>
+                            <p>
+                                Nguyên tắc của chúng tôi là không chấp nhận những khách hàng dưới 18 tuổi tham gia đánh bạc.Nếu như quý khách chưa đủ 18 tuổi , 
+                                xin vui lòng rời khỏi trang web.
+                            </p>
+                            <h2>Phụ huynh kiểm soát:</h2>
+                            <p>
+                                Đối với những gia đình có người thân chưa đủ tuổi thành niên thì chúng tôi khuyến khích quý khách nên lắp đặt phần mềm bảo vệ trẻ em để hạn chế thành viên chưa đủ tuổi trong gia đình tiếp xúc cũng như đặt cược vào trang mạng này. 
+                                Ngoài ra, 
+                                chúng tôi cũng đảm bảo rằng các hoạt động quảng cáo và khuyến mại của chúng tôi không phải là dành cho đối tượng vị thành niên.
+                            </p>
+                            <h2>
+                                Người sử dụng dịch vụ này phải xác định rõ rằng khu vực hoặc quốc gia mình đang sinh sống khi sử dụng dịch vụ này có hợp pháp hay không , 
+                                đồng thời chịu hoàn toàn trách nhiệm. 
+                                Hội viên sử dụng dịch vụ này phải tuân thủ theo các pháp lệnh cho phép tại địa phương , 
+                                nếu vì sử dụng dịch vụ này mà xảy ra vấn đề vi phạm nào thì chúng tôi sẽ không chịu bất cứ trách nhiệm nào.
+                            </h2>
+                        </ul>
                     </div>
-                    <div class="app_3">
-                        <h2>相關說明</h2>
-                        <p>除了提供線上版本外，您也可以下載行動裝置版本，在您的手機盡情遊戲；或是下載安裝至您的電腦。</p>
-                        <p>當您要透過行動裝置或下載板 玩遊戲時，請注意，必須使用 個人資料 裡的 平台帳號密碼 才能進行登入。</p>
-                        <h2>如何登入</h2>
-                        <p>請到 會員中心 > 個人資料 > 平臺帳號密碼 觀看 自己的帳號密碼</p>
-                        <button>下載APP</button>
+                    <div class="question">
+                        <h2>Bảo mật</h2>
+                        <ul>
+                            <li>
+                                Môi trường cá cược hợp pháp:
+                            </li>
+                            <p>
+                                Công ty chúng tôi là một trong những trang mạng cá cược chuyên nghiệp và tiên tiến nhất thế giới , 
+                                đồng thời cam kết cung cấp một môi trường cá cược trên mạng hợp pháp. 
+                                Ngoài ra chúng tôi sử dụng tất cả các kỹ thuật bảo mật, lắp đặt các thiết bị kỹ thuật tiên tiến , 
+                                đảm bảo các dịch vụ phù hợp cho người chơi , 
+                                những khu vực bị nghiêm cấm đặt cược qua mạng sẽ không được phép xuống đơn cược.
+                            </p>
+                            <li>
+                                Hệ thống tường lửa và gia cố bảo mật:
+                            </li>
+                            <p>
+                                Hiện nay chúng tôi có áp dụng những hệ thống kỹ thuật tiên tiến để mã hóa thông tin và hệ thống tường lửa để đảm bảo sự an toàn , 
+                                riêng tư cho người chơi đồng thời vẫn giữ được tính công bằng tuyệt đối trong trò chơi. 
+                                Vì vậy chúng tôi đã sử dụng hệ thống kỹ thuật mã hóa (1024 bit RSA và 448 bit blowfish key) , 
+                                hệ thống có tính bảo mật cao hơn so với các hệ thống SSL của các doanh nghiệp. Đối với hệ thống mà chúng tôi đang sử dụng thì thường chỉ áp dụng cho các tổ chức tài chính lớn trên thế giới mà thôi.
+                            </p>
+                            <li>
+                                Giao dịch an toàn tiêu chuẩn cao:
+                            </li>
+                            <p>
+                                Tất cả các giao dịch ngân hàng được thực hiện bởi mạng lưới bảo mật an toàn với tiêu chuẩn tài chính thế giới. 
+                                Để vào thông tin tài khoản của người chơi nhất thiết phải dùng ID đăng nhập và mật khẩu của người chơi.
+                            </p>
+                            <li>
+                                Quyền lợi người chơi:
+                            </li>
+                            <p>
+                                Công ty tuyệt đối không chấp nhận bất cứ hành vi lừa đảo nào , 
+                                nếu có hành vi như trên tài khoản sẽ lập tức bị đóng và thu hồi tất cả các tiền thưởng , 
+                                và cũng có thể tiến hành khiếu nại người chơi về hành vi thuộc trách nhiệm dân sự và hình sự , 
+                                công ty luôn luôn đặt lợi ích và quyền lợi của người chơi lên hàng đầu.
+                            </p>
+                        </ul>
+                    </div>
+                    <div class="download">
+                        <h2>Đăng nhập vào ứng dụng</h2>
+                        <p>
+                            Vui lòng vào [Trung tâm thành viên> Thông tin cá nhân> Mật khẩu tài khoản nền tảng] để xem mật khẩu tài khoản
+                        </p>
+                        <button>Download</button>
+                    </div>
+                    <div class="download">
+                        <h2>Đăng nhập vào ứng dụng</h2>
+                        <p>
+                            Vui lòng vào [Trung tâm thành viên> Thông tin cá nhân> Mật khẩu tài khoản nền tảng] để xem mật khẩu tài khoản
+                        </p>
+                        <h3 class="haveBtn">
+                            Android 
+                            <button>Download</button>
+                        </h3>
+                        <h3 class="haveBtn">
+                            IOS
+                            <button>Download</button>
+                        </h3>
+                    </div>
+                    <div class="download">
+                        <h2>Đăng nhập vào ứng dụng</h2>
+                        <p>
+                            Vui lòng vào [Trung tâm thành viên> Thông tin cá nhân> Mật khẩu tài khoản nền tảng] để xem mật khẩu tài khoản
+                        </p>
+                        <button>Download</button>
                     </div>
                 </div>
             </div>
@@ -846,9 +788,12 @@
     <nav class="sideBar">
         <p class="download" onclick="window.location.href='./help.html'">
             <i></i>
-            手機下載
+            Tải bằng điện thoại
         </p>
         <ul class="rightSide">
+            <li class="service" onclick="window.location.href='./help.html'">
+                <i></i>
+            </li>
             <li class="line" onclick="window.location.href='./help.html'">
                 <i></i>
             </li>
@@ -859,51 +804,184 @@
             <div class="center">
                 <div class="btnBox">
                     <ul>
-                        <li class="openNews">最新公告</li>
-                        <li onclick="window.location.href='./event.html'">優惠</li>
-                        <li onclick="window.location.href='./vip.html'">VIP會員</li>
-                        <li onclick="window.location.href='./help.html'">幫助中心</li>
-                        <li onclick="window.location.href='./help.html'">關於我們</li>
+                        <li class="openNews">Thông báo mới nhất</li>
+                        <li onclick="window.location.href='./event.html'">Khuyến mãi</li>
+                        <li onclick="window.location.href='./vip.html'">Cấp bậc hội viên</li>
+                        <li onclick="window.location.href='./help.html'">Trung tâm hỗ trợ</li>
+                        <li onclick="window.location.href='./help.html'">Thông tin trang</li>
                     </ul>
                 </div>
-                <p>2021 88au8.net 版權所有 │ 18+</p>
+                <p>2021 au8988.net Đã đăng ký Bản quyền │ 18+</p>
             </div>
         </div>
         <div class="footerList">
             <div class="center">
-                <p>致力於成爲世界頂級的在線娛樂公司。因此，在處理任何事情的時候，都會優先考慮客戶的利益。客戶的最大滿意就是我們的成功。</p>
-                <p>提供全天候24小時的在線客服，提供專業化和人性化相結合的最佳服務。</p>
+                <p>Chúng tôi nỗ lực trở thành công ty giải trí trực tuyến hàng đầu thế giới. Vì vậy, khi giải quyết bất cứ việc gì, đều ưu tiên suy nghĩ cho quyền lợi của khách hàng đầu tiên. Sự hài lòng lớn nhất của khách hàng chính</p>
+                <p>là thành công của chúng tôi.Cung cấp dịch vụ khách hàng trực tuyến 24 giờ, đồng thời cũng cung cấp dịch vụ tốt nhất được kết hợp giữa tính chuyên nghiệp và sự nhân văn.</p>
             </div>
         </div>
     </footer>
     <div class="filter">
+        <!--遊戲投注彈窗-->
+        <div class="jumpWindow betWindow sportGame">
+            <div class="title">
+                <p>Chuyển điểm nhanh</p>
+                <i class="close_ic"></i>
+            </div>
+            <form>
+                <div class="row">
+                    <p>nền tảng</p>
+                    <div class="smallTitle">36588</div>
+                </div>
+                <div class="row">
+                    <p>Ví chính</p>
+                    <input type="text" value="$9999" readonly>
+                </div>
+                <div class="row">
+                    <i class="trans_arrow"></i>
+                </div>
+                <div class="row">
+                    <p>36588 SPORTS</p>
+                    <input type="text" value="$0" readonly>
+                </div>
+                <div class="row">
+                    <p>Số điểm muốn chuyển</p>
+                    <input type="text" value="$100">
+                </div>
+                <div class="row forBtn">
+                    <div class="btnBox">
+                        <button>$100</button>
+                        <button>$500</button>
+                        <button>$1000</button>
+                        <button>$3000</button>
+                        <button>$5000</button>
+                        <button>$10000</button>
+                        <button>Tất cả</button>
+                    </div>
+                </div>
+                <div class="row forBtn">
+                    <button class="check">Xác nhận chuyển điểm</button>
+                </div>
+            </form>
+            <div class="enterGame">
+                <button>Vào Game</button>
+            </div>
+        </div>
+        <div class="jumpWindow betWindow liveGame">
+            <div class="title">
+                <p>Chuyển điểm nhanh</p>
+                <i class="close_ic"></i>
+            </div>
+            <form>
+                <div class="row">
+                    <p>nền tảng</p>
+                    <div class="smallTitle">WM CASINO</div>
+                </div>
+                <div class="row">
+                    <p>Ví chính</p>
+                    <input type="text" value="$9999" readonly>
+                </div>
+                <div class="row">
+                    <i class="trans_arrow"></i>
+                </div>
+                <div class="row">
+                    <p>WM CASINO</p>
+                    <input type="text" value="$0" readonly>
+                </div>
+                <div class="row">
+                    <p>Số điểm muốn chuyển</p>
+                    <input type="text" value="$100">
+                </div>
+                <div class="row forBtn">
+                    <div class="btnBox">
+                        <button>$100</button>
+                        <button>$500</button>
+                        <button>$1000</button>
+                        <button>$3000</button>
+                        <button>$5000</button>
+                        <button>$10000</button>
+                        <button>Tất cả</button>
+                    </div>
+                </div>
+                <div class="row forBtn">
+                    <button class="check">Xác nhận chuyển điểm</button>
+                </div>
+            </form>
+            <div class="enterGame">
+                <button>Vào Game</button>
+            </div>
+        </div>
+        <div class="jumpWindow betWindow lotteryGame">
+            <div class="title">
+                <p>Chuyển điểm nhanh</p>
+                <i class="close_ic"></i>
+            </div>
+            <form>
+                <div class="row">
+                    <p>Ví chính</p>
+                    <div class="smallTitle">RWD</div>
+                </div>
+                <div class="row">
+                    <p>Số điểm muốn chuyển</p>
+                    <input type="text" value="$9999" readonly>
+                </div>
+                <div class="row">
+                    <i class="trans_arrow"></i>
+                </div>
+                <div class="row">
+                    <p>RWD</p>
+                    <input type="text" value="$0" readonly>
+                </div>
+                <div class="row">
+                    <p>Số điểm muốn chuyển</p>
+                    <input type="text" value="$100">
+                </div>
+                <div class="row forBtn">
+                    <div class="btnBox">
+                        <button>$100</button>
+                        <button>$500</button>
+                        <button>$1000</button>
+                        <button>$3000</button>
+                        <button>$5000</button>
+                        <button>$10000</button>
+                        <button>Tất cả</button>
+                    </div>
+                </div>
+                <div class="row forBtn">
+                    <button class="check">Xác nhận chuyển điểm</button>
+                </div>
+            </form>
+            <div class="enterGame">
+                <button>Vào Game</button>
+            </div>
+        </div>
         <!--最新公告-->
         <div class="jumpWindow news">
             <div class="title">
-                <p>最新公告</p>
+                <p>Thông báo mới nhất</p>
                 <i class="close_ic"></i>
             </div>
             <ul class="nav">
-                <li class="hot active">熱門</li>
-                <li class="normal">一般</li>
-                <li class="deposit">存款</li>
+                <li class="hot active">HOT</li>
+                <li class="normal">Tin phổ biến</li>
+                <li class="deposit">Thông tin Nạp tiền</li>
             </ul>
             <ul class="content forHot display">
                 <li>
                     <div>
-                        <p class="text">公告測試公告測試公告測試公告測試公告測試公告測試公告測試</p>
+                        <p class="text">testtesttesttesttesttesttesttest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <p class="text">公告測試</p>
+                        <p class="text">testtest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <p class="text">公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試</p>
+                        <p class="text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
@@ -911,13 +989,13 @@
             <ul class="content forNormal">
                 <li>
                     <div>
-                        <p class="text">公告測試</p>
+                        <p class="text">testtest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <p class="text">公告測試</p>
+                        <p class="text">testtest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
@@ -925,145 +1003,13 @@
             <ul class="content forDeposit">
                 <li>
                     <div>
-                        <p class="text">公告測試</p>
+                        <p class="text">testtest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
             </ul>
         </div>
-        <!--遊戲投注彈窗-->
-        <div class="jumpWindow betWindow sportGame">
-            <div class="title">
-                <p>快速轉帳</p>
-                <i class="close_ic"></i>
-            </div>
-            <form>
-                <div class="row">
-                    <p>平台</p>
-                    <div class="smallTitle">36588</div>
-                </div>
-                <div class="row">
-                    <p>中心錢包</p>
-                    <input type="text" value="$9999" readonly>
-                </div>
-                <div class="row">
-                    <i class="trans_arrow"></i>
-                </div>
-                <div class="row">
-                    <p>BNG電子娛樂</p>
-                    <input type="text" value="$0" readonly>
-                </div>
-                <div class="row">
-                    <p>轉帳金額</p>
-                    <input type="text" value="$100">
-                </div>
-                <div class="row forBtn">
-                    <div class="btnBox">
-                        <button>$100</button>
-                        <button>$500</button>
-                        <button>$1000</button>
-                        <button>$3000</button>
-                        <button>$5000</button>
-                        <button>$10000</button>
-                        <button>全部</button>
-                    </div>
-                </div>
-                <div class="row forBtn">
-                    <button class="check">確認</button>
-                </div>
-            </form>
-            <div class="enterGame">
-                <button>進入遊戲</button>
-            </div>
-        </div>
-        <div class="jumpWindow betWindow liveGame">
-            <div class="title">
-                <p>快速轉帳</p>
-                <i class="close_ic"></i>
-            </div>
-            <form>
-                <div class="row">
-                    <p>平台</p>
-                    <div class="smallTitle">ALLBET</div>
-                </div>
-                <div class="row">
-                    <p>中心錢包</p>
-                    <input type="text" value="$9999" readonly>
-                </div>
-                <div class="row">
-                    <i class="trans_arrow"></i>
-                </div>
-                <div class="row">
-                    <p>歐博真人</p>
-                    <input type="text" value="$0" readonly>
-                </div>
-                <div class="row">
-                    <p>轉帳金額</p>
-                    <input type="text" value="$100">
-                </div>
-                <div class="row forBtn">
-                    <div class="btnBox">
-                        <button>$100</button>
-                        <button>$500</button>
-                        <button>$1000</button>
-                        <button>$3000</button>
-                        <button>$5000</button>
-                        <button>$10000</button>
-                        <button>全部</button>
-                    </div>
-                </div>
-                <div class="row forBtn">
-                    <button class="check">確認</button>
-                </div>
-            </form>
-            <div class="enterGame">
-                <button>進入遊戲</button>
-            </div>
-        </div>
-        <div class="jumpWindow betWindow lotteryGame">
-            <div class="title">
-                <p>快速轉帳</p>
-                <i class="close_ic"></i>
-            </div>
-            <form>
-                <div class="row">
-                    <p>平台</p>
-                    <div class="smallTitle">京彩彩票</div>
-                </div>
-                <div class="row">
-                    <p>中心錢包</p>
-                    <input type="text" value="$9999" readonly>
-                </div>
-                <div class="row">
-                    <i class="trans_arrow"></i>
-                </div>
-                <div class="row">
-                    <p>SG彩票</p>
-                    <input type="text" value="$0" readonly>
-                </div>
-                <div class="row">
-                    <p>轉帳金額</p>
-                    <input type="text" value="$100">
-                </div>
-                <div class="row forBtn">
-                    <div class="btnBox">
-                        <button>$100</button>
-                        <button>$500</button>
-                        <button>$1000</button>
-                        <button>$3000</button>
-                        <button>$5000</button>
-                        <button>$10000</button>
-                        <button>全部</button>
-                    </div>
-                </div>
-                <div class="row forBtn">
-                    <button class="check">確認</button>
-                </div>
-            </form>
-            <div class="enterGame">
-                <button>進入遊戲</button>
-            </div>
-        </div>
     </div>
+    <div class="bg"></div>
 </body>
 </html>

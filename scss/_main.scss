@@ -9,6 +9,21 @@ html {
         min-height: 768px;
         position: relative;
 
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $scrollBar_Thumb;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: $scrollBar_BG;
+            border-radius: 10px
+        }
+
         @import "./header";
         @import "./ad";
         @import "./sideBar";
