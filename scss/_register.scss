@@ -9,128 +9,162 @@
     justify-content: center;
 
     .bigBox {
-        display: flex;
         border-radius: 17px;
         overflow: hidden;
-        box-shadow: 0 5px 10px -5px $mainShadow_1;
+        border: solid 1px $mainBorder_2;
+        box-shadow: 1px 2px 8px $mainShadow_1;
 
-        .left {
-            width: 432px;
+        .title {
+            background: $jumpWindow_Header;
+            width: 864px;
+            height: 93px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: $jumpWindow_Title;
+            font-weight: bold;
+            font-size: 35px;
+            
+            i {
+                display: block;
+                width: 44px;
+                height: 44px;
+                margin: 0 15px;
+            }
         }
 
-        .right {
+        .content {
+            width: 864px;
+            height: auto;
+            background: $window_BG;
+            box-sizing: border-box;
+            padding: 28px 65px 30px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 432px;
-            padding: 32px 0 37px;
-            background: $mainBG_1;
+            flex-wrap: wrap;
 
-            .title {
+            .inputBox {
+                width: 50%;
                 display: flex;
                 align-items: center;
-                margin-bottom: 25px;
-                justify-content: center;
-                width: 100%;
-                height: auto;
-                font-size: 25px;
-                font-weight: bold;
-                letter-spacing: 2px;
-                color: $mainFont_1;
+                flex-direction: column;
 
-                .person_ic {
-                    width: 44px;
-                    height: 44px;
-                    margin-right: 15px;
-                }
-            }
-
-            label {
-                position: relative;
-                margin-bottom: 19px;
-                display: flex;
-                justify-content: center;
-
-                input {
+                label {
                     width: 332px;
-                    height: 41px;
-                    @include mainInput;
+                    height: auto;
+                    position: relative;
+                    margin-bottom: 19px;
+
+                    &.pad {
+                        padding-bottom: 32px;
+                    }
+                    &.hasID {
+
+                        input {
+                            padding-left: 30px;
+                        }
+
+                        .choose {
+                            width: 58px;
+                            height: 42px;
+                            @include choose;
+
+                            li {
+                                width: 100%;
+                                height: 100%;
+
+                                &.wechat {
+                                    
+                                    i {
+                                        background-position-y: 100%;
+                                    }
+                                }
+
+                                i {
+                                    display: block;
+                                    width: 27px;
+                                    height: 27px;
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    left: 8px;
+                                }
+                            }
+                        }
+                    }
+
+                    input {
+                        width: 100%;
+                        height: 42px;
+                        @include mainInput;
+                    }
+
+                    .err {
+                        font-size: 12px;
+                        line-height: 20px;
+                        font-weight: bold;
+                        color: $remind;
+                        position: absolute;
+                        left: 0;
+                        top: 42px;
+
+                        &.sp {
+                            top: 0;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .send {
+                        width: auto;
+                        height: 33px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 5px;
+                        @include secondBtn;
+                    }
                 }
 
-                .err {
-                    position: absolute;
-                    bottom: -15px;
-                    left: 0;
-                    font-size: 12px;
-                    font-weight: bold;
-                    color: $remind;
-                }
+                .check {
+                    width: 332px;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    margin-top: 26px;
 
-                .eye {
-                    display: block;
-                    width: 23px;
-                    height: 17px;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    right: 20px;
-                    cursor: pointer;
-                }
+                    input {
+                        margin-right: 10px;
+                        width: 24px;
+                        height: 24px;
+                    }
 
-                button {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 86px;
-                    height: 29px;
-                    right: 11px;
-                    @include borderBtn;
-                }
-            }
+                    p {
+                        color: $mainFont_1;
+                        font-size: 14px;
+                        font-weight: bold;
+                        line-height: 20px;
 
-            .tips {
-                width: 332px;
-                font-size: 12px;
-                font-weight: bold;
-                color: $remind;
-                text-align: left;
-            }
-
-            .checkBox {
-                width: 332px;
-                height: auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 23px 0 32px;
-
-                input {
-                    width: 16px;
-                    height: 16px;
-                    margin-right: 10px;
-                }
-
-                p {
-                    font-size: 16px;
-                    font-weight: bold;
-                    color: $title_2;
-
-                    span {
-                        color: $link;
+                        span {
+                            color: $link;
+                            padding-left: 5px;
+                            cursor: pointer;
+                        }
                     }
                 }
             }
 
-            .checkBtn {
-                width: 332px;
-                height: 41px;
-                @include mainBtn;
+            .btnBox {
+                width: 100%;
+                height: auto;
+                display: flex;
+                box-sizing: border-box;
+                padding: 0 17px;
+                justify-content: space-between;
+                margin-top: 30px;
 
-                &:last-child {
-                    margin-top: 10px;
+                button {
+                    width: 332px;
+                    height: 42px;
+                    @include mainBtn;
                 }
             }
         }

@@ -4,7 +4,7 @@
     width: 100%;
     height: 100%;
     z-index: 10;
-    background: $filter;
+    background: $filter_1;
     top: 0px;
     left: 0px;
     align-items: center;
@@ -17,9 +17,10 @@
     .jumpWindow {
         width: 480px;
         height: auto;
-        background: $mainBG_1;
+        background: $window_BG;
         border-radius: 5px;
         overflow: hidden;
+        border: solid 1px $mainBorder_2;
 
         //忘記密碼
         &.forgetPassword {
@@ -54,6 +55,8 @@
                     font-size: 14px;
                     margin: 30px 0;
                     color: $remind;
+                    text-align: center;
+                    line-height: 20px;
                 }
             }
         }
@@ -88,7 +91,6 @@
                     align-items: center;
 
                     &:hover,&:active,&.active {
-                        color: $choose_Active;
                         border-color: $choose_Border;
                     }
 
@@ -244,7 +246,7 @@
                     li {
                         width: 100%;
                         height: auto;
-                        margin-bottom: 30px;
+                        margin-bottom: 42px;
                         font-size: 14px;
                         font-weight: bold;
                         color: $mainFont_1;
@@ -258,12 +260,11 @@
                         button {
                             width: auto;
                             height: 30px;
-                            @include borderBtn;
+                            @include secondBtn;
                             padding: 0 5px;
                             position: absolute;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            right: 6px;
+                            top: 48px;
+                            right: 0;
                         }
                     }
 
@@ -288,6 +289,7 @@
                         text-align: center;
                         width: 100%;
                         margin-top: 20px;
+                        line-height: 18px;
                         font-size: 15px;
                         font-weight: bold;
                         color: $remind;
@@ -319,8 +321,9 @@
                 table {
                     width: 100%;
                     height: auto;
-                    box-shadow: 0 0 0 1px $mainBorder_1;
-                    border-right: 5px;
+                    box-shadow: 0 0 0 1px $tableList_Border;
+                    border-radius: 5px;
+                    overflow: hidden;
 
                     tr {
 
@@ -334,12 +337,21 @@
                         th {
                             height: 40px;
                             vertical-align: middle;
-                            border-bottom: solid 2px $mainBorder_2;
+                            border-bottom: solid 2px $tableList_Border;
+                            background: $tableList_TitleBG;
+
+                            &:last-child {
+
+                                p {
+                                    border: none;
+                                }
+                            }
 
                             p {
                                 font-size: 14px;
                                 font-weight: bold;
-                                color: $title_1;
+                                color: $tableList_Title;
+                                border-right: solid 1px $mainBorder_1;
                             }
                         }
 
@@ -347,15 +359,24 @@
                             height: 40px;
                             vertical-align: middle;
                             border-bottom: solid 1px $mainBorder_1;
+                            background: $tableList_ListBG;
+
+                            &:last-child {
+                                
+                                p {
+                                    border: none;
+                                }
+                            }
 
                             p {
                                 text-align: center;
                                 font-size: 14px;
                                 font-weight: bold;
                                 color: $mainFont_1;
+                                border-right: solid 1px $tableList_Border;
 
                                 &.sp {
-                                    color: $remind_sp;
+                                    color: $remind;
                                 }
                             }
                         }
@@ -367,7 +388,7 @@
         //查看活動
         &.checkEvent {
             display: none;
-            width: 1000px;
+            width: 840px;
 
             &.display {
                 display: block;
@@ -377,20 +398,33 @@
                 width: 100%;
                 height: auto;
                 box-sizing: border-box;
-                padding: 28px 22px 0;
+                padding: 28px 47px;
 
                 .imgBox {
-                    width: 100%;
-                    height: 500px;
-                    overflow-x: auto;
+                    overflow-y: auto;
+
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                        height: 10px;
+                    }
+            
+                    &::-webkit-scrollbar-thumb {
+                        background: $scrollBar_Thumb;
+                        border-radius: 10px;
+                    }
+            
+                    &::-webkit-scrollbar-track {
+                        background: $scrollBar_BG;
+                        border-radius: 10px
+                    }
                 }
 
                 p {
                     font-size: 16px;
-                    font-weight: bold;
                     letter-spacing: 1px;
                     color: $mainFont_1;
                     margin-top: 10px;
+                    font-weight: bold;
                     line-height: 20px;
                 }
             }
@@ -414,6 +448,7 @@
             display: none;
             flex-direction: column;
             position: relative;
+            width: 530px;
 
             &.display {
                 display: flex;
@@ -449,11 +484,11 @@
                         height: auto;
                         font-size: 28px;
                         font-weight: bold;
-                        color: $title_1;
+                        color: $mainFont_1;
                     }
 
                     p {
-                        width: 120px;
+                        width: 174px;
                         font-size: 16px;
                         font-weight: bold;
                         color: $title_2;
@@ -480,7 +515,7 @@
                         button {
                             width: 85px;
                             height: 32px;
-                            @include fastBtn;
+                            @include secondBtn;
                             margin: 0 2px 6px 0;
 
                             &:nth-of-type(3n) {
@@ -535,7 +570,7 @@
                     text-align: center;
                     font-size: 14px;
                     font-weight: bold;
-                    color: $title_3;
+                    color: $mainFont_1;
                     margin-top: 20px;
                 }
 
@@ -553,6 +588,11 @@
 
         //紅利會員彈窗
         &.pointWindow {
+            display: none;
+
+            &.display {
+                display: block;
+            }
 
             .content {
                 padding: 24px;
@@ -560,18 +600,24 @@
                 table {
                     width: 100%;
                     height: auto;
-                    box-shadow: 0 0 0 1px $mainBorder_2;
+                    box-shadow: 0 0 0 1px $tableList_Border;
+                    border-radius: 5px;
+                    overflow: hidden;
 
                     tr {
-                        border-bottom: solid 1px $mainBorder_2;
 
                         &:last-child {
-                            border: none;
+                            
+                            td {
+                                border: none;
+                            }
                         }
 
                         th {
                             vertical-align: middle;
                             height: 40px;
+                            background: $tableList_TitleBG;
+                            border-bottom: solid 2px $tableList_Border;
 
                             &:last-child {
 
@@ -583,7 +629,7 @@
                             p {
                                 font-size: 14px;
                                 font-weight: bold;
-                                color: $title_2;
+                                color: $tableList_Title;
                                 border-right: solid 1px $mainBorder_1;
                             }
                         }
@@ -592,6 +638,8 @@
                             width: 50%;
                             vertical-align: middle;
                             height: 40px;
+                            background: $tableList_ListBG;
+                            border-bottom: solid 1px $mainBorder_1;
 
                             &:last-child {
 
@@ -613,6 +661,90 @@
             }
         }
 
+        //相關條款彈窗
+        &.ruleWindow {
+            width: 840px;
+            display: none;
+
+            &.display {
+                display: block;
+            }
+
+            .content {
+                width: 90%;
+                height: 400px;
+                margin: 28px auto;
+                overflow-y: auto;
+
+                .smallTitle {
+                    margin: 40px 0;
+                    color: $title_2;
+                    font-size: 24px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+
+                    &:nth-of-type(1) {
+                        margin-top: 0;
+                    }
+                }
+
+                p:not(.smallTitle) {
+                    color: $mainFont_1;
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 22px;
+                    letter-spacing: 1px;
+                }
+
+                ul {
+                    width: 100%;
+                    height: auto;
+                    box-sizing: border-box;
+                    padding-left: 32px;
+
+                    li {
+                        list-style: disc;
+                        color: $mainFont_1;
+                        margin: 60px 0;
+
+                        &:nth-of-type(1) {
+                            margin-top: 0;
+                        }
+                    }
+
+                    ol {
+                        width: 100%;
+                        height: auto;
+                        padding-left: 32px;
+                        margin-top: 30px;
+                        box-sizing: border-box;
+
+                        li {
+                            list-style: decimal;
+                            margin: 20px 0;
+
+                            &:last-child {
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .btnBox {
+                width: 100%;
+                height: auto;
+                margin: 20px 0;
+                text-align: center;
+
+                button {
+                    width: 322px;
+                    height: 42px;
+                    @include mainBtn;
+                }
+            }
+        }
+
         .title {
             width: 100%;
             height: 50px;
@@ -622,8 +754,8 @@
             position: relative;
 
             p {
-                color: $mainFont_2;
-                font-size: 20px;
+                color: $jumpWindow_Title;
+                font-size: 16px;
                 font-weight: bold;
                 text-align: center;
                 width: 100%;

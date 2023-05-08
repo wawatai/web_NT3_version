@@ -1,72 +1,5 @@
 .innerPage {
-    background: $mainBG_2;
-    padding: 20px 0 40px;
-
-    //跑馬燈
-    .marqueeArea {
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-
-        .center {
-            width: 1400px;
-            height: 50px;
-            margin: 0 auto;
-
-            .marqueeWrap {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                background: $marquee_BG;
-                box-shadow: 0 0 13px 3px $marquee_Shadow;
-                border-radius: 25px;
-
-                .marquee_ic {
-                    width: 160px;
-                    height: 88%;
-                    border-radius: 25px;
-                    background: $marquee_Linear;
-                    margin-left: 3px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    p {
-                        font-size: 16px;
-                        font-weight: bold;
-                        color: $marquee_LinearWord;
-                    }
-                }
-
-                .marquee {
-                    width: 100%;
-                    height: auto;
-                    overflow: hidden;
-
-                    p {
-                        font-size: 14px;
-                        font-weight: bold;
-                        color: $marquee_Word;
-                        display: inline-block;
-                        animation: marquee 10s linear infinite;
-                        padding-left: 100%;
-                        white-space: nowrap;
-                    }
-
-                    @keyframes marquee {
-                        0% {
-                            transform: translate(0%);
-                        }
-
-                        100% {
-                            transform: translate(-100%);
-                        }
-                    }
-                }
-            }
-        }
-    }
+    padding: 66px 0 40px;
 
     .center {
         width: 1400px;
@@ -80,19 +13,20 @@
 
         hr {
             width: 100%;
-            border: solid 1px $mainBorder_1;
+            border: solid 1px $mainBorder_2;
             border-width: 1px 0 0;
             margin: 0;
         }
     
         //左列
         .innerSide {
-            background: $mainBG_1;
-            border-radius: 5px;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
+            background: $smallBG;
+            border: solid 1px $mainBorder_1;
             width: 245px;
             height: auto;
             margin-right: 15px;
+            border-radius: 5px;
+            overflow: hidden;
     
             .userInfo {
                 width: 100%;
@@ -102,18 +36,20 @@
                 justify-content: center;
     
                 div {
+                    width: 100%;
     
                     .account {
-                        color: $mainFont_1;
+                        color: $title_2;
                         font-size: 14px;
                         font-weight: bold;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        flex-direction: column;
     
                         .lv {
                             @include level;
-                            margin-left: 10px;
+                            margin-top: 8px;
                         }
                     }
 
@@ -128,29 +64,63 @@
                     }
 
                     .quickSelect {
-                        width: 160px;
-                        padding: 15px 0 10px;
+                        width: 100%;
+                        padding: 15px 10px 10px;
                         display: flex;
-                        justify-content: space-between;
+                        justify-content: center;
                         align-items: center;
+                        box-sizing: border-box;
 
                         li {
                             cursor: pointer;
+                            width: 34%;
+                            padding: 10px 0 5px;
+                            height: 85px;
+                            border-radius: 5px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            flex-direction: column;
+
+                            &:hover,&.active,&.active {
+                                background: $innerSide_HoverBG1;
+                                
+                                p {
+
+                                    &:last-child {
+                                        color: $title_1;
+                                    }
+
+                                    &.btn {
+                                        background-position-y: 100%;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                margin: 0;
+                            }
 
                             p {
-                                text-align: center;
     
                                 &:last-child {
                                     margin-top: 6px;
                                     font-size: 14px;
                                     font-weight: bold;
-                                    color: $mainFont_1;
+                                    color: $title_2;
+                                    text-align: center;
                                 }
     
                                 &.btn {
                                     width: 40px;
-                                    height: 40px;
-                                    @include quick;
+                                    height: 41px;
+                                    
+                                    &.transfer {
+                                        background-position-x: 100%;
+                                    }
+                                    &.withdrawal {
+                                        background-position-x: 50%;
+                                    }
                                 }
                             }
                         }
@@ -173,13 +143,22 @@
                     font-size: 14px;
                     font-weight: bold;
                     cursor: pointer;
-                    color: $mainFont_1;
+                    color: $title_2;
 
                     &:hover,&:active,&.active {
-                        @include navHover;
+                        color: $title_1;
+                        background: $innerSide_HoverBG2;
+
+                        i {
+                            background: none;
+
+                            &::before {
+                                display: block;
+                            }
+                        }
                     }
 
-                    &:nth-of-type(1),&:nth-of-type(4),&:nth-of-type(9) {
+                    &:nth-of-type(1),&:nth-of-type(4),&:nth-of-type(8) {
                         border-top: solid 1px $mainBorder_1;
                     }
 
@@ -189,46 +168,106 @@
                         top: 50%;
                         transform: translateY(-50%);
                         left: 25px;
+                        overflow: hidden;
+
+                        &::before {
+                            display: none;
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                        }
                         
                         &.user_ic {
                             width: 14px;
                             height: 16px;
+
+                            &::before {
+                                top: -16px;
+                                filter: drop-shadow(0 16px 0 #fbf2d3);
+                            }
                         }
                         &.vip_ic {
                             width: 17px;
                             height: 17px;
+
+                            &::before {
+                                top: -17px;
+                                filter: drop-shadow(0 17px 0 #fbf2d3);
+                            }
                         }
                         &.wallet_ic {
                             width: 15px;
                             height: 13px;
+
+                            &::before {
+                                top: -13px;
+                                filter: drop-shadow(0 13px 0 #fbf2d3);
+                            }
                         }
                         &.card_ic {
                             width: 17px;
                             height: 15px;
+
+                            &::before {
+                                top: -15px;
+                                filter: drop-shadow(0 15px 0 #fbf2d3);
+                            }
                         }
                         &.dealRecord_ic {
                             width: 13px;
                             height: 15px;
+
+                            &::before {
+                                top: -15px;
+                                filter: drop-shadow(0 15px 0 #fbf2d3);
+                            }
                         }
                         &.betRecord_ic {
                             width: 12px;
                             height: 16px;
+
+                            &::before {
+                                top: -16px;
+                                filter: drop-shadow(0 16px 0 #fbf2d3);
+                            }
                         }
                         &.event_ic {
                             width: 13px;
                             height: 18px;
+
+                            &::before {
+                                top: -18px;
+                                filter: drop-shadow(0 18px 0 #fbf2d3);
+                            }
                         }
                         &.mail_ic {
                             width: 14px;
                             height: 11px;
+
+                            &::before {
+                                top: -11px;
+                                filter: drop-shadow(0 11px 0 #fbf2d3);
+                            }
                         }
                         &.dividend_ic {
                             width: 15px;
                             height: 14px;
+
+                            &::before {
+                                top: -14px;
+                                filter: drop-shadow(0 14px 0 #fbf2d3);
+                            }
                         }
                         &.invite_ic {
                             width: 20px;
                             height: 20px;
+
+                            &::before {
+                                top: -20px;
+                                filter: drop-shadow(0 20px 0 #fbf2d3);
+                            }
                         }
                     }
                 }
@@ -244,9 +283,10 @@
                 width: 100%;
                 height: auto;
                 background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                border: solid 1px $mainBorder_1;
                 margin-bottom: 20px;
+                border-radius: 5px;
+                overflow: hidden;
 
                 h1 {
                     display: flex;
@@ -257,8 +297,8 @@
                     padding: 0 20px;
                     font-size: 20px;
                     letter-spacing: 2px;
-                    color: $title_2;
-                    border-bottom: solid 1px $mainBorder_1;
+                    color: $title_1;
+                    border-bottom: solid 1px $mainBorder_2;
                     font-weight: bold;
                 }
 
@@ -270,12 +310,12 @@
                     p {
                         font-size: 14px;
                         letter-spacing: 1px;
-                        color: $mainFont_1;
+                        color: $mainFont_2;
                         font-weight: bold;
 
                         &.remind {
                             margin-top: 6px;
-                            color: $title_3;
+                            color: $mainFont_2;
                         }
 
                         em {
@@ -349,8 +389,7 @@
                     display: none;
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
-                    box-shadow: 0px 5px 10px -5px $mainShadow_1;
+                    background: $mainBG_2;
                     border-radius: 5px;
 
                     &.display {
@@ -389,6 +428,7 @@
                                                 width: 100%;
                                                 height: auto;
                                                 margin-bottom: 20px;
+                                                position: relative;
 
                                                 em {
 
@@ -404,44 +444,46 @@
                                                 }
 
                                                 .remind {
+                                                    display: inline-block;
                                                     font-size: 12px;
-                                                    padding-left: 110px;
+                                                    padding-left: 135px;
                                                     color: $remind;
                                                     font-weight: bold;
                                                     margin-top: 6px;
+                                                    line-height: 18px;
+                                                    width: 257px;
+                                                    height: auto;
 
                                                     &.np {
                                                         padding: 0;
+                                                        margin: 15px 0 0 135px;
+                                                        white-space: nowrap;
 
                                                         span {
                                                             color: $link;
-                                                            padding-left: 5px;
+                                                            display: block;
+                                                            cursor: pointer;
                                                         }
                                                     }
+                                                }
+
+                                                .changePhone {
+                                                    width: auto;
+                                                    height: 36px;
+                                                    position: absolute;
+                                                    top: 50%;
+                                                    transform: translateY(-50%);
+                                                    right: 28px;
+                                                    left: unset;
+                                                    padding: 0 5px;
                                                 }
 
                                                 button {
                                                     width: 257px;
                                                     height: 42px;
                                                     position: relative;
-                                                    left: 110px;
+                                                    left: 134px;
                                                     @include mainBtn;
-                                                }
-                                                
-                                                span {
-                                                    display: inline-flex;
-                                                    width: 257px;
-                                                    align-items: center;
-                                                    color: $mainFont_1;
-                                                    font-weight: bold;
-                                                    font-size: 14px;
-                                                    justify-content: space-between;
-
-                                                    button {
-                                                        width: 80px;
-                                                        height: 36px;
-                                                        position: static;
-                                                    }
                                                 }
                                             }
                                         }
@@ -463,6 +505,17 @@
                                             position: relative;
                                             margin-bottom: 20px;
 
+                                            &.web {
+                                                margin-bottom: 60px;
+
+                                                .copy {
+                                                    transform: translateY(0);
+                                                    right: 0;
+                                                    top: unset;
+                                                    bottom: -40px;
+                                                }
+                                            }
+
                                             p {
                                                 font-size: 14px;
                                                 color: $mainFont_1;
@@ -471,13 +524,24 @@
 
                                             .copy {
                                                 width: auto;
-                                                height: 30px;
+                                                height: 36px;
                                                 position: absolute;
-                                                right: 0px;
+                                                right: 2px;
                                                 top: 50%;
                                                 transform: translateY(-50%);
-                                                @include borderBtn;
+                                                @include secondBtn;
                                                 padding: 0 8px;
+                                            }
+
+                                            &.qrBox {
+                                                height: auto;
+                                                justify-content: space-between;
+
+                                                .qr {
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    margin-right: 111px;
+                                                }
                                             }
                                         }
                                     }
@@ -485,10 +549,10 @@
 
                                 label {
                                     display: inline-block;
-                                    width: 80px;
+                                    width: 120px;
                                     height: auto;
                                     text-align: right;
-                                    margin-right: 26px;
+                                    margin-right: 10px;
                                     font-size: 14px;
                                     letter-spacing: 1px;
                                     color: $title_2;
@@ -496,7 +560,7 @@
                                 }
 
                                 input {
-                                    width: 200px;
+                                    width: 287px;
                                     height: 41px;
                                     @include mainInput;
                                 }
@@ -521,10 +585,10 @@
 
                                 label {
                                     display: inline-block;
-                                    width: 80px;
+                                    width: auto;
                                     height: auto;
                                     text-align: right;
-                                    margin-right: 26px;
+                                    margin-right: 10px;
                                     font-size: 14px;
                                     letter-spacing: 1px;
                                     color: $title_2;
@@ -538,10 +602,11 @@
                                 }
 
                                 button {
-                                    width: 80px;
+                                    width: auto;
                                     height: 42px;
                                     @include mainBtn;
                                     margin-left: 10px;
+                                    padding: 0 5px;
                                 }
                             }
                         }
@@ -553,11 +618,10 @@
                     display: none;
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
-                    box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    background: $mainBG_2;
                     box-sizing: border-box;
                     padding: 20px 24px;
+                    border-radius: 5px;
 
                     &.display {
                         display: block;
@@ -578,7 +642,7 @@
                         justify-content: center;
                         align-items: center;
                         letter-spacing: 1px;
-                        color: $title_3;
+                        color: $title_2;
                         font-weight: bold;
 
                         &.display {
@@ -589,13 +653,17 @@
                     table {
                         width: 100%;
                         height: auto;
+                        box-shadow: 0 0 0 1px $tableList_Border;
+                        border-radius: 5px;
+                        overflow: hidden;
 
                         tr {
 
                             th {
-                                border-bottom: solid 2px $mainBorder_2;
+                                border-bottom: solid 2px $tableList_Border;
                                 vertical-align: middle;
                                 height: 40px;
+                                background: $tableList_TitleBG;
 
                                 &:last-child {
                                     
@@ -608,7 +676,7 @@
                                     border-right: solid 1px $mainBorder_1;
                                     font-size: 14px;
                                     font-weight: bold;
-                                    color: $title_1;
+                                    color: $tableList_Title;
                                 }
                             }
 
@@ -616,6 +684,7 @@
                                 border-bottom: solid 1px $mainBorder_1;
                                 vertical-align: middle;
                                 height: 50px;
+                                background: $tableList_ListBG;
 
                                 &:last-child {
 
@@ -632,12 +701,13 @@
                                     min-width: 108px;
                                     border-right: solid 1px $mainBorder_1;
 
-                                    &.sp {
-                                        color: $remind_sp;
+                                    &.sp,
+                                    &.code {
+                                        color: $remind;
                                     }
 
-                                    &.code {
-                                        color: $remind_sp2;
+                                    &.none {
+                                        color: $disable;
                                     }
                                 }
                             }
@@ -652,9 +722,6 @@
             display: none;
             width: 1140px;
             height: auto;
-            background: $mainBG_1;
-            border-radius: 5px;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
 
             &.display {
                 display: block;
@@ -662,126 +729,139 @@
 
             &.innerMode {
                 padding: 24px 0 30px;
+                background: $mainBG_2;
+                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
             }
 
-            .vipHeader {
+            .top {
                 width: 100%;
                 height: auto;
-                padding-left: 40px;
-                display: flex;
-                box-sizing: border-box;
+                background: $mainBG_1;
+                border-radius: 5px;
+                border: solid 1px $mainBorder_1;
+                margin-bottom: 10px;
 
-                .medal {
-                    width: 80px;
-                    height: 116px;
-                    margin-right: 30px;
-                    flex-shrink: 0;
-                }
-
-                .rightBox {
+                .vipHeader {
                     width: 100%;
+                    height: auto;
+                    padding-left: 40px;
                     display: flex;
-                    align-items: flex-start;
-                    flex-direction: column;
-                    justify-content: center;
-
-                    .lv {
-                        margin: 6px 0 14px;
-                        font-size: 20px;
-                        font-weight: bold;
-                        letter-spacing: 2px;
-                        color: $title_2
+                    box-sizing: border-box;
+    
+                    .medal {
+                        width: 80px;
+                        height: 116px;
+                        margin-right: 30px;
+                        flex-shrink: 0;
                     }
-
-                    .money {
-
-                        span {
-                            font-size: 14px;
-                            letter-spacing: 1px;
-                            color: $mainFont_1;
+    
+                    .rightBox {
+                        width: 100%;
+                        display: flex;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        justify-content: center;
+    
+                        .lv {
+                            margin: 6px 0 14px;
+                            font-size: 20px;
                             font-weight: bold;
-                            margin-right: 10px;
+                            letter-spacing: 2px;
+                            color: $title_1;
+                        }
+    
+                        .money {
+    
+                            span {
+                                font-size: 14px;
+                                letter-spacing: 1px;
+                                color: $mainFont_2;
+                                font-weight: bold;
+                                margin-right: 10px;
+                            }
                         }
                     }
                 }
-            }
-
-            .lvGraph {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                padding: 20px 20px 0;
-
-                .text {
-                    display: flex;
-                    margin-bottom: 8px;
-                    position: relative;
+    
+                .lvGraph {
                     width: 100%;
                     height: auto;
-
-                    li {
-                        width: 20%;
-                        font-size: 14px;
-                        color: $title_2;
-
-                        &:nth-of-type(2) {
-                            margin-left: -18px;
-                        }
-
-                        &:last-child {
-                            text-align: right;
-                            position: absolute;
-                            right: 0px;
-                            top: 0px;
-                        }
-                    }
-                }
-
-                .bar {
-                    width: 100%;
-                    height: 13px;
-                    @include levelBar;
-
-                    li {
-                        width: 8%;
-                    }
-                }
-            }
-
-            .nextBox {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                padding: 22px 20px;
-
-                .nextWord {
-                    width: 100%;
-                    height: auto;
-                    letter-spacing: 2px;
-                    font-size: 16px;
-                    margin-bottom: 20px;
-                    color: $title_2;
-                    font-weight: bold;
-                }
-
-                .nextBar {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    margin-bottom: 15px;
-                    font-size: 14px;
-                    letter-spacing: 1px;
-                    color: $mainFont_1;
-                    font-weight: bold;
-
-                    .bar {
-                        width: 400px;
-                        height: 8px;
-                        @include levelBar;
-                        margin: 0 10px;
-
+                    box-sizing: border-box;
+                    padding: 20px 20px 0;
+    
+                    .text {
+                        display: flex;
+                        margin-bottom: 8px;
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+    
                         li {
                             width: 20%;
+                            font-size: 14px;
+                            font-weight: bold;
+                            color: $mainFont_1;
+    
+                            &:nth-of-type(2) {
+                                margin-left: -18px;
+                            }
+    
+                            &:last-child {
+                                text-align: right;
+                                position: absolute;
+                                right: 0px;
+                                top: 0px;
+                            }
+                        }
+                    }
+    
+                    .bar {
+                        width: 100%;
+                        height: 13px;
+                        @include levelBar;
+    
+                        li {
+                            width: 8%;
+                        }
+                    }
+                }
+    
+                .nextBox {
+                    width: 100%;
+                    height: auto;
+                    box-sizing: border-box;
+                    padding: 22px 20px;
+    
+                    .nextWord {
+                        width: 100%;
+                        height: auto;
+                        letter-spacing: 2px;
+                        font-size: 16px;
+                        margin-bottom: 20px;
+                        color: $title_2;
+                        font-weight: bold;
+                    }
+    
+                    .nextBar {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        margin-bottom: 15px;
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                        color: $mainFont_1;
+                        font-weight: bold;
+    
+                        .bar {
+                            width: 400px;
+                            height: 8px;
+                            @include levelBar;
+                            margin: 0 10px;
+    
+                            li {
+                                width: 20%;
+                            }
                         }
                     }
                 }
@@ -792,7 +872,10 @@
                 height: auto;
                 box-sizing: border-box;
                 padding: 18px 22px 6px;
-                border-top: solid 1px $mainBorder_1;
+                border-radius: 5px;
+                background: $mainBG_2;
+                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
 
                 .title {
                     width: 100%;
@@ -828,23 +911,24 @@
                             margin-bottom: 10px;
                             font-size: 15px;
                             letter-spacing: 1px;
-                            color: $mainFont_1;
+                            color: $title_2;
                         }
 
                         .num {
                             font-size: 28px;
-                            color: $title_1;
+                            color: $remind;
                             font-weight: bold;
                         }
                     }
                 }
 
                 .more {
-                    display: block;
                     width: 321px;
                     height: 41px;
                     margin: 40px auto 44px;
-                    @include borderBtn;
+                    @include secondBtn;
+                    display: block;
+                    cursor: pointer;
                 }
             }
 
@@ -915,6 +999,7 @@
                                 height: 152px;
                                 box-sizing: border-box;
                                 padding: 0 10px;
+                                border-radius: 15px;
 
                                 .medal {
                                     width: 60px;
@@ -926,7 +1011,6 @@
                                     height: auto;
                                     display: flex;
                                     justify-content: space-around;
-                                    margin-top: 10px;
 
                                     div {
                                         width: 33.3%;
@@ -935,7 +1019,7 @@
                                         p {
                                             width: 100%;
                                             height: auto;
-                                            @include cardWord;
+                                            @include cardWord; 
 
                                             &.text {
                                                 margin-bottom: 12px;
@@ -961,29 +1045,37 @@
 
                 &.sp {
                     font-size: 24px;
-                    color: $title_1;
                 }
             }
 
             .fakeTable {
-                width: 100%;
+                width: 92%;
                 height: auto;
                 box-sizing: border-box;
                 margin-top: 10px;
-                padding: 0 18px;
+                margin: 0 auto;
+                border: solid 1px $tableList_Border;
+                border-radius: 5px;
+                overflow: hidden;
                 
                 li {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     height: 50px;
-                    border-bottom: solid 1px $mainBorder_1;
+                    border-bottom: solid 1px $tableList_Border;
+                    background: $tableList_ListBG;
+
+                    &:last-child {
+                        border: none;
+                    }
 
                     &.header {
-                        border-bottom: solid 2px $mainBorder_2;
+                        border-bottom: solid 2px $tableList_Border;
+                        background: $tableList_TitleBG;
                         
                         div {
-                            color: $title_1;
+                            color: $tableList_Title;
                         }
                     }
 
@@ -993,7 +1085,7 @@
                         font-size: 13px;
                         letter-spacing: 1px;
                         color: $mainFont_1;
-                        border-right: solid 1px $mainBorder_1;
+                        border-right: solid 1px $tableList_Border;
                         box-sizing: border-box;
                         font-weight: bold;
 
@@ -1012,7 +1104,7 @@
             .msg {
                 font-size: 16px;
                 font-weight: bold;
-                color: $title_2;
+                color: $mainFont_1;
                 margin: 0 0 20px 20px;
             }
 
@@ -1025,7 +1117,7 @@
                 li {
                     font-size: 15px;
                     color: $mainFont_1;
-                    list-style: cjk-ideographic;
+                    list-style: decimal;
                     line-height: 20px;
                     margin-bottom: 10px;
                 }
@@ -1045,7 +1137,7 @@
                     height: auto;
                     margin-bottom: 56px;
                     background: $mainBG_1;
-                    box-shadow: 0px 5px 10px -5px $mainShadow_1;
+                    border: solid 1px $mainBorder_1;
                     border-radius: 5px;
 
                     .title {
@@ -1057,8 +1149,9 @@
                         padding-left: 22px;
                         font-size: 20px;
                         letter-spacing: 2px;
-                        color: $title_2;
+                        color: $title_1;
                         font-weight: bold;
+                        border-bottom: solid 1px $mainBorder_2;
                     }
 
                     .content {
@@ -1070,7 +1163,7 @@
                             box-sizing: border-box;
                             padding: 14px 24px 0;
                             height: 180px;
-                            border-right: solid 1px $mainBorder_1;
+                            border-right: solid 1px $mainBorder_2;
                             
                             .totalTitle {
                                 display: flex;
@@ -1079,15 +1172,13 @@
                                 margin-bottom: 16px;
                                 font-size: 17px;
                                 letter-spacing: 2px;
-                                color: $title_1;
+                                color: $mainFont_2;
                                 font-weight: bold;
 
                                 button {
                                     width: auto;
-                                    height: 24px;
-                                    @include mainBtn;
-                                    padding: 0 5px;
-                                    font-size: 12px;
+                                    @include secondBtn;
+                                    padding: 3px 5px;
                                 }
                             }
 
@@ -1117,7 +1208,7 @@
                                 margin-bottom: 16px;
                                 font-size: 17px;
                                 letter-spacing: 2px;
-                                color: $title_2;
+                                color: $mainFont_2;
                                 font-weight: bold;
                             }
 
@@ -1135,12 +1226,12 @@
                             .lock {
                                 display: flex;
                                 font-size: 16px;
-                                color: $money;
+                                color: $remind;
                                 font-weight: bold;
 
                                 p {
                                     margin-right: 23px;
-                                    color: $title_3;
+                                    color: $remind;
                                 }
                             }
                         }
@@ -1150,10 +1241,10 @@
                 .bottom {
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
-                    border-radius: 5px;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    background: $mainBG_2;
+                    border: solid 1px $mainBorder_1;
                     position: relative;
+                    border-radius: 5px;
 
                     .tabs {
                         position: absolute;
@@ -1202,6 +1293,7 @@
                                 border-radius: 5px;
                                 border: solid 1px $mainBorder_1;
                                 padding: 18px;
+                                background: $smallMoneyBox_BG;
 
                                 &:nth-of-type(5n) {
                                     margin-right: 0;
@@ -1210,7 +1302,7 @@
                                 div {
                                     font-size: 16px;
                                     margin-bottom: 8px;
-                                    color: $mainFont_1;
+                                    color: $title_2;
                                     font-weight: bold;
                                     line-height: 18px;
                                 }
@@ -1239,7 +1331,7 @@
                     width: 100%;
                     height: auto;
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border: solid 1px $mainBorder_1;
                     border-radius: 5px;
 
                     .header {
@@ -1247,13 +1339,13 @@
                         height: auto;
                         padding: 10px 0 15px 20px;
                         box-sizing: border-box;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $mainBorder_2;
 
                         span {
                             font-size: 20px;
                             letter-spacing: 2px;
                             font-weight: bold;
-                            color: $title_2;
+                            color: $title_1;
                         }
                     }
 
@@ -1273,15 +1365,15 @@
                                 font-size: 17px;
                                 font-weight: bold;
                                 letter-spacing: 2px;
-                                color: $title_2;
+                                color: $mainFont_2;
 
                                 &:nth-of-type(2) {
                                     font-size: 15px;
-                                    color: $title_3;
+                                    color: $mainFont_2;
                                     
                                     span {
                                         font-size: 15px;
-                                        color: $title_3;
+                                        color: $mainFont_2;
                                     }
                                 }
                             }
@@ -1328,9 +1420,17 @@
                                     }
 
                                     .review {
-                                        width: 100%;
-                                        height: auto;
-                                        margin-top: 4px;
+                                        width: 149px;
+                                        height: 22px;
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 0;
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                        text-align: center;
+                                        letter-spacing: 1px;
+                                        box-sizing: border-box;
+                                        padding: 4px 0 0 32px;
                                     }
                                 }
                             }
@@ -1346,9 +1446,8 @@
                     .bottom {
                         width: 100%;
                         height: auto;
-                        background: $mainBG_1;
-                        box-shadow: 0 5px 10px -5px $mainShadow_1;
-                        border-radius: 5px;
+                        background: $mainBG_2;
+                        border: solid 1px $mainBorder_1;
                         box-sizing: border-box;
                         padding: 15px 20px 35px;
 
@@ -1380,16 +1479,15 @@
                                             width: 100%;
                                             height: auto;
                                             display: flex;
-                                            margin-bottom: 35px;
+                                            margin-bottom: 40px;
 
                                             .smallTitle {
-                                                width: 98px;
+                                                width: 179px;
                                                 font-size: 14px;
                                                 display: flex;
                                                 align-items: center;
-                                                margin-right: 6px;
-                                                justify-content: flex-end;
-                                                padding-right: 20px;
+                                                margin-right: 35px;
+                                                justify-content: flex-start;
                                                 box-sizing: border-box;
 
                                                 span {
@@ -1397,7 +1495,6 @@
                                                     letter-spacing: 1px;
                                                     font-weight: bold;
                                                     color: $title_2;
-                                                    white-space: nowrap;
 
                                                     &::before {
                                                         content: "※";
@@ -1436,15 +1533,17 @@
                                                     letter-spacing: 1px;
                                                     position: absolute;
                                                     left: 0;
-                                                    bottom: -16px;
+                                                    bottom: -33px;
                                                     color: $remind;
+                                                    font-weight: bold;
+                                                    line-height: 16px;
                                                 }
 
                                                 button {
                                                     width: 255px;
                                                     height: 42px;
-                                                    margin-left: 8px;
                                                     @include mainBtn;
+                                                    margin-top: 20px;
                                                 }
                                             }
                                         }
@@ -1465,10 +1564,10 @@
             .smallBoard {
                 width: 100%;
                 height: auto;
-                background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                background: $smallBG;
+                border: solid 1px $mainBorder_1;
                 margin-bottom: 17px;
+                border-radius: 5px;
 
                 &:last-child {
                     margin: 0;
@@ -1476,32 +1575,23 @@
 
                 .title {
                     display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+                    flex-direction: column;
                     width: 100%;
-                    height: 43px;
+                    height: auto;
                     box-sizing: border-box;
-                    padding: 0 20px;
+                    padding: 12px 10px 8px;
                     border-bottom: solid 1px $mainBorder_1;
-                    font-size: 16px;
-                    letter-spacing: 2px;
+                    font-size: 14px;
                     color: $title_2;
                     font-weight: bold;
 
                     .more {
-                        font-size: 14px;
-                        display: flex;
-                        align-items: center;
-                        letter-spacing: 1px;
-                        color: $title_3;
+                        width: 100%;
+                        @include mainBtn;
+                        padding: 6px 0;
+                        font-size: 12px;
+                        margin-top: 5px;
                         cursor: pointer;
-
-                        .arrow {
-                            width: 9px;
-                            height: 16px;
-                            margin-left: 7px;
-                            transform: scaleX(-1);
-                        }
                     }
                 }
 
@@ -1530,10 +1620,10 @@
                                 height: 19px;
                                 font-size: 14px;
                                 letter-spacing: 1px;
-                                color: $title_1;
+                                color: $title_2;
 
                                 p {
-                                    color: $title_2;
+                                    color: $remind;
                                 }
                             }
 
@@ -1574,7 +1664,7 @@
                             letter-spacing: 1px;
                             margin-bottom: 10px;
                             font-weight: bold;
-                            color: $title_1;
+                            color: $title_2;
                         }
 
                         ul {
@@ -1591,13 +1681,14 @@
                                     
                                     &:nth-of-type(1) {
                                         font-size: 12px;
-                                        color: $title_3;
+                                        color: $remind;
                                     }
 
                                     &:last-child {
                                         font-size: 14px;
                                         margin-top: 6px;
                                         color: $mainFont_1;
+                                        font-weight: bold;
                                     }
                                 }
                             }
@@ -1610,7 +1701,7 @@
                         height: 307px;
                         align-items: center;
                         justify-content: center;
-                        color: $title_3;
+                        color: $disable;
                         font-weight: bold;
                         letter-spacing: 1px;
 
@@ -1650,9 +1741,9 @@
                 min-height: 900px;
                 padding: 32px 27px;
                 box-sizing: border-box;
+                border: solid 1px $mainBorder_2;
+                background: $mainBG_2;
                 border-radius: 5px;
-                background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
 
                 .title {
                     
@@ -1685,23 +1776,30 @@
                         display: inline-block;
                         width: 800px;
                         font-size: 18px;
-                        color: $title_2;
+                        color: $mainFont_1;
                     }
 
-                    button {
-                        width: 40px;
-                        height: 29px;
+                    button:not(.delete) {
+                        width: 9px;
+                        height: 16px;
 
                         &.next {
                             transform: scaleX(-1);
                         }
+                    }
+
+                    .delete {
+                        width: auto;
+                        height: auto;
+                        @include thirdBtn;
+                        padding: 5px 8px;
                     }
                 }
 
                 .date {
                     width: 100%;
                     font-size: 15px;
-                    color: $title_Time;
+                    color: $tableList_betWord;
                     padding-bottom: 18px;
                 }
 
@@ -1712,15 +1810,16 @@
                     color: $mainFont_1;
                     font-size: 15px;
                     font-weight: bold;
+                    border-top: solid 1px $mainBorder_1;
                 }
             }
 
             .top {
                 width: 100%;
                 height: auto;
-                border-radius: 5px;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                border: solid 1px $mainBorder_1;
                 background: $mainBG_1;
+                border-radius: 5px;
 
                 p {
                     height: 50px;
@@ -1731,8 +1830,8 @@
                     padding-left: 22px;
                     font-size: 20px;
                     font-weight: bold;
-                    color: $title_2;
-                    border-bottom: solid 1px $mainBorder_1;
+                    color: $title_1;
+                    border-bottom: solid 1px $mainBorder_2;
                 }
 
                 div {
@@ -1747,8 +1846,7 @@
                         width: 125px;
                         height: 35px;
                         margin-right: 10px;
-                        @include borderBtn;
-                        color: $mainFont_1;
+                        @include secondBtn;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -1763,6 +1861,26 @@
 
                 &.display {
                     display: block;
+                }
+
+                &.ann {
+
+                    .list {
+
+                        ul {
+
+                            li {
+
+                                .title {
+                                    width: 70%;
+                                }
+
+                                .date {
+                                    width: 30%;
+                                }
+                            }
+                        }
+                    }
                 }
 
                 .tabs {
@@ -1781,8 +1899,8 @@
                 }
 
                 .list {
-                    background: $mainBG_1;
-                    box-shadow: 0px 5px 10px -5px $mainShadow_1;
+                    background: $mainBG_2;
+                    border: solid 1px $mainBorder_2;
                     width: 100%;
                     min-height: 638px;
                     border-radius: 5px;
@@ -1792,7 +1910,6 @@
                         width: 100%;
                         height: auto;
                         padding-bottom: 16px;
-                        border-bottom: solid 1px $mainBorder_1;
 
                         &.nor {
                             justify-content: flex-end;
@@ -1800,17 +1917,15 @@
                             a {
 
                                 &:nth-of-type(1) {
-                                    width: 79px;
-                                    @include mailBtn_2;
+                                    @include secondBtn;
                                 }
 
                                 &:last-child {
-                                    width: 51px;
-                                    @include mailBtn_1;
+                                    @include mainBtn;
+                                    padding: 0 5px;
                                 }
                             }
                         }
-
                         &.edit {
                             justify-content: space-between;
 
@@ -1820,20 +1935,20 @@
                                 a {
 
                                     &:nth-of-type(1){
-                                        @include mailBtn_2;
+                                        @include secondBtn;
                                     }
     
                                     &:nth-of-type(2) {
-                                        @include mailBtn_1;
+                                        @include thirdBtn;
                                     }
                                 }
                             }
 
                             a {
-                                width: 51px;
                                 
                                 &:last-child {
-                                    @include borderBtn;
+                                    @include mainBtn;
+                                    padding: 0 5px;
                                 }
                             }
                         }
@@ -1844,6 +1959,7 @@
 
                         a {
                             display: inline-flex;
+                            width: auto;
                             height: 29px;
                             margin: 19px 19px 0 0;
                             align-items: center;
@@ -1855,18 +1971,39 @@
                             margin: 20px 34px 0 0;
                             display: flex;
                             align-items: center;
-                            color: $mainFont_1;
+                            color: $title_2;
                             font-size: 16px;
 
                             input {
                                 margin: 0 19px 0 24px;
                                 @include mailCheckbox;
+
+                                &:checked {
+        
+                                    &::after {
+                                        content: "";
+                                        width: 10px;
+                                        height: 10px;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%,-50%);
+                                        background: #753200;
+                                        border-radius: 50px;
+                                        z-index: 2;
+                                    }
+                                }
                             }
                         }
                     }
 
                     ul {
                         display: none;
+                        width: 96%;
+                        margin: 0px auto;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        border: solid 1px $tableList_Border;
 
                         &.display {
                             display: block;
@@ -1878,6 +2015,11 @@
                             align-items: center;
                             border-bottom: solid 1px $mainBorder_1;
                             cursor: pointer;
+                            background: $tableList_ListBG;
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
 
                             &.read {
                                 @include read;
@@ -1891,15 +2033,7 @@
                             }
 
                             &:hover,&:active,&.active {
-                                @include navHover;
-
-                                &::before {
-                                    display: none;
-                                }
-
-                                .title {
-                                    color: $title_2;
-                                }
+                                @include mailHover;
                             }
 
                             input {
@@ -1909,11 +2043,34 @@
                             }
 
                             .title {
-                                width: 70%;
+                                width: 28%;
                                 position: relative;
                                 box-sizing: border-box;
                                 padding: 0 33px 0 28px;
-                                color: $title_2;
+                                color: $tableList_Title;
+                                font-weight: bold;
+
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    right: 0;
+                                    width: 1px;
+                                    height: 15px;
+                                    background: $mainBorder_1;
+                                }
+                            }
+
+                            .msg {
+                                width: 54%;
+                                box-sizing: border-box;
+                                padding: 0 33px;
+                                position: relative;
+                                color: $tableList_Title;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
                                 font-weight: bold;
 
                                 &::before {
@@ -1929,9 +2086,9 @@
                             }
 
                             .date {
-                                width: 30%;
+                                width: 14%;
                                 text-align: center;
-                                color: $title_Time;
+                                color: $tableList_Title;
                             }
                         }
                     }
@@ -1946,10 +2103,10 @@
             .title {
                 width: 100%;
                 height: auto;
-                background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                background: $smallBG;
+                border: solid 1px $mainBorder_2;
                 margin-bottom: 20px;
+                border-radius: 5px;
 
                 h1 {
                     width: 100%;
@@ -1988,8 +2145,9 @@
                     min-height: 430px;
                     box-sizing: border-box;
                     padding: 18px 22px;
-                    background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    background: $mainBG_2;
+                    border: solid 1px $mainBorder_2;
+                    border-radius: 5px;
                     
                     &.display {
                         display: flex;
@@ -2002,8 +2160,9 @@
                         li {
                             width: 100%;
                             margin-bottom: 8px;
-                            border-radius: 3px;
-                            border: solid 1px $mainBorder_2;
+                            border-radius: 5px;
+                            border: solid 1px $tableList_Border;
+                            overflow: hidden;
 
                             .header {
                                 width: 100%;
@@ -2014,32 +2173,33 @@
                                 display: flex;
                                 align-items: center;
                                 justify-content: space-between;
+                                background: $tableList_TitleBG;
 
                                 div {
                                     display: flex;
 
                                     p {
                                         margin-right: 18px;
-                                        color: $title_2;
+                                        color: $tableList_Title;
                                         font-size: 16px;
                                         font-weight: bold;
                                         white-space: nowrap;
                                         display: flex;
                                         align-items: center;
 
-                                        &.first {
-                                            color: $title_1;
-                                        }
+                                        // &.first {
+                                        //     color: $title_1;
+                                        // }
 
-                                        &.day-tips {
-                                            color: $title_Time;
-                                        }
+                                        // &.day-tips {
+                                        //     color: $title_Time;
+                                        // }
 
                                         span {
-                                            color: $mainFont_1;
+                                            color: $tableList_Title;
 
                                             &.now {
-                                                color: $remind_sp;
+                                                color: $remind;
                                             }
 
                                             &.split {
@@ -2049,16 +2209,17 @@
                                     }
 
                                     button {
-                                        width: 75px;
+                                        width: auto;
                                         height: 27px;
-                                        @include eventBtn;
+                                        @include secondBtn;
+                                        font-size: 14px;
 
                                         &.apply {
                                             margin-right: 8px;
                                         }
 
                                         &.check {
-                                            @include borderBtn;
+                                            @include mainBtn;
                                         }
                                     }
                                 }
@@ -2071,6 +2232,7 @@
                                 padding: 20px 15px;
                                 display: flex;
                                 flex-wrap: wrap;
+                                background: $tableList_ListBG;
 
                                 ul {
                                     display: flex;
@@ -2094,11 +2256,11 @@
                                         p {
                                             font-size: 14px;
                                             font-weight: bold;
-                                            color: $mainFont_1;
+                                            color: $tableList_betWord;
     
                                             &.smallTitle {
                                                 margin-right: 25px;
-                                                color: $title_2;
+                                                color: $mainFont_1;
                                             }
     
                                             &.cur {
@@ -2117,8 +2279,8 @@
                     width: 100%;
                     min-height: 430px;
                     box-sizing: border-box;
-                    background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    background: $mainBG_2;
+                    border: solid 1px $mainBorder_2;
                     border-radius: 5px;
 
                     &.display {
@@ -2143,7 +2305,7 @@
                                 position: relative;
 
                                 .bigBox {
-                                    width: 345px;
+                                    width: 375px;
                                     height: auto;
 
                                     .inputBox {
@@ -2165,13 +2327,11 @@
 
                                             .smallTitle {
                                                 font-size: 14px;
-                                                width: auto;
-                                                max-width: 48px;
+                                                width: 80px;
                                                 margin-right: 25px;
                                                 letter-spacing: 1px;
                                                 color: $title_2;
                                                 font-weight: bold;
-                                                text-align: right;
                                             }
 
                                             .fakeInput {
@@ -2201,10 +2361,10 @@
                                     height: auto;
 
                                     button {
-                                        width: 72px;
+                                        width: auto;
                                         height: 43px;
-                                        margin-right: 8px;
-                                        @include changeBtn;
+                                        margin-right: 10px;
+                                        @include secondBtn;
                                     }
                                 }
 
@@ -2237,27 +2397,139 @@
 
                             table {
                                 width: 100%;
+                                border-radius: 5px;
+                                overflow: hidden;
+                                box-shadow: 0 0 0 1px $tableList_Border;
+                                margin-top: 25px;
+                                display: none;
+
+                                &.display {
+                                    display: table;
+                                }
 
                                 tr {
+
+                                    &:last-child {
+
+                                        td {
+                                            border-bottom: none;
+                                        }
+                                    }
 
                                     th {
                                         height: 50px;
                                         vertical-align: middle;
-                                        letter-spacing: 1px;
-                                        color: $title_1;
-                                        border-bottom: solid 2px $mainBorder_2;
-                                        font-size: 13px;
-                                        font-weight: bold;
+                                        border-bottom: solid 2px $tableList_Border;
+                                        background: $tableList_TitleBG;
+                                        position: relative;
+
+                                        &:last-child {
+
+                                            &::before {
+                                                display: none;
+                                            }
+                                        }
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            right: 0;
+                                            width: 1px;
+                                            height: 13px;
+                                            background: $mainBorder_1;
+                                        }
+
+                                        p {
+                                            letter-spacing: 1px;
+                                            color: $tableList_Title;
+                                            font-size: 12px;
+                                            width: 70%;
+                                            font-weight: bold;
+                                            text-align: center;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            margin: 0 auto;
+                                        }
                                     }
 
                                     td {
+                                        max-width: 50px;
                                         height: 50px;
                                         vertical-align: middle;
-                                        font-size: 13px;
-                                        color: $mainFont_1;
-                                        font-weight: bold;
-                                        text-align: center;
                                         border-bottom: solid 1px $mainBorder_1;
+                                        background: $tableList_ListBG;
+                                        position: relative;
+
+                                        &:hover,&:active,&.active {
+                                            
+                                            p {
+                                                width: auto;
+                                                min-width: 100%;
+                                                position: absolute;
+                                                top: 50%;
+                                                transform: translateY(-50%);
+                                                z-index: 1;
+                                                background: $innerSide_HoverBG2;
+                                                color: $title_1;
+                                                padding: 5px;
+                                                box-sizing: border-box;
+                                            }
+                                        }
+
+                                        &:last-child {
+
+                                            &::before {
+                                                display: none;
+                                            }
+                                        }
+
+                                        &:nth-of-type(1),
+                                        &:nth-of-type(10) {
+                                            width: 15%;
+                                        }
+
+                                        &:nth-of-type(2),
+                                        &:nth-of-type(3),
+                                        &:nth-of-type(4),
+                                        &:nth-of-type(5),
+                                        &:nth-of-type(6) {
+                                            width: 8%;
+                                        }
+
+                                        &:nth-of-type(7),
+                                        &:nth-of-type(8),
+                                        &:nth-of-type(9) {
+                                            width: 10%;
+                                        }
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            right: 0;
+                                            width: 1px;
+                                            height: 13px;
+                                            background: $mainBorder_1;
+                                        }
+
+                                        p {
+                                            color: $mainFont_1;
+                                            font-weight: bold;
+                                            font-size: 13px;
+                                            width: 70%;
+                                            height: 100%;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            margin: 0 auto;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                        }
                                     }
                                 }
                             }
@@ -2265,13 +2537,13 @@
                             .noData {
                                 display: none;
                                 width: 100%;
-                                height: 248px;
+                                height: 233px;
                                 align-items: center;
                                 justify-content: center;
-                                font-weight: bold;
                                 letter-spacing: 1px;
-                                color: $title_3;
-
+                                color: $disable;
+                                font-weight: bold;
+            
                                 &.display {
                                     display: flex;
                                 }
@@ -2289,8 +2561,7 @@
             .top {
                 width: 100%;
                 height: 50px;
-                background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                background: $smallBG;
                 color: $title_2;
                 display: flex;
                 align-items: center;
@@ -2300,6 +2571,7 @@
                 font-size: 20px;
                 letter-spacing: 2px;
                 border-radius: 5px;
+                border: solid 1px $mainBorder_2;
             }
 
             .bottom {
@@ -2330,10 +2602,10 @@
                 .dealBox {
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    background: $mainBG_2;
                     display: none;
+                    border-radius: 5px;
+                    border: solid 1px $mainBorder_1;
 
                     &.display {
                         display: block;
@@ -2357,7 +2629,7 @@
                                 position: relative;
 
                                 .bigBox {
-                                    width: 345px;
+                                    width: 375px;
                                     height: auto;
 
                                     .innerBox {
@@ -2376,8 +2648,7 @@
                                             }
 
                                             .smallTitle {
-                                                width: auto;
-                                                max-width: 48px;
+                                                width: 80px;
                                                 font-size: 14px;
                                                 margin-right: 25px;
                                                 letter-spacing: 1px;
@@ -2412,10 +2683,10 @@
                                     align-items: flex-end;
 
                                     button {
-                                        width: 72px;
+                                        width: auto;
                                         height: 42px;
-                                        margin-right: 8px;
-                                        @include changeBtn;
+                                        margin-right: 10px;
+                                        @include secondBtn;
                                     }
                                 }
 
@@ -2448,7 +2719,7 @@
                                 align-items: center;
                                 justify-content: center;
                                 letter-spacing: 1px;
-                                color: $title_3;
+                                color: $disable;
                                 font-weight: bold;
 
                                 &.display {
@@ -2460,8 +2731,21 @@
                                 width: 100%;
                                 height: auto;
                                 margin: 20px 0 60px;
+                                border-radius: 5px;
+                                box-shadow: 0 0 0 1px $tableList_Border;
+                                overflow: hidden;
+                                display: none;
+
+                                &.display {
+                                    display: table;
+                                }
 
                                 tr {
+                                    border-bottom: solid 1px $mainBorder_1;
+
+                                    &:last-child {
+                                        border: none;
+                                    }
 
                                     th,td {
                                         height: 50px;
@@ -2470,9 +2754,10 @@
                                         font-size: 13px;
                                         letter-spacing: 1px;
                                         font-weight: bold;
-                                        color: $title_1;
+                                        color: $tableList_Title;
                                         position: relative;
-                                        border-bottom: solid 2px $mainBorder_2;
+                                        border-bottom: solid 2px $tableList_Border;
+                                        background: $tableList_TitleBG;
 
                                         &:last-child {
 
@@ -2485,7 +2770,7 @@
                                             content: "";
                                             position: absolute;
                                             width: 1px;
-                                            height: 50%;
+                                            height: 15px;
                                             transform: translateY(-50%);
                                             top: 50%;
                                             right: 0px;
@@ -2497,6 +2782,11 @@
                                         width: 25%;
                                         border-bottom: none;
                                         color: $mainFont_1;
+                                        background: $tableList_ListBG;
+
+                                        &:last-child {
+                                            color: $remind;
+                                        }
                                     }
                                 }
                             }
@@ -2507,12 +2797,12 @@
                 .waterBox {
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    background: $mainBG_2;
                     box-sizing: border-box;
+                    border-radius: 5px;
                     padding: 20px;
                     display: none;
+                    border: solid 1px $mainBorder_1;
 
                     &.display {
                         display: block;
@@ -2527,13 +2817,23 @@
                     table {
                         width: 100%;
                         height: auto;
+                        box-shadow: 0 0 0 1px $tableList_Border;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        margin-top: 25px;
 
                         tr {
+                            border-bottom: solid 1px $mainBorder_1;
+
+                            &:last-child {
+                                border: none;
+                            }
 
                             th {
-                                border-bottom: solid 2px $mainBorder_2;
+                                border-bottom: solid 2px $tableList_Border;
                                 height: 40px;
                                 vertical-align: middle;
+                                background: $tableList_TitleBG;
 
                                 &:last-child {
 
@@ -2543,7 +2843,7 @@
                                 }
 
                                 p {
-                                    color: $title_1;
+                                    color: $title_2;
                                     padding: 0 5px;
                                     font-size: 14px;
                                     font-weight: bold;
@@ -2555,36 +2855,48 @@
                                 border-bottom: solid 1px $mainBorder_1;
                                 height: 50px;
                                 vertical-align: middle;
+                                background: $tableList_ListBG;
+
+                                &:last-child {
+
+                                    p {
+                                        border: none;
+                                    }
+                                }
 
                                 p {
                                     color: $mainFont_1;
                                     font-size: 14px;
                                     font-weight: bold;
                                     text-align: center;
+                                    border-right: solid 1px $mainBorder_1;
 
                                     &.money {
-                                        color: $remind_sp2;
-                                    }
-
-                                    &.sp {
                                         color: $remind_sp;
                                     }
 
+                                    &.sp {
+                                        color: $remind;
+                                    }
+
                                     button {
-                                        width: 60px;
-                                        height: 28px;
+                                        width: auto;
+                                        height: auto;
                                         @include mainBtn;
                                         font-size: 14px;
+                                        padding: 5px 10px;
 
                                         &.check {
-                                            @include borderBtn;
+                                            @include secondBtn;
+                                            font-size: 14px;
+                                            padding: 5px 10px;
                                         }
                                     }
 
                                     i {
                                         display: inline-block;
-                                        width: 15px;
-                                        height: 27px;
+                                        width: 9px;
+                                        height: 16px;
                                         transform: rotate(-90deg);
                                     }
                                 }
@@ -2599,22 +2911,23 @@
         .betWrap {
             width: 1140px;
             height: auto;
-            padding: 15px 0 28px;
-            background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
 
             form {
                 width: 100%;
                 height: auto;
+                border: solid 1px $mainBorder_1;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                background: $mainBG_1;
 
                 .title {
-                    padding-left: 23px;
+                    padding: 10px 0 15px 20px;
                     margin-bottom: 28px;
                     font-size: 20px;
                     letter-spacing: 2px;
-                    color: $title_2;
+                    color: $title_1;
                     font-weight: bold;
+                    border-bottom: solid 1px $mainBorder_2;
                 }
 
                 .inputGroup {
@@ -2627,11 +2940,18 @@
                     margin-bottom: 17px;
 
                     p {
+                        width: 80px;
                         margin-right: 25px;
                         font-size: 14px;
                         letter-spacing: 1px;
                         color: $title_2;
                         font-weight: bold;
+
+                        &.remind {
+                            width: auto;
+                            color: $mainFont_2;
+                            margin-top: 25px;
+                        }
                     }
 
                     select {
@@ -2657,6 +2977,7 @@
                         align-items: center;
                         
                         p {
+                            width: 80px;
                             margin-right: 25px;
                             font-size: 14px;
                             letter-spacing: 1px;
@@ -2676,12 +2997,13 @@
                         }
 
                         .btnBox {
+                            font-size: 0;
 
                             button {
-                                width: 72px;
+                                width: auto;
                                 height: 43px;
-                                margin-right: 8px;
-                                @include changeBtn;
+                                margin-right: 10px;
+                                @include secondBtn;
 
                                 &:last-child {
                                     margin-right: 15px;
@@ -2702,25 +3024,85 @@
                 width: 100%;
                 height: auto;
                 margin: 15px 0 30px;
+                padding: 0 21px;
+                box-sizing: border-box;
+                background: $mainBG_2;
+                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
+
+                .smallTitle {
+                    font-size: 17px;
+                    letter-spacing: 2px;
+                    color: $title_2;
+                    font-weight: bold;
+                    padding-top: 15px;
+                }
+
+                .noData {
+                    display: none;
+                    width: 100%;
+                    height: 233px;
+                    align-items: center;
+                    justify-content: center;
+                    letter-spacing: 1px;
+                    color: $disable;
+                    font-weight: bold;
+
+                    &.display {
+                        display: flex;
+                    }
+                }
 
                 ul {
                     width: 100%;
                     height: auto;
+                    margin: 20px auto;
+                    border: solid 1px $tableList_Border;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    display: none;
+
+                    &.display {
+                        display: block;
+                    }
 
                     li {
                         width: 100%;
                         height: 40px;
                         border-bottom: solid 1px $mainBorder_1;
+                        background: $betRecord_innerBG;
+                        padding: 1px;
+                        box-sizing: border-box;
+
+                        &:nth-last-of-type(2) {
+                            border-bottom-color: $tableList_Border;
+                        }
+
+                        &:last-child {
+                            border: none;
+                        }
 
                         &.title {
-                            border-bottom: solid 1px $mainBorder_2; 
+                            background: $tableList_TitleBG;
+                            border-bottom: solid 2px $tableList_Border;
+
+                            .wordWrap {
+                                background: none;
+                            }
 
                             p {
-                                color: $title_1 !important;
-                                
-                                &::before {
-                                    display: none;
+                                color: $tableList_Title !important;
+
+                                &:last-child {
+                                    border: none;
                                 }
+                            }
+                        }
+
+                        &.end {
+                            
+                            .wordWrap {
+                                background: $tableList_TitleBG;
                             }
                         }
 
@@ -2729,6 +3111,7 @@
 
                             .wordWrap {
                                 height: 40px;
+                                border-bottom: solid 1px $mainBorder_1;
 
                                 .arrow_ic {
                                     transform: rotate(90deg);
@@ -2745,6 +3128,7 @@
                             align-items: center;
                             width: 100%;
                             height: 100%;
+                            background: $tableList_ListBG;
 
                             p {
                                 position: relative;
@@ -2752,6 +3136,7 @@
                                 font-weight: bold;
                                 font-size: 14px;
                                 text-align: center;
+                                border-right: solid 1px $mainBorder_1;
     
                                 &:nth-of-type(1),
                                 &:nth-of-type(2),
@@ -2770,21 +3155,7 @@
                                     justify-content: center;
                                     align-items: center;
                                     cursor: pointer;
-    
-                                    &::before {
-                                        display: none;
-                                    }
-                                }
-    
-                                &::before {
-                                    content: "";
-                                    position: absolute;
-                                    right: 0px;
-                                    width: 1px;
-                                    height: 19px;
-                                    top: 50%;
-                                    transform: translateY(-50%);
-                                    background: $mainBorder_1;
+                                    border: none;
                                 }
     
                                 &.result {
@@ -2805,14 +3176,16 @@
                             width: 97%;
                             margin: 15px auto;
                             overflow: hidden;
-                            background: $mainBG_1;
-                            box-shadow: 0 5px 10px -5px $mainShadow_1;
+                            box-shadow: 0 0 0 1px $tableList_Border;
                             border-radius: 5px;
 
                             tr {
 
-                                &:nth-of-type(1) {
-                                    background: $jumpWindow_Header;
+                                &:nth-of-type(2n) {
+                                    
+                                    td {
+                                        background: $tableList_ListBG;
+                                    }
                                 }
 
                                 &:last-child {
@@ -2825,20 +3198,23 @@
                                 th {
                                     font-size: 14px;
                                     font-weight: bold;
-                                    color: $mainFont_2;
+                                    color: $tableList_Title;
+                                    background: $tableList_TitleBG;
                                     text-align: center;
                                     height: 40px;
                                     vertical-align: middle;
+                                    border-bottom: solid 1px $mainBorder_1;
                                 }
                                 
                                 td {
                                     font-weight: bold;
                                     font-size: 14px;
-                                    color: $mainFont_1;
+                                    color: $tableList_betWord;
                                     text-align: center;
                                     height: 40px;
                                     vertical-align: middle;
                                     border-bottom: solid 1px $mainBorder_1;
+                                    background: $tableList_TitleBG;
 
                                     &:nth-of-type(1),
                                     &:nth-of-type(7) {
@@ -2867,22 +3243,6 @@
                     }
                 }
             }
-
-            .noData {
-                display: none;
-                width: 100%;
-                height: 348px;
-                margin-top: 20px;
-                align-items: center;
-                justify-content: center;
-                letter-spacing: 1px;
-                color: $title_3;
-                font-weight: bold;
-
-                &.display {
-                    display: flex;
-                }
-            }
         }
 
         //deposit
@@ -2899,7 +3259,7 @@
                     height: 108px;
                     margin-bottom: 15px;
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border: solid 1px $mainBorder_1;
                     border-radius: 5px;
 
                     .title {
@@ -2910,16 +3270,23 @@
                         width: 100%;
                         box-sizing: border-box;
                         padding: 0 18px 0 22px;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $mainBorder_2;
                         font-size: 20px;
                         letter-spacing: 2px;
-                        color: $title_2;
+                        color: $title_1;
                         font-weight: bold;
 
                         button {
-                            width: 105px;
+                            width: auto;
                             height: 31px;
-                            @include borderBtn;
+                            @include secondBtn;
+
+                            &:hover,&:active,&.active {
+
+                                i {
+                                    filter: brightness(10);
+                                }
+                            }
 
                             i {
                                 display: inline-block;
@@ -2959,15 +3326,19 @@
                                 width: 100%;
                                 height: auto;
                                 display: flex;
+                                transition: 0.3s all;
 
                                 li {
-                                    width: 127px;
+                                    width: auto;
                                     height: 36px;
                                     margin-right: 10px;
-                                    @include depositBtn;
+                                    @include secondBtn;
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
+                                    box-sizing: border-box;
+                                    cursor: pointer;
+                                    flex-shrink: 0;
 
                                     i {
                                         width: 27px;
@@ -2984,12 +3355,14 @@
                     width: 100%;
                     height: 555px;
                     padding: 16px 0 0 27px;
-                    background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    background: $mainBG_2;
+                    border: solid 1px $mainBorder_2;
                     box-sizing: border-box;
+                    border-radius: 5px;
 
-                    .card,.atm,.shop,
+                    .card,
+                    .atm,
+                    .shop,
                     .cardDeposit {
                         display: none;
 
@@ -3007,6 +3380,10 @@
 
                     .content {
                         margin-top: 26px;
+                        display: flex;
+                        height: 480px;
+                        flex-direction: column;
+                        justify-content: space-between;
 
                         form {
                             width: 100%;
@@ -3015,21 +3392,27 @@
                             .row {
                                 display: flex;
                                 align-items: center;
-                                height: 41px;
                                 margin-bottom: 30px;
-                                font-weight: bold;
-                                font-size: 16px;
-                                color: $title_2;
                                 position: relative;
 
                                 &.noTitle {
-                                    padding-left: 82px;
+                                    padding-left: 148px;
                                 }
 
                                 i {
                                     font-size: 16px;
                                     color: $remind;
                                     margin-right: 5px;
+                                }
+
+                                p:not(.remind) {
+                                    font-weight: bold;
+                                    height: 41px;
+                                    font-size: 16px;
+                                    color: $title_2;
+                                    display: flex;
+                                    align-items: center;
+                                    width: 130px;
                                 }
 
                                 select {
@@ -3049,8 +3432,9 @@
                                 .remind {
                                     position: absolute;
                                     bottom: -16px;
-                                    left: 108px;
+                                    left: 175px;
                                     font-size: 12px;
+                                    font-weight: bold;
                                     letter-spacing: 1px;
                                     color: $remind;
                                 }
@@ -3059,7 +3443,7 @@
                             button {
                                 width: 257px;
                                 height: 41px;
-                                margin: 28px 0 0 108px;
+                                margin: 28px 0 0 175px;
                                 @include mainBtn;
                             }
                         }
@@ -3068,18 +3452,22 @@
                             width: 839px;
                             height: auto;
                             padding: 15px 19px;
-                            margin: 39px 0 0 -10px;
-                            border: solid 1px $mainBorder_2;
+                            border: solid 1px $mainBorder_1;
                             box-sizing: border-box;
+                            background: $mainBG_2;
+                            border-radius: 5px;
+                            margin-left: -10px;
 
                             div {
                                 color: $mainFont_1;
                                 font-size: 13px;
                                 letter-spacing: 1px;
                                 margin-bottom: 11px;
+                                line-height: 16px;
+                                font-weight: bold;
 
                                 &.title {
-                                    color: $title_1;
+                                    color: $remind;
                                 }
                             }
                         }
@@ -3118,7 +3506,7 @@
 
                                     &:nth-of-type(1) {
                                         color: $title_2;
-                                        margin-right: 30px;
+                                        width: 100px;
                                     }
 
                                     &:nth-of-type(2) {
@@ -3128,9 +3516,9 @@
                                 }
 
                                 button {
-                                    width: 95px;
+                                    width: auto;
                                     height: 36px;
-                                    @include borderBtn;
+                                    @include secondBtn;
 
                                     &:nth-of-type(2) {
                                         @include mainBtn;
@@ -3161,356 +3549,89 @@
                 width: 880px;
                 height: auto;
                 margin-right: 15px;
-                background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
-
-                .title {
-                    width: 100%;
-                    height: 50px;
-                    box-sizing: border-box;
-                    padding: 0 22px;
-                    display: flex;
-                    align-items: center;
-
-                    div {
-                        color: $title_2;
-                        font-size: 20px;
-                        letter-spacing: 2px;
-                        font-weight: bold;
-                    }
-                }
-
-                .wallet {
-                    width: 100%;
-                    height: 130px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-
-                    .centerWallet {
-                        width: 49%;
-                        height: 100%;
-                        padding: 18px 25px 0;
-                        box-sizing: border-box;
-
-                        .walletTitle {
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-
-                            p {
-                                display: flex;
-                                align-items: center;
-                                font-size: 17px;
-                                letter-spacing: 2px;
-                                color: $title_1;
-                                font-weight: bold;
-
-                                .reset_ic {
-                                    display: block;
-                                    width: 16px;
-                                    height: 16px;
-                                    margin-left: 6px;
-                                }
-                            }
-
-                            button {
-                                width: 71px;
-                                height: 23px;
-                                @include mainBtn;
-                                font-size: 12px;
-                            }
-                        }
-
-                        .amount {
-                            width: 100%;
-                            height: auto;
-                            box-sizing: border-box;
-                            padding: 13px 0 0 10px;
-                            font-size: 43px;
-                            font-weight: bold;
-                            color: $money;
-                        }
-                    }
-                }
-
-                .platform {
-                    width: 100%;
-                    height: auto;
-                    box-sizing: border-box;
-                    padding: 21px 23px 0;
-                    
-                    .platformTitle {
-                        font-size: 17px;
-                        font-weight: bold;
-                        letter-spacing: 2px;
-                        margin-bottom: 20px;
-                        color: $title_2;
-                    }
-
-                    ul {
-                        width: 100%;
-                        height: 97px;
-                        display: flex;
-                        flex-wrap: wrap;
-                        overflow: hidden;
-
-                        &.active {
-                            height: auto;
-                        }
-
-                        li {
-                           width: 196px;
-                           height: 97px;
-                           box-sizing: border-box;
-                           padding: 18px;
-                           margin: 0 16px 16px 0;
-                           border: solid 1px $mainBorder_1;
-                           border-radius: 5px;
-
-                           &:nth-of-type(4n) {
-                               margin-right: 0;
-                           }
-
-                           .name {
-                               margin-bottom: 5px;
-                               font-size: 16px;
-                               color: $mainFont_1;
-                            }
-
-                            .amount {
-                                font-size: 25px;
-                                font-weight: bold;
-                                color: $money;
-                                margin-top: 8px;
-                            }
-                        }
-                    }
-
-                    .open {
-                        width: 100%;
-                        height: auto;
-                        padding: 23px 0 35px;
-                        text-align: center;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        button {
-                            color: $mainFont_1;
-                            background: none;
-                            display: flex;
-                            align-items: center;
-                            font-size: 13px;
-
-                            i {
-                                display: block;
-                                width: 14px;
-                                height: 14px;
-                                margin-left: 10px;
-                            }
-                        }
-                    }
-                }
-
-                form {
-                    width: 100%;
-                    height: auto;
-                    box-sizing: border-box;
-                    padding: 25px 0 36px 27px;
-
-                    .formTitle {
-                        display: flex;
-                        align-items: flex-end;
-                        margin-bottom: 25px;
-                        font-size: 17px;
-                        letter-spacing: 2px;
-                        color: $title_2;
-                        font-weight: bold;
-
-                        .remind {
-                            margin-left: 25px;
-                            font-size: 14px;
-                            letter-spacing: 1px;
-                            color: $remind;
-                        }
-                    }
-
-                    .platformBox {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        width: 690px;
-                        height: auto;
-                        margin-bottom: 20px;
-
-                        p {
-                            width: 56px;
-                            text-align: center;
-                            font-size: 14px;
-                            color: $title_2;
-                            font-weight: bold;
-                        }
-
-                        .trans_ic {
-                            display: block;
-                            width: 27px;
-                            height: 23px;
-                        }
-
-                        select {
-                            width: 256px;
-                            height: 42px;
-                            @include mainSelect;
-                        }
-                    }
-
-                    .moneyBox {
-                        width: auto;
-                        height: auto;
-                        display: flex;
-                        align-items: flex-start;
-
-                        p {
-                            font-size: 14px;
-                            font-weight: bold;
-                            color: $title_2;
-                            margin-top: 14px;
-                        }
-
-                        .inputBox {
-                            width: auto;
-                            height: auto;
-                            margin-left: 31px;
-
-                            input {
-                                width: 256px;
-                                height: 42px;
-                                @include mainInput;
-                            }
-
-                            .btnBox {
-                                width: 256px;
-                                height: auto;
-                                display: flex;
-                                flex-wrap: wrap;
-                                margin-top: 20px;
-
-                                button {
-                                    width: 82px;
-                                    height: 32px;
-                                    @include fastBtn;
-                                    margin: 0 5px 5px 0;
-
-                                    &:nth-of-type(3n) {
-                                        margin-right: 0;
-                                    }
-
-                                    &.check {
-                                        width: 256px;
-                                        height: 42px;
-                                        @include mainBtn;
-                                        margin-top: 15px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        //withdrawal
-        .withdrawalWrap {
-            display: flex;
-
-            .withdrawalMiddle {
-                width: 880px;
-                margin-right: 15px;
 
                 .top {
-                    background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
                     width: 100%;
                     height: auto;
-                    margin-bottom: 20px;
+                    background: $mainBG_1;
+                    border: solid 1px $mainBorder_1;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
 
                     .title {
                         width: 100%;
                         height: 50px;
+                        box-sizing: border-box;
+                        padding: 0 22px;
                         display: flex;
                         align-items: center;
-                        padding: 0 22px;
-                        box-sizing: border-box;
+                        border-bottom: solid 1px $mainBorder_2;
     
                         div {
-                            font-weight: bold;
+                            color: $title_1;
                             font-size: 20px;
                             letter-spacing: 2px;
-                            color: $title_2;
+                            font-weight: bold;
                         }
                     }
     
-                    .walletBox {
-                        display: flex;
-                        justify-content: space-around;
-                        align-items: center;
+                    .wallet {
                         width: 100%;
                         height: 130px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        border-bottom: solid 1px $mainBorder_2;
     
-                        .smallBox {
-                            width: 33%;
+                        .centerWallet {
+                            width: 49%;
                             height: 100%;
                             padding: 18px 25px 0;
                             box-sizing: border-box;
     
-                            .smallTitle {
+                            .walletTitle {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
     
                                 p {
                                     display: flex;
-                                    height: 23px;
                                     align-items: center;
                                     font-size: 17px;
                                     letter-spacing: 2px;
-                                    color: $title_1;
+                                    color: $mainFont_2;
                                     font-weight: bold;
     
-                                    &.limit {
-                                        color: $remind;
-                                        justify-content: space-between;
-                                    }
-                                    &.canUse {
-                                        color: $title_2;
-                                    }
-    
-                                    i {
+                                    .reset_ic {
                                         display: block;
                                         width: 16px;
                                         height: 16px;
                                         margin-left: 6px;
+                                        filter: grayscale(1) brightness(10);
                                     }
-
-                                    button {
-                                        width: 71px;
-                                        height: 23px;
-                                        @include mainBtn;
-                                        font-size: 12px;
-                                    }
+                                }
+    
+                                button {
+                                    width: auto;
+                                    height: auto;
+                                    @include secondBtn;
+                                    padding: 3px 5px;
                                 }
                             }
     
                             .amount {
-                                padding: 21px 0 0 10px;
-                                font-size: 33px;
+                                width: 100%;
+                                height: auto;
+                                box-sizing: border-box;
+                                padding: 13px 0 0 10px;
+                                font-size: 43px;
                                 font-weight: bold;
                                 color: $money;
                             }
                         }
                     }
     
-                    .platformBox {
+                    .platform {
                         width: 100%;
                         height: auto;
                         box-sizing: border-box;
@@ -3521,7 +3642,7 @@
                             font-weight: bold;
                             letter-spacing: 2px;
                             margin-bottom: 20px;
-                            color: $title_2;
+                            color: $mainFont_2;
                         }
     
                         ul {
@@ -3543,6 +3664,7 @@
                                margin: 0 16px 16px 0;
                                border: solid 1px $mainBorder_1;
                                border-radius: 5px;
+                               background: $smallMoneyBox_BG;
     
                                &:nth-of-type(4n) {
                                    margin-right: 0;
@@ -3551,7 +3673,8 @@
                                .name {
                                    margin-bottom: 5px;
                                    font-size: 16px;
-                                   color: $mainFont_1;
+                                   color: $title_2;
+                                   font-weight: bold;
                                 }
     
                                 .amount {
@@ -3590,14 +3713,312 @@
                     }
                 }
 
-                .bottom {
-                    background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                form {
+                    width: 100%;
+                    height: auto;
+                    box-sizing: border-box;
+                    padding: 25px 0 36px 27px;
                     border-radius: 5px;
+                    background: $mainBG_2;
+                    border: solid 1px $mainBorder_2;
+
+                    .formTitle {
+                        display: flex;
+                        align-items: flex-end;
+                        margin-bottom: 25px;
+                        font-size: 17px;
+                        letter-spacing: 2px;
+                        color: $title_2;
+                        font-weight: bold;
+
+                        .remind {
+                            margin-left: 25px;
+                            font-size: 14px;
+                            letter-spacing: 1px;
+                            color: $remind;
+                        }
+                    }
+
+                    .platformBox {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 740px;
+                        height: auto;
+                        margin-bottom: 20px;
+
+                        p {
+                            width: 158px;
+                            font-size: 14px;
+                            color: $title_2;
+                            font-weight: bold;
+                        }
+
+                        .trans_ic {
+                            display: block;
+                            width: 27px;
+                            height: 23px;
+                        }
+
+                        select {
+                            width: 256px;
+                            height: 42px;
+                            @include mainSelect;
+                        }
+                    }
+
+                    .moneyBox {
+                        width: auto;
+                        height: auto;
+                        display: flex;
+                        align-items: flex-start;
+
+                        p {
+                            width: 158px;
+                            font-size: 14px;
+                            font-weight: bold;
+                            color: $title_2;
+                            margin-top: 14px;
+                        }
+
+                        .inputBox {
+                            width: auto;
+                            height: auto;
+                            margin-left: 14px;
+
+                            input {
+                                width: 256px;
+                                height: 42px;
+                                @include mainInput;
+                            }
+
+                            .btnBox {
+                                width: 256px;
+                                height: auto;
+                                display: flex;
+                                flex-wrap: wrap;
+                                margin-top: 20px;
+
+                                button {
+                                    width: 82px;
+                                    height: 32px;
+                                    @include secondBtn;
+                                    margin: 0 5px 5px 0;
+
+                                    &:nth-of-type(3n) {
+                                        margin-right: 0;
+                                    }
+
+                                    &.check {
+                                        width: 256px;
+                                        height: 42px;
+                                        @include mainBtn;
+                                        margin-top: 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //withdrawal
+        .withdrawalWrap {
+            display: flex;
+
+            .withdrawalMiddle {
+                width: 880px;
+                margin-right: 15px;
+
+                .top {
+                    background: $mainBG_1;
+                    border: solid 1px $mainBorder_1;
+                    width: 100%;
+                    height: auto;
+                    margin-bottom: 20px;
+                    border-radius: 5px;
+
+                    .title {
+                        width: 100%;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        padding: 0 22px;
+                        box-sizing: border-box;
+                        border-bottom: solid 1px $mainBorder_2;
+    
+                        div {
+                            font-weight: bold;
+                            font-size: 20px;
+                            letter-spacing: 2px;
+                            color: $title_1;
+                        }
+                    }
+    
+                    .walletBox {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        width: 100%;
+                        height: 130px;
+                        border-bottom: solid 1px $mainBorder_2;
+    
+                        .smallBox {
+                            width: 33%;
+                            height: 100%;
+                            padding: 18px 25px 0;
+                            box-sizing: border-box;
+    
+                            .smallTitle {
+    
+                                p {
+                                    display: flex;
+                                    height: 23px;
+                                    align-items: center;
+                                    font-size: 17px;
+                                    letter-spacing: 2px;
+                                    color: $mainFont_2;
+                                    font-weight: bold;
+    
+                                    &.limit {
+                                        color: $mainBorder_2;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                    }
+                                    &.canUse {
+                                        color: $mainBorder_2;
+                                    }
+    
+                                    i {
+                                        display: block;
+                                        width: 16px;
+                                        height: 16px;
+                                        margin-left: 6px;
+                                        position: relative;
+                                        overflow: hidden;
+                                        cursor: pointer;
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 100%;
+                                            top: -16px;
+                                            left: 0;
+                                            filter: drop-shadow(0px 16px 0px #ffffff);
+                                        }
+                                    }
+
+                                    button {
+                                        width: auto;
+                                        height: auto;
+                                        @include secondBtn;
+                                        margin-top: 5px;
+                                        padding: 3px 5px;
+                                    }
+                                }
+                            }
+    
+                            .amount {
+                                padding: 28px 0 0 10px;
+                                font-size: 33px;
+                                font-weight: bold;
+                                color: $money;
+                            }
+                        }
+                    }
+    
+                    .platformBox {
+                        width: 100%;
+                        height: auto;
+                        box-sizing: border-box;
+                        padding: 21px 23px 0;
+                        
+                        .platformTitle {
+                            font-size: 17px;
+                            font-weight: bold;
+                            letter-spacing: 2px;
+                            margin-bottom: 20px;
+                            color: $mainFont_2;
+                        }
+    
+                        ul {
+                            width: 100%;
+                            height: 97px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            overflow: hidden;
+    
+                            &.active {
+                                height: auto;
+                            }
+    
+                            li {
+                               width: 196px;
+                               height: 97px;
+                               box-sizing: border-box;
+                               padding: 18px;
+                               margin: 0 16px 16px 0;
+                               border: solid 1px $mainBorder_1;
+                               border-radius: 5px;
+                               background: $smallMoneyBox_BG;
+    
+                               &:nth-of-type(4n) {
+                                   margin-right: 0;
+                               }
+    
+                               .name {
+                                   margin-bottom: 5px;
+                                   font-size: 16px;
+                                   color: $title_2;
+                                   font-weight: bold;
+                                }
+    
+                                .amount {
+                                    font-size: 25px;
+                                    font-weight: bold;
+                                    color: $money;
+                                    margin-top: 8px;
+                                }
+                            }
+                        }
+    
+                        .open {
+                            width: 100%;
+                            height: auto;
+                            padding: 23px 0 35px;
+                            text-align: center;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+    
+                            button {
+                                color: $title_2;
+                                background: none;
+                                display: flex;
+                                align-items: center;
+                                font-size: 13px;
+    
+                                i {
+                                    display: block;
+                                    width: 14px;
+                                    height: 14px;
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .bottom {
+                    background: $mainBG_2;
+                    border: solid 1px $mainBorder_2;
                     width: 100%;
                     min-height: 630px;
                     box-sizing: border-box;
                     padding: 20px 0 20px 24px;
+                    border-radius: 5px;
 
                     .title {
                         font-size: 17px;
@@ -3612,21 +4033,25 @@
                         height: auto;
                         display: flex;
                         margin-bottom: 40px;
+                        flex-wrap: wrap;
 
                         li {
                             display: flex;
                             flex-direction: column;
                             align-items: center;
-                            justify-content: space-evenly;
-                            width: 202px;
+                            justify-content: space-between;
+                            width: 48%;
                             height: 112px;
-                            margin-right: 8px;
+                            margin: 0 1% 1% 0;
                             border: solid 1px $mainBorder_1;
                             border-radius: 5px;
+                            background: $mainBG_2;  
+                            box-sizing: border-box;
+                            padding: 10px 0;
 
                             .name {
                                 font-size: 17px;
-                                color: $mainFont_1;
+                                color: $title_2;
                                 font-weight: bold;
                             }
 
@@ -3634,15 +4059,18 @@
 
                                 span {
                                     font-size: 38px;
-                                    color: $title_1;
+                                    color: $mainFont_1;
                                     font-weight: bold;
                                 }
                             }
 
                             .notice {
-                                font-size: 15px;
-                                letter-spacing: 2px;
-                                color: $title_3;
+                                font-size: 12px;
+                                letter-spacing: 1px;
+                                font-weight: bold;
+                                color: $title_2;
+                                width: 90%;
+                                text-align: center;
                             }
                         }
                     }
@@ -3654,6 +4082,7 @@
                             margin-bottom: 23px;
 
                             p {
+                                width: 170px;
                                 font-size: 14px;
                                 letter-spacing: 1px;
                                 color: $title_2;
@@ -3671,22 +4100,22 @@
                                 select {
                                     width: 257px;
                                     height: 40px;
-                                    margin-left: 26px;
                                     @include mainSelect;
                                 }
 
                                 input {
                                     width: 257px;
                                     height: 40px;
-                                    margin-left: 26px;
                                     @include mainInput;
                                 }
 
                                 .remind {
-                                    margin: 8px 0 0 26px;
+                                    width: 600px;
+                                    margin-top: 8px;
                                     font-size: 12px;
                                     letter-spacing: 1px;
                                     color: $remind;
+                                    font-weight: bold;
                                 }
                             }
                         }
@@ -3694,7 +4123,7 @@
                         button {
                             width: 257px;
                             height: 40px;
-                            margin-left: 100px;
+                            margin-left: 170px;
                             @include mainBtn;
                         }
                     }
@@ -3704,12 +4133,14 @@
                         box-sizing: border-box;
                         padding: 15px 19px;
                         margin: 24px 0 0 -10px;
-                        border: solid 1px $mainBorder_2;
+                        border: solid 1px $mainBorder_1;
+                        background: $mainBG_2;
+                        border-radius: 5px;
 
                         .remindTitle {
                             font-size: 13px;
                             letter-spacing: 1px;
-                            color: $title_1;
+                            color: $remind;
                             font-weight: bold;
                         }
 
@@ -3719,14 +4150,7 @@
                             letter-spacing: 1px;
                             color: $mainFont_1;
                             font-weight: bold;
-                        }
-
-                        p {
-                            display: inline;
-                            color: $remind;
-                            font-size: 13px;
-                            letter-spacing: 1px;
-                            font-weight: bold;
+                            line-height: 16px;
                         }
                     }
                 }
@@ -3737,102 +4161,117 @@
         .inviteWrap {
             width: 1140px;
             height: auto;
-            background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
-            box-sizing: border-box;
-            padding: 20px;
 
             .title {
+                width: 100%;
+                height: 50px;
+                background: $smallBG;
                 color: $title_2;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 0 22px;
+                font-weight: bold;
                 font-size: 20px;
                 letter-spacing: 2px;
-                font-weight: bold;
-                margin-bottom: 15px;
+                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
+                margin-bottom: 20px;
             }
 
-            .box {
+            .bottom {
                 width: 100%;
                 height: auto;
-                display: flex;
-                justify-content: space-between;
+                background: $mainBG_2;
+                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
+                padding: 15px 20px;
+                box-sizing: border-box;
 
-                .left {
-                    width: auto;
+                .box {
+                    width: 100%;
                     height: auto;
-
-                    .row {
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .left {
+                        width: auto;
+                        height: auto;
+                        flex-shrink: 0;
+    
+                        .row {
+                            display: flex;
+                            align-items: center;
+                            height: 50px;
+                            
+                            p {
+                                font-size: 14px;
+                                font-weight: bold;
+    
+                                &:nth-of-type(1) {
+                                    width: 120px;
+                                    color: $title_2;
+                                }
+    
+                                &:nth-of-type(2) {
+                                    width: 339px;
+                                    color: $mainFont_1;
+    
+                                    input {
+                                        width: 100%;
+                                        height: 36px;
+                                        @include mainInput;
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+    
+                            button {
+                                width: auto;
+                                height: 36px;
+                                @include secondBtn;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+    
+                    .right {
                         display: flex;
                         align-items: center;
-                        height: 50px;
-                        
+                        width: 300px;
+                        justify-content: space-between;
+    
                         p {
                             font-size: 14px;
                             font-weight: bold;
-
-                            &:nth-of-type(1) {
-                                width: 80px;
-                                color: $title_2;
-                            }
-
-                            &:nth-of-type(2) {
-                                width: 190px;
-                                color: $mainFont_1;
-
-                                input {
-                                    width: 100%;
-                                    height: 36px;
-                                    @include mainInput;
-                                }
-                            }
+                            color: $title_2;
+                            line-height: 18px;
                         }
-
-                        button {
-                            width: auto;
-                            height: 36px;
-                            @include borderBtn;
-                            padding: 0 5px;
-                            margin-left: 10px;
+    
+                        div {
+                            width: 100px;
+                            height: 100px;
                         }
                     }
                 }
-
-                .right {
-                    display: flex;
-                    align-items: center;
-                    width: 300px;
-                    justify-content: space-between;
-                    margin-right: 200px;
-
+    
+                .mainImg {
+                    width: 100%;
+                    height: 505px;
+                    margin: 20px 0;
+                }
+    
+                .wordBox {
+                    width: auto;
+                    height: auto;
+    
                     p {
-                        font-size: 14px;
+                        font-size: 16px;
                         font-weight: bold;
-                        color: $title_2;
-                        line-height: 18px;
+                        color: $mainFont_1;
+                        margin-bottom: 16px;
+                        line-height: 20px;
                     }
-
-                    div {
-                        width: 100px;
-                        height: 100px;
-                    }
-                }
-            }
-
-            .mainImg {
-                width: 100%;
-                height: 505px;
-                margin: 20px 0;
-            }
-
-            .wordBox {
-                width: auto;
-                height: auto;
-
-                p {
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: $mainFont_1;
-                    margin-bottom: 6px;
                 }
             }
         }
@@ -3840,124 +4279,171 @@
         //查詢紅利
         .pointWrap {
             width: 1140px;
-            height: auto;
-            background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
-            box-sizing: border-box;
 
-            .title {
+            .top {
+                width: 100%;
+                height: 50px;
+                background: $smallBG;
                 color: $title_2;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 0 22px;
+                font-weight: bold;
                 font-size: 20px;
                 letter-spacing: 2px;
-                font-weight: bold;
-                margin-bottom: 15px;
-                padding: 20px 20px 0;
-                box-sizing: border-box;
+                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
             }
 
-            .searchBox {
+            .bottom {
                 width: 100%;
                 height: auto;
-                display: flex;
-                margin-top: 30px;
-                justify-content: space-between;
-                box-sizing: border-box;
-                padding: 0 20px;
+                margin-top: 20px;
 
-                .left {
-                    display: flex;
+                .content {
+                    width: 100%;
+                    height: auto;
+                    background: $mainBG_2;
+                    border-radius: 5px;
+                    border: solid 1px $mainBorder_1;
 
-                    .inputBox {
-                        width: auto;
-                        height: auto;
+                    .search {
+                        width: 100%;
+                        height: 90px;
                         display: flex;
                         align-items: center;
-                        color: $title_2;
-                        font-size: 14px;
-                        font-weight: bold;
-                        margin-right: 15px;
-    
-                        input {
-                            width: 250px;
-                            height: 36px;
-                            @include mainInput;
-                            margin-left: 20px;
-                        }
-                    }
-    
-                    .btnBox {
-                        width: auto;
-                        height: auto;
-                        display: flex;
-    
-                        button {
-                            width: 70px;
-                            height: 36px;
-                            @include changeBtn;
-                            margin-right: 8px;
-                        }
-                    }
-                }
+                        justify-content: space-between;
+                        padding: 0 20px;
+                        border-bottom: solid 1px $mainBorder_1;
+                        box-sizing: border-box;
 
-                .check {
-                    width: 140px;
-                    height: 36px;
-                    @include mainBtn;
-                }
-            }
+                        .dateBox {
+                            width: auto;
+                            height: auto;
+                            display: flex;
+                            align-items: center;
 
-            hr {
-                margin: 15px 0;
-            }
+                            .title {
+                                width: 80px;
+                                height: auto;
+                                color: $title_2;
+                                font-size: 14px;
+                                margin-right: 25px;
+                                font-weight: bold;
+                                letter-spacing: 1px;
+                            }
 
-            table {
-                width: 92%;
-                height: auto;
-                margin: 0 auto;
+                            input {
+                                width: 258px;
+                                height: 42px;
+                                @include mainInput;
+                            }
 
-                tr {
-                    border-bottom: solid 1px $mainBorder_1;
-
-                    &:nth-of-type(1) {
-                        border: none;
-                    }
-
-                    th {
-                        vertical-align: middle;
-                        height: 40px;
-                        border-bottom: solid 2px $mainBorder_2;
-
-                        p {
-                            font-size: 14px;
-                            font-weight: bold;
-                            color: $title_1;
-                        }
-                    }
-
-                    td {
-                        width: 25%;
-                        vertical-align: middle;
-                        height: 40px;
-
-                        &:last-child {
-
-                            p {
-                                border: none;
+                            .btnBox {
+                                width: auto;
+                                height: auto;
+                                font-size: 0;
+                                margin-left: 15px;
+                                
+                                button {
+                                    width: auto;
+                                    height: 42px;
+                                    margin-right: 10px;
+                                    @include secondBtn;
+                                }
                             }
                         }
 
-                        p {
-                            font-size: 14px;
-                            font-weight: bold;
-                            color: $mainFont_1;
-                            text-align: center;
-                            border-right: solid 1px $mainBorder_1;
+                        .check {
+                            width: 152px;
+                            height: 42px;
+                            @include mainBtn;
+                        }
+                    }
 
-                            &.open {
-                                text-decoration: underline;
-                                color: $remind_sp2;
-                                cursor: pointer;
+                    .box {
+                        width: 100%;
+                        height: auto;
+                        box-sizing: border-box;
+                        padding: 30px 20px;
+
+                        .noData {
+                            display: none;
+                            width: 100%;
+                            height: 233px;
+                            align-items: center;
+                            justify-content: center;
+                            letter-spacing: 1px;
+                            color: $disable;
+                            font-weight: bold;
+
+                            &.display {
+                                display: flex;
+                            }
+                        }
+
+                        table {
+                            width: 100%;
+                            height: auto;
+                            overflow: hidden;
+                            border-radius: 5px;
+                            box-shadow: 0 0 0 1px $tableList_Border;
+                            display: none;
+
+                            &.display {
+                                display: table;
+                            }
+
+                            tr {
+
+                                &:last-child {
+
+                                    td {
+                                        border: none;
+                                    }
+                                }
+
+                                th,td {
+                                    vertical-align: middle;
+                                    height: 50px;
+                                    border-bottom: solid 2px $tableList_Border;
+                                    background: $tableList_TitleBG;
+
+                                    &:last-child {
+
+                                        p {
+                                            border: none;
+                                        }
+                                    }
+
+                                    p {
+                                        width: 100%;
+                                        text-align: center;
+                                        font-size: 13px;
+                                        letter-spacing: 1px;
+                                        font-weight: bold;
+                                        color: $tableList_Title;
+                                        border-right: solid 1px $mainBorder_1;
+                                        box-sizing: border-box;
+                                    }
+                                }
+
+                                td {
+                                    border-bottom: solid 1px $mainBorder_1;
+                                    color: $mainFont_1;
+                                    width: 25%;
+                                    background: $tableList_ListBG;
+
+                                    &:nth-of-type(1) {
+                                        
+                                        p {
+                                            color: $tableList_betWord;
+                                            text-decoration: underline;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

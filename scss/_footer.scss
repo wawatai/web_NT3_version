@@ -1,11 +1,12 @@
 footer {
     width: 100%;
     height: auto;
+    background: $footer_BG1;
 
     //上部
     .top {
         width: 100%;
-        height: 55px;
+        height: 35px;
 
         .center {
             width: 1400px;
@@ -24,19 +25,22 @@ footer {
                     height: 100%;
 
                     li {
-                        width: 95px;
+                        width: auto;
                         height: 100%;
-                        margin-right: 8px;
+                        margin-right: 10px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         cursor: pointer;
-                        color: $title_1;
+                        color: $footer_Word1;
                         font-weight: bold;
                         font-size: 14px;
+                        box-sizing: border-box;
+                        padding: 0 12px;
 
                         &:hover,&:active,&.active {
-                            color: $mainFont_2;
+                            color: $footer_Word2;
+                            background: $footer_Hover;
                         }
                     }
                 }
@@ -45,7 +49,7 @@ footer {
             p {
                 font-size: 14px;
                 font-weight: bold;
-                color: $title_1;
+                color: $footer_Word1;
                 height: 100%;
                 display: flex;
                 align-items: center;
@@ -57,7 +61,8 @@ footer {
     //下部
     .footerList {
         width: 100%;
-        height: 160px;
+        height: 72px;
+        background: $footer_BG2;
 
         .center {
             width: 1400px;
@@ -69,12 +74,13 @@ footer {
             flex-direction: column;
 
             p {
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: bold;
-                color: $mainFont_2;
+                color: $footer_Word2;
+                letter-spacing: 1px;
 
                 &:last-child {
-                    margin-top: 20px;
+                    margin-top: 10px;
                 }
             }
         }

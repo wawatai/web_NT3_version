@@ -21,39 +21,39 @@ $(function() {
     $('.sportBtn').mouseenter(function(){
         $('.topGameList,.topGameList .sport').addClass('display');
         $('.topGameList .sport').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').removeClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.liveBtn').mouseenter(function(){
         $('.topGameList,.topGameList .live').addClass('display');
         $('.topGameList .live').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').removeClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.slotBtn').mouseenter(function(){
         $('.topGameList,.topGameList .slot').addClass('display');
         $('.topGameList .slot').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').addClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.lotteryBtn').mouseenter(function(){
         $('.topGameList,.topGameList .lottery').addClass('display');
         $('.topGameList .lottery').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').removeClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.fishBtn').mouseenter(function(){
         $('.topGameList,.topGameList .fish').addClass('display');
         $('.topGameList .fish').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').removeClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
     $('.boardBtn').mouseenter(function(){
         $('.topGameList,.topGameList .board').addClass('display');
         $('.topGameList .board').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').addClass('display');
+        // $('.topGameList .prev,.topGameList .next').removeClass('display');
     })
 })
 
 //ad
 $(document).on('ready', function() {
 	$(".single-item").slick({
-		dots: false,
+		dots: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
@@ -63,60 +63,33 @@ $(document).on('ready', function() {
 })
 
 //slot下拉選單寬度+點擊滑動
-$(function(){
-    var slot = $('.listWrap .slot li');
-    var slotl = slot.length;
-    var slwp = $('.topGameList .slot');
-    $(slwp).css("width",""+220 * slotl+"");
+// $(function(){
+//     var slot = $('.listWrap .slot li');
+//     var slotl = slot.length;
+//     var slwp = $('.topGameList .slot');
+//     $(slwp).css("width",""+220 * slotl+"");
 
-    var n = 0;
-    var nt = $('.listWrap .next');
-    var pv = $('.listWrap .prev');
-    $(nt).click(function(){
-        n ++;
-        $(slwp).css("transform","translateX("+(-220 * n)+"px)");
+//     var n = 0;
+//     var nt = $('.listWrap .next');
+//     var pv = $('.listWrap .prev');
+//     $(nt).click(function(){
+//         n ++;
+//         $(slwp).css("transform","translateX("+(-220 * n)+"px)");
 
-        if(n == 5){
-            n --;
-        }
-    })
-    $(pv).click(function(){
-        n --;
-        $(slwp).css("transform","translateX("+(-220 * n)+"px)");
+//         if(n == 1){
+//             n --;
+//         }
+//     })
+//     $(pv).click(function(){
+//         n --;
+//         $(slwp).css("transform","translateX("+(-220 * n)+"px)");
 
-        if(n == -1){
-            $(slwp).css("transform","translateX(0px)");
-            n ++;
-        }
-    })
-})
-$(function(){
-    var board = $('.listWrap .board li');
-    var boardl = board.length;
-    var bdwp = $('.topGameList .board');
-    $(bdwp).css("width",""+220 * boardl+"");
-
-    var n = 0;
-    var nt = $('.listWrap .next');
-    var pv = $('.listWrap .prev');
-    $(nt).click(function(){
-        n ++;
-        $(bdwp).css("transform","translateX("+(-220 * n)+"px)");
-
-        if(n == 1){
-            n --;
-        }
-    })
-    $(pv).click(function(){
-        n --;
-        $(bdwp).css("transform","translateX("+(-220 * n)+"px)");
-
-        if(n == -1){
-            $(bdwp).css("transform","translateX(0px)");
-            n ++;
-        }
-    })
-})
+//         if(n == -1){
+//             $(slwp).css("transform","translateX(0px)");
+//             n ++;
+//         }
+//     })
+// })
 
 //.vipWrap .detailCardBox內選單滑動
 $(function(){
@@ -152,25 +125,21 @@ $(function(){
         
         $('header .sportBtn').attr("onclick","window.location.href='./html/sportPage.html'");
         $('header .liveBtn').attr("onclick","window.location.href='./html/livePage.html'");
-        $('header .slotBtn').attr("onclick","window.location.href='./html/slotPage.html'");
+        $('header .slotBtn,.topGameList .slot li,.typeList .slot').attr("onclick","window.location.href='./html/slotPage.html'");
         $('header .lotteryBtn').attr("onclick","window.location.href='./html/lotteryPage.html'");
-        $('header .fishBtn').attr("onclick","window.location.href='./html/fishPage.html'");
-        $('header .boardBtn').attr("onclick","window.location.href='./html/boardPage.html'");
+        $('header .fishBtn,.topGameList .fish li,.typeList .fish').attr("onclick","window.location.href='./html/fishPage.html'");
+        $('header .boardBtn,.topGameList .board li,.typeList .board').attr("onclick","window.location.href='./html/boardPage.html'");
         $('header .event').attr("onclick","window.location.href='./html/event.html'");
-        $('header .vip').attr("onclick","window.location.href='./html/vip.html'");
 
         $('.topGameList .sport li,.typeList .sport').attr("onclick","openSportGame()");
         $('.topGameList .live li,.typeList .live').attr("onclick","openLiveGame()");
         $('.topGameList .lottery li,.typeList .lottery').attr("onclick","openLotteryGame()");
-        $('.topGameList .slot li,.typeList .slot').attr("onclick","window.location.href='./html/slotPageInner.html'");
-        $('.topGameList .fish li,.typeList .fish').attr("onclick","window.location.href='./html/fishPageInner.html'");
-        $('.topGameList .board li,.typeList .board').attr("onclick","window.location.href='./html/boardPageInner.html'");
     })
 })
 
 //.transferInfo display
 $(function(){
-    $('.moneyTotal').click(function(){
+    $('.user.alLogin .total').click(function(){
         $('.transferInfo').toggleClass('display');
     })
 })
@@ -206,7 +175,7 @@ $(function(){
         $('.filter,.listWindow').addClass('display');
     })
 
-    $('.eventBox .check').click(function(){
+    $('.eventBox .check,.eventBoxAl .check').click(function(){
         $('.jumpWindow').removeClass('display');
         $('.filter,.checkEvent').addClass('display');
     })
@@ -231,6 +200,15 @@ $(function(){
     $(".pointWrap .open").click(function(){
         $('.jumpWindow').removeClass('display');
         $('.filter,.pointWindow').addClass('display');
+    })
+
+    $(".registerWrap .send").click(function(){
+        $('.jumpWindow').removeClass('display');
+        $('.filter,.plsGo').addClass('display');
+    })
+    $(".registerWrap .check span").click(function(){
+        $('.jumpWindow').removeClass('display');
+        $('.filter,.ruleWindow').addClass('display');
     })
 })
 function unlogin(){
@@ -261,26 +239,44 @@ function openBoardGame(){
     $('.jumpWindow').removeClass('display');
     $('.filter,.betWindow.boardGame').addClass('display');
 }
+function loading(){
+    $('.jumpWindow').removeClass('display');
+    $('.filter,.loading').addClass('display');
+
+    setTimeout(function(){
+        $(".filter")
+        .removeClass("display");
+    },2000);
+}
 
 //gameWrap小遊戲格hover切換左大圖
-$(function(){
-    $(".gameWrap .innBox li").hover(function(){
-        var n = $(this).index();
+// $(function(){
+//     $(".livePage .btnBox li:eq(0)").hover(function(){
+//         $(".livePage .mainImg").attr("src","../images/partner/live/liveBG_1.png")
+//     })
+//     $(".livePage .btnBox li:eq(1)").hover(function(){
+//         $(".livePage .mainImg").attr("src","../images/partner/live/liveBG_2.png")
+//     })
+//     $(".livePage .btnBox li:eq(2)").hover(function(){
+//         $(".livePage .mainImg").attr("src","../images/partner/live/liveBG_3.png")
+//     })
+//     $(".livePage .btnBox li:eq(3)").hover(function(){
+//         $(".livePage .mainImg").attr("src","../images/partner/live/liveBG_4.png")
+//     })
+//     $(".livePage .btnBox li:eq(4)").hover(function(){
+//         $(".livePage .mainImg").attr("src","../images/partner/live/liveBG_5.png")
+//     })
 
-        $(".gameWrap .sportPage .mainImg")
-        .attr("src","../images/partner/sport/sportBG_"+ (n + 1) +".png");
-        $(".gameWrap .livePage .mainImg")
-        .attr("src","../images/partner/live/liveBG_"+ (n + 1) +".png");
-        $(".gameWrap .lotteryPage .mainImg")
-        .attr("src","../images/partner/lottery/lotteryBG_"+ (n + 1) +".png");
-        $(".gameWrap .slotPage .mainImg")
-        .attr("src","../images/partner/slot/slotBG_"+ (n + 1) +".png");
-        $(".gameWrap .fishPage .mainImg")
-        .attr("src","../images/partner/fish/fishBG_"+ (n + 1) +".png");
-        $(".gameWrap .boardPage .mainImg")
-        .attr("src","../images/partner/board/boardBG_"+ (n + 1) +".png");
-    })
-})
+//     $(".lotteryPage .btnBox li:eq(0)").hover(function(){
+//         $(".lotteryPage .mainImg").attr("src","../images/partner/lottery/lotteryBG_1.png")
+//     })
+//     $(".lotteryPage .btnBox li:eq(1)").hover(function(){
+//         $(".lotteryPage .mainImg").attr("src","../images/partner/lottery/lotteryBG_2.png")
+//     })
+//     $(".lotteryPage .btnBox li:eq(2)").hover(function(){
+//         $(".lotteryPage .mainImg").attr("src","../images/partner/lottery/lotteryBG_3.png")
+//     })
+// })
 
 //jumpWindow .new .content
 $(function(){
@@ -318,32 +314,32 @@ $(function(){
     })
 })
 //slotPage 遊戲展開
-// $(function(){
-//     $('.pfName .all').click(function(){
-//         $('.platforms').removeClass('display');
-//         $($(this).closest('.platforms')).addClass('display');
-//         $($(this).closest('.pfName').next('.gameList')).addClass('active');
-//         $($(this).closest('.pfName')).addClass('active');
-//     })
+$(function(){
+    $('.pfName .all').click(function(){
+        $('.platforms').removeClass('display');
+        $($(this).closest('.platforms')).addClass('display');
+        $($(this).closest('.pfName').next('.gameList')).addClass('active');
+        $($(this).closest('.pfName')).addClass('active');
+    })
 
-//     $('.pfName .back').click(function(){
-//         $('.platforms').addClass('display');
-//         $('.pfName.active,.gameList.active').removeClass('active');
-//     })
-// })
+    $('.pfName .back').click(function(){
+        $('.platforms').addClass('display');
+        $('.pfName.active,.gameList.active').removeClass('active');
+    })
+})
 
 //eventList+eventDetail 切換
-// $(function(){
-//     $('.eventBox .btnBox button').click(function(){
-//         $('.eventList').removeClass('display');
-//         $('.eventDetail').addClass('display');
-//     })
+$(function(){
+    $('.eventBox .btnBox button').click(function(){
+        $('.eventList').removeClass('display');
+        $('.eventDetail').addClass('display');
+    })
 
-//     $('.eventDetail .back').click(function(){
-//         $('.eventList').addClass('display');
-//         $('.eventDetail').removeClass('display');
-//     })
-// })
+    $('.eventDetail .back').click(function(){
+        $('.eventList').addClass('display');
+        $('.eventDetail').removeClass('display');
+    })
+})
 
 //vipWrap切換
 $(function(){
@@ -545,79 +541,165 @@ $(function(){
 })
 //helpPage .nav 連動切換
 $(function(){
-    $('.forNew_1').click(function(){
-        $('.newHelp_1').addClass('display');
-        $('.newHelp_1').siblings().removeClass('display');
-    })
-    $('.forNew_2').click(function(){
-        $('.newHelp_2').addClass('display');
-        $('.newHelp_2').siblings().removeClass('display');
-    })
-    $('.forNew_3').click(function(){
-        $('.newHelp_3').addClass('display');
-        $('.newHelp_3').siblings().removeClass('display');
-    })
-    $('.forNew_4').click(function(){
-        $('.newHelp_4').addClass('display');
-        $('.newHelp_4').siblings().removeClass('display');
-    })
-    $('.forNew_5').click(function(){
-        $('.newHelp_5').addClass('display');
-        $('.newHelp_5').siblings().removeClass('display');
-    })
-    $('.forNew_6').click(function(){
-        $('.newHelp_6').addClass('display');
-        $('.newHelp_6').siblings().removeClass('display');
+    $('.forNew').click(function(){
+        var n = $(this).index();
+
+        $(".newHelp:eq("+ n +")")
+        .addClass("display")
+        .siblings().removeClass("display");
     })
 
-    $('.forQues_1').click(function(){
-        $('.question_1').addClass('display');
-        $('.question_1').siblings().removeClass('display');
-    })
-    $('.forQues_2').click(function(){
-        $('.question_2').addClass('display');
-        $('.question_2').siblings().removeClass('display');
-    })
-    $('.forQues_3').click(function(){
-        $('.question_3').addClass('display');
-        $('.question_3').siblings().removeClass('display');
+    $('.forQues').click(function(){
+        var n = $(this).index();
+
+        $(".question:eq("+ n +")")
+        .addClass("display")
+        .siblings().removeClass("display");
     })
 
-    $('.forUs_1').click(function(){
-        $('.aboutUs_1').addClass('display');
-        $('.aboutUs_1').siblings().removeClass('display');
+    $('.forApp').click(function(){
+        var n = $(this).index();
+
+        $(".download:eq("+ n +")")
+        .addClass("display")
+        .siblings().removeClass("display");
     })
-    $('.forUs_2').click(function(){
-        $('.aboutUs_2').addClass('display');
-        $('.aboutUs_2').siblings().removeClass('display');
+})
+
+//register choose切換
+$(function(){
+    $(".registerWrap .choose li").click(function(){
+        $(this).removeClass("display");
+        $(this).siblings().addClass("display")
     })
-    $('.forUs_3').click(function(){
-        $('.aboutUs_3').addClass('display');
-        $('.aboutUs_3').siblings().removeClass('display');
+})
+
+//deposit滑動
+$(function(){
+    var depWay = $('.depositWrap .box ul');
+
+    var n = 0;
+    var nt = $('.depositWrap .list .next');
+    var pv = $('.depositWrap .list .prev');
+    $(nt).click(function(){
+        n ++;
+        $(depWay).css("transform","translateX("+(-50 * n)+"px)");
+
+        if(n == 1){
+            n --;
+        }
     })
-    $('.forUs_4').click(function(){
-        $('.aboutUs_4').addClass('display');
-        $('.aboutUs_4').siblings().removeClass('display');
+    $(pv).click(function(){
+        n --;
+        $(depWay).css("transform","translateX("+(-50 * n)+"px)");
+
+        if(n == -1){
+            $(depWay).css("transform","translateX(0px)");
+            n ++;
+        }
     })
-    $('.forUs_5').click(function(){
-        $('.aboutUs_5').addClass('display');
-        $('.aboutUs_5').siblings().removeClass('display');
-    })
-    $('.forUs_6').click(function(){
-        $('.aboutUs_6').addClass('display');
-        $('.aboutUs_6').siblings().removeClass('display');
+})
+
+//交易紀錄切換date
+$(function(){
+    $(".dealWrap .search .btnBox button").click(function(){
+        $(this)
+        .addClass("active")
+        .siblings().removeClass("active");
     })
 
-    $('.forApp_1').click(function(){
-        $('.app_1').addClass('display');
-        $('.app_1').siblings().removeClass('display');
+    $(".dealWrap .search .btnBox button:eq(1)").click(function(){
+        $(".dealWrap .dealBox .fakeTable table:eq(0)")
+        .addClass("display")
+        .siblings().removeClass("display");
     })
-    $('.forApp_2').click(function(){
-        $('.app_2').addClass('display');
-        $('.app_2').siblings().removeClass('display');
+    $(".dealWrap .search .btnBox button:eq(0)").click(function(){
+        $(".dealWrap .dealBox .fakeTable table:eq(1)")
+        .addClass("display")
+        .siblings().removeClass("display");
     })
-    $('.forApp_3').click(function(){
-        $('.app_3').addClass('display');
-        $('.app_3').siblings().removeClass('display');
+    $(".dealWrap .search .btnBox button:eq(2),.dealWrap .search .btnBox button:eq(3)").click(function(){
+        $(".dealWrap .dealBox .fakeTable .noData")
+        .addClass("display")
+        .siblings().removeClass("display");
+    })
+})
+
+//查詢紅利切換date
+$(function(){
+    $(".pointWrap .search .btnBox button").click(function(){
+        $(this)
+        .addClass("active")
+        .siblings().removeClass("active");
+    })
+
+    $(".pointWrap .search .btnBox button:eq(1)").click(function(){
+        $(".pointWrap .box table")
+        .addClass("display")
+        .siblings().removeClass("display");
+    })
+    $(".pointWrap .search .btnBox button:eq(1)").siblings().click(function(){
+        $(".pointWrap .box .noData")
+        .addClass("display")
+        .siblings().removeClass("display");
+    })
+})
+
+//投注紀錄切換date
+$(function(){
+    $(".betWrap .timeGroup .btnBox button").click(function(){
+        $(this)
+        .addClass("active")
+        .siblings().removeClass("active");
+    })
+
+    $(".betWrap .timeGroup .btnBox button:eq(1)").click(function(){
+        $(".betWrap .fakeTable ul:eq(0)")
+        .addClass("display")
+        .siblings().removeClass("display");
+    })
+    $(".betWrap .timeGroup .btnBox button:eq(0)").click(function(){
+        $(".betWrap .fakeTable ul:eq(1)")
+        .addClass("display")
+        .siblings().removeClass("display");
+    })
+    $(".betWrap .timeGroup .btnBox button:eq(2),.betWrap .timeGroup .btnBox button:eq(3)").click(function(){
+        $(".betWrap .fakeTable .noData")
+        .addClass("display")
+        .siblings().removeClass("display");
+    })
+})
+
+//優惠申請切換date
+$(function(){
+    $(".eventWrap .eventRecord .dateBtnBox button").click(function(){
+        $(this)
+        .addClass("active")
+        .siblings().removeClass("active");
+    })
+
+    $(".eventWrap .eventRecord .dateBtnBox button:eq(1)").click(function(){
+        $(".eventWrap .tableWrap table:eq(0)")
+        .addClass("display")
+        .siblings().removeClass("display");
+    })
+    $(".eventWrap .eventRecord .dateBtnBox button:eq(0)").click(function(){
+        $(".eventWrap .tableWrap table:eq(1)")
+        .addClass("display")
+        .siblings().removeClass("display");
+    })
+    $(".eventWrap .eventRecord .dateBtnBox button:eq(2),.eventWrap .eventRecord .dateBtnBox button:eq(3)").click(function(){
+        $(".eventWrap .tableWrap .noData")
+        .addClass("display")
+        .siblings().removeClass("display");
+    })
+})
+
+//優惠頁左列切換
+$(function(){
+    $(".eventWrap .side li").click(function(){
+        $(this)
+        .addClass("active")
+        .siblings().removeClass("active");
     })
 })

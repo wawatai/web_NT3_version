@@ -1,5 +1,4 @@
 .eventWrap {
-    background: $mainBG_2;
 
     .eventTitle {
         width: 100%;
@@ -7,6 +6,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
+        padding-top: 30px;
     
         p {
             font-size: 61px;
@@ -27,8 +28,10 @@
             width: 357px;
             margin-right: 13px;
             height: auto;
-            background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
+            background: $smallBG;
+            border: solid 1px $mainBorder_2;
+            border-radius: 5px;
+            overflow: hidden;
 
             ul {
                 width: 100%;
@@ -43,8 +46,35 @@
                     position: relative;
                     cursor: pointer;
 
+                    &:nth-of-type(2),
+                    &:nth-of-type(4) {
+                        
+                        span {
+                            font-size: 16px;
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        
+                        span {
+                            font-size: 14px;
+                        }
+                    }
+
                     &:hover,&:active,&.active {
-                        @include navHover;
+                        background: $innerSide_HoverBG2;
+
+                        span {
+                            color: $title_1;
+                        }
+
+                        i {
+                            background: none;
+
+                            &::before {
+                                display: block;
+                            }
+                        }
                     }
 
                     i {
@@ -52,161 +82,166 @@
                         width: 23px;
                         height: 23px;
                         margin: 0 28px;
+                        overflow: hidden;
+                        position: relative;
+                        flex-shrink: 0;
+
+                        &::before {
+                            display: none;
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            left: -23px;
+                            top: 0;
+                            filter: drop-shadow(23px 0px 0px #fff7d8);
+                        }
                     }
 
                     span {
                         font-weight: bold;
                         font-size: 22px;
-                        color: $mainFont_1;
+                        color: $title_2;
                     }
                 }
             }
         }
 
         .eventList {
-            // display: none;
-            width: 1024px;
+            display: none;
+            width: 1028px;
 
-            // &.display {
-            //     display: block;
-            // }
+            &.display {
+                display: block;
+            }
 
             .eventBox {
-                background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                background: $event_RightBG;
+                border: solid 1px $mainBorder_2;
+                display: flex;
                 margin-bottom: 20px;
-                overflow: hidden;
                 border-radius: 5px;
+                overflow: hidden;
 
                 &:last-child {
                     margin: 0;
                 }
 
                 ul {
-                    width: 100%;
-                    height: 60px;
+                    width: 252px;
                     display: flex;
-                    align-items: center;
+                    flex-direction: column;
                     justify-content: space-between;
-                    box-sizing: border-box;
-                    padding: 0 20px;
+                    margin: 30px 27px;
 
                     .title {
-                        width: 72%;
-                        font-size: 24px;
+                        font-size: 29px;
                         font-weight: bold;
                         letter-spacing: 3px;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
-                        color: $title_2;
+                        color: $mainFont_1;
                     }
 
                     .btnBox {
-                        width: auto;
+                        width: 100%;
                         height: auto;
                         display: flex;
 
-                        &.twin {
-
-                            button {
-
-                                &:last-child {
-                                    display: block;
-                                }
-                            }
-                        }
-
                         button {
-                            width: 117px;
+                            width: 100%;
                             height: 37px;
-                            @include mainBtn;
-
-                            &:last-child {
-                                display: none;
-                                @include eventApply;
-                                margin-left: 10px;
-                            }
+                            @include thirdBtn;
                         }
                     }
                 }
             }
         }
 
-        // .eventDetail {
-        //     display: none;
-        //     width: 1028px;
-        //     background: $mainBG_1;
-        //     box-shadow: 0px 5px 10px -5px $mainShadow_1;
+        .eventDetail {
+            display: none;
+            width: 1028px;
+            background: $event_RightBG;
+            border: solid 1px $mainBorder_2;
+            border-radius: 5px;
+            overflow: hidden;
 
-        //     &.display {
-        //         display: block;
-        //     }
+            &.display {
+                display: block;
+            }
 
-        //     .title {
-        //         padding: 22px 40px 18px;
+            .title {
+                padding: 22px 40px 18px;
 
-        //         p {
-        //             font-size: 34px;
-        //             font-weight: bold;
-        //             color: $title_2;
-        //         }
+                p {
+                    font-size: 34px;
+                    font-weight: bold;
+                    color: $title_2;
+                }
 
-        //         button {
-        //             width: 135px;
-        //             height: 36px;
-        //             margin-top: 18px;
-        //             @include normalBtn;
+                button {
+                    width: auto;
+                    height: 36px;
+                    margin-top: 18px;
+                    @include mainBtn;
+                    padding: 0 8px;
 
-        //             i {
-        //                 display: inline-block;
-        //                 width: 17px;
-        //                 height: 17px;
-        //                 margin: 0 10px -2px 0;
-        //             }
-        //         }
-        //     }
+                    i {
+                        display: inline-block;
+                        width: 17px;
+                        height: 17px;
+                        margin-bottom: -3px;
+                    }
+                }
+            }
 
-        //     .info {
-        //         padding: 25px 40px;
+            .info {
+                padding: 25px 40px;
+
+                img {
+                    width: 100%;
+                }
+
+                p:not(.infoTitle) {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: $mainFont_1;
+                    margin: 15px 0;
+                    line-height: 20px;
+                }
                 
-        //         .infoTitle {
-        //             font-size: 26px;
-        //             font-weight: bold;
-        //             margin-bottom: 30px;
-        //             color: $title_1;
-        //         }
+                .infoTitle {
+                    font-size: 26px;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+                    color: $title_2;
+                }
 
-        //         ul {
-        //             list-style: disc;
-        //             margin: 10px 0;
+                ul {
+                    margin: 10px 0;
+                    padding: 0 17px;
 
-        //             &.rule {
-        //                 margin-top: 30px;
+                    li {
+                        font-size: 16px;
+                        color: $mainFont_1;
+                        line-height: 20px;
+                        margin-bottom: 10px;
+                        list-style: decimal;
+                        font-weight: bold;
 
-        //                 li {
-        //                     font-weight: bold;
-        //                 }
-        //             }
+                        &.remind {
+                            color: $remind;
+                        }
+                    }
+                }
+            }
 
-        //             li {
-        //                 font-size: 16px;
-        //                 color: $mainFont_1;
-        //                 line-height: 20px;
-        //                 margin-bottom: 5px;
-
-        //                 &.remind {
-        //                     color: $remind;
-        //                 }
-        //             }
-        //         }
-        //     }
-
-        //     .detailFooter {
-        //         width: 100%;
-        //         height: 130px;
-        //         padding-bottom: 60px;
-        //     }
-        // }
+            .detailFooter {
+                width: 100%;
+                height: 130px;
+                padding-bottom: 60px;
+            }
+        }
     }
 }

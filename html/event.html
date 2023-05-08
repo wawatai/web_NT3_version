@@ -21,16 +21,15 @@
             </span> -->
             <ul class="user alLogin display">
                 <li class="lv">
-                    <span>VIP20</span>
-                    userName
-                </li>
-                <li class="moneyTotal">
-                    <span class="total">9999</span>
-                    <i class="money_arrow"></i>
+                    <p class="level">Thành viên mới</p>
+                    <p class="name">
+                        userName
+                        <span class="total">9999</span>
+                    </p>
                     <ul class="transferInfo">
                         <li class="platform">
                             <div>
-                                <p>BNG娛樂</p>
+                                <p>BNG</p>
                                 <p class="money">
                                     <i class="display"></i>
                                     <span></span>
@@ -57,7 +56,7 @@
                         </li>
                         <li class="platform">
                             <div>
-                                <p>歐博</p>
+                                <p>ALL BET</p>
                                 <p class="money">
                                     <i></i>
                                     <span>0</span>
@@ -111,7 +110,7 @@
                         </li>
                         <li class="platform">
                             <div>
-                                <p>必贏</p>
+                                <p>bWin</p>
                                 <p class="money">
                                     <i></i>
                                     <span>0</span>
@@ -120,7 +119,7 @@
                         </li>
                         <li class="platform">
                             <div>
-                                <p>36588體育</p>
+                                <p>36588</p>
                                 <p class="money">
                                     <i></i>
                                     <span>0</span>
@@ -148,30 +147,28 @@
                     </ul>
                 </li>
                 <li onclick="window.location.href='./deposit.html'">
-                    存款
+                    <i class="deposit_ic"></i>
+                    Nạp tiền
                 </li>
                 <li onclick="window.location.href='./transfer.html'">
-                    轉帳
+                    <i class="transfer_ic"></i>
+                    CHUYỂN ĐIỂM
                 </li>
                 <li onclick="window.location.href='./withdrawal.html'">
-                    提款
+                    <i class="withdrawal_ic"></i>
+                    RÚT TIỀN
                 </li>
                 <li onclick="window.location.href='./member.html'">
-                    會員中心
+                    <i class="member_ic"></i>
+                    Thông tin hội viên
                 </li>
                 <li onclick="window.location.href='./mail.html'">
-                    站內信
+                    <i class="mail_ic"></i>
+                    Thư thông báo
                 </li>
-                <li class="logoutBtn" onclick="window.location.href='../index.html'">
-                    登出
-                </li>
-                <li class="lang">
-                    <select>
-                        <option>繁體中文</option>
-                        <option>简体中文</option>
-                        <option>ENGLISH</option>
-                        <option>日本語</option>
-                    </select>
+                <li onclick="window.location.href='../index.html'">
+                    <i class="exit_ic"></i>
+                    Đăng xuất
                 </li>
             </ul>
         </div>
@@ -179,247 +176,169 @@
             <div class="center">
                 <img class="logo" src="../images/icon/logo.png">
                 <ul>
-                    <li class="menu" onclick="window.location.href='../index.html'">首頁</li>
-                    <li class="sportBtn" onclick="window.location.href='./sportPage.html'">體育賽事</li>
-                    <li class="liveBtn" onclick="window.location.href='./livePage.html'">真人娛樂</li>
-                    <li class="slotBtn" onclick="window.location.href='./slotPage.html'">老虎機</li>
-                    <li class="lotteryBtn" onclick="window.location.href='./lotteryPage.html'">彩票</li>
-                    <li class="fishBtn" onclick="window.location.href='./fishPage.html'">捕魚機</li>
-                    <li class="boardBtn" onclick="window.location.href='./boardPage.html'">棋牌遊戲</li>
-                    <!-- <li class="activeWallet">活動錢包</li> -->
-                    <li class="event active" onclick="window.location.href='./event.html'">優惠中心</li>
-                    <li class="vip" onclick="window.location.href='./vip.html'">VIP會員</li>
+                    <li class="menu" onclick="window.location.href='../index.html'">TRANG CHỦ</li>
+                    <li class="sportBtn" onclick="window.location.href='./sportPage.html'">THỂ THAO</li>
+                    <li class="liveBtn" onclick="window.location.href='./livePage.html'">CASINO</li>
+                    <li class="lotteryBtn" onclick="window.location.href='./lotteryPage.html'">XỔ SỐ</li>
+                    <li class="slotBtn" onclick="window.location.href='./slotPage.html'">SLOTS</li>
+                    <li class="fishBtn" onclick="window.location.href='./fishPage.html'">BẮN CÁ</li>
+                    <li class="boardBtn" onclick="window.location.href='./boardPage.html'">GAME BÀI</li>
+                    <li class="event active" onclick="window.location.href='./event.html'">KHUYẾN MÃI</li>
                 </ul>
             </div>
         </div>
         <div class="topGameList">
-            <div class="listWrap">
-                <div class="center">
-                    <i class="prev"></i>
-                    <div class="container">
-                        <ul class="sport">
-                            <li onclick="openSportGame()">
-                                <div>
-                                    <img src="../images/partner/sport/36588.png">
-                                </div>
-                                <p>36588體育</p>
-                            </li>
-                        </ul>
-                        <ul class="live">
+             <div class="listWrap">
+                 <div class="center">
+                     <i class="prev"></i>
+                     <div class="container">
+                         <ul class="sport">
+                             <li onclick="openSportGame()">
+                                 <div>
+                                     <img src="../images/partner/sport/36588.png">
+                                 </div>
+                                 <p>36588</p>
+                             </li>
+                         </ul>
+                         <ul class="live">
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_1.png">
                                 </div>
-                                <p>沙龍真人娛樂</p>
+                                <p>SA</p>
                             </li>
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_2.png">
                                 </div>
-                                <p>歐博真人娛樂</p>
+                                <p>All BET</p>
                             </li>
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_3.png">
                                 </div>
-                                <p>DG真人娛樂</p>
+                                <p>DG</p>
                             </li>
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_4.png">
                                 </div>
-                                <p>WM真人娛樂</p>
+                                <p>WM</p>
                             </li>
                             <li onclick="openLiveGame()">
                                 <div>
                                     <img src="../images/partner/live/live_5.png">
                                 </div>
-                                <p>OG真人娛樂</p>
+                                <p>OG</p>
                             </li>
-                            <li onclick="openLiveGame()">
+                         </ul>
+                         <ul class="lottery">
+                            <li onclick="openLotteryGame()">
                                 <div>
-                                    <img src="../images/partner/live/live_7.png">
+                                    <img src="../images/partner/lottery/rwd.png">
                                 </div>
-                                <p>RG真人娛樂</p>
+                                <p>RWD</p>
                             </li>
-                        </ul>
-                        <ul class="slot">
-                            <li onclick="window.location.href='./slotPageInner.html'">
+                         </ul>
+                         <ul class="slot">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
                                     <img src="../images/partner/slot/bng.png">
                                 </div>
-                                <p>BNG電子娛樂</p>
+                                <p>BNG</p>
                                 <div class="fixBox display">
-                                    <p class="title">維護中</p>
+                                    <p class="title">duy trì</p>
                                     <p>2022/03/02 下午2:00 ~</p>
                                     <p>2020/03/02 下午4:00</p>
                                 </div>
                             </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/bwin.png">
-                                </div>
-                                <p>必贏電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/fa.png">
-                                </div>
-                                <p>福星電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/gr.png">
-                                </div>
-                                <p>好路棋牌</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/ifun.png">
-                                </div>
-                                <p>FUN GAME</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/pls.png">
-                                </div>
-                                <p>PLS電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/png.png">
-                                </div>
-                                <p>PNG電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/rsg.png">
-                                </div>
-                                <p>RSG電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/slot/sp.png">
-                                </div>
-                                <p>SimplePlay</p>
-                            </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
                                     <img src="../images/partner/slot/tpg.png">
                                 </div>
-                                <p>TPG電子娛樂</p>
+                                <p>TPG</p>
                             </li>
-                            <li onclick="window.location.href='./slotPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/slot/ufo.png">
+                                    <img src="../images/partner/slot/rsg.png">
                                 </div>
-                                <p>UFO電子娛樂</p>
+                                <p>RSG</p>
                             </li>
-                        </ul>
-                        <ul class="lottery">
-                           <li onclick="openLotteryGame()">
-                               <div>
-                                   <img src="../images/partner/lottery/sg.png">
-                               </div>
-                               <p>SG88六合、大樂、539</p>
-                           </li>
-                           <li onclick="openLotteryGame()">
-                               <div>
-                                   <img src="../images/partner/lottery/gs.png">
-                               </div>
-                               <p>京彩彩票</p>
-                           </li>
-                           <li onclick="openLotteryGame()">
-                               <div>
-                                   <img src="../images/partner/lottery/rwd.png">
-                               </div>
-                               <p>白鹿電子娛樂</p>
-                           </li>
-                        </ul>
-                        <ul class="fish">
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/fish/bwin.png">
+                                    <img src="../images/partner/slot/bwin.png">
                                 </div>
-                                <p>必贏電子娛樂</p>
+                                <p>bWin</p>
                             </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/fish/fa.png">
+                                    <img src="../images/partner/slot/ifun.png">
                                 </div>
-                                <p>福星電子娛樂</p>
+                                <p>IFUN</p>
                             </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/fish/gr.png">
+                                    <img src="../images/partner/slot/pls.png">
                                 </div>
-                                <p>好路棋牌</p>
+                                <p>PLS</p>
                             </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                            <li onclick="window.location.href='./slotPage.html'">
                                 <div>
-                                    <img src="../images/partner/fish/rsg.png">
+                                    <img src="../images/partner/slot/sp.png">
                                 </div>
-                                <p>RSG電子娛樂</p>
+                                <p>SP</p>
                             </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/fish/sp.png">
-                                </div>
-                                <p>SimplePlay</p>
-                            </li>
-                            <li onclick="window.location.href='./fishPageInner.html'">
+                         </ul>
+                         <ul class="fish">
+                            <li onclick="window.location.href='../html/fishPage.html'">
                                 <div>
                                     <img src="../images/partner/fish/tpg.png">
                                 </div>
-                                <p>TPG電子娛樂</p>
+                                <p>TPG</p>
                             </li>
-                        </ul>
-                        <ul class="board">
-                            <li onclick="window.location.href='./boardPageInner.html'">
+                            <li onclick="window.location.href='../html/fishPage.html'">
                                 <div>
-                                    <img src="../images/partner/board/big.png">
+                                    <img src="../images/partner/fish/rsg.png">
                                 </div>
-                                <p>大運棋牌</p>
+                                <p>RSG</p>
                             </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
+                            <li onclick="window.location.href='../html/fishPage.html'">
                                 <div>
-                                    <img src="../images/partner/board/bts.png">
+                                    <img src="../images/partner/fish/bwin.png">
                                 </div>
-                                <p>BTS電子娛樂</p>
+                                <p>bWin</p>
                             </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
+                            <li onclick="window.location.href='../html/fishPage.html'">
                                 <div>
-                                    <img src="../images/partner/board/fa.png">
+                                    <img src="../images/partner/fish/sp.png">
                                 </div>
-                                <p>福星電子娛樂</p>
+                                <p>SP</p>
                             </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/board/gr.png">
-                                </div>
-                                <p>好路棋牌</p>
-                            </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/board/ifun.png">
-                                </div>
-                                <p>FUN GAME</p>
-                            </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
-                                <div>
-                                    <img src="../images/partner/board/png.png">
-                                </div>
-                                <p>PNG電子娛樂</p>
-                            </li>
-                            <li onclick="window.location.href='./boardPageInner.html'">
+                         </ul>
+                         <ul class="board">
+                            <li onclick="window.location.href='../html/boardPage.html'">
                                 <div>
                                     <img src="../images/partner/board/rwd.png">
                                 </div>
-                                <p>白鹿</p>
+                                <p>RWD</p>
                             </li>
-                        </ul>
+                         </ul>
+                     </div>
+                     <i class="next"></i>
+                 </div>
+             </div>
+        </div>
+        <div class="marqueeArea">
+            <div class="center">
+                <div class="marqueeWrap">
+                    <i class="marquee_ic"></i>
+                    <div class="marquee">
+                        <p>TEST</p>
                     </div>
-                    <i class="next"></i>
+                </div>
+                <div class="people">
+                    <i class="people_ic"></i>
+                    9999
                 </div>
             </div>
         </div>
@@ -427,143 +346,138 @@
     <main>
         <div class="eventWrap">
             <div class="eventTitle">
-                <p>優惠</p>
+                <p>Ưu đãi</p>
             </div>
             <div class="eventBody">
                 <div class="side">
                     <ul>
                         <li class="active">
                             <i class="event_ic"></i>
-                            <span>全部活動</span>
+                            <span>Tất cả hoạt động</span>
                         </li>
                         <li>
                             <i class="event_ic"></i>
-                            <span>推薦活動</span>
+                            <span>Các hoạt động được đề xuất</span>
                         </li>
                         <li>
                             <i class="event_ic"></i>
-                            <span>新會員首存</span>
+                            <span>Thành viên mới Khoản tiền gửi đầu tiên</span>
                         </li>
                         <li>
                             <i class="event_ic"></i>
-                            <span>儲值活動</span>
+                            <span>Các hoạt động giá trị được lưu trữ</span>
                         </li>
                         <li>
                             <i class="event_ic"></i>
-                            <span>生日禮金</span>
+                            <span>quà sinh nhật</span>
                         </li>
                         <li>
                             <i class="event_ic"></i>
-                            <span>每月紅包</span>
+                            <span>phong bì đỏ hàng tháng</span>
                         </li>
                         <li>
                             <i class="event_ic"></i>
-                            <span>VIP活動</span>
+                            <span>Sự kiện VIP</span>
                         </li>
                     </ul>
                 </div>
                 <div class="eventList display">
                     <div class="eventBox">
                         <div class="imgBox">
-                            <img src="../images/eventImg.jpg">
+                            <img src="../images/banner.png">
                         </div>
                         <ul>
-                            <li class="title">公司活動前派固定型</li>
-                            <li class="btnBox twin">
-                                <button class="check">查看</button>
-                                <button>申請提領</button>
+                            <li class="title">VIP Quyền lợi cao</li>
+                            <li class="btnBox">
+                                <button>Xem</button>
                             </li>
                         </ul>
                     </div>
                     <div class="eventBox">
                         <div class="imgBox">
-                            <img src="../images/eventImg.jpg">
+                            <img src="../images/banner.png">
                         </div>
                         <ul>
-                            <li class="title">公司活動前派固定型公司活動前派固定型公司活動前派固定型公司活動前派固定型</li>
+                            <li class="title">VIP Quyền lợi cao</li>
                             <li class="btnBox">
-                                <button class="check">查看</button>
-                                <button>申請提領</button>
+                                <button>Xem</button>
                             </li>
                         </ul>
                     </div>
                     <div class="eventBox">
                         <div class="imgBox">
-                            <img src="../images/eventImg.jpg">
+                            <img src="../images/banner.png">
                         </div>
                         <ul>
-                            <li class="title">公司活動前派固定型</li>
+                            <li class="title">VIP Quyền lợi cao</li>
                             <li class="btnBox">
-                                <button class="check">查看</button>
-                                <button>申請提領</button>
+                                <button>Xem</button>
                             </li>
                         </ul>
                     </div>
                     <div class="eventBox">
                         <div class="imgBox">
-                            <img src="../images/eventImg.jpg">
+                            <img src="../images/banner.png">
                         </div>
                         <ul>
-                            <li class="title">公司活動前派固定型</li>
+                            <li class="title">VIP Quyền lợi cao</li>
                             <li class="btnBox">
-                                <button class="check">查看</button>
-                                <button>申請提領</button>
+                                <button>Xem</button>
                             </li>
                         </ul>
                     </div>
                     <div class="eventBox">
                         <div class="imgBox">
-                            <img src="../images/eventImg.jpg">
+                            <img src="../images/banner.png">
                         </div>
                         <ul>
-                            <li class="title">公司活動前派固定型</li>
+                            <li class="title">VIP Quyền lợi cao</li>
                             <li class="btnBox">
-                                <button class="check">查看</button>
-                                <button>申請提領</button>
+                                <button>Xem</button>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <!-- <
+                <div class="eventDetail">
                     <div class="title">
-                        <p>公司活動前派固定型</p>
+                        <p>VIP Quyền lợi cao</p>
                         <button class="back">
                             <i class="back_ic"></i>
-                            返回列表
+                            Trở lại danh sách
                         </button>
                     </div>
                     <div class="imgBox">
-                        <img src="../images/eventImg.jpg">
+                        <img src="../images/banner.png">
                     </div>
                     <div class="info">
-                        <p class="infoTitle">參加辦法</p>
+                        <p class="infoTitle">Cách tham gia</p>
+                        <p>VIP Quyền lợi cao</p>
                         <img src="../images/eventDetail_1.png" alt="">
+                        <p>* Hoàn trả Jackpot 1 lần số tiền có thể rút được.</p>
+                        <p>Quy tắc ưu đãi :</p>
                         <ul>
-                            <li>一天限參加一次，需再投注前申請。</li>
-                            <li>僅供36588所使用，不得與其他優惠共享</li>
-                        </ul>
-                        <img src="../images/eventDetail_2.png" alt="">
-                        <ul>
-                            <li>翻本救援金需進線向客服申請(申請前一天體育賽果，須完全過帳才可申請)</li>
-                        </ul>
-                        <ul class="rule">
-                            <li>每位玩家、每戶、每一住址、每一電子信箱地址、每一電話號碼、相同付款方式及IP地址只能享有一次優惠；若會員有重複申請帳號行為，公司保留取消或收回會員優惠彩金的權利。</li>
-                            <li>本站的所有優惠特為玩家而設，如發現任何團體或個人，以不誠實方式套取紅利或任何威脅、濫用公司優惠等行為，公司保留凍結、取消該團體或個人帳戶及帳戶結餘的權利。</li>
-                            <li>若會員對活動有爭議時，為確保雙方利益，杜絕身份盜用行為，AU8娛樂城有權要求會員向我們提供充足有效的文件，用以確認是否享有該優惠的資格。</li>
-                            <li class="remind">公司保留對活動的最終解釋權，以及在無通知的情況下修改、終止活動的權利，適用於所有優惠。</li>
+                            <li>Mỗi người chơi, mỗi hộ gia đình, mỗi địa chỉ, mỗi địa chỉ e-mail, mỗi số điện thoại, cùng một phương thức thanh toán và địa chỉ IP chỉ được hưởng một lần chiết khấu; nếu thành viên có hành vi đăng ký tài khoản nhiều lần, công ty có quyền hủy bỏ hoặc rút lại quyền của Thành viên đối với tiền thắng ưu đãi.</li>
+                            <li>Đặt cược vào các trò chơi thể thao, cược bảo hiểm rủi ro hoặc cược cặp đôi không được tính, và các cá cược chưa chấp nhận cược / Kết quả của trận đấu sẽ không được tính. Không đặt cược trong giải trí trực tiếp / trò chơi điện tử / Trò chơi xổ số / Cược không rủi ro. Cược không rủi ro bao gồm đặt cược đồng thời cho chủ ngân hàng và người chơi trong Baccarat, đồng thời đặt cược đồng thời vào "Đen + Đỏ, Lẻ + Đôi, Lớn + Nhỏ" trong Roulette, và mọi sự kiện hoặc vòng cược bị hủy đều không được tính.</li>
+                            <li>Tất cả giảm giá trên trang web này được thiết kế đặc biệt cho người chơi . Nếu bất kỳ nhóm hoặc cá nhân được tìm thấy, chênh lệch giá hoặc bất kỳ mối đe dọa nào theo cách không trung thực. Lạm dụng các ưu đãi của trang, Admin có quyền đóng băng hoặc hủy bỏ các tài khoản và số dư tài khoản của nhóm hoặc cá nhân.</li>
+                            <li>Bảo lưu quyền giải thích cuối cùng về sự kiện, cũng như quyền sửa đổi và chấm dứt sự kiện mà không cần thông báo, áp dụng cho tất cả các ưu đãi.</li>
+                            <li>Nếu thành viên có tranh chấp về sự kiện, để đảm bảo quyền lợi của cả hai bên và tránh bị đánh cắp danh tính, Sòng bạc AU8 có quyền yêu cầu thành viên cung cấp cho chúng tôi các tài liệu đầy đủ và có hiệu lực để xác nhận xem họ có đủ điều kiện nhận chiết khấu hay không .</li>
+                            <li>Nền tảng cập nhật tìm kiếm và hiện thị dữ liệu chênh lệch giá mới nhất và các liên kết đến các nền tảng chính. Nếu phát hiện nghi ngờ chênh lệch giá với các nền tảng khác, tài khoản bảo hiểm rủi ro và có quyền rút điểm.</li>
                         </ul>
                     </div>
                     <div class="detailFooter"></div>
-                </div> -->
+                </div>
             </div>
         </div>
     </main>
     <nav class="sideBar">
         <p class="download" onclick="window.location.href='./help.html'">
             <i></i>
-            手機下載
+            Tải bằng điện thoại
         </p>
         <ul class="rightSide">
+            <li class="service" onclick="window.location.href='./help.html'">
+                <i></i>
+            </li>
             <li class="line" onclick="window.location.href='./help.html'">
                 <i></i>
             </li>
@@ -574,51 +488,184 @@
             <div class="center">
                 <div class="btnBox">
                     <ul>
-                        <li class="openNews">最新公告</li>
-                        <li onclick="window.location.href='./event.html'">優惠</li>
-                        <li onclick="window.location.href='./vip.html'">VIP會員</li>
-                        <li onclick="window.location.href='./help.html'">幫助中心</li>
-                        <li onclick="window.location.href='./help.html'">關於我們</li>
+                        <li class="openNews">Thông báo mới nhất</li>
+                        <li onclick="window.location.href='./event.html'">Khuyến mãi</li>
+                        <li onclick="window.location.href='./vip.html'">Cấp bậc hội viên</li>
+                        <li onclick="window.location.href='./help.html'">Trung tâm hỗ trợ</li>
+                        <li onclick="window.location.href='./help.html'">Thông tin trang</li>
                     </ul>
                 </div>
-                <p>2021 88au8.net 版權所有 │ 18+</p>
+                <p>2021 au8988.net Đã đăng ký Bản quyền │ 18+</p>
             </div>
         </div>
         <div class="footerList">
             <div class="center">
-                <p>致力於成爲世界頂級的在線娛樂公司。因此，在處理任何事情的時候，都會優先考慮客戶的利益。客戶的最大滿意就是我們的成功。</p>
-                <p>提供全天候24小時的在線客服，提供專業化和人性化相結合的最佳服務。</p>
+                <p>Chúng tôi nỗ lực trở thành công ty giải trí trực tuyến hàng đầu thế giới. Vì vậy, khi giải quyết bất cứ việc gì, đều ưu tiên suy nghĩ cho quyền lợi của khách hàng đầu tiên. Sự hài lòng lớn nhất của khách hàng chính</p>
+                <p>là thành công của chúng tôi.Cung cấp dịch vụ khách hàng trực tuyến 24 giờ, đồng thời cũng cung cấp dịch vụ tốt nhất được kết hợp giữa tính chuyên nghiệp và sự nhân văn.</p>
             </div>
         </div>
     </footer>
     <div class="filter">
+        <!--遊戲投注彈窗-->
+        <div class="jumpWindow betWindow sportGame">
+            <div class="title">
+                <p>Chuyển điểm nhanh</p>
+                <i class="close_ic"></i>
+            </div>
+            <form>
+                <div class="row">
+                    <p>nền tảng</p>
+                    <div class="smallTitle">36588</div>
+                </div>
+                <div class="row">
+                    <p>Ví chính</p>
+                    <input type="text" value="$9999" readonly>
+                </div>
+                <div class="row">
+                    <i class="trans_arrow"></i>
+                </div>
+                <div class="row">
+                    <p>36588 SPORTS</p>
+                    <input type="text" value="$0" readonly>
+                </div>
+                <div class="row">
+                    <p>Số điểm muốn chuyển</p>
+                    <input type="text" value="$100">
+                </div>
+                <div class="row forBtn">
+                    <div class="btnBox">
+                        <button>$100</button>
+                        <button>$500</button>
+                        <button>$1000</button>
+                        <button>$3000</button>
+                        <button>$5000</button>
+                        <button>$10000</button>
+                        <button>Tất cả</button>
+                    </div>
+                </div>
+                <div class="row forBtn">
+                    <button class="check">Xác nhận chuyển điểm</button>
+                </div>
+            </form>
+            <div class="enterGame">
+                <button>Vào Game</button>
+            </div>
+        </div>
+        <div class="jumpWindow betWindow liveGame">
+            <div class="title">
+                <p>Chuyển điểm nhanh</p>
+                <i class="close_ic"></i>
+            </div>
+            <form>
+                <div class="row">
+                    <p>nền tảng</p>
+                    <div class="smallTitle">WM CASINO</div>
+                </div>
+                <div class="row">
+                    <p>Ví chính</p>
+                    <input type="text" value="$9999" readonly>
+                </div>
+                <div class="row">
+                    <i class="trans_arrow"></i>
+                </div>
+                <div class="row">
+                    <p>WM CASINO</p>
+                    <input type="text" value="$0" readonly>
+                </div>
+                <div class="row">
+                    <p>Số điểm muốn chuyển</p>
+                    <input type="text" value="$100">
+                </div>
+                <div class="row forBtn">
+                    <div class="btnBox">
+                        <button>$100</button>
+                        <button>$500</button>
+                        <button>$1000</button>
+                        <button>$3000</button>
+                        <button>$5000</button>
+                        <button>$10000</button>
+                        <button>Tất cả</button>
+                    </div>
+                </div>
+                <div class="row forBtn">
+                    <button class="check">Xác nhận chuyển điểm</button>
+                </div>
+            </form>
+            <div class="enterGame">
+                <button>Vào Game</button>
+            </div>
+        </div>
+        <div class="jumpWindow betWindow lotteryGame">
+            <div class="title">
+                <p>Chuyển điểm nhanh</p>
+                <i class="close_ic"></i>
+            </div>
+            <form>
+                <div class="row">
+                    <p>Ví chính</p>
+                    <div class="smallTitle">RWD</div>
+                </div>
+                <div class="row">
+                    <p>Số điểm muốn chuyển</p>
+                    <input type="text" value="$9999" readonly>
+                </div>
+                <div class="row">
+                    <i class="trans_arrow"></i>
+                </div>
+                <div class="row">
+                    <p>RWD</p>
+                    <input type="text" value="$0" readonly>
+                </div>
+                <div class="row">
+                    <p>Số điểm muốn chuyển</p>
+                    <input type="text" value="$100">
+                </div>
+                <div class="row forBtn">
+                    <div class="btnBox">
+                        <button>$100</button>
+                        <button>$500</button>
+                        <button>$1000</button>
+                        <button>$3000</button>
+                        <button>$5000</button>
+                        <button>$10000</button>
+                        <button>Tất cả</button>
+                    </div>
+                </div>
+                <div class="row forBtn">
+                    <button class="check">Xác nhận chuyển điểm</button>
+                </div>
+            </form>
+            <div class="enterGame">
+                <button>Vào Game</button>
+            </div>
+        </div>
         <!--最新公告-->
         <div class="jumpWindow news">
             <div class="title">
-                <p>最新公告</p>
+                <p>Thông báo mới nhất</p>
                 <i class="close_ic"></i>
             </div>
             <ul class="nav">
-                <li class="hot active">熱門</li>
-                <li class="normal">一般</li>
-                <li class="deposit">存款</li>
+                <li class="hot active">HOT</li>
+                <li class="normal">Tin phổ biến</li>
+                <li class="deposit">Thông tin Nạp tiền</li>
             </ul>
             <ul class="content forHot display">
                 <li>
                     <div>
-                        <p class="text">公告測試公告測試公告測試公告測試公告測試公告測試公告測試</p>
+                        <p class="text">testtesttesttesttesttesttesttest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <p class="text">公告測試</p>
+                        <p class="text">testtest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <p class="text">公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試公告測試</p>
+                        <p class="text">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
@@ -626,13 +673,13 @@
             <ul class="content forNormal">
                 <li>
                     <div>
-                        <p class="text">公告測試</p>
+                        <p class="text">testtest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <p class="text">公告測試</p>
+                        <p class="text">testtest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
@@ -640,162 +687,13 @@
             <ul class="content forDeposit">
                 <li>
                     <div>
-                        <p class="text">公告測試</p>
+                        <p class="text">testtest</p>
                         <p class="date">2021/09/26</p>
                     </div>
                 </li>
             </ul>
         </div>
-        <!--遊戲投注彈窗-->
-        <div class="jumpWindow betWindow sportGame">
-            <div class="title">
-                <p>快速轉帳</p>
-                <i class="close_ic"></i>
-            </div>
-            <form>
-                <div class="row">
-                    <p>平台</p>
-                    <div class="smallTitle">36588</div>
-                </div>
-                <div class="row">
-                    <p>中心錢包</p>
-                    <input type="text" value="$9999" readonly>
-                </div>
-                <div class="row">
-                    <i class="trans_arrow"></i>
-                </div>
-                <div class="row">
-                    <p>BNG電子娛樂</p>
-                    <input type="text" value="$0" readonly>
-                </div>
-                <div class="row">
-                    <p>轉帳金額</p>
-                    <input type="text" value="$100">
-                </div>
-                <div class="row forBtn">
-                    <div class="btnBox">
-                        <button>$100</button>
-                        <button>$500</button>
-                        <button>$1000</button>
-                        <button>$3000</button>
-                        <button>$5000</button>
-                        <button>$10000</button>
-                        <button>全部</button>
-                    </div>
-                </div>
-                <div class="row forBtn">
-                    <button class="check">確認</button>
-                </div>
-            </form>
-            <div class="enterGame">
-                <button>進入遊戲</button>
-            </div>
-        </div>
-        <div class="jumpWindow betWindow liveGame">
-            <div class="title">
-                <p>快速轉帳</p>
-                <i class="close_ic"></i>
-            </div>
-            <form>
-                <div class="row">
-                    <p>平台</p>
-                    <div class="smallTitle">ALLBET</div>
-                </div>
-                <div class="row">
-                    <p>中心錢包</p>
-                    <input type="text" value="$9999" readonly>
-                </div>
-                <div class="row">
-                    <i class="trans_arrow"></i>
-                </div>
-                <div class="row">
-                    <p>歐博真人</p>
-                    <input type="text" value="$0" readonly>
-                </div>
-                <div class="row">
-                    <p>轉帳金額</p>
-                    <input type="text" value="$100">
-                </div>
-                <div class="row forBtn">
-                    <div class="btnBox">
-                        <button>$100</button>
-                        <button>$500</button>
-                        <button>$1000</button>
-                        <button>$3000</button>
-                        <button>$5000</button>
-                        <button>$10000</button>
-                        <button>全部</button>
-                    </div>
-                </div>
-                <div class="row forBtn">
-                    <button class="check">確認</button>
-                </div>
-            </form>
-            <div class="enterGame">
-                <button>進入遊戲</button>
-            </div>
-        </div>
-        <div class="jumpWindow betWindow lotteryGame">
-            <div class="title">
-                <p>快速轉帳</p>
-                <i class="close_ic"></i>
-            </div>
-            <form>
-                <div class="row">
-                    <p>平台</p>
-                    <div class="smallTitle">京彩彩票</div>
-                </div>
-                <div class="row">
-                    <p>中心錢包</p>
-                    <input type="text" value="$9999" readonly>
-                </div>
-                <div class="row">
-                    <i class="trans_arrow"></i>
-                </div>
-                <div class="row">
-                    <p>SG彩票</p>
-                    <input type="text" value="$0" readonly>
-                </div>
-                <div class="row">
-                    <p>轉帳金額</p>
-                    <input type="text" value="$100">
-                </div>
-                <div class="row forBtn">
-                    <div class="btnBox">
-                        <button>$100</button>
-                        <button>$500</button>
-                        <button>$1000</button>
-                        <button>$3000</button>
-                        <button>$5000</button>
-                        <button>$10000</button>
-                        <button>全部</button>
-                    </div>
-                </div>
-                <div class="row forBtn">
-                    <button class="check">確認</button>
-                </div>
-            </form>
-            <div class="enterGame">
-                <button>進入遊戲</button>
-            </div>
-        </div>
-        <!--查看活動-->
-        <div class="jumpWindow checkEvent">
-            <div class="title">
-                <p>任務詳情</p>
-                <i class="close_ic"></i>
-            </div>
-            <div class="content">
-                <div class="imgBox">
-                    <img src="../images/eventImg.jpg">
-                    <p>公司活動前派固定型，滿100流水送1000 限領3 周期每日11:40</p>
-                    <p>申請方式 ：會員首次存款後（未下注前）至會員中心或優惠頁面申請優惠，最高送2000 ，提款必需流水量12倍。</p>
-                </div>
-            </div>
-            <div class="btnBox">
-                <button class="close">確認</button>
-            </div>
-        </div>
     </div>
+    <div class="bg"></div>
 </body>
 </html>
