@@ -178,46 +178,52 @@ footer .footerList {
     background-size: 65%;
 }
 
+//vipWrap
+.vipWrap {
+    background: url('../images/vip_info.png') no-repeat;
+    background-size: 100%;
+}
+
 //.vipWrap .medal
-.vipHeader .medal {
-    background: url('../images/icon/medal.png') no-repeat;
-    background-size: 100%;
-}
+// .vipHeader .medal {
+//     background: url('../images/icon/medal.png') no-repeat;
+//     background-size: 100%;
+// }
 //.vipWrap .detailTitle .back
-.vipWrap .detailTitle .back {
-    background: url('../images/icon/svg/arrow_r.svg') no-repeat;
-    background-size: 100%;
-}
+// .vipWrap .detailTitle .back {
+//     background: url('../images/icon/svg/arrow_r.svg') no-repeat;
+//     background-size: 100%;
+// }
 //.vipWrap .detailCardBox .prev,.next
-.vipWrap .detailCardBox .prev,.vipWrap .detailCardBox .next {
-    background: url('../images/icon/svg/arrow_r.svg') no-repeat;
-    background-size: 100%;
-}
+// .vipWrap .detailCardBox .prev,.vipWrap .detailCardBox .next {
+//     background: url('../images/icon/svg/arrow_r.svg') no-repeat;
+//     background-size: 100%;
+// }
 //.vipWrap vip卡樣式
-.vipWrap .detailCardBox .cardBg {
-    background: url('../images/vip_card.png') no-repeat;
-    background-size: 100%;
-}
-.vipWrap .detailCardBox .cardBg .medal {
-    background: url('../images/icon/medal.png') no-repeat;
-    background-size: 100%;
-}
-.vipWrap .detailCardBox .cardBg.v1 {
-    background: url('../images/vip_card_2.png') no-repeat;
-    background-size: 100%;
-}
-.vipWrap .detailCardBox .cardBg.v1 .medal {
-    background: url('../images/icon/medal_2.png') no-repeat;
-    background-size: 100%;
-}
-.vipWrap .detailCardBox .cardBg.v2 {
-    background: url('../images/vip_card_3.png') no-repeat;
-    background-size: 100%;
-}
-.vipWrap .detailCardBox .cardBg.v2 .medal {
-    background: url('../images/icon/medal_3.png') no-repeat;
-    background-size: 100%;
-}
+// .vipWrap .detailCardBox .cardBg {
+//     background: url('../images/vip_card.png') no-repeat;
+//     background-size: 100%;
+// }
+// .vipWrap .detailCardBox .cardBg .medal {
+//     background: url('../images/icon/medal.png') no-repeat;
+//     background-size: 100%;
+// }
+// .vipWrap .detailCardBox .cardBg.v1 {
+//     background: url('../images/vip_card_2.png') no-repeat;
+//     background-size: 100%;
+// }
+// .vipWrap .detailCardBox .cardBg.v1 .medal {
+//     background: url('../images/icon/medal_2.png') no-repeat;
+//     background-size: 100%;
+// }
+// .vipWrap .detailCardBox .cardBg.v2 {
+//     background: url('../images/vip_card_3.png') no-repeat;
+//     background-size: 100%;
+// }
+// .vipWrap .detailCardBox .cardBg.v2 .medal {
+//     background: url('../images/icon/medal_3.png') no-repeat;
+//     background-size: 100%;
+// }
 
 //dealWrap
 .dealWrap .waterBox .arrow_ic {
@@ -229,6 +235,9 @@ footer .footerList {
 .cardMiddle .card .addCard_ic {
     background: url('../images/icon/svg/addCard.svg') no-repeat;
     background-size: 100%;
+}
+.cardWrap .bottomWrap .row .img {
+    background: url('../images/id_sample.png') no-repeat;
 }
 
 //.rightSide .smallBoard .arrow
@@ -331,10 +340,6 @@ footer .footerList {
     background: url('../images/icon/svg/aboutus.svg') no-repeat;
     background-size: 100%;
 }
-.helpPage .nav .app {
-    background: url(../images/icon/download.png) no-repeat;
-    background-size: contain;
-}
 //helpPage .teachList arrow_ic
 .helpPage .teachList .arrow_ic {
     background: url('../images/icon/svg/arrow_b.svg') no-repeat;
@@ -420,7 +425,7 @@ header .logo {
     object-fit: cover;
 }
 
-//入口頁中央遊戲enter .mainWrap .img
+//入口頁中央遊戲入口圖 .mainWrap .img
 .mainWrap .typeList img {
     width: 338px;
     height: 270px;
@@ -459,38 +464,42 @@ header .logo {
 .eventBox {
     
     .imgBox {
-        width: 100%;
-        height: 250px;
+        width: 792px;
+        height: 192px;
 
         img {
             width: 100%;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }
 //.eventDetail .imgBox img
-// .eventDetail {
+.eventDetail {
 
-//     .imgBox {
-//         width: 100%;
-//         height: 267px;
+    .imgBox {
+        width: 100%;
+        height: 267px;
 
-//         img {
-//             width: 100%;
-//             height: 100%;
-//             object-fit: cover;
-//         }
-//     }
-// }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
 
 //.jumpWindow .checkEvent img
 .checkEvent {
 
     .imgBox {
+        width: 100%;
+        height: 400px;
 
         img {
             width: 100%;
-            object-fit: contain;
+            height: auto;
+            object-fit: cover;
         }
     }
 }
