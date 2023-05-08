@@ -2,6 +2,7 @@ header {
     width: 100%;
     height: 120px;
     position: relative;
+    background: $header_BG_1;
 
     //上部
     .top {
@@ -33,7 +34,6 @@ header {
             width: auto;
             height: 100%;
             align-items: center;
-            color: $header_Word;
             font-size: 14px;
             font-weight: bold;
             display: none;
@@ -45,18 +45,29 @@ header {
             &.alLogin {
 
                 li:not(.platform) {
-                    cursor: pointer;
+                    margin-right: 10px;
 
-                    &:hover,&:active,&.active {
-                        background: $header_Hover;
+                    button {
+                        width: auto;
+                        height: auto;
+                        @include headerBtn_3;
+
+                        &.logoutBtn {
+                            @include headerBtn_1;
+                            padding: 3px 10px;
+                        }
+
+                        .remind {
+                            min-width: 18px;
+                            min-height: 18px;
+                            @include headerMailRemind;
+                        }
                     }
 
-                    &:nth-of-type(1),
-                    &:nth-of-type(2) {
-                        cursor: default;
+                    &.lang {
                         
-                        &:hover,&:active,&.active {
-                            background: none;
+                        select {
+                            margin: 0;
                         }
                     }
                 }
@@ -66,10 +77,8 @@ header {
                 display: flex;
                 width: auto;
                 height: 100%;
-                padding: 0 20px;
                 align-items: center;
                 position: relative;
-                @include headerBorder;
 
                 //未登入選單
                 .loginForm {
@@ -81,24 +90,11 @@ header {
                     div {
                         position: relative;
 
-                        i {
-                            width: 11px;
-                            height: 15px;
-                            position: absolute;
-                            top: 52%;
-                            transform: translateY(-50%);
-                            left: 12px;
-
-                            &.pass_ic {
-                                background-position-y: 100%;
-                            }
-                        }
-
                         input {
-                            width: 152px;
+                            width: 180px;
                             height: 30px;
                             margin-right: 8px;
-                            @include headerInput;
+                            @include mainInput;
                         }
                     }
 
@@ -110,13 +106,6 @@ header {
                         &.signupBtn {
                             margin-left: 8px;
                             @include headerBtn_2;
-
-                            i {
-                                display: inline-block;
-                                width: 12px;
-                                height: 14px;
-                                margin: 0 4px -1px 0;
-                            }
                         }
                     }
                 }
@@ -125,45 +114,34 @@ header {
                 &.lv {
                     color: $header_LV_1;
                     font-weight: bold;
+                    padding-right: 10px;
 
                     span {
                         color: $header_LV_2;
-                        padding-right: 15px;
+                        padding-right: 10px;
                     }
                 }
 
                 //忘記密碼
                 &.forget {
-                    font-size: 14px;
-                    cursor: pointer;
-                    font-weight: bold;
-                    letter-spacing: 1px;
-
-                    &:hover,&:active,&.active {
-                        background: $header_Hover;
-                    }
+                    margin-left: 10px;
+                    @include headerForget;
 
                     i {
                         display: block;
                         width: 19px;
                         height: 19px;
-                        margin-right: 10px;
+                        margin-right: 5px;
                     }
                 }
 
                 //transfer
                 &.moneyTotal {
-                    position: relative;
-                    color: $header_Money;
-                    @include headerArrow;
-                    padding: 0 20px 0 14px;
-
-                    &::after {
-                        right: 16px;
-                    }
 
                     .total {
-                        padding-right: 8px;
+                        width: auto;
+                        height: auto;
+                        @include headerMoney;
                     }
 
                     .transferInfo {
@@ -221,6 +199,7 @@ header {
                         width: auto;
                         height: auto;
                         @include headerLang;
+                        margin-left: 50px;
                     }
                 }
             }
@@ -231,7 +210,7 @@ header {
     .gameNav {
         width: 100%;
         height: 80px;
-        background: $mainBG_1;
+        background: $header_BG_2;
 
         .center {
             width: 1400px;
@@ -240,10 +219,6 @@ header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            .logo {
-                margin-top: 10px;
-            }
 
             ul {
                 width: auto;
@@ -257,6 +232,7 @@ header {
                     height: 100%;
                     padding: 0 25px;
                     font-size: 18px;
+                    margin: 0 5px;
                     letter-spacing: 1px;
                     cursor: pointer;
                     box-sizing: border-box;
@@ -280,8 +256,9 @@ header {
         overflow: hidden;
         position: absolute;
         left: 0px;
-        bottom: -226px;
+        bottom: -227px;
         z-index: 10;
+        box-shadow: 0 3px 10px 0 $topGameList_Shadow;
 
         &.display {
             height: auto;
@@ -290,9 +267,8 @@ header {
         .listWrap {
             width: 100%;
             height: 226px;
-            box-sizing: border-box;
-            border-top: solid 1px $mainBorder_1;
-            background: $mainBG_1;
+            background: $topGameList_BG;
+            border-bottom: solid 1px $topGameList_Border;
 
             .center {
                 width: 1400px;

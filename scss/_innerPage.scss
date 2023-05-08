@@ -1,46 +1,56 @@
 .innerPage {
-    background: $mainBG_2;
     padding: 20px 0 40px;
 
     //跑馬燈
     .marqueeArea {
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px;
+        width: 1400px;
+        height: 40px;
+        background: $marquee_BG;
+        border-radius: 25px;
+        margin: 10px auto 30px;
+        border: solid 1px $marquee_Border;
 
         .center {
-            width: 1400px;
-            height: 50px;
-            margin: 0 auto;
+            width: 100%;
+            height: 100%;
 
             .marqueeWrap {
                 width: 100%;
                 height: 100%;
                 display: flex;
                 align-items: center;
-                background: $marquee_BG;
-                box-shadow: 0 0 13px 3px $marquee_Shadow;
-                border-radius: 25px;
+                justify-content: flex-end;
+                position: relative;
+
+                &::before,&::after {
+                    content: "";
+                    position: absolute;
+                    width: 49px;
+                    height: 71px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &::before {
+                    left: -20px;
+                    transform: scaleX(-1) translateY(-50%);
+                    z-index: 1;
+                }
+                &::after {
+                    right: -20px;
+                }
 
                 .marquee_ic {
-                    width: 160px;
-                    height: 88%;
-                    border-radius: 25px;
-                    background: $marquee_Linear;
-                    margin-left: 3px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    p {
-                        font-size: 16px;
-                        font-weight: bold;
-                        color: $marquee_LinearWord;
-                    }
+                    width: 65px;
+                    height: 65px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 6px;
+                    z-index: 1;
                 }
 
                 .marquee {
-                    width: 100%;
+                    width: 98%;
                     height: auto;
                     overflow: hidden;
 
@@ -80,7 +90,7 @@
 
         hr {
             width: 100%;
-            border: solid 1px $mainBorder_1;
+            border: solid 1px $mainBorder_2;
             border-width: 1px 0 0;
             margin: 0;
         }
@@ -88,8 +98,7 @@
         //左列
         .innerSide {
             background: $mainBG_1;
-            border-radius: 5px;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
+            border: solid 1px $mainBorder_2;
             width: 245px;
             height: auto;
             margin-right: 15px;
@@ -177,10 +186,18 @@
 
                     &:hover,&:active,&.active {
                         @include navHover;
+
+                        i {
+                            background: none;
+
+                            &::before {
+                                display: block;
+                            }
+                        }
                     }
 
-                    &:nth-of-type(1),&:nth-of-type(4),&:nth-of-type(9) {
-                        border-top: solid 1px $mainBorder_1;
+                    &:nth-of-type(1),&:nth-of-type(4),&:nth-of-type(8) {
+                        border-top: solid 1px $mainBorder_2;
                     }
 
                     i {
@@ -189,6 +206,18 @@
                         top: 50%;
                         transform: translateY(-50%);
                         left: 25px;
+                        overflow: hidden;
+
+                        &::before {
+                            display: none;
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            left: 0;
+                            top: 0;
+                            filter: brightness(3);
+                        }
                         
                         &.user_ic {
                             width: 14px;
@@ -244,8 +273,7 @@
                 width: 100%;
                 height: auto;
                 background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
                 margin-bottom: 20px;
 
                 h1 {
@@ -257,8 +285,8 @@
                     padding: 0 20px;
                     font-size: 20px;
                     letter-spacing: 2px;
-                    color: $title_2;
-                    border-bottom: solid 1px $mainBorder_1;
+                    color: $title_1;
+                    border-bottom: solid 1px $mainBorder_2;
                     font-weight: bold;
                 }
 
@@ -270,12 +298,12 @@
                     p {
                         font-size: 14px;
                         letter-spacing: 1px;
-                        color: $mainFont_1;
+                        color: $title_1;
                         font-weight: bold;
 
                         &.remind {
                             margin-top: 6px;
-                            color: $title_3;
+                            color: $title_2;
                         }
 
                         em {
@@ -301,7 +329,7 @@
                         li {
                             font-size: 14px;
                             letter-spacing: 1px;
-                            color: $mainFont_1;
+                            color: $remind;
                             display: flex;
                             align-items: center;
                             margin-right: 27px;
@@ -350,8 +378,7 @@
                     width: 100%;
                     height: auto;
                     background: $mainBG_1;
-                    box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
 
                     &.display {
                         display: block;
@@ -364,7 +391,7 @@
                         h1 {
                             font-size: 17px;
                             letter-spacing: 2px;
-                            color: $title_2;
+                            color: $title_1;
                             font-weight: bold;
                         }
 
@@ -404,6 +431,7 @@
                                                 }
 
                                                 .remind {
+                                                    display: inline-block;
                                                     font-size: 12px;
                                                     padding-left: 110px;
                                                     color: $remind;
@@ -412,10 +440,13 @@
 
                                                     &.np {
                                                         padding: 0;
+                                                        margin: 15px 0 0 111px;
+                                                        white-space: nowrap;
 
                                                         span {
-                                                            color: $link;
+                                                            color: $link_2;
                                                             padding-left: 5px;
+                                                            cursor: pointer;
                                                         }
                                                     }
                                                 }
@@ -479,6 +510,17 @@
                                                 @include borderBtn;
                                                 padding: 0 8px;
                                             }
+
+                                            &.qrBox {
+                                                height: auto;
+                                                justify-content: space-between;
+
+                                                .qr {
+                                                    width: 100px;
+                                                    height: 100px;
+                                                    margin-right: 111px;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -511,7 +553,7 @@
                             font-size: 17px;
                             font-weight: bold;
                             letter-spacing: 2px;
-                            color: $title_2;
+                            color: $title_1;
                         }
 
                         ul {
@@ -554,8 +596,7 @@
                     width: 100%;
                     height: auto;
                     background: $mainBG_1;
-                    box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
                     box-sizing: border-box;
                     padding: 20px 24px;
 
@@ -567,7 +608,7 @@
                         padding: 20px 24px;
                         font-size: 17px;
                         letter-spacing: 2px;
-                        color: $title_2;
+                        color: $title_1;
                         font-weight: bold;
                     }
 
@@ -593,7 +634,7 @@
                         tr {
 
                             th {
-                                border-bottom: solid 2px $mainBorder_2;
+                                border-bottom: solid 2px $choose_Border;
                                 vertical-align: middle;
                                 height: 40px;
 
@@ -608,7 +649,7 @@
                                     border-right: solid 1px $mainBorder_1;
                                     font-size: 14px;
                                     font-weight: bold;
-                                    color: $title_1;
+                                    color: $title_2;
                                 }
                             }
 
@@ -633,11 +674,15 @@
                                     border-right: solid 1px $mainBorder_1;
 
                                     &.sp {
-                                        color: $remind_sp;
+                                        color: $remind;
                                     }
 
                                     &.code {
-                                        color: $remind_sp2;
+                                        color: $remind_sp;
+                                    }
+
+                                    &.none {
+                                        color: $title_3;
                                     }
                                 }
                             }
@@ -653,8 +698,7 @@
             width: 1140px;
             height: auto;
             background: $mainBG_1;
-            border-radius: 5px;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
+            border: solid 1px $mainBorder_2;
 
             &.display {
                 display: block;
@@ -690,7 +734,7 @@
                         font-size: 20px;
                         font-weight: bold;
                         letter-spacing: 2px;
-                        color: $title_2
+                        color: $title_1;
                     }
 
                     .money {
@@ -698,7 +742,7 @@
                         span {
                             font-size: 14px;
                             letter-spacing: 1px;
-                            color: $mainFont_1;
+                            color: $title_2;
                             font-weight: bold;
                             margin-right: 10px;
                         }
@@ -722,7 +766,7 @@
                     li {
                         width: 20%;
                         font-size: 14px;
-                        color: $title_2;
+                        color: $remind;
 
                         &:nth-of-type(2) {
                             margin-left: -18px;
@@ -771,7 +815,7 @@
                     margin-bottom: 15px;
                     font-size: 14px;
                     letter-spacing: 1px;
-                    color: $mainFont_1;
+                    color: $title_2;
                     font-weight: bold;
 
                     .bar {
@@ -792,7 +836,7 @@
                 height: auto;
                 box-sizing: border-box;
                 padding: 18px 22px 6px;
-                border-top: solid 1px $mainBorder_1;
+                border-top: solid 1px $mainBorder_2;
 
                 .title {
                     width: 100%;
@@ -800,7 +844,7 @@
                     margin-bottom: 30px;
                     font-size: 17px;
                     letter-spacing: 2px;
-                    color: $title_2;
+                    color: $title_1;
                     font-weight: bold;
                 }
 
@@ -812,7 +856,7 @@
 
                     li {
                         width: calc(33.3% - 1px);
-                        border-right: solid 1px $mainBorder_1;
+                        border-right: solid 1px $mainBorder_2;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -828,12 +872,12 @@
                             margin-bottom: 10px;
                             font-size: 15px;
                             letter-spacing: 1px;
-                            color: $mainFont_1;
+                            color: $title_2;
                         }
 
                         .num {
                             font-size: 28px;
-                            color: $title_1;
+                            color: $money;
                             font-weight: bold;
                         }
                     }
@@ -844,7 +888,7 @@
                     width: 321px;
                     height: 41px;
                     margin: 40px auto 44px;
-                    @include borderBtn;
+                    @include mainBtn;
                 }
             }
 
@@ -857,7 +901,7 @@
                 font-size: 17px;
                 font-weight: bold;
                 letter-spacing: 2px;
-                color: $title_2;
+                color: $title_1;
 
                 .back {
                     display: block;
@@ -915,6 +959,7 @@
                                 height: 152px;
                                 box-sizing: border-box;
                                 padding: 0 10px;
+                                border-radius: 15px;
 
                                 .medal {
                                     width: 60px;
@@ -956,12 +1001,12 @@
             .detailTitle_2 {
                 font-size: 17px;
                 font-weight: bold;
-                color: $title_2;
+                color: $title_1;
                 margin: 40px 0 20px 20px;
 
                 &.sp {
                     font-size: 24px;
-                    color: $title_1;
+                    color: $remind;
                 }
             }
 
@@ -980,10 +1025,10 @@
                     border-bottom: solid 1px $mainBorder_1;
 
                     &.header {
-                        border-bottom: solid 2px $mainBorder_2;
+                        border-bottom: solid 2px $choose_Border;
                         
                         div {
-                            color: $title_1;
+                            color: $title_2;
                         }
                     }
 
@@ -1045,8 +1090,7 @@
                     height: auto;
                     margin-bottom: 56px;
                     background: $mainBG_1;
-                    box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
 
                     .title {
                         display: flex;
@@ -1057,7 +1101,7 @@
                         padding-left: 22px;
                         font-size: 20px;
                         letter-spacing: 2px;
-                        color: $title_2;
+                        color: $title_1;
                         font-weight: bold;
                     }
 
@@ -1070,7 +1114,7 @@
                             box-sizing: border-box;
                             padding: 14px 24px 0;
                             height: 180px;
-                            border-right: solid 1px $mainBorder_1;
+                            border-right: solid 1px $mainBorder_2;
                             
                             .totalTitle {
                                 display: flex;
@@ -1079,7 +1123,7 @@
                                 margin-bottom: 16px;
                                 font-size: 17px;
                                 letter-spacing: 2px;
-                                color: $title_1;
+                                color: $title_2;
                                 font-weight: bold;
 
                                 button {
@@ -1135,12 +1179,12 @@
                             .lock {
                                 display: flex;
                                 font-size: 16px;
-                                color: $money;
+                                color: $title_2;
                                 font-weight: bold;
 
                                 p {
                                     margin-right: 23px;
-                                    color: $title_3;
+                                    color: $title_2;
                                 }
                             }
                         }
@@ -1151,8 +1195,7 @@
                     width: 100%;
                     height: auto;
                     background: $mainBG_1;
-                    border-radius: 5px;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border: solid 1px $mainBorder_2;
                     position: relative;
 
                     .tabs {
@@ -1183,7 +1226,7 @@
                             font-size: 17px;
                             letter-spacing: 2px;
                             margin-bottom: 20px;
-                            color: $title_2;
+                            color: $title_1;
                             font-weight: bold;
                         }
                         
@@ -1200,8 +1243,9 @@
                                 height: auto;
                                 margin: 0 9px 9px 0;
                                 border-radius: 5px;
-                                border: solid 1px $mainBorder_1;
+                                border: solid 1px $mainBorder_2;
                                 padding: 18px;
+                                background: $mainBG_2;
 
                                 &:nth-of-type(5n) {
                                     margin-right: 0;
@@ -1210,7 +1254,7 @@
                                 div {
                                     font-size: 16px;
                                     margin-bottom: 8px;
-                                    color: $mainFont_1;
+                                    color: $title_2;
                                     font-weight: bold;
                                     line-height: 18px;
                                 }
@@ -1239,21 +1283,20 @@
                     width: 100%;
                     height: auto;
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
 
                     .header {
                         width: 100%;
                         height: auto;
                         padding: 10px 0 15px 20px;
                         box-sizing: border-box;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $mainBorder_2;
 
                         span {
                             font-size: 20px;
                             letter-spacing: 2px;
                             font-weight: bold;
-                            color: $title_2;
+                            color: $title_1;
                         }
                     }
 
@@ -1277,11 +1320,11 @@
 
                                 &:nth-of-type(2) {
                                     font-size: 15px;
-                                    color: $title_3;
+                                    color: $title_2;
                                     
                                     span {
                                         font-size: 15px;
-                                        color: $title_3;
+                                        color: $title_2;
                                     }
                                 }
                             }
@@ -1328,9 +1371,17 @@
                                     }
 
                                     .review {
-                                        width: 100%;
-                                        height: auto;
-                                        margin-top: 4px;
+                                        width: 93px;
+                                        height: 22px;
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 0;
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                        text-align: center;
+                                        letter-spacing: 1px;
+                                        box-sizing: border-box;
+                                        padding: 4px 0 0 23px;
                                     }
                                 }
                             }
@@ -1347,8 +1398,7 @@
                         width: 100%;
                         height: auto;
                         background: $mainBG_1;
-                        box-shadow: 0 5px 10px -5px $mainShadow_1;
-                        border-radius: 5px;
+                        border: solid 1px $mainBorder_2;
                         box-sizing: border-box;
                         padding: 15px 20px 35px;
 
@@ -1358,7 +1408,7 @@
                                 font-size: 17px;
                                 letter-spacing: 2px;
                                 font-weight: bold;
-                                color: $title_2;
+                                color: $title_1;
                             }
 
                             .formBox {
@@ -1381,6 +1431,54 @@
                                             height: auto;
                                             display: flex;
                                             margin-bottom: 35px;
+
+                                            &.upload {
+                                                margin-top: 20px;
+                                                align-items: flex-start;
+
+                                                .smallTitle {
+                                                    margin-top: 6px;
+
+                                                    span {
+                                                        line-height: 18px;
+
+                                                        &::before {
+                                                            display: none;
+                                                        }
+                                                    }
+                                                }
+                                                
+                                                .btnBox {
+                                                    position: relative;
+                                                    width: 100%;
+                                                    height: auto;
+
+                                                    button {
+                                                        width: auto;
+                                                        height: auto;
+                                                        padding: 4px 10px;
+                                                        @include eventBtn;
+                                                        font-size: 14px;
+                                                    }
+
+                                                    p {
+                                                        font-size: 12px;
+                                                        font-weight: bold;
+                                                        margin-bottom: 15px;
+                                                        color: $remind_sp;
+
+                                                        &.remind {
+                                                            color: $remind;
+                                                            margin-top: 10px;
+                                                        }
+                                                    }
+
+                                                    .img {
+                                                        width: 239px;
+                                                        height: 308px;
+                                                    }
+                                                }
+                                            }
 
                                             .smallTitle {
                                                 width: 98px;
@@ -1438,6 +1536,7 @@
                                                     left: 0;
                                                     bottom: -16px;
                                                     color: $remind;
+                                                    font-weight: bold;
                                                 }
 
                                                 button {
@@ -1466,8 +1565,7 @@
                 width: 100%;
                 height: auto;
                 background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
                 margin-bottom: 17px;
 
                 &:last-child {
@@ -1482,10 +1580,10 @@
                     height: 43px;
                     box-sizing: border-box;
                     padding: 0 20px;
-                    border-bottom: solid 1px $mainBorder_1;
+                    border-bottom: solid 1px $mainBorder_2;
                     font-size: 16px;
                     letter-spacing: 2px;
-                    color: $title_2;
+                    color: $title_1;
                     font-weight: bold;
 
                     .more {
@@ -1493,7 +1591,7 @@
                         display: flex;
                         align-items: center;
                         letter-spacing: 1px;
-                        color: $title_3;
+                        color: $mainFont_1;
                         cursor: pointer;
 
                         .arrow {
@@ -1530,10 +1628,10 @@
                                 height: 19px;
                                 font-size: 14px;
                                 letter-spacing: 1px;
-                                color: $title_1;
+                                color: $title_2;
 
                                 p {
-                                    color: $title_2;
+                                    color: $mainFont_1;
                                 }
                             }
 
@@ -1574,7 +1672,7 @@
                             letter-spacing: 1px;
                             margin-bottom: 10px;
                             font-weight: bold;
-                            color: $title_1;
+                            color: $title_2;
                         }
 
                         ul {
@@ -1591,7 +1689,7 @@
                                     
                                     &:nth-of-type(1) {
                                         font-size: 12px;
-                                        color: $title_3;
+                                        color: $remind;
                                     }
 
                                     &:last-child {
@@ -1650,9 +1748,8 @@
                 min-height: 900px;
                 padding: 32px 27px;
                 box-sizing: border-box;
-                border-radius: 5px;
                 background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                border: solid 1px $mainBorder_2;
 
                 .title {
                     
@@ -1718,8 +1815,7 @@
             .top {
                 width: 100%;
                 height: auto;
-                border-radius: 5px;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                border: solid 1px $mainBorder_2;
                 background: $mainBG_1;
 
                 p {
@@ -1731,8 +1827,8 @@
                     padding-left: 22px;
                     font-size: 20px;
                     font-weight: bold;
-                    color: $title_2;
-                    border-bottom: solid 1px $mainBorder_1;
+                    color: $title_1;
+                    border-bottom: solid 1px $mainBorder_2;
                 }
 
                 div {
@@ -1748,7 +1844,6 @@
                         height: 35px;
                         margin-right: 10px;
                         @include borderBtn;
-                        color: $mainFont_1;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -1763,6 +1858,26 @@
 
                 &.display {
                     display: block;
+                }
+
+                &.ann {
+
+                    .list {
+
+                        ul {
+
+                            li {
+
+                                .title {
+                                    width: 70%;
+                                }
+
+                                .date {
+                                    width: 30%;
+                                }
+                            }
+                        }
+                    }
                 }
 
                 .tabs {
@@ -1782,17 +1897,16 @@
 
                 .list {
                     background: $mainBG_1;
-                    box-shadow: 0px 5px 10px -5px $mainShadow_1;
+                    border: solid 1px $mainBorder_2;
                     width: 100%;
                     min-height: 638px;
-                    border-radius: 5px;
 
                     .btnBox  {
                         display: none;
                         width: 100%;
                         height: auto;
                         padding-bottom: 16px;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $mainBorder_2;
 
                         &.nor {
                             justify-content: flex-end;
@@ -1810,7 +1924,6 @@
                                 }
                             }
                         }
-
                         &.edit {
                             justify-content: space-between;
 
@@ -1891,15 +2004,7 @@
                             }
 
                             &:hover,&:active,&.active {
-                                @include navHover;
-
-                                &::before {
-                                    display: none;
-                                }
-
-                                .title {
-                                    color: $title_2;
-                                }
+                                @include mailHover;
                             }
 
                             input {
@@ -1909,7 +2014,7 @@
                             }
 
                             .title {
-                                width: 70%;
+                                width: 28%;
                                 position: relative;
                                 box-sizing: border-box;
                                 padding: 0 33px 0 28px;
@@ -1928,10 +2033,33 @@
                                 }
                             }
 
+                            .msg {
+                                width: 54%;
+                                box-sizing: border-box;
+                                padding: 0 33px;
+                                position: relative;
+                                color: $remind;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                font-weight: bold;
+
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    right: 0;
+                                    width: 1px;
+                                    height: 15px;
+                                    background: $mainBorder_1;
+                                }
+                            }
+
                             .date {
-                                width: 30%;
+                                width: 14%;
                                 text-align: center;
-                                color: $title_Time;
+                                color: $title_2;
                             }
                         }
                     }
@@ -1947,8 +2075,7 @@
                 width: 100%;
                 height: auto;
                 background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
                 margin-bottom: 20px;
 
                 h1 {
@@ -1961,7 +2088,7 @@
                     letter-spacing: 2px;
                     font-size: 20px;
                     font-weight: bold;
-                    color: $title_2;
+                    color: $title_1;
                 }
             }
 
@@ -1989,7 +2116,7 @@
                     box-sizing: border-box;
                     padding: 18px 22px;
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border: solid 1px $mainBorder_2;
                     
                     &.display {
                         display: flex;
@@ -2008,7 +2135,7 @@
                             .header {
                                 width: 100%;
                                 height: 47px;
-                                border-bottom: solid 1px $mainBorder_1;
+                                border-bottom: solid 1px $mainBorder_2;
                                 box-sizing: border-box;
                                 padding: 0 15px;
                                 display: flex;
@@ -2039,7 +2166,7 @@
                                             color: $mainFont_1;
 
                                             &.now {
-                                                color: $remind_sp;
+                                                color: $remind;
                                             }
 
                                             &.split {
@@ -2052,6 +2179,7 @@
                                         width: 75px;
                                         height: 27px;
                                         @include eventBtn;
+                                        font-size: 14px;
 
                                         &.apply {
                                             margin-right: 8px;
@@ -2118,8 +2246,7 @@
                     min-height: 430px;
                     box-sizing: border-box;
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
 
                     &.display {
                         display: block;
@@ -2134,7 +2261,7 @@
                             height: auto;
                             box-sizing: border-box;
                             padding: 24px;
-                            border-bottom: solid 1px $mainBorder_1;
+                            border-bottom: solid 1px $mainBorder_2;
 
                             form {
                                 width: 100%;
@@ -2232,7 +2359,7 @@
                                 font-size: 17px;
                                 font-weight: bold;
                                 letter-spacing: 2px;
-                                color: $title_2;
+                                color: $title_1;
                             }
 
                             table {
@@ -2244,10 +2371,29 @@
                                         height: 50px;
                                         vertical-align: middle;
                                         letter-spacing: 1px;
-                                        color: $title_1;
-                                        border-bottom: solid 2px $mainBorder_2;
+                                        color: $title_2;
+                                        border-bottom: solid 2px $choose_Border;
                                         font-size: 13px;
                                         font-weight: bold;
+                                        position: relative;
+
+                                        &:last-child {
+
+                                            &::before {
+                                                display: none;
+                                            }
+                                        }
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            width: 1px;
+                                            height: 13px;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            right: 0;
+                                            background: $mainBorder_1;
+                                        }
                                     }
 
                                     td {
@@ -2258,6 +2404,25 @@
                                         font-weight: bold;
                                         text-align: center;
                                         border-bottom: solid 1px $mainBorder_1;
+                                        position: relative;
+
+                                        &:last-child {
+
+                                            &::before {
+                                                display: none;
+                                            }
+                                        }
+
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            width: 1px;
+                                            height: 13px;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            right: 0;
+                                            background: $mainBorder_1;
+                                        }
                                     }
                                 }
                             }
@@ -2290,8 +2455,7 @@
                 width: 100%;
                 height: 50px;
                 background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                color: $title_2;
+                color: $title_1;
                 display: flex;
                 align-items: center;
                 box-sizing: border-box;
@@ -2299,7 +2463,7 @@
                 font-weight: bold;
                 font-size: 20px;
                 letter-spacing: 2px;
-                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
             }
 
             .bottom {
@@ -2331,8 +2495,7 @@
                     width: 100%;
                     height: auto;
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
                     display: none;
 
                     &.display {
@@ -2348,7 +2511,7 @@
                             height: auto;
                             box-sizing: border-box;
                             padding: 24px;
-                            border-bottom: solid 1px $mainBorder_1;
+                            border-bottom: solid 1px $mainBorder_2;
 
                             form {
                                 width: 100%;
@@ -2470,9 +2633,9 @@
                                         font-size: 13px;
                                         letter-spacing: 1px;
                                         font-weight: bold;
-                                        color: $title_1;
+                                        color: $title_2;
                                         position: relative;
-                                        border-bottom: solid 2px $mainBorder_2;
+                                        border-bottom: solid 2px $choose_Border;
 
                                         &:last-child {
 
@@ -2508,8 +2671,7 @@
                     width: 100%;
                     height: auto;
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
                     box-sizing: border-box;
                     padding: 20px;
                     display: none;
@@ -2521,7 +2683,7 @@
                     h1 {
                         font-size: 17px;
                         font-weight: bold;
-                        color: $title_2;
+                        color: $title_1;
                     }
 
                     table {
@@ -2531,7 +2693,7 @@
                         tr {
 
                             th {
-                                border-bottom: solid 2px $mainBorder_2;
+                                border-bottom: solid 2px $choose_Border;
                                 height: 40px;
                                 vertical-align: middle;
 
@@ -2543,7 +2705,7 @@
                                 }
 
                                 p {
-                                    color: $title_1;
+                                    color: $title_2;
                                     padding: 0 5px;
                                     font-size: 14px;
                                     font-weight: bold;
@@ -2563,11 +2725,11 @@
                                     text-align: center;
 
                                     &.money {
-                                        color: $remind_sp2;
+                                        color: $remind_sp;
                                     }
 
                                     &.sp {
-                                        color: $remind_sp;
+                                        color: $remind;
                                     }
 
                                     button {
@@ -2601,8 +2763,7 @@
             height: auto;
             padding: 15px 0 28px;
             background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
+            border: solid 1px $mainBorder_2;
 
             form {
                 width: 100%;
@@ -2613,7 +2774,7 @@
                     margin-bottom: 28px;
                     font-size: 20px;
                     letter-spacing: 2px;
-                    color: $title_2;
+                    color: $title_1;
                     font-weight: bold;
                 }
 
@@ -2710,13 +2871,13 @@
                     li {
                         width: 100%;
                         height: 40px;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $mainBorder_2;
 
                         &.title {
-                            border-bottom: solid 1px $mainBorder_2; 
+                            border-bottom: solid 2px $choose_Border; 
 
                             p {
-                                color: $title_1 !important;
+                                color: $title_2 !important;
                                 
                                 &::before {
                                     display: none;
@@ -2726,6 +2887,7 @@
 
                         &.active {
                             height: auto;
+                            background: $mainBG_2;
 
                             .wordWrap {
                                 height: 40px;
@@ -2745,6 +2907,7 @@
                             align-items: center;
                             width: 100%;
                             height: 100%;
+                            background: $mainBG_1;
 
                             p {
                                 position: relative;
@@ -2788,7 +2951,7 @@
                                 }
     
                                 &.result {
-                                    color: $remind;
+                                    color: $remind_sp;
                                 }
     
                                 .arrow_ic {
@@ -2806,7 +2969,7 @@
                             margin: 15px auto;
                             overflow: hidden;
                             background: $mainBG_1;
-                            box-shadow: 0 5px 10px -5px $mainShadow_1;
+                            box-shadow: 0 0 0 1px $mainBorder_2;
                             border-radius: 5px;
 
                             tr {
@@ -2899,8 +3062,7 @@
                     height: 108px;
                     margin-bottom: 15px;
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
 
                     .title {
                         display: flex;
@@ -2910,16 +3072,23 @@
                         width: 100%;
                         box-sizing: border-box;
                         padding: 0 18px 0 22px;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $mainBorder_2;
                         font-size: 20px;
                         letter-spacing: 2px;
-                        color: $title_2;
+                        color: $title_1;
                         font-weight: bold;
 
                         button {
                             width: 105px;
                             height: 31px;
                             @include borderBtn;
+
+                            &:hover,&:active,&.active {
+
+                                i {
+                                    filter: brightness(3);
+                                }
+                            }
 
                             i {
                                 display: inline-block;
@@ -2968,6 +3137,7 @@
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
+                                    box-sizing: border-box;
 
                                     i {
                                         width: 27px;
@@ -2985,8 +3155,7 @@
                     height: 555px;
                     padding: 16px 0 0 27px;
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
                     box-sizing: border-box;
 
                     .card,.atm,.shop,
@@ -3001,7 +3170,7 @@
                     .title {
                         font-size: 17px;
                         letter-spacing: 2px;
-                        color: $title_2;
+                        color: $title_1;
                         font-weight: bold;
                     }
 
@@ -3071,6 +3240,7 @@
                             margin: 39px 0 0 -10px;
                             border: solid 1px $mainBorder_2;
                             box-sizing: border-box;
+                            background: $mainBG_2;
 
                             div {
                                 color: $mainFont_1;
@@ -3079,7 +3249,7 @@
                                 margin-bottom: 11px;
 
                                 &.title {
-                                    color: $title_1;
+                                    color: $remind;
                                 }
                             }
                         }
@@ -3162,8 +3332,7 @@
                 height: auto;
                 margin-right: 15px;
                 background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                border: solid 1px $mainBorder_2;
 
                 .title {
                     width: 100%;
@@ -3174,7 +3343,7 @@
                     align-items: center;
 
                     div {
-                        color: $title_2;
+                        color: $title_1;
                         font-size: 20px;
                         letter-spacing: 2px;
                         font-weight: bold;
@@ -3204,7 +3373,7 @@
                                 align-items: center;
                                 font-size: 17px;
                                 letter-spacing: 2px;
-                                color: $title_1;
+                                color: $title_2;
                                 font-weight: bold;
 
                                 .reset_ic {
@@ -3266,8 +3435,9 @@
                            box-sizing: border-box;
                            padding: 18px;
                            margin: 0 16px 16px 0;
-                           border: solid 1px $mainBorder_1;
+                           border: solid 1px $mainBorder_2;
                            border-radius: 5px;
+                           background: $mainBG_2;
 
                            &:nth-of-type(4n) {
                                margin-right: 0;
@@ -3276,7 +3446,7 @@
                            .name {
                                margin-bottom: 5px;
                                font-size: 16px;
-                               color: $mainFont_1;
+                               color: $title_2;
                             }
 
                             .amount {
@@ -3326,7 +3496,7 @@
                         margin-bottom: 25px;
                         font-size: 17px;
                         letter-spacing: 2px;
-                        color: $title_2;
+                        color: $title_1;
                         font-weight: bold;
 
                         .remind {
@@ -3431,8 +3601,7 @@
 
                 .top {
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
                     width: 100%;
                     height: auto;
                     margin-bottom: 20px;
@@ -3449,7 +3618,7 @@
                             font-weight: bold;
                             font-size: 20px;
                             letter-spacing: 2px;
-                            color: $title_2;
+                            color: $title_1;
                         }
                     }
     
@@ -3474,11 +3643,11 @@
                                     align-items: center;
                                     font-size: 17px;
                                     letter-spacing: 2px;
-                                    color: $title_1;
+                                    color: $title_2;
                                     font-weight: bold;
     
                                     &.limit {
-                                        color: $remind;
+                                        color: $title_2;
                                         justify-content: space-between;
                                     }
                                     &.canUse {
@@ -3521,7 +3690,7 @@
                             font-weight: bold;
                             letter-spacing: 2px;
                             margin-bottom: 20px;
-                            color: $title_2;
+                            color: $title_1;
                         }
     
                         ul {
@@ -3541,8 +3710,9 @@
                                box-sizing: border-box;
                                padding: 18px;
                                margin: 0 16px 16px 0;
-                               border: solid 1px $mainBorder_1;
+                               border: solid 1px $mainBorder_2;
                                border-radius: 5px;
+                               background: $mainBG_2;
     
                                &:nth-of-type(4n) {
                                    margin-right: 0;
@@ -3592,8 +3762,7 @@
 
                 .bottom {
                     background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: solid 1px $mainBorder_2;
                     width: 100%;
                     min-height: 630px;
                     box-sizing: border-box;
@@ -3602,7 +3771,7 @@
                     .title {
                         font-size: 17px;
                         letter-spacing: 2px;
-                        color: $title_2;
+                        color: $title_1;
                         margin-bottom: 20px;
                         font-weight: bold;
                     }
@@ -3621,12 +3790,12 @@
                             width: 202px;
                             height: 112px;
                             margin-right: 8px;
-                            border: solid 1px $mainBorder_1;
+                            border: solid 1px $mainBorder_2;
                             border-radius: 5px;
 
                             .name {
                                 font-size: 17px;
-                                color: $mainFont_1;
+                                color: $title_1;
                                 font-weight: bold;
                             }
 
@@ -3634,7 +3803,7 @@
 
                                 span {
                                     font-size: 38px;
-                                    color: $title_1;
+                                    color: $money;
                                     font-weight: bold;
                                 }
                             }
@@ -3642,7 +3811,7 @@
                             .notice {
                                 font-size: 15px;
                                 letter-spacing: 2px;
-                                color: $title_3;
+                                color: $title_2;
                             }
                         }
                     }
@@ -3705,11 +3874,12 @@
                         padding: 15px 19px;
                         margin: 24px 0 0 -10px;
                         border: solid 1px $mainBorder_2;
+                        background: $mainBG_2;
 
                         .remindTitle {
                             font-size: 13px;
                             letter-spacing: 1px;
-                            color: $title_1;
+                            color: $remind;
                             font-weight: bold;
                         }
 
@@ -3723,7 +3893,7 @@
 
                         p {
                             display: inline;
-                            color: $remind;
+                            color: $remind_sp;
                             font-size: 13px;
                             letter-spacing: 1px;
                             font-weight: bold;
@@ -3738,13 +3908,12 @@
             width: 1140px;
             height: auto;
             background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
+            border: solid 1px $mainBorder_2;
             box-sizing: border-box;
             padding: 20px;
 
             .title {
-                color: $title_2;
+                color: $title_1;
                 font-size: 20px;
                 letter-spacing: 2px;
                 font-weight: bold;
@@ -3829,10 +3998,11 @@
                 height: auto;
 
                 p {
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: bold;
                     color: $mainFont_1;
-                    margin-bottom: 6px;
+                    margin-bottom: 16px;
+                    line-height: 20px;
                 }
             }
         }
@@ -3842,12 +4012,11 @@
             width: 1140px;
             height: auto;
             background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
+            border: solid 1px $mainBorder_2;
             box-sizing: border-box;
 
             .title {
-                color: $title_2;
+                color: $title_1;
                 font-size: 20px;
                 letter-spacing: 2px;
                 font-weight: bold;
@@ -3926,12 +4095,13 @@
                     th {
                         vertical-align: middle;
                         height: 40px;
-                        border-bottom: solid 2px $mainBorder_2;
+                        border-bottom: solid 2px $choose_Border;
 
                         p {
                             font-size: 14px;
                             font-weight: bold;
-                            color: $title_1;
+                            color: $title_2;
+                            border-right: solid 1px $mainBorder_1;
                         }
                     }
 
@@ -3956,7 +4126,7 @@
 
                             &.open {
                                 text-decoration: underline;
-                                color: $remind_sp2;
+                                color: $remind_sp;
                                 cursor: pointer;
                             }
                         }

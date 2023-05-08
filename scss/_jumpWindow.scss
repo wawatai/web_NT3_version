@@ -20,6 +20,7 @@
         background: $mainBG_1;
         border-radius: 5px;
         overflow: hidden;
+        border: solid 1px $mainBorder_2;
 
         //忘記密碼
         &.forgetPassword {
@@ -355,7 +356,7 @@
                                 color: $mainFont_1;
 
                                 &.sp {
-                                    color: $remind_sp;
+                                    color: $remind;
                                 }
                             }
                         }
@@ -367,7 +368,7 @@
         //查看活動
         &.checkEvent {
             display: none;
-            width: 1000px;
+            width: 840px;
 
             &.display {
                 display: block;
@@ -377,20 +378,18 @@
                 width: 100%;
                 height: auto;
                 box-sizing: border-box;
-                padding: 28px 22px 0;
+                padding: 28px 47px;
 
                 .imgBox {
-                    width: 100%;
-                    height: 500px;
                     overflow-x: auto;
                 }
 
                 p {
                     font-size: 16px;
-                    font-weight: bold;
                     letter-spacing: 1px;
                     color: $mainFont_1;
                     margin-top: 10px;
+                    font-weight: bold;
                     line-height: 20px;
                 }
             }
@@ -492,7 +491,7 @@
                     .check {
                         width: 267px;
                         height: 42px;
-                        @include mainBtn;
+                        @include fastCheck;
                         margin-bottom: 20px;
                     }
                 }
@@ -553,6 +552,11 @@
 
         //紅利會員彈窗
         &.pointWindow {
+            display: none;
+
+            &.display {
+                display: block;
+            }
 
             .content {
                 padding: 24px;
@@ -613,6 +617,90 @@
             }
         }
 
+        //相關條款彈窗
+        &.ruleWindow {
+            width: 840px;
+            display: none;
+
+            &.display {
+                display: block;
+            }
+
+            .content {
+                width: 90%;
+                height: 400px;
+                margin: 28px auto;
+                overflow-y: auto;
+
+                .smallTitle {
+                    margin: 40px 0;
+                    color: $title_2;
+                    font-size: 24px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+
+                    &:nth-of-type(1) {
+                        margin-top: 0;
+                    }
+                }
+
+                p:not(.smallTitle) {
+                    color: $mainFont_1;
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 22px;
+                    letter-spacing: 1px;
+                }
+
+                ul {
+                    width: 100%;
+                    height: auto;
+                    box-sizing: border-box;
+                    padding-left: 32px;
+
+                    li {
+                        list-style: disc;
+                        color: $mainFont_1;
+                        margin: 60px 0;
+
+                        &:nth-of-type(1) {
+                            margin-top: 0;
+                        }
+                    }
+
+                    ol {
+                        width: 100%;
+                        height: auto;
+                        padding-left: 32px;
+                        margin-top: 30px;
+                        box-sizing: border-box;
+
+                        li {
+                            list-style: decimal;
+                            margin: 20px 0;
+
+                            &:last-child {
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .btnBox {
+                width: 100%;
+                height: auto;
+                margin: 20px 0;
+                text-align: center;
+
+                button {
+                    width: 322px;
+                    height: 42px;
+                    @include mainBtn;
+                }
+            }
+        }
+
         .title {
             width: 100%;
             height: 50px;
@@ -622,8 +710,8 @@
             position: relative;
 
             p {
-                color: $mainFont_2;
-                font-size: 20px;
+                color: $title_1;
+                font-size: 16px;
                 font-weight: bold;
                 text-align: center;
                 width: 100%;
