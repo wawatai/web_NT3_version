@@ -21,8 +21,12 @@ html {
         @import "./help";
         @import "./register";
 
+        main {
+            padding-top: 120px;
+        }
+
         .bg {
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 100%;
             top: 0;

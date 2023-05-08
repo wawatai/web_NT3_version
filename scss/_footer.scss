@@ -6,12 +6,14 @@ footer {
     .top {
         width: 100%;
         height: 55px;
+        background: $header_BG;
 
         .center {
             width: 1400px;
             height: 100%;
             margin: 0 auto;
             display: flex;
+            align-items: center;
             justify-content: space-between;
 
             .btnBox {
@@ -26,29 +28,32 @@ footer {
                     li {
                         width: 95px;
                         height: 100%;
+                        @include footerBtn;
                         margin-right: 8px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        cursor: pointer;
-                        color: $title_1;
-                        font-weight: bold;
-                        font-size: 14px;
 
                         &:hover,&:active,&.active {
-                            color: $mainFont_2;
+
+                            i {
+                                display: block;
+                            }
+                        }
+
+                        i {
+                            display: none;
+                            width: 5px;
+                            height: 5px;
+                            background: $mainFont_2;
+                            transform: rotate(45deg);
+                            margin-right: 10px;
                         }
                     }
                 }
             }
 
             p {
+                color: $footer_copyright_Color;
                 font-size: 14px;
                 font-weight: bold;
-                color: $title_1;
-                height: 100%;
-                display: flex;
-                align-items: center;
                 letter-spacing: 2px;
             }
         }
@@ -62,16 +67,16 @@ footer {
         .center {
             width: 1400px;
             height: 100%;
-            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            margin: 0 auto;
 
             p {
+                color: $mainFont_2;
                 font-size: 14px;
                 font-weight: bold;
-                color: $mainFont_2;
 
                 &:last-child {
                     margin-top: 20px;

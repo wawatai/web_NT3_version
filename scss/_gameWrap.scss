@@ -1,68 +1,52 @@
 .gameWrap {
     padding-bottom: 30px;
 
-    //跑馬燈
-    .marqueeArea {
+     //跑馬燈
+     .marqueeArea {
         width: 100%;
-        height: auto;
+        height: 50px;
+        @include marquee;
+        margin: 12px 0;
 
-        .center {
-            width: 1400px;
-            height: 50px;
-            margin: 0 auto;
+        .marquee_ic {
+            width: 38px;
+            height: 38px;
+            margin-left: 5px;
+            flex-shrink: 0;
+        }
 
-            .marqueeWrap {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                background: $marquee_BG;
-                box-shadow: 0 0 13px 3px $marquee_Shadow;
-                border-radius: 25px;
+        .marquee {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
 
-                .marquee_ic {
-                    width: 160px;
-                    height: 88%;
-                    border-radius: 25px;
-                    background: $marquee_Linear;
-                    margin-left: 3px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+            p {
+                display: inline-block;
+                color: $mainFont_1;
+                font-size: 14px;
+                font-weight: bold;
+                white-space: nowrap;
+                animation: marquee 10s linear infinite;
+                padding-left: 100%;
+            }
 
-                    p {
-                        font-size: 16px;
-                        font-weight: bold;
-                        color: $marquee_LinearWord;
-                    }
+            @keyframes marquee {
+                0% {
+                    transform: translate(0%);
                 }
 
-                .marquee {
-                    width: 100%;
-                    height: auto;
-                    overflow: hidden;
-
-                    p {
-                        font-size: 14px;
-                        font-weight: bold;
-                        color: $marquee_Word;
-                        display: inline-block;
-                        animation: marquee 10s linear infinite;
-                        padding-left: 100%;
-                        white-space: nowrap;
-                    }
-
-                    @keyframes marquee {
-                        0% {
-                            transform: translate(0%);
-                        }
-
-                        100% {
-                            transform: translate(-100%);
-                        }
-                    }
+                100% {
+                    transform: translate(-100%);
                 }
             }
+        }
+
+        .marquee_base {
+            width: 45px;
+            height: 42px;
+            border-radius: 0 12px 12px 0;
+            flex-shrink: 0;
+            margin-right: 5px;
         }
     }
 
@@ -72,7 +56,7 @@
         min-width: 1400px;
         height: auto;
         margin-bottom: 48px;
-        padding-top: 70px;
+        // padding-top: 70px;
 
         // &.slotPage {
         //     width: 1400px;
@@ -86,42 +70,94 @@
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
+            position: relative;
+
+            .marqueeArea {
+                position: absolute;
+            }
         }
 
         .textBox {
             width: 630px;
             height: auto;
-            padding-top: 148px;
+            padding-top: 120px;
 
-            .title {
-                display: flex;
-                align-items: flex-end;
-                font-weight: bold;
-                background: $gameWrap_Linear;
-                -webkit-background-clip: text;
+            .infoBox {
+                width: 100%;
+                height: auto;
+                border: 4px solid $mainBorder_3;
+                padding: 40px 30px 30px;
+                margin: 0 auto 50px;
+                position: relative;
 
-                .big {
-                    font-size: 62px;
-                    letter-spacing: 6px;
-                    color: transparent;
+                &::before {
+                    content: "";
+                    width: 97%;
+                    height: 93%;
+                    border: 1.5px solid $mainBorder_3;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
                 }
 
-                .small {
-                    font-size: 42px;
-                    padding-bottom: 5px;
-                    margin-left: 16px;
-                    color: transparent;
-                }
-            }
+                .deco {
+                    width: 66px;
+                    height: 66px;
+                    display: flex;
 
-            .mainCnt {
-                margin: 50px 0;
-                width: 630px;
-                letter-spacing: 1px;
-                line-height: 24px;
-                font-size: 14px;
-                font-weight: bold;
-                color: $title_2;
+                    align-items: center;
+                    justify-content: center;
+                    background: $decoCircle_BG;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -33px;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    i {
+                        width: 42px;
+                        height: 27px;
+                    }
+                }
+                
+                .title {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-weight: bold;
+                    background: $gameWrap_Linear;
+                    -webkit-background-clip: text;
+                    border-bottom: 2px solid $mainBorder_3;
+                    margin: 0 auto;
+
+                    .big {
+                        font-size: 45px;
+                        letter-spacing: 6px;
+                        color: transparent;
+                    }
+
+                    .small {
+                        color: #f6950e;
+                        font-size: 28px;
+                        font-weight: bold;
+                        letter-spacing: 6px;
+                        padding-bottom: 5px;
+                        margin: 15px 0;
+                    }
+                }
+
+                .mainCnt {
+                    width: 90%;
+                    color: $title_2;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-align: center;
+                    letter-spacing: 1px;
+                    line-height: 24px;
+                    margin: 20px auto 0;
+                }
             }
         }
 
@@ -164,14 +200,14 @@
         width: 1400px;
         height: auto;
         margin: 0 auto;
-        padding: 25px 0;
+        padding: 1px 0 0;
 
         .marqueeArea {
-            margin-bottom: 25px;
+            margin-bottom: 12px;
         }
 
         .slotBody {
-            background: $mainBG_1;
+            background: $mainBG_3;
             border-radius: 5px;
             box-shadow: 0 5px 10px $mainShadow_1;
 
@@ -191,7 +227,7 @@
                     li {
                         color: $choose_Word;
                         width: auto;
-                        height: calc(100% - 3px);
+                        height: calc(100% + 1px);
                         padding: 0 50px;
                         font-size: 18px;
                         display: flex;
@@ -265,7 +301,7 @@
                             height: 70px;
                             margin-bottom: 15px;
                             display: flex;
-                            justify-content: flex-start;
+                            justify-content: space-between;
                             align-items: center;
 
                             &.active {
@@ -279,28 +315,28 @@
                                 }
                             }
 
-                            // .all,.back {
-                            //     @include mainBtn;
-                            //     width: 137px;
-                            //     height: 40px;
-                            //     font-size: 18px;
+                            .all,.back {
+                                @include mainBtn;
+                                width: 137px;
+                                height: 40px;
+                                font-size: 18px;
 
-                            //     i {
-                            //         display: inline-block;
-                            //         width: 8px;
-                            //         height: 15px;
-                            //         transform: scaleX(-1);
-                            //         margin-left: 20px;
-                            //     }
-                            // }
-                            // .back {
-                            //     display: none;
+                                i {
+                                    display: inline-block;
+                                    width: 8px;
+                                    height: 15px;
+                                    transform: scaleX(-1);
+                                    margin-left: 20px;
+                                }
+                            }
+                            .back {
+                                display: none;
 
-                            //     i {
-                            //         margin: 0 20px 0 0;
-                            //         transform: scaleX(1);
-                            //     }
-                            // }
+                                i {
+                                    margin: 0 20px 0 0;
+                                    transform: scaleX(1);
+                                }
+                            }
                         }
 
                         .gameList {
@@ -318,7 +354,7 @@
                             li {
                                 width: 250px;
                                 height: 200px;
-                                border: solid 1px $mainBorder_1;
+                                border: solid 1px $mainBorder_3;
                                 border-radius: 5px;
                                 overflow: hidden;
                                 cursor: pointer;
@@ -343,15 +379,16 @@
                                     height: 35px;
                                     display: flex;
                                     align-items: center;
+                                    justify-content: space-between;
+                                    background: $mainBG_1;
                                     padding: 0 20px;
                                     box-sizing: border-box;
-                                    justify-content: space-between;
+                                    border-top: 1px solid $mainBorder_3;                                    
                                     position: relative;
                                     z-index: 1;
 
                                     p {
                                         font-size: 18px;
-                                        font-weight: bold;
                                         color: $mainFont_1;
                                     }
 
