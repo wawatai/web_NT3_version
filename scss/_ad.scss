@@ -9,7 +9,7 @@
             outline: none;
         }
 
-        button {
+        .slick-arrow {
             z-index: 1;
             width: 285px;
             height: 494px;
@@ -22,7 +22,7 @@
                 transform: translate(-50%,-50%) rotate(-45deg);
                 width: 8px;
                 height: 8px;
-                border: solid 6px $mainBG_1;
+                border: solid 6px $ad_Arrow;
                 border-width: 6px 0 0 6px;
             }
 
@@ -35,6 +35,35 @@
                 
                 &::before {
                     transform: translate(-50%,-50%) rotate(45deg) scaleX(-1);
+                }
+            }
+        }
+
+        .slick-dots {
+            bottom: 30px;
+
+            li {
+                margin: 0 10px;
+
+                &.slick-active {
+
+                    button {
+
+                        &::before {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                button {
+
+                    &::before {
+                        width: 16px;
+                        height: 16px;
+                        background: #a17a52;
+                        color: transparent;
+                        transform: rotate(45deg);
+                    }
                 }
             }
         }
