@@ -26,7 +26,7 @@ $(function() {
     $('.liveBtn').mouseenter(function(){
         $('.topGameList,.topGameList .live').addClass('display');
         $('.topGameList .live').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').removeClass('display');
+        $('.topGameList .prev,.topGameList .next').addClass('display');
     })
     $('.slotBtn').mouseenter(function(){
         $('.topGameList,.topGameList .slot').addClass('display');
@@ -41,7 +41,7 @@ $(function() {
     $('.fishBtn').mouseenter(function(){
         $('.topGameList,.topGameList .fish').addClass('display');
         $('.topGameList .fish').siblings().removeClass('display');
-        $('.topGameList .prev,.topGameList .next').removeClass('display');
+        $('.topGameList .prev,.topGameList .next').addClass('display');
     })
     $('.boardBtn').mouseenter(function(){
         $('.topGameList,.topGameList .board').addClass('display');
@@ -53,7 +53,7 @@ $(function() {
 //ad
 $(document).on('ready', function() {
 	$(".single-item").slick({
-		dots: false,
+		dots: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
@@ -76,7 +76,7 @@ $(function(){
         n ++;
         $(slwp).css("transform","translateX("+(-220 * n)+"px)");
 
-        if(n == 5){
+        if(n == 6){
             n --;
         }
     })
@@ -103,7 +103,7 @@ $(function(){
         n ++;
         $(bdwp).css("transform","translateX("+(-220 * n)+"px)");
 
-        if(n == 1){
+        if(n == 2){
             n --;
         }
     })
@@ -113,6 +113,60 @@ $(function(){
 
         if(n == -1){
             $(bdwp).css("transform","translateX(0px)");
+            n ++;
+        }
+    })
+})
+$(function(){
+    var live = $('.listWrap .live li');
+    var live1 = live.length;
+    var lvwp = $('.topGameList .live');
+    $(lvwp).css("width",""+220 * live1+"");
+
+    var n = 0;
+    var nt = $('.listWrap .next');
+    var pv = $('.listWrap .prev');
+    $(nt).click(function(){
+        n ++;
+        $(lvwp).css("transform","translateX("+(-220 * n)+"px)");
+
+        if(n == 2){
+            n --;
+        }
+    })
+    $(pv).click(function(){
+        n --;
+        $(lvwp).css("transform","translateX("+(-220 * n)+"px)");
+
+        if(n == -1){
+            $(lvwp).css("transform","translateX(0px)");
+            n ++;
+        }
+    })
+})
+$(function(){
+    var fish = $('.listWrap .fish li');
+    var fish1 = fish.length;
+    var fhwp = $('.topGameList .fish');
+    $(fhwp).css("width",""+220 * fish1+"");
+
+    var n = 0;
+    var nt = $('.listWrap .next');
+    var pv = $('.listWrap .prev');
+    $(nt).click(function(){
+        n ++;
+        $(fhwp).css("transform","translateX("+(-220 * n)+"px)");
+
+        if(n == 2){
+            n --;
+        }
+    })
+    $(pv).click(function(){
+        n --;
+        $(fhwp).css("transform","translateX("+(-220 * n)+"px)");
+
+        if(n == -1){
+            $(fhwp).css("transform","translateX(0px)");
             n ++;
         }
     })
@@ -159,12 +213,14 @@ $(function(){
         $('header .event').attr("onclick","window.location.href='./html/event.html'");
         $('header .vip').attr("onclick","window.location.href='./html/vip.html'");
 
-        $('.topGameList .sport li,.typeList .sport').attr("onclick","openSportGame()");
-        $('.topGameList .live li,.typeList .live').attr("onclick","openLiveGame()");
-        $('.topGameList .lottery li,.typeList .lottery').attr("onclick","openLotteryGame()");
-        $('.topGameList .slot li,.typeList .slot').attr("onclick","window.location.href='./html/slotPageInner.html'");
-        $('.topGameList .fish li,.typeList .fish').attr("onclick","window.location.href='./html/fishPageInner.html'");
-        $('.topGameList .board li,.typeList .board').attr("onclick","window.location.href='./html/boardPageInner.html'");
+        $('.topGameList .sport li,.typeList .sport div').attr("onclick","openSportGame()");
+        $('.topGameList .live li,.typeList .live div').attr("onclick","openLiveGame()");
+        $('.topGameList .lottery li,.typeList .lottery div').attr("onclick","openLotteryGame()");
+        $('.topGameList .slot li,.typeList .slot div,.typeList .hot div').attr("onclick","window.location.href='./html/slotPageInner.html'");
+        $('.topGameList .fish li,.typeList .fish div').attr("onclick","window.location.href='./html/fishPageInner.html'");
+        $('.topGameList .board li,.typeList .board div').attr("onclick","window.location.href='./html/boardPageInner.html'");
+
+        $(".mainWrap .typeList .gameBox.slot .more").attr("onclick","window.location.href='./html/slotPage.html'");
     })
 })
 
@@ -172,6 +228,14 @@ $(function(){
 $(function(){
     $('.moneyTotal').click(function(){
         $('.transferInfo').toggleClass('display');
+    })
+})
+
+//betRecord 展開
+$(function(){
+    $('.betWrap .tableBox .more').click(function(){
+        $(this).parent()
+        .toggleClass('active');
     })
 })
 
@@ -528,7 +592,9 @@ $(function(){
         $(this).addClass('active');
         $(this).siblings().removeClass('active');
         $('.nav .box').removeClass('display');
+        $(this).prev('li.title').css('margin-bottom','15');
         $($(this).next('.box')).addClass('display');
+       
     })
 
     $('.nav .box li').click(function(){
@@ -619,5 +685,31 @@ $(function(){
     $('.forApp_3').click(function(){
         $('.app_3').addClass('display');
         $('.app_3').siblings().removeClass('display');
+    })
+})
+
+//首頁遊戲切換
+$(function(){
+    $(".mainWrap .typeList .left li").on("click",function(){
+        $(this)
+        .addClass("active")
+        .siblings().removeClass("active");
+
+        var n = $(this).index();
+
+        $(".mainWrap .typeList .right .gameBox:eq("+ n +")")
+        .addClass("display")
+        .siblings().removeClass("display");
+
+        // if(n == 0 || n == 4 || n == 5)
+        // {
+        //     $(".mainWrap .typeList .right .partnerBox")
+        //     .addClass("display");
+        // }
+        // else
+        // {
+        //     $(".mainWrap .typeList .right .partnerBox")
+        //     .removeClass("display");
+        // }
     })
 })

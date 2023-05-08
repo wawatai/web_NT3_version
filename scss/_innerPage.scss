@@ -1,71 +1,55 @@
 .innerPage {
-    background: $mainBG_2;
-    padding: 20px 0 40px;
-
+    padding: 1px 0 40px;
+   
     //跑馬燈
     .marqueeArea {
         width: 100%;
-        height: auto;
-        margin-bottom: 20px;
+        max-width: 1400px;
+        height: 50px;
+        @include marquee;
+        margin: 12px auto;
 
-        .center {
-            width: 1400px;
-            height: 50px;
-            margin: 0 auto;
+        .marquee_ic {
+            width: 38px;
+            height: 38px;
+            margin-left: 5px;
+            flex-shrink: 0;
+        }
 
-            .marqueeWrap {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                background: $marquee_BG;
-                box-shadow: 0 0 13px 3px $marquee_Shadow;
-                border-radius: 25px;
+        .marquee {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
 
-                .marquee_ic {
-                    width: 160px;
-                    height: 88%;
-                    border-radius: 25px;
-                    background: $marquee_Linear;
-                    margin-left: 3px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+            p {
+                display: inline-block;
+                color: $mainFont_1;
+                font-size: 14px;
+                font-weight: bold;
+                white-space: nowrap;
+                animation: marquee 10s linear infinite;
+                padding-left: 100%;
+            }
 
-                    p {
-                        font-size: 16px;
-                        font-weight: bold;
-                        color: $marquee_LinearWord;
-                    }
+            @keyframes marquee {
+                0% {
+                    transform: translate(0%);
                 }
 
-                .marquee {
-                    width: 100%;
-                    height: auto;
-                    overflow: hidden;
-
-                    p {
-                        font-size: 14px;
-                        font-weight: bold;
-                        color: $marquee_Word;
-                        display: inline-block;
-                        animation: marquee 10s linear infinite;
-                        padding-left: 100%;
-                        white-space: nowrap;
-                    }
-
-                    @keyframes marquee {
-                        0% {
-                            transform: translate(0%);
-                        }
-
-                        100% {
-                            transform: translate(-100%);
-                        }
-                    }
+                100% {
+                    transform: translate(-100%);
                 }
             }
         }
+
+        .marquee_base {
+            width: 45px;
+            height: 42px;
+            border-radius: 0 12px 12px 0;
+            flex-shrink: 0;
+            margin-right: 5px;
+        }
+        
     }
 
     .center {
@@ -73,6 +57,7 @@
         height: auto;
         margin: 0 auto;
         display: flex;
+        position: relative;
 
         section {
             display: flex;
@@ -80,16 +65,14 @@
 
         hr {
             width: 100%;
-            border: solid 1px $mainBorder_1;
+            border: solid 1px $mainBorder_3;
             border-width: 1px 0 0;
             margin: 0;
         }
     
         //左列
         .innerSide {
-            background: $mainBG_1;
             border-radius: 5px;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
             width: 245px;
             height: auto;
             margin-right: 15px;
@@ -97,9 +80,23 @@
             .userInfo {
                 width: 100%;
                 height: auto;
+                background: $mainBG_1;
+                border: 1px solid $mainBorder_3;
+                box-shadow: 0 5px 10px -5px $mainShadow_1;
                 padding: 20px 0;
                 display: flex;
                 justify-content: center;
+                margin-bottom: 20px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 1px;
+                    background: $mainBorder_3;
+                    position: absolute;
+                    top: 80px;
+                }
     
                 div {
     
@@ -109,7 +106,7 @@
                         font-weight: bold;
                         display: flex;
                         align-items: center;
-                        justify-content: center;
+                        
     
                         .lv {
                             @include level;
@@ -124,18 +121,40 @@
                         font-weight: bold;
                         display: flex;
                         align-items: center;
-                        justify-content: center;
                     }
 
                     .quickSelect {
-                        width: 160px;
-                        padding: 15px 0 10px;
+                        width: 100%;
+                        padding: 35px 0 0;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
 
                         li {
                             cursor: pointer;
+
+                            
+                            &:nth-of-type(1) {
+
+                                span {
+                                    background-position-x: 0%;
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                margin: 0 30px;
+                                
+                                span {
+                                    background-position-x: 33%;
+                                }
+                            }
+                            
+                            &:nth-of-type(3) {
+
+                                span {
+                                    background-position-x: 66%;
+                                }
+                            }
 
                             p {
                                 text-align: center;
@@ -148,9 +167,14 @@
                                 }
     
                                 &.btn {
-                                    width: 40px;
-                                    height: 40px;
+                                    width: 44px;
+                                    height: 44px;
                                     @include quick;
+                                }
+
+                                span {
+                                    width: 24px;
+                                    height: 25px;
                                 }
                             }
                         }
@@ -167,8 +191,12 @@
                     height: 50px;
                     display: flex;
                     align-items: center;
+                    background: $mainBG_1;
+                    border: 1px solid $mainBorder_3;
+                    box-shadow: inset 0 -4px 10px -5px $mainShadow_1;
                     box-sizing: border-box;
                     padding-left: 64px;
+                    margin-bottom: 10px;
                     position: relative;
                     font-size: 14px;
                     font-weight: bold;
@@ -177,59 +205,23 @@
 
                     &:hover,&:active,&.active {
                         @include navHover;
-                    }
+                        color: $mainFont_2;
+                        box-shadow: none;
 
-                    &:nth-of-type(1),&:nth-of-type(4),&:nth-of-type(9) {
-                        border-top: solid 1px $mainBorder_1;
+                        i {
+                            background-position-y: 100%;
+                        }
                     }
 
                     i {
+                        width: 20px;
+                        height: 20px;
                         display: block;
+                        background-position-y: 0%;
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
                         left: 25px;
-                        
-                        &.user_ic {
-                            width: 14px;
-                            height: 16px;
-                        }
-                        &.vip_ic {
-                            width: 17px;
-                            height: 17px;
-                        }
-                        &.wallet_ic {
-                            width: 15px;
-                            height: 13px;
-                        }
-                        &.card_ic {
-                            width: 17px;
-                            height: 15px;
-                        }
-                        &.dealRecord_ic {
-                            width: 13px;
-                            height: 15px;
-                        }
-                        &.betRecord_ic {
-                            width: 12px;
-                            height: 16px;
-                        }
-                        &.event_ic {
-                            width: 13px;
-                            height: 18px;
-                        }
-                        &.mail_ic {
-                            width: 14px;
-                            height: 11px;
-                        }
-                        &.dividend_ic {
-                            width: 15px;
-                            height: 14px;
-                        }
-                        &.invite_ic {
-                            width: 20px;
-                            height: 20px;
-                        }
                     }
                 }
             }
@@ -243,9 +235,8 @@
             .top {
                 width: 100%;
                 height: auto;
-                background: $mainBG_1;
+                border: 1px solid $mainBorder_3;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
                 margin-bottom: 20px;
 
                 h1 {
@@ -258,7 +249,7 @@
                     font-size: 20px;
                     letter-spacing: 2px;
                     color: $title_2;
-                    border-bottom: solid 1px $mainBorder_1;
+                    border-bottom: solid 1px $mainBorder_3;
                     font-weight: bold;
                 }
 
@@ -333,14 +324,25 @@
                     width: 100%;
                     height: auto;
                     box-sizing: border-box;
-                    padding: 0 24px;
                     display: flex;
 
                     li {
                         min-width: 105px;
                         height: 35px;
                         margin-right: 7px;
-                        @include grayBtn;
+                        @include purpleBtn;
+                        position: relative;
+
+                        &::before {
+                            content: "";
+                            width: 100%;
+                            height: 1px;
+                            background: transparent;
+                            position: absolute;
+                            bottom: -1px;
+                            left: 0;
+                            z-index: 100;
+                        }
                     }
                 }
 
@@ -349,9 +351,10 @@
                     display: none;
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
+                    background: $mainBG_3;
                     box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border-radius: 0 5px 5px 5px 5px;
+                    border: 1px solid $mainBorder_3;
 
                     &.display {
                         display: block;
@@ -425,14 +428,19 @@
                                                     height: 42px;
                                                     position: relative;
                                                     left: 110px;
-                                                    @include mainBtn;
+                                                    @include main_longBtn;
+
+                                                    &.changePhone {
+                                                        @include mainBtn;
+                                                        border: none;
+                                                    }
                                                 }
                                                 
                                                 span {
                                                     display: inline-flex;
                                                     width: 257px;
                                                     align-items: center;
-                                                    color: $mainFont_1;
+                                                    color: $mainFont_3;
                                                     font-weight: bold;
                                                     font-size: 14px;
                                                     justify-content: space-between;
@@ -465,7 +473,7 @@
 
                                             p {
                                                 font-size: 14px;
-                                                color: $mainFont_1;
+                                                color: $mainFont_3;
                                                 font-weight: bold;
                                             }
 
@@ -491,7 +499,7 @@
                                     margin-right: 26px;
                                     font-size: 14px;
                                     letter-spacing: 1px;
-                                    color: $title_2;
+                                    color: $mainFont_1;
                                     font-weight: bold;
                                 }
 
@@ -527,7 +535,7 @@
                                     margin-right: 26px;
                                     font-size: 14px;
                                     letter-spacing: 1px;
-                                    color: $title_2;
+                                    color: $mainFont_1;
                                     font-weight: bold;
                                 }
 
@@ -553,9 +561,9 @@
                     display: none;
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
+                    background: $mainBG_3;
                     box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
                     box-sizing: border-box;
                     padding: 20px 24px;
 
@@ -593,7 +601,7 @@
                         tr {
 
                             th {
-                                border-bottom: solid 2px $mainBorder_2;
+                                border-bottom: solid 2px $mainBorder_3;
                                 vertical-align: middle;
                                 height: 40px;
 
@@ -608,7 +616,7 @@
                                     border-right: solid 1px $mainBorder_1;
                                     font-size: 14px;
                                     font-weight: bold;
-                                    color: $title_1;
+                                    color: $title_2;
                                 }
                             }
 
@@ -652,8 +660,8 @@
             display: none;
             width: 1140px;
             height: auto;
-            background: $mainBG_1;
-            border-radius: 5px;
+            background: $mainBG_3;
+            border: 1px solid $mainBorder_3;
             box-shadow: 0 5px 10px -5px $mainShadow_1;
 
             &.display {
@@ -667,7 +675,7 @@
             .vipHeader {
                 width: 100%;
                 height: auto;
-                padding-left: 40px;
+                padding: 20px 40px 0;
                 display: flex;
                 box-sizing: border-box;
 
@@ -722,7 +730,8 @@
                     li {
                         width: 20%;
                         font-size: 14px;
-                        color: $title_2;
+                        color: $mainFont_1;
+                        font-weight: bold;
 
                         &:nth-of-type(2) {
                             margin-left: -18px;
@@ -833,7 +842,7 @@
 
                         .num {
                             font-size: 28px;
-                            color: $title_1;
+                            color: $title_2;
                             font-weight: bold;
                         }
                     }
@@ -844,7 +853,7 @@
                     width: 321px;
                     height: 41px;
                     margin: 40px auto 44px;
-                    @include borderBtn;
+                    @include main_longBtn;
                 }
             }
 
@@ -961,7 +970,7 @@
 
                 &.sp {
                     font-size: 24px;
-                    color: $title_1;
+                    color: $title_2;
                 }
             }
 
@@ -980,10 +989,10 @@
                     border-bottom: solid 1px $mainBorder_1;
 
                     &.header {
-                        border-bottom: solid 2px $mainBorder_2;
+                        border-bottom: solid 2px $mainBorder_3;
                         
                         div {
-                            color: $title_1;
+                            color: $title_2;
                         }
                     }
 
@@ -1012,7 +1021,7 @@
             .msg {
                 font-size: 16px;
                 font-weight: bold;
-                color: $title_2;
+                color: $mainFont_3;
                 margin: 0 0 20px 20px;
             }
 
@@ -1046,7 +1055,7 @@
                     margin-bottom: 56px;
                     background: $mainBG_1;
                     box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
 
                     .title {
                         display: flex;
@@ -1070,7 +1079,7 @@
                             box-sizing: border-box;
                             padding: 14px 24px 0;
                             height: 180px;
-                            border-right: solid 1px $mainBorder_1;
+                            border-right: solid 1px $mainBorder_3;
                             
                             .totalTitle {
                                 display: flex;
@@ -1150,15 +1159,15 @@
                 .bottom {
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
-                    border-radius: 5px;
+                    background: $mainBG_3;
+                    border: 1px solid $mainBorder_3;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
                     position: relative;
 
                     .tabs {
                         position: absolute;
                         top: -35px;
-                        padding: 0 24px;
+                        left: -1px;
                         width: auto;
                         height: auto;
                         display: flex;
@@ -1167,13 +1176,25 @@
                             min-width: 105px;
                             height: 35px;
                             margin-right: 7px;
-                            @include grayBtn;
+                            @include purpleBtn;
+                            position: relative;
+
+                            &::before {
+                                content: "";
+                                width: 100%;
+                                height: 1px;
+                                background: transparent;
+                                position: absolute;
+                                bottom: -1px;
+                                left: 0;
+                                z-index: 100;
+                            }
                         }
                     }
 
                     .platformWallet {
                         display: none;
-                        padding: 21px 23px 0;
+                        padding: 21px 23px;
 
                         &.display {
                             display: block;
@@ -1199,8 +1220,9 @@
                                 box-sizing: border-box;
                                 height: auto;
                                 margin: 0 9px 9px 0;
+                                background: $mainBG_1;
+                                border: solid 1px $mainBorder_3;
                                 border-radius: 5px;
-                                border: solid 1px $mainBorder_1;
                                 padding: 18px;
 
                                 &:nth-of-type(5n) {
@@ -1240,14 +1262,14 @@
                     height: auto;
                     background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
 
                     .header {
                         width: 100%;
                         height: auto;
                         padding: 10px 0 15px 20px;
                         box-sizing: border-box;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $mainBorder_3;
 
                         span {
                             font-size: 20px;
@@ -1346,9 +1368,9 @@
                     .bottom {
                         width: 100%;
                         height: auto;
-                        background: $mainBG_1;
+                        background: $mainBG_3;
                         box-shadow: 0 5px 10px -5px $mainShadow_1;
-                        border-radius: 5px;
+                        border: 1px solid $mainBorder_3;
                         box-sizing: border-box;
                         padding: 15px 20px 35px;
 
@@ -1444,7 +1466,7 @@
                                                     width: 255px;
                                                     height: 42px;
                                                     margin-left: 8px;
-                                                    @include mainBtn;
+                                                    @include main_longBtn;
                                                 }
                                             }
                                         }
@@ -1467,7 +1489,7 @@
                 height: auto;
                 background: $mainBG_1;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                border: 1px solid $mainBorder_3;
                 margin-bottom: 17px;
 
                 &:last-child {
@@ -1482,7 +1504,7 @@
                     height: 43px;
                     box-sizing: border-box;
                     padding: 0 20px;
-                    border-bottom: solid 1px $mainBorder_1;
+                    border-bottom: solid 1px $mainBorder_3;
                     font-size: 16px;
                     letter-spacing: 2px;
                     color: $title_2;
@@ -1493,14 +1515,13 @@
                         display: flex;
                         align-items: center;
                         letter-spacing: 1px;
-                        color: $title_3;
+                        color: $title_Time;
                         cursor: pointer;
 
                         .arrow {
-                            width: 9px;
-                            height: 16px;
+                            width: 13px;
+                            height: 14px;
                             margin-left: 7px;
-                            transform: scaleX(-1);
                         }
                     }
                 }
@@ -1530,10 +1551,10 @@
                                 height: 19px;
                                 font-size: 14px;
                                 letter-spacing: 1px;
-                                color: $title_1;
+                                color: $title_3;
 
                                 p {
-                                    color: $title_2;
+                                    color: $mainFont_3;
                                 }
                             }
 
@@ -1565,6 +1586,7 @@
 
                     .smallList {
                         height: 84px;
+                        height: auto;
                         padding: 8px 18px 12px;
                         border-bottom: solid 1px $mainBorder_1;
                         box-sizing: border-box;
@@ -1574,7 +1596,7 @@
                             letter-spacing: 1px;
                             margin-bottom: 10px;
                             font-weight: bold;
-                            color: $title_1;
+                            color: $title_3;
                         }
 
                         ul {
@@ -1583,10 +1605,14 @@
                             display: flex;
 
                             li {
-                                width: 50%;
+                                width: 100%;
                                 height: auto;
 
                                 p {
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
                                     letter-spacing: 1px;
                                     
                                     &:nth-of-type(1) {
@@ -1598,6 +1624,27 @@
                                         font-size: 14px;
                                         margin-top: 6px;
                                         color: $mainFont_1;
+                                    }
+                                    
+                                    &.lose {
+                                        color: $remind;
+                                        font-weight: bold;
+                                    }
+
+                                    &.win {
+                                        color: $remind_sp;
+                                        font-weight: bold;
+                                    }
+
+                                    &.type {
+                                        color: $mainFont_3;
+                                        font-size: 14px;
+                                    }
+
+                                    span {
+                                        color: $mainFont_3;
+                                        font-size: 14px;
+                                        font-weight: bold;
                                     }
                                 }
                             }
@@ -1650,8 +1697,8 @@
                 min-height: 900px;
                 padding: 32px 27px;
                 box-sizing: border-box;
-                border-radius: 5px;
-                background: $mainBG_1;
+                border: 1px solid $mainBorder_3;
+                background: $mainBG_3;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
 
                 .title {
@@ -1660,7 +1707,7 @@
                         background: none;
                         font-size: 20px;
                         font-weight: bold;
-                        color: $title_2;
+                        color: $mainFont_1;
                         display: flex;
                         align-items: center;
 
@@ -1685,7 +1732,16 @@
                         display: inline-block;
                         width: 800px;
                         font-size: 18px;
+                        font-weight: bold;
                         color: $title_2;
+                    }
+
+                    a {
+                        @include mailBtn_1;
+                        text-decoration: none;
+                        font-weight: lighter;
+                        padding: 7px 15px;
+                        margin-left: 35px;
                     }
 
                     button {
@@ -1693,6 +1749,8 @@
                         height: 29px;
 
                         &.next {
+                            width: 10px;
+                            height: 18px;
                             transform: scaleX(-1);
                         }
                     }
@@ -1705,6 +1763,10 @@
                     padding-bottom: 18px;
                 }
 
+                hr {
+                    border-color: $mainBorder_1;
+                }
+
                 .msg {
                     width: 100%;
                     height: auto;
@@ -1712,15 +1774,15 @@
                     color: $mainFont_1;
                     font-size: 15px;
                     font-weight: bold;
+                    line-height: 30px;
                 }
             }
 
             .top {
                 width: 100%;
                 height: auto;
-                border-radius: 5px;
+                border: 1px solid $mainBorder_3;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
-                background: $mainBG_1;
 
                 p {
                     height: 50px;
@@ -1732,7 +1794,7 @@
                     font-size: 20px;
                     font-weight: bold;
                     color: $title_2;
-                    border-bottom: solid 1px $mainBorder_1;
+                    border-bottom: solid 1px $mainBorder_3;
                 }
 
                 div {
@@ -1747,7 +1809,7 @@
                         width: 125px;
                         height: 35px;
                         margin-right: 10px;
-                        @include borderBtn;
+                        @include fastBtn;
                         color: $mainFont_1;
                         display: flex;
                         align-items: center;
@@ -1769,23 +1831,35 @@
                     width: 100%;
                     height: auto;
                     box-sizing: border-box;
-                    padding: 0 24px;
+                    border-radius: 5px;
                     display: flex;
 
                     li {
                         min-width: 105px;
                         height: 35px;
                         margin-right: 7px;
-                        @include grayBtn;
+                        @include purpleBtn;
+                        position: relative;
+
+                        &::before {
+                            content: "";
+                            width: 100%;
+                            height: 1px;
+                            background: transparent;
+                            position: absolute;
+                            bottom: -1px;
+                            left: 0;
+                            z-index: 100;
+                        }
                     }
                 }
 
                 .list {
-                    background: $mainBG_1;
+                    background: $mainBG_3;
                     box-shadow: 0px 5px 10px -5px $mainShadow_1;
                     width: 100%;
                     min-height: 638px;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
 
                     .btnBox  {
                         display: none;
@@ -1806,7 +1880,8 @@
 
                                 &:last-child {
                                     width: 51px;
-                                    @include mailBtn_1;
+                                    @include mainBtn;
+                                    font-size: 14px;
                                 }
                             }
                         }
@@ -1893,12 +1968,8 @@
                             &:hover,&:active,&.active {
                                 @include navHover;
 
-                                &::before {
-                                    display: none;
-                                }
-
-                                .title {
-                                    color: $title_2;
+                                .title,.info,.date {
+                                    color: $mainFont_2;
                                 }
                             }
 
@@ -1908,30 +1979,30 @@
                                 margin: 0 19px 0 24px;
                             }
 
-                            .title {
-                                width: 70%;
-                                position: relative;
-                                box-sizing: border-box;
-                                padding: 0 33px 0 28px;
-                                color: $title_2;
-                                font-weight: bold;
-
-                                &::before {
-                                    content: "";
-                                    position: absolute;
-                                    top: 50%;
-                                    transform: translateY(-50%);
-                                    right: 0;
-                                    width: 1px;
-                                    height: 15px;
-                                    background: $mainBorder_1;
+                            span {
+                                
+                                &.title {
+                                    width: 30%;
+                                    position: relative;
+                                    box-sizing: border-box;
+                                    padding: 0 33px 0 28px;
+                                    color: $title_3;
+                                    font-weight: bold;
+                                    border-right: 1px solid $mainBorder_1;
                                 }
-                            }
 
-                            .date {
-                                width: 30%;
-                                text-align: center;
-                                color: $title_Time;
+                                &.info {
+                                    width: 50%;
+                                    padding: 0 15px;
+                                    border-right: 1px solid $mainBorder_1;
+                                    @include textHide;
+                                }
+
+                                &.date {
+                                    width: 20%;
+                                    color: $title_Time;
+                                    padding: 0 40px;
+                                }
                             }
                         }
                     }
@@ -1942,13 +2013,14 @@
         //event
         .eventWrap {
             width: 1140px;
+            background: transparent;
 
             .title {
                 width: 100%;
                 height: auto;
-                background: $mainBG_1;
+                background: $top_BG;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                border: 1px solid $mainBorder_3;
                 margin-bottom: 20px;
 
                 h1 {
@@ -1970,7 +2042,6 @@
                 .tabs {
                     width: 100%;
                     height: auto;
-                    padding: 0 24px;
                     box-sizing: border-box;
                     display: flex;
 
@@ -1978,7 +2049,19 @@
                         min-width: 105px;
                         height: 35px;
                         margin-right: 7px;
-                        @include grayBtn;
+                        @include purpleBtn;
+                        position: relative;
+
+                        &::before {
+                            content: "";
+                            width: 100%;
+                            height: 1px;
+                            background: transparent;
+                            position: absolute;
+                            bottom: -1px;
+                            left: 0;
+                            z-index: 100;
+                        }
                     }
                 }
                 
@@ -1988,8 +2071,9 @@
                     min-height: 430px;
                     box-sizing: border-box;
                     padding: 18px 22px;
-                    background: $mainBG_1;
+                    background: $mainBG_3;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border: 1px solid $mainBorder_3;
                     
                     &.display {
                         display: flex;
@@ -2003,12 +2087,13 @@
                             width: 100%;
                             margin-bottom: 8px;
                             border-radius: 3px;
-                            border: solid 1px $mainBorder_2;
+                            border: solid 1px $mainBorder_3;
 
                             .header {
                                 width: 100%;
                                 height: 47px;
-                                border-bottom: solid 1px $mainBorder_1;
+                                background: $top_BG;
+                                border-bottom: solid 1px $mainBorder_3;
                                 box-sizing: border-box;
                                 padding: 0 15px;
                                 display: flex;
@@ -2020,7 +2105,7 @@
 
                                     p {
                                         margin-right: 18px;
-                                        color: $title_2;
+                                        color: $mainFont_1;
                                         font-size: 16px;
                                         font-weight: bold;
                                         white-space: nowrap;
@@ -2028,18 +2113,26 @@
                                         align-items: center;
 
                                         &.first {
-                                            color: $title_1;
+                                            color: $remind_sp2;
+
+                                            &.normal {
+                                                color: $mainFont_1;
+                                            }
                                         }
 
                                         &.day-tips {
                                             color: $title_Time;
+
+                                            em {
+                                                margin-right: 10px;
+                                            }
                                         }
 
                                         span {
                                             color: $mainFont_1;
 
                                             &.now {
-                                                color: $remind_sp;
+                                                color: $title_2;
                                             }
 
                                             &.split {
@@ -2051,14 +2144,16 @@
                                     button {
                                         width: 75px;
                                         height: 27px;
-                                        @include eventBtn;
+                                        @include mainBtn;
+                                        font-size: 14px;
 
                                         &.apply {
                                             margin-right: 8px;
                                         }
 
                                         &.check {
-                                            @include borderBtn;
+                                            @include eventApply;
+                                            font-size: 14px;
                                         }
                                     }
                                 }
@@ -2067,6 +2162,7 @@
                             .content {
                                 width: 100%;
                                 height: auto;
+                                background: $mainBG_1;
                                 box-sizing: border-box;
                                 padding: 20px 15px;
                                 display: flex;
@@ -2083,7 +2179,9 @@
                                         border: none;
                                         margin: 0;
 
-                                        &:last-child {
+                                        &:nth-of-type(4), 
+                                        &:nth-of-type(5), 
+                                        &:nth-of-type(6) {
                                             padding: 0;
                                         }
 
@@ -2098,11 +2196,61 @@
     
                                             &.smallTitle {
                                                 margin-right: 25px;
-                                                color: $title_2;
+                                                color: $mainFont_1;
                                             }
     
-                                            &.cur {
+                                            &.water {
                                                 color: $remind;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                table {
+                                    width: 45%;
+                                    border-radius: 4px;
+                                    overflow: hidden;
+                                    
+                                    tbody {
+                                        border-collapse: collapse;
+                                        box-shadow: inset 2px 1px 1px  $mainBorder_1,
+                                        inset -1px -1px 1px  $mainBorder_1;
+                                        
+
+                                        tr {
+
+                                            &:not(:first-child) {
+                                                border-top: 1px solid $mainBorder_1;
+                                            }
+    
+                                            th,td {
+    
+                                                &:first-child {
+                                                    background: $mainBorder_3;
+    
+                                                    p {
+                                                        color: $mainFont_2;
+                                                    }
+                                                }
+    
+                                                &:last-child {
+    
+                                                    p {
+                                                        border-right: none;
+                                                    }
+                                                }
+                                            }
+    
+                                            p {
+                                                color: $mainFont_1;
+                                                font-size: 14px;
+                                                line-height: 30px;
+                                                text-align: center;
+                                                border-right: 1px solid $mainBorder_1;
+    
+                                                span {
+                                                    margin-left: 5px;
+                                                }
                                             }
                                         }
                                     }
@@ -2117,9 +2265,9 @@
                     width: 100%;
                     min-height: 430px;
                     box-sizing: border-box;
-                    background: $mainBG_1;
+                    background: $mainBG_3;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border:1px solid $mainBorder_3;
 
                     &.display {
                         display: block;
@@ -2158,6 +2306,23 @@
                                             margin-bottom: 20px;
                                             display: flex;
                                             align-items: center;
+
+                                            &:nth-of-type(1) {
+                                                position: relative;
+
+                                                &::before {
+                                                    content: "";
+                                                    width: 0;
+                                                    height: 0;
+                                                    border-style: solid;
+                                                    border-width: 7px 5px 0 5px;
+                                                    border-color: $mainBorder_3 transparent transparent transparent;
+                                                    position: absolute;
+                                                    top: 48.5%;
+                                                    left: 288px;
+                                                    transform: translateY(-50%);
+                                                }
+                                            }
 
                                             &:last-child {
                                                 margin: 0;
@@ -2244,8 +2409,8 @@
                                         height: 50px;
                                         vertical-align: middle;
                                         letter-spacing: 1px;
-                                        color: $title_1;
-                                        border-bottom: solid 2px $mainBorder_2;
+                                        color: $title_2;
+                                        border-bottom: solid 2px $mainBorder_3;
                                         font-size: 13px;
                                         font-weight: bold;
                                     }
@@ -2289,7 +2454,7 @@
             .top {
                 width: 100%;
                 height: 50px;
-                background: $mainBG_1;
+                background: $top_BG;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
                 color: $title_2;
                 display: flex;
@@ -2299,7 +2464,7 @@
                 font-weight: bold;
                 font-size: 20px;
                 letter-spacing: 2px;
-                border-radius: 5px;
+                border: 1px solid $mainBorder_3;
             }
 
             .bottom {
@@ -2315,14 +2480,25 @@
                         width: 100%;
                         height: auto;
                         box-sizing: border-box;
-                        padding: 0 24px;
                         display: flex;
 
                         li {
                             min-width: 105px;
                             height: 35px;
                             margin-right: 7px;
-                            @include grayBtn;
+                            @include purpleBtn;
+                            position: relative;
+
+                            &::before {
+                                content: "";
+                                width: 100%;
+                                height: 1px;
+                                background: transparent;
+                                position: absolute;
+                                bottom: -1px;
+                                left: 0;
+                                z-index: 100;
+                            }
                         }
                     }
                 }
@@ -2330,9 +2506,9 @@
                 .dealBox {
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
+                    background: $mainBG_3;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
                     display: none;
 
                     &.display {
@@ -2370,6 +2546,26 @@
                                             display: flex;
                                             align-items: center;
                                             margin-bottom: 20px;
+
+                                            &:first-child {
+
+                                                .inputBox {
+                                                    position: relative;
+
+                                                    &::before {
+                                                        content: "";
+                                                        width: 0;
+                                                        height: 0;
+                                                        border-style: solid;
+                                                        border-width: 7px 5px 0 5px;
+                                                        border-color: $mainBorder_3 transparent transparent transparent;
+                                                        position: absolute;
+                                                        top: 50%;
+                                                        left: 232px;
+                                                        transform: translateY(-50%);
+                                                    }
+                                                }
+                                            }
 
                                             &:last-child {
                                                 margin: 0;
@@ -2439,7 +2635,6 @@
                             width: 100%;
                             height: auto;
                             box-sizing: border-box;
-                            padding: 0 21px 10px;
 
                             .noData {
                                 display: none;
@@ -2470,9 +2665,9 @@
                                         font-size: 13px;
                                         letter-spacing: 1px;
                                         font-weight: bold;
-                                        color: $title_1;
+                                        color: $title_2;
                                         position: relative;
-                                        border-bottom: solid 2px $mainBorder_2;
+                                        border-bottom: solid 2px $mainBorder_3;
 
                                         &:last-child {
 
@@ -2494,7 +2689,7 @@
                                     }
 
                                     td {
-                                        width: 25%;
+                                        width: 16.6%;
                                         border-bottom: none;
                                         color: $mainFont_1;
                                     }
@@ -2507,9 +2702,9 @@
                 .waterBox {
                     width: 100%;
                     height: auto;
-                    background: $mainBG_1;
+                    background: $mainBG_3;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
                     box-sizing: border-box;
                     padding: 20px;
                     display: none;
@@ -2530,8 +2725,18 @@
 
                         tr {
 
+                            &:nth-of-type(1) {
+
+                                th {
+
+                                    p {
+                                        color: $mainBorder_3;
+                                    }
+                                }
+                            }
+
                             th {
-                                border-bottom: solid 2px $mainBorder_2;
+                                border-bottom: solid 2px $mainBorder_3;
                                 height: 40px;
                                 vertical-align: middle;
 
@@ -2555,15 +2760,23 @@
                                 border-bottom: solid 1px $mainBorder_1;
                                 height: 50px;
                                 vertical-align: middle;
+                                
+                                &:last-child {
+
+                                    p {
+                                        border: none;
+                                    }
+                                }
 
                                 p {
                                     color: $mainFont_1;
                                     font-size: 14px;
                                     font-weight: bold;
                                     text-align: center;
+                                    border-right: solid 1px $mainBorder_1;
 
                                     &.money {
-                                        color: $remind_sp2;
+                                        color: $remind;
                                     }
 
                                     &.sp {
@@ -2577,7 +2790,8 @@
                                         font-size: 14px;
 
                                         &.check {
-                                            @include borderBtn;
+                                            @include eventApply;
+                                            font-size: 14px;
                                         }
                                     }
 
@@ -2586,6 +2800,10 @@
                                         width: 15px;
                                         height: 27px;
                                         transform: rotate(-90deg);
+
+                                        &.disabled {
+                                            opacity: 0.3;
+                                        }
                                     }
                                 }
                             }
@@ -2600,9 +2818,9 @@
             width: 1140px;
             height: auto;
             padding: 15px 0 28px;
-            background: $mainBG_1;
+            background: $mainBG_3;
             box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
+            border: 1px solid $mainBorder_3;
 
             form {
                 width: 100%;
@@ -2634,11 +2852,28 @@
                         font-weight: bold;
                     }
 
-                    select {
-                        width: 287px;
-                        height: 43px;
-                        margin-right: 30px;
-                        @include mainSelect;
+                    label {
+                        position: relative;
+
+                        &::before {
+                            content: "";
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 7px 5px 0 5px;
+                            border-color: $mainBorder_3 transparent transparent transparent;
+                            position: absolute;
+                            top: 49.5%;
+                            left: 261px;
+                            transform: translateY(-50%);
+                        }
+
+                        select {
+                            width: 287px;
+                            height: 43px;
+                            margin-right: 30px;
+                            @include mainSelect;
+                        }
                     }
                 }
 
@@ -2713,10 +2948,10 @@
                         border-bottom: solid 1px $mainBorder_1;
 
                         &.title {
-                            border-bottom: solid 1px $mainBorder_2; 
+                            border-bottom: solid 2px $mainBorder_3; 
 
                             p {
-                                color: $title_1 !important;
+                                color: $title_2 !important;
                                 
                                 &::before {
                                     display: none;
@@ -2735,8 +2970,13 @@
                                 }
                             }
 
-                            table {
-                                display: table;
+                            .tableBox {
+                                background: $tableBox_BG;
+                                padding: 20px 10px;
+                                
+                                table {
+                                    display: table;
+                                }
                             }
                         }
 
@@ -2745,6 +2985,18 @@
                             align-items: center;
                             width: 100%;
                             height: 100%;
+
+                            &.total {
+                                background: $wordWrapTotal_BG;
+                                
+                                p {
+                                    color: $title_3;
+                                    
+                                    &::before {
+                                        display: none;
+                                    }
+                                }
+                            }
 
                             p {
                                 position: relative;
@@ -2800,67 +3052,107 @@
                             }
                         }
 
-                        table {
-                            display: none;
-                            width: 97%;
-                            margin: 15px auto;
+                        .tableBox {
+                            max-height: 306px;
                             overflow: hidden;
-                            background: $mainBG_1;
-                            box-shadow: 0 5px 10px -5px $mainShadow_1;
-                            border-radius: 5px;
+                            position: relative;
 
-                            tr {
+                            &.active {
+                                max-height: none;
 
-                                &:nth-of-type(1) {
-                                    background: $jumpWindow_Header;
+                                .more {
+                                    padding: 4px 0 0;
+
+                                    span {
+                                        transform: rotate(-90deg);
+                                    }
                                 }
+                            }
 
-                                &:last-child {
-
+                            table {
+                                display: none;
+                                width: 97%;
+                                margin: 15px auto;
+                                overflow: hidden;
+                                background: $mainBG_1;
+                                box-shadow: 0 5px 10px -5px $mainShadow_1;
+    
+                                tr {
+    
+                                    &:nth-of-type(1) {
+                                        background: transparent;
+                                    }
+    
+                                    &:last-child {
+    
+                                        td {
+                                            border: none;
+                                        }
+                                    }
+    
+                                    th {
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                        color: $title_2;
+                                        text-align: center;
+                                        height: 40px;
+                                        vertical-align: middle;
+                                        border-bottom: 1px solid $mainBorder_3;
+                                    }
+                                    
                                     td {
-                                        border: none;
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                        color: $mainFont_1;
+                                        text-align: center;
+                                        height: 40px;
+                                        vertical-align: middle;
+                                        border-bottom: solid 1px $mainBorder_1;
+    
+                                        &:nth-of-type(1),
+                                        &:nth-of-type(7) {
+                                            width: 15%;
+                                        }
+    
+                                        &:nth-of-type(2) {
+                                            width: 10%;
+                                        }
+    
+                                        &:nth-of-type(3) {
+                                            width: 30%;
+                                        }
+    
+                                        &:nth-of-type(4),
+                                        &:nth-of-type(5),
+                                        &:nth-of-type(6),
+                                        &:nth-of-type(7) {
+                                            width: 7.5%;
+                                        }
                                     }
                                 }
+                            }
 
-                                th {
-                                    font-size: 14px;
-                                    font-weight: bold;
-                                    color: $mainFont_2;
-                                    text-align: center;
-                                    height: 40px;
-                                    vertical-align: middle;
-                                }
-                                
-                                td {
-                                    font-weight: bold;
-                                    font-size: 14px;
-                                    color: $mainFont_1;
-                                    text-align: center;
-                                    height: 40px;
-                                    vertical-align: middle;
-                                    border-bottom: solid 1px $mainBorder_1;
+                            .more {
+                                width: 100%;
+                                height: 30px;
+                                background: $tableBox_BG;
+                                color: $title_3;
+                                font-size: 14px;
+                                text-align: center;
+                                padding: 7px 0 0;
+                                margin: 6px auto 0;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                cursor: pointer;
 
-                                    &:nth-of-type(1),
-                                    &:nth-of-type(7) {
-                                        width: 15%;
-                                    }
-
-                                    &:nth-of-type(2) {
-                                        width: 10%;
-                                    }
-
-                                    &:nth-of-type(3) {
-                                        width: 30%;
-                                    }
-
-                                    &:nth-of-type(4),
-                                    &:nth-of-type(5) {
-                                        width: 8%;
-                                    }
-
-                                    &:nth-of-type(6) {
-                                        width: 14%;
-                                    }
+                                span {
+                                    width: 12px;
+                                    height: 12px;
+                                    display: inline-block;
+                                    transform: rotate(90deg);
+                                    transition: transform 0.3s;
+                                    margin: 3px 0 0 5px;
                                 }
                             }
                         }
@@ -2898,9 +3190,8 @@
                     width: 100%;
                     height: 108px;
                     margin-bottom: 15px;
-                    background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
 
                     .title {
                         display: flex;
@@ -2910,7 +3201,7 @@
                         width: 100%;
                         box-sizing: border-box;
                         padding: 0 18px 0 22px;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $mainBorder_3;
                         font-size: 20px;
                         letter-spacing: 2px;
                         color: $title_2;
@@ -2920,6 +3211,16 @@
                             width: 105px;
                             height: 31px;
                             @include borderBtn;
+                            background: $mainBG_1;
+                            color: $choose_Border;
+                            border-color: $choose_Border;
+
+                            &:hover,&:active,&.active {
+                                
+                                i {
+                                    filter: brightness(6);
+                                }
+                            }
 
                             i {
                                 display: inline-block;
@@ -2945,7 +3246,7 @@
                             height: 17px;
                             cursor: pointer;
 
-                            &.next {
+                            &.prev {
                                 transform: scaleX(-1);
                             }
                         }
@@ -2973,6 +3274,11 @@
                                         width: 27px;
                                         height: 27px;
                                         margin-right: 8px;
+
+                                        &.atm_ic {
+                                            width: 26px;
+                                            height: 26px;
+                                        }
                                     }
                                 }
                             }
@@ -2983,11 +3289,12 @@
                 .bottom {
                     width: 100%;
                     height: 555px;
-                    padding: 16px 0 0 27px;
-                    background: $mainBG_1;
+                    padding: 16px 27px;
+                    background: $mainBG_3;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
                     box-sizing: border-box;
+                    position: relative;
 
                     .card,.atm,.shop,
                     .cardDeposit {
@@ -2995,6 +3302,48 @@
 
                         &.display {
                             display: block;
+                        }
+                    }
+
+                    .atm,.shop {
+
+                        .content {
+
+                            form {
+
+                                .row {
+                                    &:first-child {
+                                        position: relative;
+
+                                        &::before {
+                                            left: 339px;
+                                        }
+                                    }
+
+                                    
+                                    &.noTitle {
+                                        position: relative;
+
+                                        &::before {
+                                            content: "";
+                                            width: 0;
+                                            height: 0;
+                                            border-style: solid;
+                                            border-width: 7px 5px 0 5px;
+                                            border-color: $mainBorder_3 transparent transparent transparent;
+                                            position: absolute;
+                                            top: 50.5%;
+                                            left: 339px;
+                                            transform: translateY(-50%);
+                                        }
+                                    }
+
+                                    
+                                    .remind {
+                                        left: 108px;
+                                    }
+                                }
+                            }
                         }
                     }
 
@@ -3019,8 +3368,36 @@
                                 margin-bottom: 30px;
                                 font-weight: bold;
                                 font-size: 16px;
-                                color: $title_2;
+                                color: $mainFont_1;
                                 position: relative;
+
+                                &:first-child {
+                                    position: relative;
+
+                                    &::before {
+                                        content: "";
+                                        width: 0;
+                                        height: 0;
+                                        border-style: solid;
+                                        border-width: 7px 5px 0 5px;
+                                        border-color: $mainBorder_3 transparent transparent transparent;
+                                        position: absolute;
+                                        top: 50.5%;
+                                        left: 289px;
+                                        transform: translateY(-50%);
+                                    }
+                                }
+
+                                .data {
+                                    display: none;
+                                    min-width: 55px;
+                                    color: $mainFont_1;
+                                    margin-left: 35px;
+
+                                    &.display {
+                                        display: block;
+                                    }
+                                }
 
                                 &.noTitle {
                                     padding-left: 82px;
@@ -3049,7 +3426,7 @@
                                 .remind {
                                     position: absolute;
                                     bottom: -16px;
-                                    left: 108px;
+                                    left: 60px;
                                     font-size: 12px;
                                     letter-spacing: 1px;
                                     color: $remind;
@@ -3057,20 +3434,36 @@
                             }
 
                             button {
-                                width: 257px;
-                                height: 41px;
-                                margin: 28px 0 0 108px;
-                                @include mainBtn;
+                                
+                                &.copy {
+                                    display: none;
+                                    width: auto;
+                                    height: auto;
+                                    @include borderBtn;
+                                    padding: 2px 10px 3px;
+                                    margin-left: 20px;
+                                }
+
+                                &.check {
+                                    width: 257px;
+                                    height: 41px;
+                                    margin: 28px 0 0 108px;
+                                    @include mainBtn;
+                                    border: none;
+                                }
                             }
                         }
 
                         .remindBox {
-                            width: 839px;
+                            width: 94%;
                             height: auto;
+                            background: $mainBG_1;
                             padding: 15px 19px;
-                            margin: 39px 0 0 -10px;
-                            border: solid 1px $mainBorder_2;
+                            margin: 126px 0 0 0;
+                            border: solid 1px $mainBorder_3;
                             box-sizing: border-box;
+                            position: absolute;
+                            bottom: 26px;
 
                             div {
                                 color: $mainFont_1;
@@ -3079,7 +3472,7 @@
                                 margin-bottom: 11px;
 
                                 &.title {
-                                    color: $title_1;
+                                    color: $title_4;
                                 }
                             }
                         }
@@ -3087,7 +3480,7 @@
                         .smallTitle {
                             font-size: 15px;
                             font-weight: bold;
-                            color: $title_2;
+                            color: $mainFont_1;
                             margin-bottom: 20px;
                         }
 
@@ -3117,7 +3510,7 @@
                                     font-weight: bold;
 
                                     &:nth-of-type(1) {
-                                        color: $title_2;
+                                        color: $mainFont_1;
                                         margin-right: 30px;
                                     }
 
@@ -3127,15 +3520,10 @@
                                     }
                                 }
 
-                                button {
+                                .copy {
                                     width: 95px;
                                     height: 36px;
                                     @include borderBtn;
-
-                                    &:nth-of-type(2) {
-                                        @include mainBtn;
-                                        margin-left: 8px;
-                                    }
                                 }
 
                                 .remind {
@@ -3161,9 +3549,9 @@
                 width: 880px;
                 height: auto;
                 margin-right: 15px;
-                background: $mainBG_1;
+                background: $mainBG_3;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                border: 1px solid $mainBorder_3;
 
                 .title {
                     width: 100%;
@@ -3204,7 +3592,7 @@
                                 align-items: center;
                                 font-size: 17px;
                                 letter-spacing: 2px;
-                                color: $title_1;
+                                color: $title_2;
                                 font-weight: bold;
 
                                 .reset_ic {
@@ -3263,11 +3651,12 @@
                         li {
                            width: 196px;
                            height: 97px;
+                           background: $mainBG_1;
+                           border: solid 1px $mainBorder_3;
+                           border-radius: 5px;
                            box-sizing: border-box;
                            padding: 18px;
                            margin: 0 16px 16px 0;
-                           border: solid 1px $mainBorder_1;
-                           border-radius: 5px;
 
                            &:nth-of-type(4n) {
                                margin-right: 0;
@@ -3349,7 +3738,7 @@
                             width: 56px;
                             text-align: center;
                             font-size: 14px;
-                            color: $title_2;
+                            color: $mainFont_1;
                             font-weight: bold;
                         }
 
@@ -3359,10 +3748,27 @@
                             height: 23px;
                         }
 
-                        select {
-                            width: 256px;
-                            height: 42px;
-                            @include mainSelect;
+                        label {
+                            position: relative;
+
+                            &::before {
+                                content: "";
+                                width: 0;
+                                height: 0;
+                                border-style: solid;
+                                border-width: 7px 5px 0 5px;
+                                border-color: $mainBorder_3 transparent transparent transparent;
+                                position: absolute;
+                                top: 50%;
+                                right: 16px;
+                                transform: translateY(-50%);
+                            }
+
+                            select {
+                                width: 256px;
+                                height: 42px;
+                                @include mainSelect;
+                            }
                         }
                     }
 
@@ -3375,7 +3781,7 @@
                         p {
                             font-size: 14px;
                             font-weight: bold;
-                            color: $title_2;
+                            color: $mainFont_1;
                             margin-top: 14px;
                         }
 
@@ -3411,6 +3817,7 @@
                                         width: 256px;
                                         height: 42px;
                                         @include mainBtn;
+                                        border: none;
                                         margin-top: 15px;
                                     }
                                 }
@@ -3430,9 +3837,8 @@
                 margin-right: 15px;
 
                 .top {
-                    background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
                     width: 100%;
                     height: auto;
                     margin-bottom: 20px;
@@ -3465,6 +3871,32 @@
                             height: 100%;
                             padding: 18px 25px 0;
                             box-sizing: border-box;
+                            
+                            &:nth-of-type(2) {
+                                position: relative;
+                               
+                                &::after {
+                                    content: "";
+                                    width: 1.5px;
+                                    height: 60%;
+                                    background: $mainBorder_1;
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 0;
+                                    transform: translateY(-50%);
+                                }
+                               
+                                &::before {
+                                    content: "";
+                                    width: 1.5px;
+                                    height: 60%;
+                                    background: $mainBorder_1;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 0;
+                                    transform: translateY(-50%);
+                                }
+                            }
     
                             .smallTitle {
     
@@ -3474,7 +3906,7 @@
                                     align-items: center;
                                     font-size: 17px;
                                     letter-spacing: 2px;
-                                    color: $title_1;
+                                    color: $title_2;
                                     font-weight: bold;
     
                                     &.limit {
@@ -3538,10 +3970,11 @@
                             li {
                                width: 196px;
                                height: 97px;
+                               background: $mainBG_1;
                                box-sizing: border-box;
                                padding: 18px;
                                margin: 0 16px 16px 0;
-                               border: solid 1px $mainBorder_1;
+                               border: solid 1px $mainBorder_3;
                                border-radius: 5px;
     
                                &:nth-of-type(4n) {
@@ -3588,16 +4021,23 @@
                             }
                         }
                     }
+
+                    hr {
+
+                        &:nth-of-type(2) {
+                            border-color: $mainBorder_1;
+                        }
+                    }
                 }
 
                 .bottom {
-                    background: $mainBG_1;
+                    background: $mainBG_3;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $mainBorder_3;
                     width: 100%;
                     min-height: 630px;
                     box-sizing: border-box;
-                    padding: 20px 0 20px 24px;
+                    padding: 20px 24px;
 
                     .title {
                         font-size: 17px;
@@ -3620,8 +4060,9 @@
                             justify-content: space-evenly;
                             width: 202px;
                             height: 112px;
+                            background: $mainBG_1;
                             margin-right: 8px;
-                            border: solid 1px $mainBorder_1;
+                            border: solid 1px $mainBorder_3;
                             border-radius: 5px;
 
                             .name {
@@ -3634,7 +4075,7 @@
 
                                 span {
                                     font-size: 38px;
-                                    color: $title_1;
+                                    color: $title_2;
                                     font-weight: bold;
                                 }
                             }
@@ -3653,6 +4094,23 @@
                             display: flex;
                             margin-bottom: 23px;
 
+                            &:first-child {
+                                position: relative;
+
+                                &::before {
+                                    content: "";
+                                    width: 0;
+                                    height: 0;
+                                    border-style: solid;
+                                    border-width: 7px 5px 0 5px;
+                                    border-color: $mainBorder_3 transparent transparent transparent;
+                                    position: absolute;
+                                    top: 51.5%;
+                                    left: 333px;
+                                    transform: translateY(-50%);
+                                }
+                            }
+
                             p {
                                 font-size: 14px;
                                 letter-spacing: 1px;
@@ -3660,14 +4118,14 @@
                                 font-weight: bold;
                                 margin-top: 13px;
                                 
-                                i {
+                                span {
                                     font-size: 12px;
                                     color: $remind;
                                 }
                             }
 
                             div {
-
+                                
                                 select {
                                     width: 257px;
                                     height: 40px;
@@ -3700,16 +4158,17 @@
                     }
 
                     .remindBox {
-                        width: 839px;
+                        width: 100%;
+                        background: $mainBG_1;
                         box-sizing: border-box;
                         padding: 15px 19px;
-                        margin: 24px 0 0 -10px;
-                        border: solid 1px $mainBorder_2;
+                        margin: 65px 0 0 0;
+                        border: solid 1px $mainBorder_3;
 
                         .remindTitle {
                             font-size: 13px;
                             letter-spacing: 1px;
-                            color: $title_1;
+                            color: $title_2;
                             font-weight: bold;
                         }
 
@@ -3737,9 +4196,9 @@
         .inviteWrap {
             width: 1140px;
             height: auto;
-            background: $mainBG_1;
+            background: $mainBG_3;
             box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
+            border: 1px solid $mainBorder_3;
             box-sizing: border-box;
             padding: 20px;
 
@@ -3841,9 +4300,9 @@
         .pointWrap {
             width: 1140px;
             height: auto;
-            background: $mainBG_1;
+            background: $mainBG_3;
             box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
+            border: 1px solid $mainBorder_3;
             box-sizing: border-box;
 
             .title {
@@ -3908,13 +4367,13 @@
             }
 
             hr {
+                border-color: $mainBorder_1;
                 margin: 15px 0;
             }
 
             table {
-                width: 92%;
+                width: 100%;
                 height: auto;
-                margin: 0 auto;
 
                 tr {
                     border-bottom: solid 1px $mainBorder_1;
@@ -3926,7 +4385,7 @@
                     th {
                         vertical-align: middle;
                         height: 40px;
-                        border-bottom: solid 2px $mainBorder_2;
+                        border-bottom: solid 2px $mainBorder_3;
 
                         p {
                             font-size: 14px;
@@ -3958,6 +4417,90 @@
                                 text-decoration: underline;
                                 color: $remind_sp2;
                                 cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //維護時間
+        .fixingWrap {
+            width: 1140px;
+            height: auto;
+            background: $mainBG_3;
+            box-shadow: 0 5px 10px -5px $mainShadow_1;
+            border: 1px solid $mainBorder_3;
+            box-sizing: border-box;
+
+            .top {
+                width: 100%;
+                height: 50px;
+                background: $mainBG_1;
+                color: $title_2;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 0 22px;
+                font-weight: bold;
+                font-size: 20px;
+                letter-spacing: 2px;
+                border-bottom: 1px solid $mainBorder_3;
+            }
+
+            .bottom {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                box-sizing: border-box;
+                padding: 25px;
+
+                table {
+                    width: 100%;
+                    height: auto;
+                    overflow: hidden;
+                    box-shadow: 0 0 0 1px $mainBorder_3;
+                    
+                    tr {
+                        border-bottom: solid 1px $mainBorder_1;
+
+                        &:first-child,
+                        &:last-child {
+                            border: none;
+                        }
+
+                        &:first-child {
+                            background: $maintainTableTr_BG;
+                        }
+
+                        th {
+                            height: 40px;
+                            border-bottom: 1px solid $mainBorder_1;
+                            vertical-align: middle;
+
+                            p {
+                                color: $title_2;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                        }
+
+                        td {
+                            width: 33%;
+                            height: 40px;
+                            vertical-align: middle;
+                            border-right: solid 1px $mainBorder_1;
+
+                            &:last-child {
+                                border: none;
+                            }
+
+                            p {
+                                width: 100%;
+                                text-align: center;
+                                color: $mainFont_1;
+                                font-size: 14px;
+                                font-weight: bold;
                             }
                         }
                     }
