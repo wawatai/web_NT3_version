@@ -1,5 +1,5 @@
 .eventWrap {
-    background: $mainBG_2;
+    //background: $mainBG_2;
 
     .eventTitle {
         width: 100%;
@@ -7,11 +7,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    
-        p {
-            font-size: 61px;
-            color: $title_1;
-            font-weight: bold;
+        position: relative;
+
+        .titleClip {
+            width: 244px;
+            height: 61px;
+            background: $eventTitle;
+            background-clip: text;
+            position: absolute;
+            top: 35%;
+            left: 51.8%;
+            
+            p {
+                font-size: 61px;
+                font-weight: bold;
+                color: transparent;
+            }
         }
     }
     
@@ -19,7 +30,7 @@
         width: 1400px;
         height: auto;
         min-height: 350px;
-        padding: 28px 0 56px;
+        padding: 28px 0 0;
         margin: 0 auto;
         display: flex;
 
@@ -45,6 +56,10 @@
 
                     &:hover,&:active,&.active {
                         @include navHover;
+
+                        i {
+                            background-position-x: 0%;
+                        }
                     }
 
                     i {
@@ -52,12 +67,13 @@
                         width: 23px;
                         height: 23px;
                         margin: 0 28px;
+                        background-position-x: 100%;
                     }
 
                     span {
                         font-weight: bold;
                         font-size: 22px;
-                        color: $mainFont_1;
+                        color: $mainFont_4;
                     }
                 }
             }
@@ -76,7 +92,8 @@
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
                 margin-bottom: 20px;
                 overflow: hidden;
-                border-radius: 5px;
+                border-radius: 0px 0px 30px 30px;
+                border: 1px solid $blockBoreder;
 
                 &:last-child {
                     margin: 0;
@@ -120,11 +137,15 @@
                         button {
                             width: 117px;
                             height: 37px;
-                            @include mainBtn;
+                            @include eventCheck;
 
                             &:last-child {
+                                width: 130px;
                                 display: none;
                                 @include eventApply;
+                                border: 1px solid transparent;
+                                padding: 0 15px;
+                                box-sizing: border-box;
                                 margin-left: 10px;
                             }
                         }
@@ -208,5 +229,52 @@
         //         padding-bottom: 60px;
         //     }
         // }
+    }
+
+    .buttonArea {
+        width: 1400px;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        margin: 0 auto;
+
+        button {
+            width: 27px;
+            height: 27px;
+            background: transparent;
+            color: $mainFont_1;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 50px;
+            margin: 0 8px;
+
+            &:hover, &:active, &.active {
+                background: $pageBTN_bg;
+                color: $mainFont_2;
+            }
+
+            &.prevBtn,
+            &.nextBtn {
+                width: 18px;
+                height: 18px;
+                background: $adBTN; 
+                position: relative;
+
+                &::before {
+                    content: ">";
+                    color: $pageNext_text;
+                }
+            }
+
+            &:first-child {
+                opacity: 0.8;
+
+                &::before {
+                    content: "<";
+                    color: $pagePrev_text;
+                }
+            }
+        }
     }
 }
