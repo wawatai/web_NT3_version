@@ -1,7 +1,12 @@
 header {
     width: 100%;
     height: 120px;
-    position: relative;
+    background: $header_topBG;
+    box-shadow: 0 0 13px 2px $mainShadow_1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
 
     //上部
     .top {
@@ -47,17 +52,60 @@ header {
                 li:not(.platform) {
                     cursor: pointer;
 
-                    &:hover,&:active,&.active {
-                        background: $header_Hover;
-                    }
-
-                    &:nth-of-type(1),
-                    &:nth-of-type(2) {
+                    &:nth-of-type(1) {
+                        margin: 0 10px 0 0;
                         cursor: default;
                         
                         &:hover,&:active,&.active {
                             background: none;
                         }
+                    }
+                    &:nth-of-type(2) {
+                        width: auto;
+                        height: 28px;
+                        background: $header_MoneyBTN;
+                        border-radius: 20px;
+                        color: #a2741f;
+                        border: 1px solid $header_MoneyBorder;
+                        font-size: 14px;
+                        margin: 0 3px;
+                        cursor: default;
+                    }
+
+                    &:nth-of-type(3),
+                    &:nth-of-type(4),
+                    &:nth-of-type(5),
+                    &:nth-of-type(6), 
+                    &:nth-of-type(7) {
+                        @include headerBtn_2;
+                        width: auto;
+                        height: 28px;
+                        border: 1px solid transparent;
+                        margin: 0 4px;
+                    }
+                    &:nth-of-type(7) {
+                        position: relative;
+                        
+                        &:before {
+                            content: "9";
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 15px;
+                            background: $remind02;
+                            color: $mainFont_2;
+                            font-size: 12px;
+                            padding: 2px 6px;
+                            box-sizing: border-box;
+                            position: absolute;
+                            top: -5px;
+                            left: -8px;
+                        }
+                    }
+                    &:nth-of-type(8) {
+                        @include headerBtn_1;
+                        border: 1px solid transparent;
+                        height: 28px;
+                        margin: 0 3px;
                     }
                 }
             }
@@ -66,10 +114,9 @@ header {
                 display: flex;
                 width: auto;
                 height: 100%;
-                padding: 0 20px;
+                padding: 0 11px;
                 align-items: center;
                 position: relative;
-                @include headerBorder;
 
                 //未登入選單
                 .loginForm {
@@ -82,8 +129,8 @@ header {
                         position: relative;
 
                         i {
-                            width: 11px;
-                            height: 15px;
+                            width: 15px;
+                            height: 14px;
                             position: absolute;
                             top: 52%;
                             transform: translateY(-50%);
@@ -103,58 +150,52 @@ header {
                     }
 
                     button {
-                        width: auto;
+                        width: 69px;
                         height: 28px;
                         @include headerBtn_1;
 
                         &.signupBtn {
                             margin-left: 8px;
                             @include headerBtn_2;
-
-                            i {
-                                display: inline-block;
-                                width: 12px;
-                                height: 14px;
-                                margin: 0 4px -1px 0;
-                            }
+                            border: 1px solid transparent;
                         }
                     }
+                }
+                &:nth-of-type(1),
+                &:nth-of-type(2) {
+                    padding: 0 0 0 11px;
                 }
 
                 //等級
                 &.lv {
-                    color: $header_LV_1;
-                    font-weight: bold;
+                    color: $header_memberID;
 
                     span {
-                        color: $header_LV_2;
-                        padding-right: 15px;
+                        @include level;
+                        margin-right: 10px;
                     }
                 }
 
                 //忘記密碼
                 &.forget {
+                    color: $header_FGPW_Word;
                     font-size: 14px;
+                    text-decoration: underline;
                     cursor: pointer;
                     font-weight: bold;
                     letter-spacing: 1px;
-
-                    &:hover,&:active,&.active {
-                        background: $header_Hover;
-                    }
 
                     i {
                         display: block;
                         width: 19px;
                         height: 19px;
-                        margin-right: 10px;
+                        margin-right: 5px;
                     }
                 }
 
                 //transfer
                 &.moneyTotal {
                     position: relative;
-                    color: $header_Money;
                     @include headerArrow;
                     padding: 0 20px 0 14px;
 
@@ -163,6 +204,7 @@ header {
                     }
 
                     .total {
+                        color: $remind02;
                         padding-right: 8px;
                     }
 
@@ -171,6 +213,7 @@ header {
                         height: auto;
                         top: 40px;
                         @include headerMoneyList;
+                        z-index: 500;
 
                         &.display {
                             display: block;
@@ -216,6 +259,8 @@ header {
                 
                 //語言列
                 &.lang {
+                    width: 105px;
+                    height: 32px;
                     
                     select {
                         width: auto;
@@ -231,7 +276,7 @@ header {
     .gameNav {
         width: 100%;
         height: 80px;
-        background: $mainBG_1;
+        background: $header_NavBG;
 
         .center {
             width: 1400px;
@@ -241,9 +286,7 @@ header {
             align-items: center;
             justify-content: space-between;
 
-            .logo {
-                margin-top: 10px;
-            }
+            
 
             ul {
                 width: auto;
@@ -260,13 +303,11 @@ header {
                     letter-spacing: 1px;
                     cursor: pointer;
                     box-sizing: border-box;
-                    border-bottom: solid 4px transparent;
                     color: $headerNav_Word;
                     font-weight: bold;
 
                     &:hover,&:active,&.active {
-                        border-color: $headerNav_Border;
-                        color: $headerNav_Hover;
+                        background: $headerNav_BG;
                     }
                 }
             }
@@ -356,13 +397,13 @@ header {
                                 display: none;
                                 position: absolute;
                                 width: 92%;
-                                height: 92%;
+                                height: 80%;
                                 border-radius: 5px;
                                 background: $filter;
                                 align-items: center;
                                 justify-content: center;
                                 flex-direction: column;
-                                top: 50%;
+                                top: 45%;
                                 left: 50%;
                                 transform: translate(-50%,-50%);
                                 cursor: not-allowed;
@@ -379,6 +420,14 @@ header {
                                     &.title {
                                         margin-bottom: 30px;
                                     }
+                                }
+                            }
+
+                            &:hover,&:active,&.active {
+                                img {
+                                    transform: scale(1.09);
+                                    transition: 0.4s;
+                                    filter: brightness(1.1);
                                 }
                             }
                         }

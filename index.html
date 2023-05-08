@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="js/slick-1.8.1/slick/slick.min.js"></script>
     <script src="./js/javascript.js"></script>
+    <link rel="shortcut icon" href="./images/64X64.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -24,7 +25,7 @@
                     <form class="loginForm">
                         <div>
                             <i class="acc_ic"></i>
-                            <input type="text" placeholder="帳號或手機號碼">
+                            <input type="text" placeholder="請輸入帳號或手機號碼">
                         </div>
                         <div>
                             <i class="pass_ic"></i>
@@ -32,7 +33,6 @@
                         </div>
                         <button class="loginBtn" type="button">登入</button>
                         <button class="signupBtn" type="button" onclick="window.location.href='./html/register.html'">
-                            <i></i>
                             註冊
                         </button>
                     </form>
@@ -52,11 +52,11 @@
             </ul>
             <ul class="user alLogin">
                 <li class="lv">
-                    <span>VIP20</span>
-                    userName
+                    <span>一般會員</span>
+                    opp121
                 </li>
                 <li class="moneyTotal">
-                    <span class="total">9999</span>
+                    <span class="total">4960</span>
                     <i class="money_arrow"></i>
                     <ul class="transferInfo">
                         <li class="platform">
@@ -210,7 +210,7 @@
             <div class="center">
                 <img class="logo" src="./images/icon/logo.png">
                 <ul>
-                    <li class="menu" onclick="window.location.href='./index.html'">首頁</li>
+                    <li class="menu active" onclick="window.location.href='./index.html'">首頁</li>
                     <li class="sportBtn" onclick="unlogin()">體育賽事</li>
                     <li class="liveBtn" onclick="unlogin()">真人娛樂</li>
                     <li class="slotBtn" onclick="unlogin()">老虎機</li>
@@ -219,7 +219,7 @@
                     <li class="boardBtn" onclick="unlogin()">棋牌遊戲</li>
                     <!-- <li class="activeWallet">活動錢包</li> -->
                     <li class="event" onclick="unlogin()">優惠中心</li>
-                    <li class="vip" onclick="unlogin()">VIP會員</li>
+                    <!-- <li class="vip" onclick="unlogin()">VIP會員</li> -->
                 </ul>
             </div>
         </div>
@@ -235,43 +235,43 @@
                                 </div>
                                 <p>36588體育</p>
                             </li>
+                            <li onclick="unlogin()">
+                                <div>
+                                    <img src="./images/partner/sport/pinnacle.png">
+                                </div>
+                                <p>Pinnacle體育</p>
+                            </li>
                         </ul>
                         <ul class="live">
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/live/live_1.png">
+                                <img src="./images/partner/live/sa.png">
                             </div>
                             <p>沙龍真人娛樂</p>
                         </li>
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/live/live_2.png">
+                                <img src="./images/partner/live/ab.png">
                             </div>
                             <p>歐博真人娛樂</p>
                         </li>
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/live/live_3.png">
+                                <img src="./images/partner/live/dg.png">
                             </div>
                             <p>DG真人娛樂</p>
                         </li>
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/live/live_4.png">
+                                <img src="./images/partner/live/wm.png">
                             </div>
                             <p>WM真人娛樂</p>
                         </li>
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/live/live_5.png">
+                                <img src="./images/partner/live/og.png">
                             </div>
                             <p>OG真人娛樂</p>
-                        </li>
-                        <li onclick="unlogin()">
-                            <div>
-                                <img src="./images/partner/live/live_7.png">
-                            </div>
-                            <p>RG真人娛樂</p>
                         </li>
                         </ul>
                         <ul class="slot">
@@ -294,7 +294,7 @@
                         </li>
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/slot/fa.png">
+                                <img src="./images/partner/slot/funta.png">
                             </div>
                             <p>福星電子娛樂</p>
                         </li>
@@ -376,13 +376,13 @@
                         </li>
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/fish/fa.png">
+                                <img src="./images/partner/fish/funta.png">
                             </div>
                             <p>福星電子娛樂</p>
                         </li>
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/fish/gr.png">
+                                <img src="./images/partner/board/gr.png">
                             </div>
                             <p>好路棋牌</p>
                         </li>
@@ -408,7 +408,7 @@
                         <ul class="board">
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/board/big.png">
+                                <img src="./images/partner/board/dayun.png">
                             </div>
                             <p>大運棋牌</p>
                         </li>
@@ -420,7 +420,7 @@
                         </li>
                         <li onclick="unlogin()">
                             <div>
-                                <img src="./images/partner/board/fa.png">
+                                <img src="./images/partner/board/funta.png">
                             </div>
                             <p>福星電子娛樂</p>
                         </li>
@@ -458,9 +458,10 @@
     <main>
         <div class="ad">
             <ul class="single-item">
-                <li><img src="./images/banner.png"></li>
-                <li><img src="./images/banner.png"></li>
-                <li><img src="./images/banner.png"></li>
+                <li><img src="./images/banner.jpg"></li>
+                <li><img src="./images/banner.jpg"></li>
+                <li><img src="./images/banner.jpg"></li>
+                <li><img src="./images/banner.jpg"></li>
             </ul>
         </div>
         <div class="mainWrap">
@@ -469,99 +470,183 @@
                     <div class="center">
                         <div class="marqueeWrap">
                             <i class="marquee_ic">
-                                <p>最新資訊</p>
+                                <i></i>
                             </i>
                             <div class="marquee">
-                                <p>測試跑馬燈</p>
+                                <p>✩重要公告✩  近期有發現仿冒的遊戲網~提醒會員多加注意,慎防詐騙 並認明本網唯一老牌公信力娛樂城</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <ul class="typeList">
-                    <li class="sport" onclick="unlogin()">
-                        <img src="./images/enter/36588.png" alt="">
+                    <li class="sport p1" onclick="unlogin()">
+                        <img src="./images/enter/sport/36588.png" alt="">
                         <p>36588體育</p>
+                        <div class="fixBox display">
+                            <p class="title">維護中</p>
+                            <p>2022/01/10 13:00:00~</p>
+                            <p>2020/01/10 16:00:00</p>
+                        </div>
+                    </li>
+                    <li class="sport p2" onclick="unlogin()">
+                        <img src="./images/enter/sport/pinnacle.png" alt="">
+                        <p>Pinnacle體育</p>
                     </li>
                     <li class="live p1" onclick="unlogin()">
-                        <img src="./images/enter/sa.png" alt="">
+                        <img src="./images/enter/live/sa.png" alt="沙龍真人娛樂">
                         <p>沙龍真人娛樂</p>
                     </li>
                     <li class="live p2" onclick="unlogin()">
-                        <img src="./images/enter/allbet.png" alt="">
+                        <img src="./images/enter/live/ab.png" alt="歐博真人娛樂">
                         <p>歐博真人娛樂</p>
                     </li>
                     <li class="live p3" onclick="unlogin()">
-                        <img src="./images/enter/dg.png" alt="">
+                        <img src="./images/enter/live/dg.png" alt="DG真人娛樂">
                         <p>DG真人娛樂</p>
                     </li>
                     <li class="live p4" onclick="unlogin()">
-                        <img src="./images/enter/wm.png" alt="">
+                        <img src="./images/enter/live/wm.png" alt="WM真人娛樂">
                         <p>WM真人娛樂</p>
                     </li>
                     <li class="live p5" onclick="unlogin()">
-                        <img src="./images/enter/og.png" alt="">
+                        <img src="./images/enter/live/og.png" alt="OG真人娛樂">
                         <p>OG真人娛樂</p>
                     </li>
-                    <li class="board" onclick="unlogin()">
-                        <img src="./images/enter/mg.png" alt="">
-                        <p>MG棋牌</p>
-                    </li>
-                    <li class="lottery p1" onclick="unlogin()">
-                        <img src="./images/enter/sg88.png" alt="">
-                        <p>SG88六合、大樂、539</p>
-                    </li>
-                    <li class="lottery p2" onclick="unlogin()">
-                        <img src="./images/enter/gs.png" alt="">
-                        <p>京彩彩票</p>
-                    </li>
-                    <li class="lottery p3" onclick="unlogin()">
-                        <img src="./images/enter/rwd.png" alt="">
-                        <p>白鹿電子娛樂</p>
+                    <li class="live p6" onclick="unlogin()">
+                        <img src="./images/enter/live/kg.png" alt="KG娛樂">
+                        <p>KG真人娛樂</p>
                     </li>
                     <li class="slot p1" onclick="unlogin()">
-                        <img src="./images/enter/bng.png" alt="">
+                        <img src="./images/enter/slot/bng.png" alt="">
                         <p>BNG電子娛樂</p>
-                        <div class="fixBox display">
-                            <p class="title">維護中</p>
-                            <p>2022/03/02 下午2:00 ~</p>
-                            <p>2020/03/02 下午4:00</p>
-                        </div>
                     </li>
                     <li class="slot p2" onclick="unlogin()">
-                        <img src="./images/enter/tpg.png" alt="">
+                        <img src="./images/enter/slot/tpg.png" alt="">
                         <p>TPG電子娛樂</p>
                     </li>
                     <li class="slot p3" onclick="unlogin()">
-                        <img src="./images/enter/png.png" alt="">
-                        <p>PNG電子娛樂</p>
+                        <img src="./images/enter/slot/bwin.png" alt="">
+                        <p>必贏電子</p>
                     </li>
                     <li class="slot p4" onclick="unlogin()">
-                        <img src="./images/enter/px.png" alt="">
-                        <p>鳳凰棋牌</p>
+                        <img src="./images/enter/slot/funta.png" alt="">
+                        <p>福星電子</p>
                     </li>
                     <li class="slot p5" onclick="unlogin()">
-                        <img src="./images/enter/rsg.png" alt="">
-                        <p>RSG電子娛樂</p>
+                        <img src="./images/enter/slot/gr.png" alt="">
+                        <p>好路電子</p>
+                    </li>
+                    <li class="slot p5" onclick="unlogin()">
+                        <img src="./images/enter/slot/ifun.png" alt="">
+                        <p>IFUN電子</p>
                     </li>
                     <li class="slot p6" onclick="unlogin()">
-                        <img src="./images/enter/bwin.png" alt="">
-                        <p>必贏電子娛樂</p>
+                        <img src="./images/enter/slot/pls.png" alt="">
+                        <p>PLS電子</p>
                     </li>
                     <li class="slot p7" onclick="unlogin()">
-                        <img src="./images/enter/ifun.png" alt="">
-                        <p>IFUN電子娛樂</p>
+                        <img src="./images/enter/slot/png.png" alt="">
+                        <p>PNG電子</p>
                     </li>
                     <li class="slot p8" onclick="unlogin()">
-                        <img src="./images/enter/sp.png" alt="">
-                        <p>SP電子娛樂</p>
+                        <img src="./images/enter/slot/rsg.png" alt="">
+                        <p>RSG電子</p>
                     </li>
                     <li class="slot p9" onclick="unlogin()">
-                        <img src="./images/enter/pls.png" alt="">
-                        <p>PLS電子娛樂</p>
+                        <img src="./images/enter/slot/sp.png" alt="">
+                        <p>SP電子</p>
                     </li>
-                    <li class="fish" onclick="unlogin()">
-                        <img src="./images/enter/fish.png" alt="">
-                        <p>捕魚機</p>
+                    <li class="slot p10" onclick="unlogin()">
+                        <img src="./images/enter/slot/tpg.png" alt="">
+                        <p>TPG電子</p>
+                    </li>
+                    <li class="slot p11" onclick="unlogin()">
+                        <img src="./images/enter/slot/ufo.png" alt="">
+                        <p>UFO電子</p>
+                    </li>
+                    <li class="lottery p1" onclick="unlogin()">
+                        <img src="./images/enter/lottery/sg.png" alt="">
+                        <p>SG88六合、大樂、539</p>
+                    </li>
+                    <li class="lottery p2" onclick="unlogin()">
+                        <img src="./images/enter/lottery/gs.png" alt="">
+                        <p>京彩彩票</p>
+                    </li>
+                    <li class="lottery p3" onclick="unlogin()">
+                        <img src="./images/enter/lottery/rwd.png" alt="">
+                        <p>白鹿彩票</p>
+                    </li>
+                    <li class="lottery p4" onclick="unlogin()">
+                        <img src="./images/enter/lottery/wg.png" alt="">
+                        <p>WG彩票</p>
+                    </li>
+                    <li class="fish p1" onclick="unlogin()">
+                        <img src="./images/enter/fish/bwin.png" alt="">
+                        <p>BWIN捕魚</p>
+                    </li>
+                    <li class="fish p2" onclick="unlogin()">
+                        <img src="./images/enter/fish/dayun.png" alt="">
+                        <p>大運捕魚</p>
+                    </li>
+                    <li class="fish p3" onclick="unlogin()">
+                        <img src="./images/enter/fish/funta.png" alt="">
+                        <p>福星捕魚</p>
+                    </li>
+                    <li class="fish p4" onclick="unlogin()">
+                        <img src="./images/enter/fish/gr.png" alt="">
+                        <p>GR捕魚</p>
+                    </li>
+                    <li class="fish p5" onclick="unlogin()">
+                        <img src="./images/enter/fish/rsg.png" alt="">
+                        <p>RSG捕魚</p>
+                    </li>
+                    <li class="fish p6" onclick="unlogin()">
+                        <img src="./images/enter/fish/sp.png" alt="">
+                        <p>SP捕魚</p>
+                    </li>
+                    <li class="fish p7" onclick="unlogin()">
+                        <img src="./images/enter/fish/tpg.png" alt="">
+                        <p>TPG捕魚</p>
+                    </li>
+                    <li class="fish p8" onclick="unlogin()">
+                        <img src="./images/enter/fish/ufo.png" alt="">
+                        <p>UFO捕魚</p>
+                    </li>
+                    <li class="board p1" onclick="unlogin()">
+                        <img src="./images/enter/board/bts.png" alt="">
+                        <p>BTS棋牌</p>
+                    </li>
+                    <li class="board p2" onclick="unlogin()">
+                        <img src="./images/enter/board/bwin.png" alt="">
+                        <p>BWIN棋牌</p>
+                    </li>
+                    <li class="board p3" onclick="unlogin()">
+                        <img src="./images/enter/board/dayun.png" alt="">
+                        <p>大運棋牌</p>
+                    </li>
+                    <li class="board p4" onclick="unlogin()">
+                        <img src="./images/enter/board/funta.png" alt="">
+                        <p>福星棋牌</p>
+                    </li>
+                    <li class="board p5" onclick="unlogin()">
+                        <img src="./images/enter/board/gr.png" alt="">
+                        <p>GR好路棋牌</p>
+                    </li>
+                    <li class="board p6" onclick="unlogin()">
+                        <img src="./images/enter/board/ifun.png" alt="">
+                        <p>ifun棋牌</p>
+                    </li>
+                    <li class="board p7" onclick="unlogin()">
+                        <img src="./images/enter/board/png.png" alt="">
+                        <p>PNG棋牌</p>
+                    </li>
+                    <li class="board p8" onclick="unlogin()">
+                        <img src="./images/enter/board/rwd.png" alt="">
+                        <p>RWD棋牌</p>
+                    </li>
+                    <li class="board p8" onclick="unlogin()">
+                        <img src="./images/enter/board/ufo.png" alt="">
+                        <p>UFO棋牌</p>
                     </li>
                 </ul>
             </div>
@@ -573,8 +658,12 @@
             手機下載
         </p>
         <ul class="rightSide">
-            <li class="line" onclick="window.location.href='./html/help.html'">
+            <li class="cs">
                 <i></i>
+            </li>
+            <li class="goTOP">
+                <i></i>
+                <p>TOP</p>
             </li>
         </ul>
     </nav>
@@ -590,7 +679,7 @@
                         <li onclick="window.location.href='./html/help.html'">關於我們</li>
                     </ul>
                 </div>
-                <p>2021 88au8.net 版權所有 │ 18+</p>
+                <p>2021 AR娛樂城 版權所有 │ 18+</p>
             </div>
         </div>
         <div class="footerList">
@@ -735,7 +824,7 @@
             </div>
         </div>
         <!--忘記密碼-->
-        <div class="jumpWindow forgetPassword">
+        <div class="jumpWindow forgetPassword display">
             <div class="title">
                 <p>忘記密碼</p>
                 <i class="close_ic"></i>
@@ -807,6 +896,28 @@
                 <i class="close_ic"></i>
             </div>
             <div class="content">請先登入</div>
+            <div class="btnBox">
+                <button class="close">確認</button>
+            </div>
+        </div>
+        <!-- 會員不存在 -->
+        <div class="jumpWindow notExist">
+            <div class="title">
+                <p>提示</p>
+                <i class="close_ic"></i>
+            </div>
+            <div class="content">會員不存在</div>
+            <div class="btnBox">
+                <button class="close">確認</button>
+            </div>
+        </div>
+        <!-- 帳密為必填 -->
+        <div class="jumpWindow idpwRequire">
+            <div class="title">
+                <p>提示</p>
+                <i class="close_ic"></i>
+            </div>
+            <div class="content">帳號 為必填 密碼 為必填</div>
             <div class="btnBox">
                 <button class="close">確認</button>
             </div>

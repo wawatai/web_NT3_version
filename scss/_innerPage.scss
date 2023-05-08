@@ -1,12 +1,12 @@
 .innerPage {
-    background: $mainBG_2;
-    padding: 20px 0 40px;
+    //background: $mainBG_2;
+    padding: 10px 0 41px;
 
     //跑馬燈
     .marqueeArea {
         width: 100%;
-        height: auto;
-        margin-bottom: 20px;
+        height: 50px;
+        margin-bottom: 39px;
 
         .center {
             width: 1400px;
@@ -19,23 +19,31 @@
                 display: flex;
                 align-items: center;
                 background: $marquee_BG;
-                box-shadow: 0 0 13px 3px $marquee_Shadow;
+                box-shadow: 1px 6px 6px $marquee_Shadow ;
+                border: 1px solid $blockBoreder;
                 border-radius: 25px;
+                margin: 10px 0 60px;
 
                 .marquee_ic {
-                    width: 160px;
-                    height: 88%;
+                    width: 78px;
+                    height: 102%;
                     border-radius: 25px;
                     background: $marquee_Linear;
-                    margin-left: 3px;
+                    box-shadow: 2px 2px 5px $mainShadow_1;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    margin-left:  0 0 0 -1px;
 
                     p {
                         font-size: 16px;
                         font-weight: bold;
                         color: $marquee_LinearWord;
+                    }
+
+                    i {
+                        width: 30px;
+                        height: 30px;
                     }
                 }
 
@@ -45,7 +53,7 @@
                     overflow: hidden;
 
                     p {
-                        font-size: 14px;
+                        font-size: 16px;
                         font-weight: bold;
                         color: $marquee_Word;
                         display: inline-block;
@@ -88,7 +96,7 @@
         //左列
         .innerSide {
             background: $mainBG_1;
-            border-radius: 5px;
+            border-radius: 30px 30px 0 0;
             box-shadow: 0 5px 10px -5px $mainShadow_1;
             width: 245px;
             height: auto;
@@ -104,7 +112,7 @@
                 div {
     
                     .account {
-                        color: $mainFont_1;
+                        color: $mainFont_3;
                         font-size: 14px;
                         font-weight: bold;
                         display: flex;
@@ -173,62 +181,80 @@
                     font-size: 14px;
                     font-weight: bold;
                     cursor: pointer;
-                    color: $mainFont_1;
+                    color: $mainFont_4;
 
                     &:hover,&:active,&.active {
                         @include navHover;
+
+                        .circleOutter {
+                            background: transparent;
+                        }
                     }
 
                     &:nth-of-type(1),&:nth-of-type(4),&:nth-of-type(9) {
                         border-top: solid 1px $mainBorder_1;
                     }
 
-                    i {
-                        display: block;
+                    .circleOutter {
+                        width: 26px;
+                        height: 26px;
+                        background: $naviconCircle;
+                        border-radius: 50px;
+                        padding: 5px;
+                        box-sizing: border-box;
                         position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        left: 25px;
-                        
-                        &.user_ic {
-                            width: 14px;
-                            height: 16px;
-                        }
-                        &.vip_ic {
-                            width: 17px;
-                            height: 17px;
-                        }
-                        &.wallet_ic {
-                            width: 15px;
-                            height: 13px;
-                        }
-                        &.card_ic {
-                            width: 17px;
-                            height: 15px;
-                        }
-                        &.dealRecord_ic {
-                            width: 13px;
-                            height: 15px;
-                        }
-                        &.betRecord_ic {
-                            width: 12px;
-                            height: 16px;
-                        }
-                        &.event_ic {
-                            width: 13px;
-                            height: 18px;
-                        }
-                        &.mail_ic {
-                            width: 14px;
-                            height: 11px;
-                        }
-                        &.dividend_ic {
-                            width: 15px;
-                            height: 14px;
-                        }
-                        &.invite_ic {
-                            width: 20px;
-                            height: 20px;
+                        top: 12px;
+                        left: 20px;
+
+                        i {
+                            display: block;
+                                   
+                            &.user_ic {
+                                width: 12px;
+                                height: 20px;
+                                margin-left: 2.5px;
+                            }
+                            &.vip_ic {
+                                width: 17px;
+                                height: 17px;
+                            }
+                            &.wallet_ic {
+                                width: 15px;
+                                height: 13px;
+                            }
+                            &.card_ic {
+                                width: 17px;
+                                height: 15px;
+                            }
+                            &.dealRecord_ic {
+                                width: 13px;
+                                height: 15px;
+                                margin-left: 2px;
+                            }
+                            &.betRecord_ic {
+                                width: 12px;
+                                height: 16px;
+                                margin-left: 3px;
+                            }
+                            &.event_ic {
+                                width: 13px;
+                                height: 18px;
+                                margin: -1px 2.5px;
+                            }
+                            &.mail_ic {
+                                width: 14px;
+                                height: 11px;
+                                margin: 2px 0 0 1px;
+                            }
+                            &.dividend_ic {
+                                width: 15px;
+                                height: 14px;
+                                margin-left: 1px;
+                            }
+                            &.invite_ic {
+                                width: 16px;
+                                height: 16px;
+                            }
                         }
                     }
                 }
@@ -245,8 +271,9 @@
                 height: auto;
                 background: $mainBG_1;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
-                margin-bottom: 20px;
+                border-radius: 25px 25px 0 0;
+                border: 1px solid $blockBoreder;
+                margin-bottom: 15px;
 
                 h1 {
                     display: flex;
@@ -258,7 +285,7 @@
                     font-size: 20px;
                     letter-spacing: 2px;
                     color: $title_2;
-                    border-bottom: solid 1px $mainBorder_1;
+                    border-bottom: solid 1px $blockBoreder;
                     font-weight: bold;
                 }
 
@@ -351,7 +378,7 @@
                     height: auto;
                     background: $mainBG_1;
                     box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $blockBoreder;
 
                     &.display {
                         display: block;
@@ -412,6 +439,7 @@
 
                                                     &.np {
                                                         padding: 0;
+                                                        margin-top: 10px;
 
                                                         span {
                                                             color: $link;
@@ -425,7 +453,7 @@
                                                     height: 42px;
                                                     position: relative;
                                                     left: 110px;
-                                                    @include mainBtn;
+                                                    @include mainBtn2;
                                                 }
                                                 
                                                 span {
@@ -467,6 +495,16 @@
                                                 font-size: 14px;
                                                 color: $mainFont_1;
                                                 font-weight: bold;
+
+                                                &.bet {
+                                                    color: $money;
+                                                }
+                                                &.lose {
+                                                    color: $remind;
+                                                }
+                                                &.win {
+                                                    color: $remind_sp;
+                                                }
                                             }
 
                                             .copy {
@@ -491,7 +529,7 @@
                                     margin-right: 26px;
                                     font-size: 14px;
                                     letter-spacing: 1px;
-                                    color: $title_2;
+                                    color: $mainFont_1;
                                     font-weight: bold;
                                 }
 
@@ -527,7 +565,7 @@
                                     margin-right: 26px;
                                     font-size: 14px;
                                     letter-spacing: 1px;
-                                    color: $title_2;
+                                    color: $mainFont_1;
                                     font-weight: bold;
                                 }
 
@@ -540,7 +578,7 @@
                                 button {
                                     width: 80px;
                                     height: 42px;
-                                    @include mainBtn;
+                                    @include mainBtn2;
                                     margin-left: 10px;
                                 }
                             }
@@ -553,9 +591,10 @@
                     display: none;
                     width: 100%;
                     height: auto;
+                    min-height: 503px;
                     background: $mainBG_1;
                     box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $blockBoreder;
                     box-sizing: border-box;
                     padding: 20px 24px;
 
@@ -605,17 +644,17 @@
                                 }
 
                                 p {
-                                    border-right: solid 1px $mainBorder_1;
                                     font-size: 14px;
                                     font-weight: bold;
                                     color: $title_1;
+                                    border-right: 1px solid $mainBorder_1;
                                 }
                             }
 
                             td {
                                 border-bottom: solid 1px $mainBorder_1;
                                 vertical-align: middle;
-                                height: 50px;
+                                height: 40px;
 
                                 &:last-child {
 
@@ -637,7 +676,7 @@
                                     }
 
                                     &.code {
-                                        color: $remind_sp2;
+                                        color: $link;
                                     }
                                 }
                             }
@@ -652,297 +691,319 @@
             display: none;
             width: 1140px;
             height: auto;
-            background: $mainBG_1;
-            border-radius: 5px;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
 
             &.display {
                 display: block;
             }
 
-            &.innerMode {
-                padding: 24px 0 30px;
+            .top {
+                color: $mainFont_4;
+                font-size: 20px;
+                font-weight: bold;
+                padding: 18px 22px;
+                background: $mainBG_1;
+                border: 1px solid $blockBoreder;
+                border-radius: 25px 25px 0 0;
+                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                margin-bottom: 15px;
             }
 
-            .vipHeader {
-                width: 100%;
-                height: auto;
-                padding-left: 40px;
-                display: flex;
-                box-sizing: border-box;
+            .bottom {
+                background: $mainBG_1;
+                border: 1px solid $blockBoreder;
+                box-shadow: 0 5px 10px -5px $mainShadow_1;
 
-                .medal {
-                    width: 80px;
-                    height: 116px;
-                    margin-right: 30px;
-                    flex-shrink: 0;
-                }
-
-                .rightBox {
+                .vipHeader {
                     width: 100%;
+                    height: auto;
+                    padding: 22px 40px;
                     display: flex;
-                    align-items: flex-start;
-                    flex-direction: column;
-                    justify-content: center;
-
-                    .lv {
-                        margin: 6px 0 14px;
-                        font-size: 20px;
-                        font-weight: bold;
-                        letter-spacing: 2px;
-                        color: $title_2
+                    box-sizing: border-box;
+    
+                    .medal {
+                        width: 80px;
+                        height: 116px;
+                        margin-right: 30px;
+                        flex-shrink: 0;
                     }
-
-                    .money {
-
-                        span {
-                            font-size: 14px;
-                            letter-spacing: 1px;
-                            color: $mainFont_1;
+    
+                    .rightBox {
+                        width: 100%;
+                        display: flex;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        justify-content: center;
+    
+                        .lv {
+                            margin: 6px 0 14px;
+                            font-size: 20px;
                             font-weight: bold;
-                            margin-right: 10px;
+                            letter-spacing: 2px;
+                            color: $title_2
+                        }
+    
+                        .money {
+    
+                            span {
+                                font-size: 14px;
+                                letter-spacing: 1px;
+                                color: $mainFont_1;
+                                font-weight: bold;
+                                margin-right: 10px;
+                            }
                         }
                     }
                 }
-            }
-
-            .lvGraph {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                padding: 20px 20px 0;
-
-                .text {
-                    display: flex;
-                    margin-bottom: 8px;
-                    position: relative;
+    
+                .lvGraph {
                     width: 100%;
                     height: auto;
-
-                    li {
-                        width: 20%;
-                        font-size: 14px;
+                    box-sizing: border-box;
+                    padding: 20px 20px 0;
+    
+                    .text {
+                        display: flex;
+                        margin-bottom: 8px;
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+    
+                        li {
+                            width: 20%;
+                            font-size: 14px;
+                            color: $title_2;
+    
+                            &:nth-of-type(2) {
+                                margin-left: -18px;
+                            }
+    
+                            &:last-child {
+                                text-align: right;
+                                position: absolute;
+                                right: 0px;
+                                top: 0px;
+                            }
+                        }
+                    }
+    
+                    .bar {
+                        width: 100%;
+                        height: 13px;
+                        @include levelBar;
+    
+                        li {
+                            width: 8%;
+                        }
+                    }
+                }
+    
+                .nextBox {
+                    width: 100%;
+                    height: auto;
+                    box-sizing: border-box;
+                    padding: 22px 20px;
+    
+                    .nextWord {
+                        width: 100%;
+                        height: auto;
+                        letter-spacing: 2px;
+                        font-size: 16px;
+                        margin-bottom: 20px;
                         color: $title_2;
-
-                        &:nth-of-type(2) {
-                            margin-left: -18px;
-                        }
-
-                        &:last-child {
-                            text-align: right;
-                            position: absolute;
-                            right: 0px;
-                            top: 0px;
+                        font-weight: bold;
+                    }
+    
+                    .nextBar {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        margin-bottom: 15px;
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                        color: $mainFont_1;
+                        font-weight: bold;
+    
+                        .bar {
+                            width: 400px;
+                            height: 8px;
+                            @include levelBar;
+                            margin: 0 10px;
+    
+                            li {
+                                width: 20%;
+                            }
                         }
                     }
                 }
-
-                .bar {
+    
+                .levelEnjoy {
                     width: 100%;
-                    height: 13px;
-                    @include levelBar;
-
-                    li {
-                        width: 8%;
+                    height: auto;
+                    box-sizing: border-box;
+                    padding: 18px 22px 6px;
+                    border-top: solid 1px $mainBorder_1;
+    
+                    .title {
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 30px;
+                        font-size: 17px;
+                        letter-spacing: 2px;
+                        color: $title_2;
+                        font-weight: bold;
+                    }
+    
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        height: auto;
+    
+                        li {
+                            width: calc(33.3% - 1px);
+                            border-right: solid 1px $mainBorder_1;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            height: 70px;
+                            margin-bottom: 18px;
+    
+                            &:nth-of-type(3n) {
+                                border: none;
+                            }
+    
+                            .text {
+                                margin-bottom: 10px;
+                                font-size: 15px;
+                                letter-spacing: 1px;
+                                color: $mainFont_1;
+                            }
+    
+                            .num {
+                                font-size: 28px;
+                                color: $title_1;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+    
+                    .more {
+                        display: block;
+                        width: 321px;
+                        height: 41px;
+                        margin: 40px auto 44px;
+                        @include borderBtn;
                     }
                 }
             }
 
-            .nextBox {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                padding: 22px 20px;
+            &.innerMode {
 
-                .nextWord {
-                    width: 100%;
-                    height: auto;
-                    letter-spacing: 2px;
-                    font-size: 16px;
-                    margin-bottom: 20px;
-                    color: $title_2;
-                    font-weight: bold;
-                }
-
-                .nextBar {
+                .detailTitle {
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
-                    margin-bottom: 15px;
-                    font-size: 14px;
-                    letter-spacing: 1px;
-                    color: $mainFont_1;
-                    font-weight: bold;
-
-                    .bar {
-                        width: 400px;
-                        height: 8px;
-                        @include levelBar;
-                        margin: 0 10px;
-
-                        li {
-                            width: 20%;
-                        }
-                    }
-                }
-            }
-
-            .levelEnjoy {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                padding: 18px 22px 6px;
-                border-top: solid 1px $mainBorder_1;
-
-                .title {
-                    width: 100%;
-                    height: auto;
-                    margin-bottom: 30px;
-                    font-size: 17px;
-                    letter-spacing: 2px;
                     color: $title_2;
+                    font-size: 17px;
                     font-weight: bold;
-                }
-
-                ul {
-                    display: flex;
-                    flex-wrap: wrap;
-                    width: 100%;
-                    height: auto;
-
-                    li {
-                        width: calc(33.3% - 1px);
-                        border-right: solid 1px $mainBorder_1;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        height: 70px;
-                        margin-bottom: 18px;
-
-                        &:nth-of-type(3n) {
-                            border: none;
-                        }
-
-                        .text {
-                            margin-bottom: 10px;
-                            font-size: 15px;
-                            letter-spacing: 1px;
-                            color: $mainFont_1;
-                        }
-
-                        .num {
-                            font-size: 28px;
-                            color: $title_1;
-                            font-weight: bold;
-                        }
-                    }
-                }
-
-                .more {
-                    display: block;
-                    width: 321px;
-                    height: 41px;
-                    margin: 40px auto 44px;
-                    @include borderBtn;
-                }
-            }
-
-            .detailTitle {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                padding: 0 20px;
-                margin-bottom: 13px;
-                font-size: 17px;
-                font-weight: bold;
-                letter-spacing: 2px;
-                color: $title_2;
-
-                .back {
-                    display: block;
-                    width: 9px;
-                    height: 18px;
-                    margin-right: 13px;
-                    cursor: pointer;
-                }
-            }
-
-            .detailCardBox {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 0 20px;
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-
-                i {
-                    width: 9px;
-                    height: 18px;
-                    cursor: pointer;
-
-                    &.prev {
+                    letter-spacing: 2px;
+                    background: $mainBG_1;
+                    border: 1px solid $blockBoreder;
+                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border-radius: 25px 25px 0 0;
+                    padding: 15px 22px;
+                    margin-bottom: 15px;
+    
+                    .back {
+                        display: block;
+                        width: 9px;
+                        height: 18px;
                         margin-right: 13px;
-                    }
-
-                    &.next {
-                        margin-left: 13px;
-                        transform: scaleX(-1);
+                        cursor: pointer;
                     }
                 }
 
-                .wrap {
-                    overflow: hidden;
-                    width: 100%;
-                    height: auto;
+                .bottom {
+                    padding: 22px 0;
 
-                    ul {
+                    .detailCardBox {
                         display: flex;
-                        width: 1740px;
-                        height: 152px;
-                        transition: all 0.6s ease;
-
-                        li {
-                            margin-right: 9px;
-
-                            &:last-child {
-                                margin: 0;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 20px;
+                        width: 100%;
+                        height: auto;
+                        box-sizing: border-box;
+        
+                        i {
+                            width: 9px;
+                            height: 18px;
+                            cursor: pointer;
+        
+                            &.prev {
+                                margin-right: 13px;
                             }
-
-                            .cardBg {
-                                width: 281px;
+        
+                            &.next {
+                                margin-left: 13px;
+                                transform: scaleX(-1);
+                            }
+                        }
+        
+                        .wrap {
+                            overflow: hidden;
+                            width: 100%;
+                            height: auto;
+        
+                            ul {
+                                display: flex;
+                                width: 1740px;
                                 height: 152px;
-                                box-sizing: border-box;
-                                padding: 0 10px;
-
-                                .medal {
-                                    width: 60px;
-                                    height: 87px;
-                                }
-
-                                .content {
-                                    width: 100%;
-                                    height: auto;
-                                    display: flex;
-                                    justify-content: space-around;
-                                    margin-top: 10px;
-
-                                    div {
-                                        width: 33.3%;
-                                        height: auto;
-
-                                        p {
+                                transition: all 0.6s ease;
+        
+                                li {
+                                    margin-right: 9px;
+        
+                                    &:last-child {
+                                        margin: 0;
+                                    }
+        
+                                    .cardBg {
+                                        width: 281px;
+                                        height: 152px;
+                                        box-sizing: border-box;
+                                        padding: 0 10px;
+        
+                                        .medal {
+                                            width: 60px;
+                                            height: 87px;
+                                        }
+        
+                                        .content {
                                             width: 100%;
                                             height: auto;
-                                            @include cardWord;
-
-                                            &.text {
-                                                margin-bottom: 12px;
-                                            }
-
-                                            &.num {
-                                                font-size: 15px;
+                                            display: flex;
+                                            justify-content: space-around;
+                                            margin-top: 10px;
+        
+                                            div {
+                                                width: 33.3%;
+                                                height: auto;
+        
+                                                p {
+                                                    width: 100%;
+                                                    height: auto;
+                                                    @include cardWord;
+        
+                                                    &.text {
+                                                        margin-bottom: 12px;
+                                                    }
+        
+                                                    &.num {
+                                                        font-size: 15px;
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -950,84 +1011,84 @@
                             }
                         }
                     }
-                }
-            }
-
-            .detailTitle_2 {
-                font-size: 17px;
-                font-weight: bold;
-                color: $title_2;
-                margin: 40px 0 20px 20px;
-
-                &.sp {
-                    font-size: 24px;
-                    color: $title_1;
-                }
-            }
-
-            .fakeTable {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                margin-top: 10px;
-                padding: 0 18px;
-                
-                li {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    height: 50px;
-                    border-bottom: solid 1px $mainBorder_1;
-
-                    &.header {
-                        border-bottom: solid 2px $mainBorder_2;
-                        
-                        div {
+        
+                    .detailTitle_2 {
+                        font-size: 17px;
+                        font-weight: bold;
+                        color: $title_2;
+                        margin: 40px 0 20px 20px;
+        
+                        &.sp {
+                            font-size: 24px;
                             color: $title_1;
                         }
                     }
-
-                    div {
+        
+                    .fakeTable {
                         width: 100%;
-                        text-align: center;
-                        font-size: 13px;
-                        letter-spacing: 1px;
-                        color: $mainFont_1;
-                        border-right: solid 1px $mainBorder_1;
+                        height: auto;
                         box-sizing: border-box;
-                        font-weight: bold;
-
-                        &:last-child {
-                            border: none;
-                        }
-
-                        &:nth-of-type(1) {
-                            min-width: 185px;
-                            color: $title_2;
+                        margin-top: 10px;
+                        padding: 0 18px;
+                        
+                        li {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            height: 40px;
+                            border-bottom: solid 1px $mainBorder_1;
+        
+                            &.header {
+                                border-bottom: solid 2px $blockBoreder;
+                                
+                                div {
+                                    color: $title_1;
+                                }
+                            }
+        
+                            div {
+                                width: 100%;
+                                text-align: center;
+                                font-size: 14px;
+                                letter-spacing: 1px;
+                                color: $mainFont_1;
+                                border-right: solid 1px $mainBorder_1;
+                                box-sizing: border-box;
+                                font-weight: bold;
+        
+                                &:last-child {
+                                    border: none;
+                                }
+        
+                                &:nth-of-type(1) {
+                                    min-width: 185px;
+                                    color: $title_2;
+                                }
+                            }
                         }
                     }
-                }
-            }
-
-            .msg {
-                font-size: 16px;
-                font-weight: bold;
-                color: $title_2;
-                margin: 0 0 20px 20px;
-            }
-
-            .msgBox {
-                width: 100%;
-                height: auto;
-                box-sizing: border-box;
-                padding-left: 60px;
-
-                li {
-                    font-size: 15px;
-                    color: $mainFont_1;
-                    list-style: cjk-ideographic;
-                    line-height: 20px;
-                    margin-bottom: 10px;
+        
+                    .msg {
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: $title_2;
+                        margin: 0 0 20px 20px;
+                    }
+        
+                    .msgBox {
+                        width: 100%;
+                        height: auto;
+                        box-sizing: border-box;
+                        padding-left: 60px;
+        
+                        li {
+                            font-size: 15px;
+                            color: $mainFont_1;
+                            list-style: cjk-ideographic;
+                            line-height: 20px;
+                            margin-bottom: 10px;
+                        }
+                    }
                 }
             }
         }
@@ -1043,10 +1104,11 @@
                 .top {
                     width: 100%;
                     height: auto;
-                    margin-bottom: 56px;
+                    margin-bottom: 48px;
                     background: $mainBG_1;
                     box-shadow: 0px 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border-radius: 25px 25px 0 0;
+                    border: 1px solid $blockBoreder;
 
                     .title {
                         display: flex;
@@ -1059,6 +1121,7 @@
                         letter-spacing: 2px;
                         color: $title_2;
                         font-weight: bold;
+                        border-bottom: 1px solid $blockBoreder;
                     }
 
                     .content {
@@ -1070,7 +1133,17 @@
                             box-sizing: border-box;
                             padding: 14px 24px 0;
                             height: 180px;
-                            border-right: solid 1px $mainBorder_1;
+                            position: relative;
+
+                            &:before {
+                                content: "";
+                                width: 2px;
+                                height: 100px;
+                                background: $mainBorder_1;
+                                position: absolute;
+                                top: 40px;
+                                right: 0;
+                            }
                             
                             .totalTitle {
                                 display: flex;
@@ -1079,15 +1152,16 @@
                                 margin-bottom: 16px;
                                 font-size: 17px;
                                 letter-spacing: 2px;
-                                color: $title_1;
+                                color: $mainFont_3;
                                 font-weight: bold;
 
                                 button {
                                     width: auto;
                                     height: 24px;
                                     @include mainBtn;
-                                    padding: 0 5px;
+                                    padding: 0 10px;
                                     font-size: 12px;
+                                    box-shadow: 0 2px 6px $mainShadow_1;
                                 }
                             }
 
@@ -1117,7 +1191,7 @@
                                 margin-bottom: 16px;
                                 font-size: 17px;
                                 letter-spacing: 2px;
-                                color: $title_2;
+                                color: $mainFont_3;
                                 font-weight: bold;
                             }
 
@@ -1151,7 +1225,6 @@
                     width: 100%;
                     height: auto;
                     background: $mainBG_1;
-                    border-radius: 5px;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
                     position: relative;
 
@@ -1173,7 +1246,8 @@
 
                     .platformWallet {
                         display: none;
-                        padding: 21px 23px 0;
+                        padding: 21px 23px;
+                        border: 1px solid $blockBoreder;
 
                         &.display {
                             display: block;
@@ -1199,8 +1273,9 @@
                                 box-sizing: border-box;
                                 height: auto;
                                 margin: 0 9px 9px 0;
-                                border-radius: 5px;
-                                border: solid 1px $mainBorder_1;
+                                background: $innerPlatBox_BG;
+                                border-radius: 10px;
+                                border: solid 1px $mainBorder_2;
                                 padding: 18px;
 
                                 &:nth-of-type(5n) {
@@ -1210,14 +1285,14 @@
                                 div {
                                     font-size: 16px;
                                     margin-bottom: 8px;
-                                    color: $mainFont_1;
+                                    color: $mainFont_3;
                                     font-weight: bold;
                                     line-height: 18px;
                                 }
 
                                 p {
                                     font-size: 25px;
-                                    color: $money;
+                                    color: $title_2;
                                     font-weight: bold;
                                 }
                             }
@@ -1240,14 +1315,16 @@
                     height: auto;
                     background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border-radius: 25px 25px 0 0;
+                    border: 1px solid $blockBoreder;
+
 
                     .header {
                         width: 100%;
                         height: auto;
                         padding: 10px 0 15px 20px;
                         box-sizing: border-box;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $blockBoreder;
 
                         span {
                             font-size: 20px;
@@ -1273,7 +1350,7 @@
                                 font-size: 17px;
                                 font-weight: bold;
                                 letter-spacing: 2px;
-                                color: $title_2;
+                                color: $title_3;
 
                                 &:nth-of-type(2) {
                                     font-size: 15px;
@@ -1348,104 +1425,101 @@
                         height: auto;
                         background: $mainBG_1;
                         box-shadow: 0 5px 10px -5px $mainShadow_1;
-                        border-radius: 5px;
+                        border: 1px solid $blockBoreder;
                         box-sizing: border-box;
                         padding: 15px 20px 35px;
 
-                        div {
+                        .title {
+                            font-size: 17px;
+                            letter-spacing: 2px;
+                            font-weight: bold;
+                            color: $title_2;
+                        }
 
-                            .title {
-                                font-size: 17px;
-                                letter-spacing: 2px;
-                                font-weight: bold;
-                                color: $title_2;
-                            }
+                        .formBox {
+                            margin-top: 25px;
+                            width: 100%;
+                            height: auto;
 
-                            .formBox {
-                                margin-top: 25px;
+                            form {
                                 width: 100%;
                                 height: auto;
 
-                                form {
+                                .content {
+                                    display: flex;
+                                    flex-direction: column;
                                     width: 100%;
                                     height: auto;
 
-                                    .content {
-                                        display: flex;
-                                        flex-direction: column;
+                                    .row {
                                         width: 100%;
                                         height: auto;
+                                        display: flex;
+                                        margin-bottom: 35px;
 
-                                        .row {
+                                        .smallTitle {
+                                            width: 98px;
+                                            font-size: 14px;
+                                            display: flex;
+                                            align-items: center;
+                                            margin-right: 6px;
+                                            justify-content: flex-end;
+                                            padding-right: 20px;
+                                            box-sizing: border-box;
+
+                                            span {
+                                                font-size: 14px;
+                                                letter-spacing: 1px;
+                                                font-weight: bold;
+                                                color: $mainFont_1;
+                                                white-space: nowrap;
+
+                                                &::before {
+                                                    content: "※";
+                                                    font-size: 13px;
+                                                    margin-right: 5px;
+                                                    letter-spacing: 1px;
+                                                    color: $remind;
+                                                }
+                                            }
+                                        }
+
+                                        .inputBox {
+                                            position: relative;
                                             width: 100%;
                                             height: auto;
-                                            display: flex;
-                                            margin-bottom: 35px;
 
-                                            .smallTitle {
-                                                width: 98px;
-                                                font-size: 14px;
-                                                display: flex;
-                                                align-items: center;
-                                                margin-right: 6px;
-                                                justify-content: flex-end;
-                                                padding-right: 20px;
-                                                box-sizing: border-box;
+                                            input {
+                                                width: 258px;
+                                                height: 42px;
+                                                @include mainInput;
+                                            }
 
-                                                span {
-                                                    font-size: 14px;
-                                                    letter-spacing: 1px;
-                                                    font-weight: bold;
-                                                    color: $title_2;
-                                                    white-space: nowrap;
+                                            .err {
+                                                display: none;
+                                                font-size: 12px;
+                                                padding-top: 3px;
+                                                color: $remind;
 
-                                                    &::before {
-                                                        content: "※";
-                                                        font-size: 13px;
-                                                        margin-right: 5px;
-                                                        letter-spacing: 1px;
-                                                        color: $remind;
-                                                    }
+                                                &.display {
+                                                    display: block;
                                                 }
                                             }
 
-                                            .inputBox {
-                                                position: relative;
-                                                width: 100%;
-                                                height: auto;
+                                            small {
+                                                font-size: 12px;
+                                                letter-spacing: 1px;
+                                                position: absolute;
+                                                left: 0;
+                                                bottom: -16px;
+                                                color: $remind;
+                                            }
 
-                                                input {
-                                                    width: 258px;
-                                                    height: 42px;
-                                                    @include mainInput;
-                                                }
-
-                                                .err {
-                                                    display: none;
-                                                    font-size: 12px;
-                                                    padding-top: 3px;
-                                                    color: $remind;
-
-                                                    &.display {
-                                                        display: block;
-                                                    }
-                                                }
-
-                                                small {
-                                                    font-size: 12px;
-                                                    letter-spacing: 1px;
-                                                    position: absolute;
-                                                    left: 0;
-                                                    bottom: -16px;
-                                                    color: $remind;
-                                                }
-
-                                                button {
-                                                    width: 255px;
-                                                    height: 42px;
-                                                    margin-left: 8px;
-                                                    @include mainBtn;
-                                                }
+                                            button {
+                                                width: 255px;
+                                                height: 42px;
+                                                margin-left: 8px;
+                                                @include mainBtn2;
                                             }
                                         }
                                     }
@@ -1467,11 +1541,12 @@
                 height: auto;
                 background: $mainBG_1;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                border-radius: 25px 25px 0 0;
                 margin-bottom: 17px;
 
                 &:last-child {
                     margin: 0;
+                    border-radius: 0;
                 }
 
                 .title {
@@ -1482,10 +1557,10 @@
                     height: 43px;
                     box-sizing: border-box;
                     padding: 0 20px;
-                    border-bottom: solid 1px $mainBorder_1;
+                    border-bottom: solid 1px $blockBoreder;
                     font-size: 16px;
                     letter-spacing: 2px;
-                    color: $title_2;
+                    color: $mainFont_4;
                     font-weight: bold;
 
                     .more {
@@ -1513,14 +1588,16 @@
                     &.trans {
                         height: 321px;
                         box-sizing: border-box;
-                        padding: 15px 14px 42px;
+                        padding: 15px 0 42px;
 
                         .transList {
                             height: 53px;
-                            border-bottom: solid 1px $mainBorder_1;
+                            border-bottom: solid 1px $blockBoreder;
                             margin-bottom: 13px;
                             display: flex;
                             flex-direction: column;
+                            padding: 0 18px;
+                            box-sizing: border-box;
 
                             .transTitle {
                                 display: flex;
@@ -1564,9 +1641,9 @@
                     }
 
                     .smallList {
-                        height: 84px;
+                        height: 85px;
                         padding: 8px 18px 12px;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $blockBoreder;
                         box-sizing: border-box;
 
                         .smallTitle {
@@ -1596,8 +1673,18 @@
 
                                     &:last-child {
                                         font-size: 14px;
-                                        margin-top: 6px;
-                                        color: $mainFont_1;
+                                        font-weight: bold;
+                                        margin-top: 8px; 
+                                    }
+
+                                    &.bet {
+                                        color: $money;
+                                    }
+                                    &.lose {
+                                        color: $remind;
+                                    }
+                                    &.win {
+                                        color: $remind_sp;
                                     }
                                 }
                             }
@@ -1718,7 +1805,8 @@
             .top {
                 width: 100%;
                 height: auto;
-                border-radius: 5px;
+                border: 1px solid $blockBoreder;
+                border-radius: 25px 25px 0 0;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
                 background: $mainBG_1;
 
@@ -1732,7 +1820,7 @@
                     font-size: 20px;
                     font-weight: bold;
                     color: $title_2;
-                    border-bottom: solid 1px $mainBorder_1;
+                    border-bottom: solid 1px $blockBoreder;
                 }
 
                 div {
@@ -1785,7 +1873,7 @@
                     box-shadow: 0px 5px 10px -5px $mainShadow_1;
                     width: 100%;
                     min-height: 638px;
-                    border-radius: 5px;
+                    border: 1px solid $blockBoreder;
 
                     .btnBox  {
                         display: none;
@@ -1948,8 +2036,9 @@
                 height: auto;
                 background: $mainBG_1;
                 box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
-                margin-bottom: 20px;
+                border: 1px solid $blockBoreder;
+                border-radius: 25px 25px 0 0;
+                margin-bottom: 15px;
 
                 h1 {
                     width: 100%;
@@ -1985,11 +2074,12 @@
                 .eventBox,.eventBoxAl {
                     display: none;
                     width: 100%;
-                    min-height: 430px;
+                    min-height: 569px;
                     box-sizing: border-box;
                     padding: 18px 22px;
                     background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border: 1px solid $blockBoreder;
                     
                     &.display {
                         display: flex;
@@ -2001,7 +2091,7 @@
 
                         li {
                             width: 100%;
-                            margin-bottom: 8px;
+                            margin-bottom: 15px;
                             border-radius: 3px;
                             border: solid 1px $mainBorder_2;
 
@@ -2031,8 +2121,16 @@
                                             color: $title_1;
                                         }
 
+                                        &.head {
+                                            color: $mainFont_3;
+                                        }
+
                                         &.day-tips {
                                             color: $title_Time;
+
+                                            em {
+                                                margin-right: 5px;
+                                            }
                                         }
 
                                         span {
@@ -2049,16 +2147,19 @@
                                     }
 
                                     button {
-                                        width: 75px;
+                                        width: 90px;
                                         height: 27px;
-                                        @include eventBtn;
+                                        padding: 0 10px;
 
                                         &.apply {
+                                            @include eventApply;
+                                            font-size: 14px;
                                             margin-right: 8px;
                                         }
 
                                         &.check {
-                                            @include borderBtn;
+                                            @include eventCheck;
+                                            font-size: 14px;
                                         }
                                     }
                                 }
@@ -2115,11 +2216,11 @@
                 .eventRecord {
                     display: none;
                     width: 100%;
-                    min-height: 430px;
+                    min-height: 569px;
                     box-sizing: border-box;
                     background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $blockBoreder;
 
                     &.display {
                         display: block;
@@ -2216,7 +2317,7 @@
                                     button {
                                         width: 152px;
                                         height: 41px;
-                                        @include mainBtn;
+                                        @include mainBtn2;
                                     }
                                 }
                             }
@@ -2237,27 +2338,48 @@
 
                             table {
                                 width: 100%;
+                                margin-top: 25px;
 
                                 tr {
 
                                     th {
-                                        height: 50px;
+                                        height: 40px;
                                         vertical-align: middle;
                                         letter-spacing: 1px;
                                         color: $title_1;
-                                        border-bottom: solid 2px $mainBorder_2;
-                                        font-size: 13px;
+                                        border-bottom: solid 2px $choose_Border;
+                                        font-size: 14px;
                                         font-weight: bold;
+
+                                        p {
+                                            border-right: 1px solid $mainBorder_1;
+                                        }
+
+                                        &:last-child {
+                                            p {
+                                                border-right: 0;
+                                            }
+                                        }
                                     }
 
                                     td {
-                                        height: 50px;
+                                        height: 40px;
                                         vertical-align: middle;
-                                        font-size: 13px;
+                                        font-size: 14px;
                                         color: $mainFont_1;
                                         font-weight: bold;
                                         text-align: center;
                                         border-bottom: solid 1px $mainBorder_1;
+
+                                        p {
+                                            border-right: 1px solid $mainBorder_1;
+                                        }
+
+                                        &:last-child {
+                                            p {
+                                                border: 0;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -2299,13 +2421,14 @@
                 font-weight: bold;
                 font-size: 20px;
                 letter-spacing: 2px;
-                border-radius: 5px;
+                border: 1px solid $blockBoreder;
+                border-radius: 25px 25px 0 0;
             }
 
             .bottom {
                 width: 100%;
                 height: auto;
-                margin-top: 20px;
+                margin-top: 15px;
 
                 .header {
                     width: 100%;
@@ -2328,11 +2451,10 @@
                 }
 
                 .dealBox {
-                    width: 100%;
                     height: auto;
                     background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $blockBoreder;
                     display: none;
 
                     &.display {
@@ -2342,6 +2464,7 @@
                     .reviewWrap {
                         width: 100%;
                         height: auto;
+                        min-height: 569px;
 
                         .search {
                             width: 100%;
@@ -2429,7 +2552,7 @@
                                     button {
                                         width: 152px;
                                         height: 42px;
-                                        @include mainBtn;
+                                        @include mainBtn2;
                                     }
                                 }
                             }
@@ -2462,17 +2585,18 @@
                                 margin: 20px 0 60px;
 
                                 tr {
+                                    border-bottom: 1px solid $mainBorder_1;
 
                                     th,td {
-                                        height: 50px;
+                                        height: 40px;
                                         vertical-align: middle;
                                         text-align: center;
-                                        font-size: 13px;
+                                        font-size: 14px;
                                         letter-spacing: 1px;
                                         font-weight: bold;
                                         color: $title_1;
                                         position: relative;
-                                        border-bottom: solid 2px $mainBorder_2;
+                                        border-bottom: solid 2px $choose_Border;
 
                                         &:last-child {
 
@@ -2480,6 +2604,23 @@
                                                 display: none;
                                             }
                                         }
+                                    }
+
+                                    th {
+                                        p {
+                                            border-right: 1px solid $mainBorder_1;
+                                        }
+                                        &:last-child {
+                                            p {
+                                                border: 0;
+                                            }
+                                        }
+                                    }
+
+                                    td {
+                                        width: 25%;
+                                        border-bottom: none;
+                                        color: $mainFont_1;
 
                                         &::before {
                                             content: "";
@@ -2492,12 +2633,6 @@
                                             background: $mainBorder_1;
                                         }
                                     }
-
-                                    td {
-                                        width: 25%;
-                                        border-bottom: none;
-                                        color: $mainFont_1;
-                                    }
                                 }
                             }
                         }
@@ -2507,9 +2642,10 @@
                 .waterBox {
                     width: 100%;
                     height: auto;
+                    min-height: 569px;
                     background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $blockBoreder;
                     box-sizing: border-box;
                     padding: 20px;
                     display: none;
@@ -2527,11 +2663,12 @@
                     table {
                         width: 100%;
                         height: auto;
+                        margin-top: 25px;
 
                         tr {
 
                             th {
-                                border-bottom: solid 2px $mainBorder_2;
+                                border-bottom: solid 2px $choose_Border;
                                 height: 40px;
                                 vertical-align: middle;
 
@@ -2547,7 +2684,7 @@
                                     padding: 0 5px;
                                     font-size: 14px;
                                     font-weight: bold;
-                                    border-right: solid 1px $mainBorder_1;
+                                    border-right: 1px solid $mainBorder_1;
                                 }
                             }
 
@@ -2561,9 +2698,10 @@
                                     font-size: 14px;
                                     font-weight: bold;
                                     text-align: center;
+                                    border-right: solid 1px $mainBorder_1;
 
                                     &.money {
-                                        color: $remind_sp2;
+                                        color: $remind02;
                                     }
 
                                     &.sp {
@@ -2588,6 +2726,12 @@
                                         transform: rotate(-90deg);
                                     }
                                 }
+
+                                &:last-child {
+                                    p {
+                                        border-right: 0;
+                                    }
+                                }
                             }
                         }
                     }
@@ -2599,288 +2743,322 @@
         .betWrap {
             width: 1140px;
             height: auto;
-            padding: 15px 0 28px;
-            background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
+            //padding: 15px 0 22px;
 
-            form {
-                width: 100%;
+            .top {
+                margin-bottom: 15px;
+                font-size: 20px;
+                letter-spacing: 2px;
+                color: $title_2;
+                font-weight: bold;
+                background: $mainBG_1;
+                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                border: 1px solid $blockBoreder;
+                border-radius: 25px 25px 0 0;
+                padding: 15px 22px;
+            }
+
+            .bottom {
                 height: auto;
+                min-height: 561px;
+                padding: 22px 0;
+                background: $mainBG_1;
+                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                border: 1px solid $blockBoreder;
 
-                .title {
-                    padding-left: 23px;
-                    margin-bottom: 28px;
-                    font-size: 20px;
-                    letter-spacing: 2px;
-                    color: $title_2;
-                    font-weight: bold;
-                }
-
-                .inputGroup {
-                    display: flex;
-                    align-items: center;
+                form {
                     width: 100%;
                     height: auto;
-                    box-sizing: border-box;
-                    padding-left: 25px;
-                    margin-bottom: 17px;
-
-                    p {
-                        margin-right: 25px;
-                        font-size: 14px;
-                        letter-spacing: 1px;
-                        color: $title_2;
-                        font-weight: bold;
-                    }
-
-                    select {
-                        width: 287px;
-                        height: 43px;
-                        margin-right: 30px;
-                        @include mainSelect;
-                    }
-                }
-
-                .timeGroup {
-                    width: 100%;
-                    height: auto;
-                    box-sizing: border-box;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: 0 19px 0 25px;
-                    margin-bottom: 25px;
-
-                    .timeBox {
+    
+                    .inputGroup {
                         display: flex;
                         align-items: center;
-                        
+                        width: 100%;
+                        height: auto;
+                        box-sizing: border-box;
+                        padding-left: 25px;
+                        margin-bottom: 17px;
+    
                         p {
                             margin-right: 25px;
                             font-size: 14px;
                             letter-spacing: 1px;
                             color: $title_2;
                             font-weight: bold;
-
-                            &.remind {
-                                color: $remind;
-                            }
                         }
-
-                        input {
+    
+                        select {
                             width: 287px;
                             height: 43px;
                             margin-right: 30px;
-                            @include mainInput;
-                        }
-
-                        .btnBox {
-
-                            button {
-                                width: 72px;
-                                height: 43px;
-                                margin-right: 8px;
-                                @include changeBtn;
-
-                                &:last-child {
-                                    margin-right: 15px;
-                                }
-                            }
+                            @include mainSelect;
                         }
                     }
-
-                    .checkBtn {
-                        width: 152px;
-                        height: 43px;
-                        @include mainBtn;
-                    }
-                }
-            }
-
-            .fakeTable {
-                width: 100%;
-                height: auto;
-                margin: 15px 0 30px;
-
-                ul {
-                    width: 100%;
-                    height: auto;
-
-                    li {
+    
+                    .timeGroup {
                         width: 100%;
-                        height: 40px;
-                        border-bottom: solid 1px $mainBorder_1;
-
-                        &.title {
-                            border-bottom: solid 1px $mainBorder_2; 
-
-                            p {
-                                color: $title_1 !important;
-                                
-                                &::before {
-                                    display: none;
-                                }
-                            }
-                        }
-
-                        &.active {
-                            height: auto;
-
-                            .wordWrap {
-                                height: 40px;
-
-                                .arrow_ic {
-                                    transform: rotate(90deg);
-                                }
-                            }
-
-                            table {
-                                display: table;
-                            }
-                        }
-
-                        .wordWrap {
+                        height: auto;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0 19px 0 25px;
+                        margin-bottom: 25px;
+    
+                        .timeBox {
                             display: flex;
                             align-items: center;
-                            width: 100%;
-                            height: 100%;
-
+                            
                             p {
-                                position: relative;
-                                color: $mainFont_1;
-                                font-weight: bold;
+                                margin-right: 25px;
                                 font-size: 14px;
-                                text-align: center;
+                                letter-spacing: 1px;
+                                color: $title_2;
+                                font-weight: bold;
     
-                                &:nth-of-type(1),
-                                &:nth-of-type(2),
-                                &:nth-of-type(3) {
-                                    width: 24%;
+                                &.remind {
+                                    color: $remind;
                                 }
+                            }
     
-                                &:nth-of-type(4),
-                                &:nth-of-type(5) {
-                                    width: 11%;
+                            input {
+                                width: 287px;
+                                height: 43px;
+                                margin-right: 30px;
+                                @include mainInput;
+                            }
+    
+                            .btnBox {
+    
+                                button {
+                                    width: 72px;
+                                    height: 43px;
+                                    margin-right: 8px;
+                                    @include changeBtn;
+    
+                                    &:last-child {
+                                        margin-right: 15px;
+                                    }
                                 }
+                            }
+                        }
     
-                                &:last-child {
-                                    width: 6%;
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    cursor: pointer;
+                        .checkBtn {
+                            width: 152px;
+                            height: 43px;
+                            @include mainBtn2;
+                        }
+                    }
+                }
     
+                .fakeTable {
+                    width: 100%;
+                    height: auto;
+                    margin: 6px 0 30px;
+    
+                    ul {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+    
+                        li {
+                            width: 95%;
+                            height: 40px;
+                            border-bottom: solid 1px $mainBorder_1;
+                            position: relative;
+
+                            &:first-child {
+                                border-bottom: 0;
+
+                                &::before {
+                                    content: "";
+                                    width: 100%;
+                                    height: 2px;
+                                    background: $choose_Border;
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                }
+                            }
+    
+                            &.title {
+    
+                                p {
+                                    border-right: 1px solid $mainBorder_1;
+                                    color: $title_1 !important;
+                                    
                                     &::before {
                                         display: none;
                                     }
+
+                                    &:last-child {
+                                        border: 0;
+                                     }
+                                }
+
+                               
+                            }
+    
+                            &.active {
+                                height: auto;
+    
+                                .wordWrap {
+                                    height: 40px;
+    
+                                    .arrow_ic {
+                                        transform: rotate(90deg);
+                                    }
                                 }
     
-                                &::before {
-                                    content: "";
-                                    position: absolute;
-                                    right: 0px;
-                                    width: 1px;
-                                    height: 19px;
-                                    top: 50%;
-                                    transform: translateY(-50%);
-                                    background: $mainBorder_1;
-                                }
-    
-                                &.result {
-                                    color: $remind;
-                                }
-    
-                                .arrow_ic {
-                                    display: block;
-                                    width: 9px;
-                                    height: 16px;
-                                    transform: rotate(-90deg);
+                                table {
+                                    display: table;
                                 }
                             }
-                        }
-
-                        table {
-                            display: none;
-                            width: 97%;
-                            margin: 15px auto;
-                            overflow: hidden;
-                            background: $mainBG_1;
-                            box-shadow: 0 5px 10px -5px $mainShadow_1;
-                            border-radius: 5px;
-
-                            tr {
-
-                                &:nth-of-type(1) {
-                                    background: $jumpWindow_Header;
-                                }
-
-                                &:last-child {
-
-                                    td {
-                                        border: none;
-                                    }
-                                }
-
-                                th {
-                                    font-size: 14px;
-                                    font-weight: bold;
-                                    color: $mainFont_2;
-                                    text-align: center;
-                                    height: 40px;
-                                    vertical-align: middle;
-                                }
-                                
-                                td {
-                                    font-weight: bold;
-                                    font-size: 14px;
+    
+                            .wordWrap {
+                                display: flex;
+                                align-items: center;
+                                width: 100%;
+                                height: 100%;
+    
+                                p {
+                                    position: relative;
                                     color: $mainFont_1;
+                                    font-weight: bold;
+                                    font-size: 14px;
                                     text-align: center;
-                                    height: 40px;
-                                    vertical-align: middle;
-                                    border-bottom: solid 1px $mainBorder_1;
-
+        
                                     &:nth-of-type(1),
-                                    &:nth-of-type(7) {
-                                        width: 15%;
-                                    }
-
-                                    &:nth-of-type(2) {
-                                        width: 10%;
-                                    }
-
+                                    &:nth-of-type(2),
                                     &:nth-of-type(3) {
-                                        width: 30%;
+                                        width: 24%;
                                     }
-
+        
                                     &:nth-of-type(4),
                                     &:nth-of-type(5) {
-                                        width: 8%;
+                                        width: 11%;
                                     }
-
-                                    &:nth-of-type(6) {
-                                        width: 14%;
+        
+                                    &:last-child {
+                                        width: 6%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        cursor: pointer;
+        
+                                        &::before {
+                                            display: none;
+                                        }
+                                    }
+        
+                                    &::before {
+                                        content: "";
+                                        position: absolute;
+                                        right: 0px;
+                                        width: 1px;
+                                        height: 19px;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        background: $mainBorder_1;
+                                    }
+        
+                                    &.result {
+                                        color: $remind;
+                                    }
+        
+                                    .arrow_ic {
+                                        display: block;
+                                        width: 9px;
+                                        height: 16px;
+                                        transform: rotate(-90deg);
+                                    }
+                                }
+                            }
+    
+                            table {
+                                display: none;
+                                width: 97%;
+                                margin: 15px auto;
+                                overflow: hidden;
+                                background: $mainBG_1;
+                                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                                border-radius: 5px;
+    
+                                tr {
+    
+                                    &:nth-of-type(1) {
+                                        background: $jumpWindow_Header;
+                                    }
+    
+                                    &:last-child {
+    
+                                        td {
+                                            border: none;
+                                        }
+                                    }
+    
+                                    th {
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                        color: $mainFont_2;
+                                        text-align: center;
+                                        height: 40px;
+                                        vertical-align: middle;
+                                    }
+                                    
+                                    td {
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                        color: $mainFont_1;
+                                        text-align: center;
+                                        height: 40px;
+                                        vertical-align: middle;
+                                        border-bottom: solid 1px $mainBorder_1;
+    
+                                        &:nth-of-type(1),
+                                        &:nth-of-type(7) {
+                                            width: 15%;
+                                        }
+    
+                                        &:nth-of-type(2) {
+                                            width: 10%;
+                                        }
+    
+                                        &:nth-of-type(3) {
+                                            width: 30%;
+                                        }
+    
+                                        &:nth-of-type(4),
+                                        &:nth-of-type(5) {
+                                            width: 8%;
+                                        }
+    
+                                        &:nth-of-type(6) {
+                                            width: 14%;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
-            }
-
-            .noData {
-                display: none;
-                width: 100%;
-                height: 348px;
-                margin-top: 20px;
-                align-items: center;
-                justify-content: center;
-                letter-spacing: 1px;
-                color: $title_3;
-                font-weight: bold;
-
-                &.display {
-                    display: flex;
+    
+                .noData {
+                    display: none;
+                    width: 100%;
+                    height: 348px;
+                    margin-top: 20px;
+                    align-items: center;
+                    justify-content: center;
+                    letter-spacing: 1px;
+                    color: $title_3;
+                    font-weight: bold;
+    
+                    &.display {
+                        display: flex;
+                    }
                 }
             }
         }
@@ -2895,12 +3073,12 @@
                 margin-right: 15px;
 
                 .top {
-                    width: 100%;
                     height: 108px;
                     margin-bottom: 15px;
                     background: $mainBG_1;
+                    border: 1px solid $blockBoreder;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border-radius: 25px 25px 0 0;
 
                     .title {
                         display: flex;
@@ -2910,7 +3088,7 @@
                         width: 100%;
                         box-sizing: border-box;
                         padding: 0 18px 0 22px;
-                        border-bottom: solid 1px $mainBorder_1;
+                        border-bottom: solid 1px $blockBoreder;
                         font-size: 20px;
                         letter-spacing: 2px;
                         color: $title_2;
@@ -2926,6 +3104,12 @@
                                 width: 18px;
                                 height: 18px;
                                 margin: 0 5px -4px 0;
+                            }
+
+                            &:hover,&:active,&.active {
+                                i {
+                                    filter: brightness(10);
+                                }
                             }
                         }
                     }
@@ -2983,10 +3167,10 @@
                 .bottom {
                     width: 100%;
                     height: 555px;
-                    padding: 16px 0 0 27px;
+                    padding: 20px 24px;
                     background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $blockBoreder;
                     box-sizing: border-box;
 
                     .card,.atm,.shop,
@@ -2995,6 +3179,12 @@
 
                         &.display {
                             display: block;
+                        }
+
+                        &:first-child {
+                            .remindBox { 
+                                margin-top: 125px;
+                            }
                         }
                     }
 
@@ -3019,7 +3209,7 @@
                                 margin-bottom: 30px;
                                 font-weight: bold;
                                 font-size: 16px;
-                                color: $title_2;
+                                color: $mainFont_1;
                                 position: relative;
 
                                 &.noTitle {
@@ -3060,15 +3250,15 @@
                                 width: 257px;
                                 height: 41px;
                                 margin: 28px 0 0 108px;
-                                @include mainBtn;
+                                @include mainBtn2;
                             }
                         }
 
                         .remindBox {
-                            width: 839px;
+                            width: 100%;
                             height: auto;
                             padding: 15px 19px;
-                            margin: 39px 0 0 -10px;
+                            margin: 54px 0 0 0;
                             border: solid 1px $mainBorder_2;
                             box-sizing: border-box;
 
@@ -3108,7 +3298,7 @@
                                     .check {
                                         width: 257px;
                                         height: 42px;
-                                        @include mainBtn;
+                                        @include mainBtn2;
                                     }
                                 }
                                 
@@ -3133,7 +3323,7 @@
                                     @include borderBtn;
 
                                     &:nth-of-type(2) {
-                                        @include mainBtn;
+                                        @include mainBtn2;
                                         margin-left: 8px;
                                     }
                                 }
@@ -3151,6 +3341,12 @@
                     }
                 }
             }
+
+            .rightSide {
+                .detailBox {
+                    border-radius: 25px 25px 0 0;
+                }
+            }
         }
 
         //transfer
@@ -3161,9 +3357,7 @@
                 width: 880px;
                 height: auto;
                 margin-right: 15px;
-                background: $mainBG_1;
-                box-shadow: 0 5px 10px -5px $mainShadow_1;
-                border-radius: 5px;
+                
 
                 .title {
                     width: 100%;
@@ -3172,6 +3366,11 @@
                     padding: 0 22px;
                     display: flex;
                     align-items: center;
+                    background: $mainBG_1;
+                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border: 1px solid $blockBoreder;
+                    border-radius: 25px 25px 0 0;
+                    margin-bottom: 15px;
 
                     div {
                         color: $title_2;
@@ -3181,336 +3380,68 @@
                     }
                 }
 
-                .wallet {
-                    width: 100%;
-                    height: 130px;
+                .bottom {
                     display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+                    flex-direction: column;
+                    background: $mainBG_1;
+                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border: 1px solid $blockBoreder;
 
-                    .centerWallet {
-                        width: 49%;
-                        height: 100%;
-                        padding: 18px 25px 0;
-                        box-sizing: border-box;
-
-                        .walletTitle {
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-
-                            p {
-                                display: flex;
-                                align-items: center;
-                                font-size: 17px;
-                                letter-spacing: 2px;
-                                color: $title_1;
-                                font-weight: bold;
-
-                                .reset_ic {
-                                    display: block;
-                                    width: 16px;
-                                    height: 16px;
-                                    margin-left: 6px;
-                                }
-                            }
-
-                            button {
-                                width: 71px;
-                                height: 23px;
-                                @include mainBtn;
-                                font-size: 12px;
-                            }
-                        }
-
-                        .amount {
-                            width: 100%;
-                            height: auto;
-                            box-sizing: border-box;
-                            padding: 13px 0 0 10px;
-                            font-size: 43px;
-                            font-weight: bold;
-                            color: $money;
-                        }
-                    }
-                }
-
-                .platform {
-                    width: 100%;
-                    height: auto;
-                    box-sizing: border-box;
-                    padding: 21px 23px 0;
-                    
-                    .platformTitle {
-                        font-size: 17px;
-                        font-weight: bold;
-                        letter-spacing: 2px;
-                        margin-bottom: 20px;
-                        color: $title_2;
-                    }
-
-                    ul {
+                    .wallet {
                         width: 100%;
-                        height: 97px;
-                        display: flex;
-                        flex-wrap: wrap;
-                        overflow: hidden;
-
-                        &.active {
-                            height: auto;
-                        }
-
-                        li {
-                           width: 196px;
-                           height: 97px;
-                           box-sizing: border-box;
-                           padding: 18px;
-                           margin: 0 16px 16px 0;
-                           border: solid 1px $mainBorder_1;
-                           border-radius: 5px;
-
-                           &:nth-of-type(4n) {
-                               margin-right: 0;
-                           }
-
-                           .name {
-                               margin-bottom: 5px;
-                               font-size: 16px;
-                               color: $mainFont_1;
-                            }
-
-                            .amount {
-                                font-size: 25px;
-                                font-weight: bold;
-                                color: $money;
-                                margin-top: 8px;
-                            }
-                        }
-                    }
-
-                    .open {
-                        width: 100%;
-                        height: auto;
-                        padding: 23px 0 35px;
-                        text-align: center;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        button {
-                            color: $mainFont_1;
-                            background: none;
-                            display: flex;
-                            align-items: center;
-                            font-size: 13px;
-
-                            i {
-                                display: block;
-                                width: 14px;
-                                height: 14px;
-                                margin-left: 10px;
-                            }
-                        }
-                    }
-                }
-
-                form {
-                    width: 100%;
-                    height: auto;
-                    box-sizing: border-box;
-                    padding: 25px 0 36px 27px;
-
-                    .formTitle {
-                        display: flex;
-                        align-items: flex-end;
-                        margin-bottom: 25px;
-                        font-size: 17px;
-                        letter-spacing: 2px;
-                        color: $title_2;
-                        font-weight: bold;
-
-                        .remind {
-                            margin-left: 25px;
-                            font-size: 14px;
-                            letter-spacing: 1px;
-                            color: $remind;
-                        }
-                    }
-
-                    .platformBox {
+                        height: 130px;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        width: 690px;
-                        height: auto;
-                        margin-bottom: 20px;
-
-                        p {
-                            width: 56px;
-                            text-align: center;
-                            font-size: 14px;
-                            color: $title_2;
-                            font-weight: bold;
-                        }
-
-                        .trans_ic {
-                            display: block;
-                            width: 27px;
-                            height: 23px;
-                        }
-
-                        select {
-                            width: 256px;
-                            height: 42px;
-                            @include mainSelect;
-                        }
-                    }
-
-                    .moneyBox {
-                        width: auto;
-                        height: auto;
-                        display: flex;
-                        align-items: flex-start;
-
-                        p {
-                            font-size: 14px;
-                            font-weight: bold;
-                            color: $title_2;
-                            margin-top: 14px;
-                        }
-
-                        .inputBox {
-                            width: auto;
-                            height: auto;
-                            margin-left: 31px;
-
-                            input {
-                                width: 256px;
-                                height: 42px;
-                                @include mainInput;
-                            }
-
-                            .btnBox {
-                                width: 256px;
-                                height: auto;
-                                display: flex;
-                                flex-wrap: wrap;
-                                margin-top: 20px;
-
-                                button {
-                                    width: 82px;
-                                    height: 32px;
-                                    @include fastBtn;
-                                    margin: 0 5px 5px 0;
-
-                                    &:nth-of-type(3n) {
-                                        margin-right: 0;
-                                    }
-
-                                    &.check {
-                                        width: 256px;
-                                        height: 42px;
-                                        @include mainBtn;
-                                        margin-top: 15px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        //withdrawal
-        .withdrawalWrap {
-            display: flex;
-
-            .withdrawalMiddle {
-                width: 880px;
-                margin-right: 15px;
-
-                .top {
-                    background: $mainBG_1;
-                    box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
-                    width: 100%;
-                    height: auto;
-                    margin-bottom: 20px;
-
-                    .title {
-                        width: 100%;
-                        height: 50px;
-                        display: flex;
-                        align-items: center;
-                        padding: 0 22px;
-                        box-sizing: border-box;
     
-                        div {
-                            font-weight: bold;
-                            font-size: 20px;
-                            letter-spacing: 2px;
-                            color: $title_2;
-                        }
-                    }
-    
-                    .walletBox {
-                        display: flex;
-                        justify-content: space-around;
-                        align-items: center;
-                        width: 100%;
-                        height: 130px;
-    
-                        .smallBox {
-                            width: 33%;
+                        .centerWallet {
+                            width: 49%;
                             height: 100%;
                             padding: 18px 25px 0;
                             box-sizing: border-box;
     
-                            .smallTitle {
+                            .walletTitle {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
     
                                 p {
                                     display: flex;
-                                    height: 23px;
                                     align-items: center;
                                     font-size: 17px;
                                     letter-spacing: 2px;
-                                    color: $title_1;
+                                    color: $title_2;
                                     font-weight: bold;
     
-                                    &.limit {
-                                        color: $remind;
-                                        justify-content: space-between;
-                                    }
-                                    &.canUse {
-                                        color: $title_2;
-                                    }
-    
-                                    i {
+                                    .reset_ic {
                                         display: block;
                                         width: 16px;
                                         height: 16px;
                                         margin-left: 6px;
                                     }
-
-                                    button {
-                                        width: 71px;
-                                        height: 23px;
-                                        @include mainBtn;
-                                        font-size: 12px;
-                                    }
+                                }
+    
+                                button {
+                                    width: 71px;
+                                    height: 23px;
+                                    @include mainBtn;
+                                    font-size: 12px;
                                 }
                             }
     
                             .amount {
-                                padding: 21px 0 0 10px;
-                                font-size: 33px;
+                                width: 100%;
+                                height: auto;
+                                box-sizing: border-box;
+                                padding: 13px 0 0 10px;
+                                font-size: 43px;
                                 font-weight: bold;
                                 color: $money;
                             }
                         }
                     }
     
-                    .platformBox {
+                    .platform {
                         width: 100%;
                         height: auto;
                         box-sizing: border-box;
@@ -3557,7 +3488,295 @@
                                 .amount {
                                     font-size: 25px;
                                     font-weight: bold;
-                                    color: $money;
+                                    color: $title_2;
+                                    margin-top: 8px;
+                                }
+                            }
+                        }
+    
+                        .open {
+                            width: 100%;
+                            height: auto;
+                            padding: 23px 0 35px;
+                            text-align: center;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+    
+                            button {
+                                color: $mainFont_1;
+                                background: none;
+                                display: flex;
+                                align-items: center;
+                                font-size: 13px;
+    
+                                i {
+                                    display: block;
+                                    width: 14px;
+                                    height: 14px;
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                    }
+    
+                    form {
+                        width: 100%;
+                        height: auto;
+                        box-sizing: border-box;
+                        padding: 25px 23px 36px 23px;
+    
+                        .formTitle {
+                            display: flex;
+                            align-items: flex-end;
+                            margin-bottom: 25px;
+                            font-size: 17px;
+                            letter-spacing: 2px;
+                            color: $title_2;
+                            font-weight: bold;
+    
+                            .remind {
+                                margin-left: 25px;
+                                font-size: 14px;
+                                letter-spacing: 1px;
+                                color: $remind;
+                            }
+                        }
+    
+                        .platformBox {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 690px;
+                            height: auto;
+                            margin-bottom: 20px;
+    
+                            p {
+                                width: 56px;
+                                text-align: center;
+                                font-size: 14px;
+                                color: $mainFont_1;
+                                font-weight: bold;
+                            }
+    
+                            .trans_ic {
+                                display: block;
+                                width: 27px;
+                                height: 23px;
+                            }
+    
+                            select {
+                                width: 256px;
+                                height: 42px;
+                                @include mainSelect;
+                            }
+                        }
+    
+                        .moneyBox {
+                            width: auto;
+                            height: auto;
+                            display: flex;
+                            align-items: flex-start;
+    
+                            p {
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: $mainFont_1;
+                                margin-top: 14px;
+                            }
+    
+                            .inputBox {
+                                width: auto;
+                                height: auto;
+                                margin-left: 31px;
+    
+                                input {
+                                    width: 256px;
+                                    height: 42px;
+                                    @include mainInput;
+                                }
+    
+                                .btnBox {
+                                    width: 256px;
+                                    height: auto;
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    margin-top: 20px;
+    
+                                    button {
+                                        width: 82px;
+                                        height: 32px;
+                                        @include fastBtn;
+                                        margin: 0 5px 5px 0;
+    
+                                        &:nth-of-type(3n) {
+                                            margin-right: 0;
+                                        }
+    
+                                        &.check {
+                                            width: 256px;
+                                            height: 42px;
+                                            @include mainBtn2;
+                                            margin-top: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .rightSide {
+                .detailBox {
+                    border-radius: 25px 25px 0 0;
+                }
+            }
+        }
+
+        //withdrawal
+        .withdrawalWrap {
+            display: flex;
+
+            .withdrawalMiddle {
+                width: 880px;
+                margin-right: 15px;
+
+                .top {
+                    height: auto;
+                    margin-bottom: 15px;
+                    background: $mainBG_1;
+                    box-shadow: 0 5px 10px -5px $mainShadow_1;
+                    border-radius: 25px 25px 0 0;
+                    border: 1px solid $blockBoreder;
+
+                    .title {
+                        width: 100%;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        padding: 0 22px;
+                        box-sizing: border-box;
+                        border-bottom: 1px solid $blockBoreder;
+    
+                        div {
+                            font-weight: bold;
+                            font-size: 20px;
+                            letter-spacing: 2px;
+                            color: $title_2;
+                        }
+                    }
+    
+                    .walletBox {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        width: 100%;
+                        height: 130px;
+    
+                        .smallBox {
+                            width: 33%;
+                            height: 100%;
+                            padding: 18px 25px 0;
+                            box-sizing: border-box;
+
+                            &.detailBox {
+                                border-radius: 25px 25px 0 0;
+                            }
+    
+                            .smallTitle {
+    
+                                p {
+                                    display: flex;
+                                    height: 23px;
+                                    align-items: center;
+                                    font-size: 17px;
+                                    letter-spacing: 2px;
+                                    color: $mainFont_3;
+                                    font-weight: bold;
+    
+                                    &.limit {
+                                        color: $remind;
+                                        justify-content: space-between;
+                                    }
+                                    &.canUse {
+                                        color: $mainFont_3;
+                                    }
+    
+                                    i {
+                                        display: block;
+                                        width: 16px;
+                                        height: 16px;
+                                        margin-left: 6px;
+                                    }
+
+                                    button {
+                                        width: 71px;
+                                        height: 23px;
+                                        @include mainBtn;
+                                        font-size: 12px;
+                                    }
+                                }
+                            }
+    
+                            .amount {
+                                padding: 21px 0 0 10px;
+                                font-size: 33px;
+                                font-weight: bold;
+                                color: $money
+                            }
+                        }
+                    }
+    
+                    .platformBox {
+                        width: 100%;
+                        height: auto;
+                        box-sizing: border-box;
+                        padding: 21px 23px 0;
+                        
+                        .platformTitle {
+                            font-size: 17px;
+                            font-weight: bold;
+                            letter-spacing: 2px;
+                            margin-bottom: 20px;
+                            color: $mainFont_3;
+                        }
+    
+                        ul {
+                            width: 100%;
+                            height: 97px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            overflow: hidden;
+    
+                            &.active {
+                                height: auto;
+                            }
+    
+                            li {
+                               width: 196px;
+                               height: 97px;
+                               box-sizing: border-box;
+                               padding: 18px;
+                               margin: 0 16px 16px 0;
+                               border: solid 1px $mainBorder_1;
+                               border-radius: 5px;
+    
+                               &:nth-of-type(4n) {
+                                   margin-right: 0;
+                               }
+    
+                               .name {
+                                   margin-bottom: 5px;
+                                   font-size: 16px;
+                                   color: $mainFont_1;
+                                }
+    
+                                .amount {
+                                    font-size: 25px;
+                                    font-weight: bold;
+                                    color: $mainFont_4;
                                     margin-top: 8px;
                                 }
                             }
@@ -3593,11 +3812,11 @@
                 .bottom {
                     background: $mainBG_1;
                     box-shadow: 0 5px 10px -5px $mainShadow_1;
-                    border-radius: 5px;
+                    border: 1px solid $blockBoreder;
                     width: 100%;
                     min-height: 630px;
                     box-sizing: border-box;
-                    padding: 20px 0 20px 24px;
+                    padding: 20px 24px;
 
                     .title {
                         font-size: 17px;
@@ -3644,6 +3863,11 @@
                                 letter-spacing: 2px;
                                 color: $title_3;
                             }
+
+                            &:last-child {
+                            
+                                margin-right: 0;
+                            }
                         }
                     }
 
@@ -3656,7 +3880,7 @@
                             p {
                                 font-size: 14px;
                                 letter-spacing: 1px;
-                                color: $title_2;
+                                color: $mainFont_1;
                                 font-weight: bold;
                                 margin-top: 13px;
                                 
@@ -3700,10 +3924,10 @@
                     }
 
                     .remindBox {
-                        width: 839px;
+                        width: 100%;
                         box-sizing: border-box;
                         padding: 15px 19px;
-                        margin: 24px 0 0 -10px;
+                        margin: 42px 0 0 0;
                         border: solid 1px $mainBorder_2;
 
                         .remindTitle {
@@ -3731,17 +3955,19 @@
                     }
                 }
             }
+
+            .rightSide {
+                .detailBox {
+                    border-radius: 25px 25px 0 0;
+                }
+            }
         }
 
         //邀請會員
         .inviteWrap {
             width: 1140px;
             height: auto;
-            background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
             box-sizing: border-box;
-            padding: 20px;
 
             .title {
                 color: $title_2;
@@ -3749,90 +3975,102 @@
                 letter-spacing: 2px;
                 font-weight: bold;
                 margin-bottom: 15px;
+                padding: 18px 22px;
+                background: $mainBG_1;
+                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                border: 1px solid $blockBoreder;
+                border-radius: 25px 25px 0 0;
             }
 
-            .box {
-                width: 100%;
-                height: auto;
-                display: flex;
-                justify-content: space-between;
+            .bottom {
+                background: $mainBG_1;
+                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                border: 1px solid $blockBoreder;
+                padding: 22px;
 
-                .left {
-                    width: auto;
+                .box {
+                    width: 100%;
                     height: auto;
-
-                    .row {
+                    display: flex;
+                    justify-content: space-between;
+    
+                    .left {
+                        width: auto;
+                        height: auto;
+    
+                        .row {
+                            display: flex;
+                            align-items: center;
+                            height: 50px;
+                            
+                            p {
+                                font-size: 14px;
+                                font-weight: bold;
+    
+                                &:nth-of-type(1) {
+                                    width: 80px;
+                                    color: $mainFont_1;
+                                }
+    
+                                &:nth-of-type(2) {
+                                    width: 190px;
+                                    color: $mainFont_1;
+    
+                                    input {
+                                        width: 100%;
+                                        height: 36px;
+                                        @include mainInput;
+                                    }
+                                }
+                            }
+    
+                            button {
+                                width: auto;
+                                height: 36px;
+                                @include borderBtn;
+                                padding: 0 5px;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+    
+                    .right {
                         display: flex;
                         align-items: center;
-                        height: 50px;
-                        
+                        width: 300px;
+                        justify-content: space-between;
+                        margin-right: 200px;
+    
                         p {
                             font-size: 14px;
                             font-weight: bold;
-
-                            &:nth-of-type(1) {
-                                width: 80px;
-                                color: $title_2;
-                            }
-
-                            &:nth-of-type(2) {
-                                width: 190px;
-                                color: $mainFont_1;
-
-                                input {
-                                    width: 100%;
-                                    height: 36px;
-                                    @include mainInput;
-                                }
-                            }
+                            color: $mainFont_1;
+                            line-height: 18px;
                         }
-
-                        button {
-                            width: auto;
-                            height: 36px;
-                            @include borderBtn;
-                            padding: 0 5px;
-                            margin-left: 10px;
+    
+                        div {
+                            width: 100px;
+                            height: 100px;
                         }
                     }
                 }
-
-                .right {
-                    display: flex;
-                    align-items: center;
-                    width: 300px;
-                    justify-content: space-between;
-                    margin-right: 200px;
-
+    
+                .mainImg {
+                    width: 100%;
+                    height: 505px;
+                    margin: 20px 0;
+                }
+    
+                .wordBox {
+                    width: auto;
+                    height: auto;
+    
                     p {
                         font-size: 14px;
                         font-weight: bold;
-                        color: $title_2;
-                        line-height: 18px;
+                        color: $mainFont_1;
+                        margin-bottom: 6px;
                     }
-
-                    div {
-                        width: 100px;
-                        height: 100px;
-                    }
-                }
-            }
-
-            .mainImg {
-                width: 100%;
-                height: 505px;
-                margin: 20px 0;
-            }
-
-            .wordBox {
-                width: auto;
-                height: auto;
-
-                p {
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: $mainFont_1;
-                    margin-bottom: 6px;
                 }
             }
         }
@@ -3841,9 +4079,6 @@
         .pointWrap {
             width: 1140px;
             height: auto;
-            background: $mainBG_1;
-            box-shadow: 0 5px 10px -5px $mainShadow_1;
-            border-radius: 5px;
             box-sizing: border-box;
 
             .title {
@@ -3852,112 +4087,136 @@
                 letter-spacing: 2px;
                 font-weight: bold;
                 margin-bottom: 15px;
-                padding: 20px 20px 0;
+                padding: 15px 20px;
                 box-sizing: border-box;
+                background: $mainBG_1;
+                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                border: 1px solid $blockBoreder;
+                border-radius: 25px 25px 0 0;
             }
 
-            .searchBox {
-                width: 100%;
-                height: auto;
-                display: flex;
-                margin-top: 30px;
-                justify-content: space-between;
-                box-sizing: border-box;
-                padding: 0 20px;
+            .bottom {
+                height: 90%;
+                background: $mainBG_1;
+                box-shadow: 0 5px 10px -5px $mainShadow_1;
+                border: 1px solid $blockBoreder;
 
-                .left {
+                .searchBox {
+                    width: 100%;
+                    height: auto;
                     display: flex;
-
-                    .inputBox {
-                        width: auto;
-                        height: auto;
-                        display: flex;
-                        align-items: center;
-                        color: $title_2;
-                        font-size: 14px;
-                        font-weight: bold;
-                        margin-right: 15px;
+                    margin-top: 30px;
+                    justify-content: space-between;
+                    box-sizing: border-box;
+                    padding: 0 20px;
     
-                        input {
-                            width: 250px;
-                            height: 36px;
-                            @include mainInput;
-                            margin-left: 20px;
-                        }
-                    }
-    
-                    .btnBox {
-                        width: auto;
-                        height: auto;
+                    .left {
                         display: flex;
     
-                        button {
-                            width: 70px;
-                            height: 36px;
-                            @include changeBtn;
-                            margin-right: 8px;
-                        }
-                    }
-                }
-
-                .check {
-                    width: 140px;
-                    height: 36px;
-                    @include mainBtn;
-                }
-            }
-
-            hr {
-                margin: 15px 0;
-            }
-
-            table {
-                width: 92%;
-                height: auto;
-                margin: 0 auto;
-
-                tr {
-                    border-bottom: solid 1px $mainBorder_1;
-
-                    &:nth-of-type(1) {
-                        border: none;
-                    }
-
-                    th {
-                        vertical-align: middle;
-                        height: 40px;
-                        border-bottom: solid 2px $mainBorder_2;
-
-                        p {
+                        .inputBox {
+                            width: auto;
+                            height: auto;
+                            display: flex;
+                            align-items: center;
+                            color: $title_2;
                             font-size: 14px;
                             font-weight: bold;
-                            color: $title_1;
-                        }
-                    }
-
-                    td {
-                        width: 25%;
-                        vertical-align: middle;
-                        height: 40px;
-
-                        &:last-child {
-
-                            p {
-                                border: none;
+                            margin-right: 15px;
+        
+                            input {
+                                width: 250px;
+                                height: 36px;
+                                @include mainInput;
+                                margin-left: 20px;
                             }
                         }
+        
+                        .btnBox {
+                            width: auto;
+                            height: auto;
+                            display: flex;
+        
+                            button {
+                                width: 70px;
+                                height: 36px;
+                                @include changeBtn;
+                                margin-right: 8px;
+                            }
+                        }
+                    }
+    
+                    .check {
+                        width: 140px;
+                        height: 36px;
+                        @include mainBtn2;
+                    }
+                }
+    
+                hr {
+                    margin: 15px 0;
+                }
+    
+                table {
+                    width: 92%;
+                    height: auto;
+                    margin: 0 auto;
+    
+                    tr {
+                        border-bottom: solid 1px $mainBorder_1;
+    
+                        &:nth-of-type(1) {
+                            border: none;
+                        }
+    
+                        th {
+                            vertical-align: middle;
+                            height: 40px;
+                            border-bottom: solid 2px $choose_Border;
+    
+                            p {
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: $title_1;
+                                border-right: solid 1px $mainBorder_1;
+                            }
 
-                        p {
-                            font-size: 14px;
-                            font-weight: bold;
-                            color: $mainFont_1;
-                            text-align: center;
-                            border-right: solid 1px $mainBorder_1;
+                            &:last-child {
+                                p {
+                                    border-right: 0;
+                                }
+                            }
+                        }
+    
+                        td {
+                            width: 25%;
+                            vertical-align: middle;
+                            height: 40px;
+    
+                            &:last-child {
+    
+                                p {
+                                    border: none;
+                                }
+                            }
+    
+                            p {
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: $mainFont_1;
+                                text-align: center;
+                                border-right: solid 1px $mainBorder_1;
+    
+                                &.open {
+                                    text-decoration: underline;
+                                    color: $link;
+                                    cursor: pointer;
+                                }
 
-                            &.open {
-                                text-decoration: underline;
-                                color: $remind_sp2;
-                                cursor: pointer;
+                                &.openDetail {
+                                    text-decoration: underline;
+                                    color: $link;
+                                    cursor: pointer;
+                                }
                             }
                         }
                     }

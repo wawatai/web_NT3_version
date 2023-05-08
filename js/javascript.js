@@ -53,7 +53,7 @@ $(function() {
 //ad
 $(document).on('ready', function() {
 	$(".single-item").slick({
-		dots: false,
+		dots: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
@@ -227,10 +227,21 @@ $(function(){
         $('.jumpWindow').removeClass('display');
         $('.filter,.betWindow.lotteryGame').addClass('display');
     })
-
+    $('.registerWrap .right .checkBox .agreePolicy').click(function(){
+        $('.jumpWindow').removeClass('display');
+        $('.filter,.policyWindow').addClass('display');
+    })
+    $('.registerWrap .right label .reciveNum').click(function(){
+        $('.jumpWindow').removeClass('display');
+        $('.filter,.phoneNumWindow').addClass('display');
+     })
     $(".pointWrap .open").click(function(){
         $('.jumpWindow').removeClass('display');
         $('.filter,.pointWindow').addClass('display');
+    })
+    $(".pointWrap .openDetail").click(function(){
+        $('.jumpWindow').removeClass('display');
+        $('.filter,.pointDetail').addClass('display');
     })
 })
 function unlogin(){
@@ -619,5 +630,26 @@ $(function(){
     $('.forApp_3').click(function(){
         $('.app_3').addClass('display');
         $('.app_3').siblings().removeClass('display');
+    })
+
+    //goTop
+    $(function(){
+        $(window).scroll(function () {
+            var scrollVal = $(this).scrollTop();
+            if(scrollVal > 0){
+                    $(".goTOP")
+                    .addClass("display")
+            } else{
+                    $(".goTOP")
+                    .removeClass("display");
+            };
+        })
+    
+        $(".goTOP").click(function(){
+            var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body'); //各瀏覽器相容性
+            $body.delay('0').animate({
+                    scrollTop: 0
+            },500)
+        })
     })
 })

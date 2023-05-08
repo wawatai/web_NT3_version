@@ -1,6 +1,6 @@
 //背景
 .bg {
-    background: url('../images/bg.jpg') no-repeat top center;
+    background: url('../images/bg.png') no-repeat top center;
     background-size: cover;
 }
 
@@ -37,35 +37,42 @@ header .transferInfo .money i {
 }
 
 //側邊 sideBar img
-.download i {
+.sideBar .download i {
     background: url('../images/icon/download.png') no-repeat;
     background-size: 100%;
 }
-.rightSide .line i {
-    background: url('../images/icon/svg/line.svg') no-repeat;
+
+.sideBar .cs i {
+    background: url('../images/icon/lineIC.png') no-repeat;
     background-size: 100%;
 }
 
-//footer
-footer .top {
-    background: url('../images/footerBG_1.png') no-repeat;
+.goTOP i {
+    background: url('../images/icon/gotopIC.png') no-repeat;
+    background-size: 100%;
 }
+
+//mq
+.marquee_ic i {
+    background: url('../images/icon/mqIC.png') no-repeat;
+    background-size: 100%;
+}
+.ad .slick-arrow.slick-prev::before,
+.ad .slick-arrow.slick-next::before {
+    background: url('../images/icon/adArrow.png') no-repeat;
+    background-size: contain;
+}
+
+
+//footer
+
 footer .top li:hover,
 footer .top li:active,
 footer .top li.active {
     background: url('../images/footerHover.png') no-repeat;
     background-size: 100%;
 }
-footer .footerList {
-    background: url('../images/footerBG_2.png') no-repeat top center;
-    background-size: cover;
-}
 
-//jumpWindow ic
-.jumpWindow .close_ic {
-    background: url('../images/icon/svg/close_w.svg') no-repeat;
-    background-size: 100%;
-}
 .jumpWindow.betWindow .trans_arrow {
     background: url('../images/icon/svg/transfer_arrow.svg') no-repeat;
     background-size: 100%;
@@ -78,7 +85,7 @@ footer .footerList {
 
 //gameWrap background
 .gameWrap {
-    background: url('../images/gameBg.jpg') no-repeat top center;
+    background: url('../images/gameBg.png') no-repeat top center;
     background-size: cover;
 }
 
@@ -104,13 +111,13 @@ footer .footerList {
 
 //evevtTitle
 .eventTitle {
-    background: url('../images/eventTitle_bg.png') no-repeat;
+    background: url('../images/eventCenter_banner.jpg') no-repeat;
     background-size: cover;
 }
 //eventBody .side li i
 .eventBody .event_ic {
-    background: url('../images/icon/svg/entire.svg') no-repeat;
-    background-size: 100%;
+    background: url('../images/icon/entire.png') no-repeat;
+    background-size: 200%;
 }
 //eventDetail .back
 .eventDetail .back_ic {
@@ -152,7 +159,7 @@ footer .footerList {
     background-size: 100%;
 }
 .innerNav .dividend_ic {
-    background: url('../images/icon/svg/innerNav_dividend.svg');
+    background: url('../images/icon/svg/innerNav_dividend.svg') no-repeat;
     background-size: 100%;
 }
 .innerNav .invite_ic {
@@ -216,6 +223,46 @@ footer .footerList {
 }
 .vipWrap .detailCardBox .cardBg.v2 .medal {
     background: url('../images/icon/medal_3.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v3 {
+    background: url('../images/vip_card_4.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v3 .medal {
+    background: url('../images/icon/medal_4.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v4 {
+    background: url('../images/vip_card_5.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v4 .medal {
+    background: url('../images/icon/medal_5.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v5 {
+    background: url('../images/vip_card_6.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v5 .medal {
+    background: url('../images/icon/medal_6.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v6 {
+    background: url('../images/vip_card_7.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v6 .medal {
+    background: url('../images/icon/medal_7.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v7 {
+    background: url('../images/vip_card_8.png') no-repeat;
+    background-size: 100%;
+}
+.vipWrap .detailCardBox .cardBg.v7 .medal {
+    background: url('../images/icon/medal_8.png') no-repeat;
     background-size: 100%;
 }
 
@@ -310,7 +357,7 @@ footer .footerList {
 
 //help_bg
 .helpPage {
-    background: url('../images/help_bg.png') no-repeat top center;
+    background: url('../images/bg.png') no-repeat top center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -332,7 +379,7 @@ footer .footerList {
     background-size: 100%;
 }
 .helpPage .nav .app {
-    background: url(../images/icon/download.png) no-repeat;
+    background: url(../images/icon/help_download.png) no-repeat;
     background-size: contain;
 }
 //helpPage .teachList arrow_ic
@@ -369,7 +416,7 @@ footer .footerList {
     background-attachment: fixed;
 }
 .registerWrap .person_ic {
-    background: url('../images/icon/svg/register.svg') no-repeat;
+    background: url('../images/icon/registIC.png') no-repeat;
     background-size: 100%;
 }
 .registerWrap .eye {
@@ -408,8 +455,8 @@ header .topGameList div {
 }
 //logo
 header .logo {
-    width: 200px;
-    height: 80px;
+    width: 146px;
+    height: 66px;
     object-fit: cover;
 }
 
@@ -423,7 +470,7 @@ header .logo {
 //入口頁中央遊戲enter .mainWrap .img
 .mainWrap .typeList img {
     width: 338px;
-    height: 270px;
+    height: 250px;
     object-fit: contain;
 }
 
@@ -464,7 +511,8 @@ header .logo {
 
         img {
             width: 100%;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }

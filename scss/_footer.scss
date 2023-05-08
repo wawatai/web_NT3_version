@@ -6,6 +6,7 @@ footer {
     .top {
         width: 100%;
         height: 55px;
+        background: $footerTOP_BG;
 
         .center {
             width: 1400px;
@@ -25,18 +26,23 @@ footer {
 
                     li {
                         width: 95px;
-                        height: 100%;
+                        height: 90%;
                         margin-right: 8px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        border-radius: 0 0 30px 30px;
                         cursor: pointer;
-                        color: $title_1;
+                        color: $mainBG_2;
                         font-weight: bold;
                         font-size: 14px;
 
                         &:hover,&:active,&.active {
+                            height: 90%;
+                            background: $footerNAV_HOV;
+                            border-radius: 0 0 30px 30px;
                             color: $mainFont_2;
+                            transition: 0.1s;
                         }
                     }
                 }
@@ -45,7 +51,7 @@ footer {
             p {
                 font-size: 14px;
                 font-weight: bold;
-                color: $title_1;
+                color: $mainFont_2;
                 height: 100%;
                 display: flex;
                 align-items: center;
@@ -58,6 +64,7 @@ footer {
     .footerList {
         width: 100%;
         height: 160px;
+        background: $footerBottom_BG;
 
         .center {
             width: 1400px;
