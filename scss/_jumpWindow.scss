@@ -10,7 +10,6 @@
     &.display {
         @include flex_H1;
     }
-
     
     .jumpWindow {
         display: none;
@@ -18,7 +17,7 @@
         height: auto;
         border-radius: 5px;
         overflow: hidden;
-        background: $jumpWindow_BG;
+        background: #ffffff;
 
         //忘記密碼
         &.fgPW {
@@ -53,6 +52,107 @@
                 }
             }
         }
+
+        //最新公告
+        &.news {
+            width: 840px;
+
+              &.display {
+                display: block;
+            }
+
+            .content {
+                padding: 10px 15px 20px;
+
+                .nav {
+                    @include variable_W_full_H_auto;
+                    @include flex_H1;
+                    justify-content: flex-start;
+                    border-bottom: 1px solid #b9b9b9;
+
+                    li {
+                        width: 115px;
+                        height: 35px;
+                        @include flex_H1;
+                        padding: 0 15px;
+                        position: relative;
+                        cursor: pointer;
+
+                        &::before {
+                            content: "";
+                            width: 100%;
+                            height: 3px;
+                            background: #9b9b9b;
+                            position: absolute;
+                            opacity: 0;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translateX(-50%)
+                        }
+
+                        &::after {
+                            content: "";
+                            width: 1px;
+                            height: 15px;
+                            background: #b9b9b9;
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-50%);
+                        }
+
+                        &:hover,&:active,&.active {
+
+                            &::before {
+                                opacity: 1;
+                            }
+                        }
+
+                        p {
+                            color: #000000;
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                .changeContent {
+                    @include variable_W_full_H_auto;
+
+                    .type {
+                        display: none;
+                        @include variable_W_full_H_auto;
+
+                        &.active {
+                            display: block
+                        }
+
+                        li {
+                            @include variable_W_full_H_auto;
+                            @include flex_H1;
+                            justify-content: space-between;
+                            padding: 15px 0;
+                            border-bottom: 1px solid #b9b9b9;
+                        
+                            p {
+                                font-size: 15px;
+
+                                &.text {
+                                    color: #000000;
+                                    @include textHide;
+                                }
+
+                                &.date {
+                                    flex-shrink: 0;
+                                    color: #8f8f8f;
+                                    margin-left: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
         .title {
             @include variable_W_full_H_auto;
@@ -62,8 +162,8 @@
             font-weight: bold;
             letter-spacing: 1px;
             position: relative;
-            color: $mainfont_2;
-            background: $jumpWindow_Title_BG;
+            color: #ffffff;
+            background: linear-gradient(to right, #5f5f5f 0%, #b9b9b9 100%);
 
             i {
                 position: absolute;
@@ -104,7 +204,7 @@
 
             .remind {
                 font-size: 14px;
-                color: $remind;
+                color: #ff0000;
                 margin-top: 20px;
             }
         }

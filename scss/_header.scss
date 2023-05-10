@@ -11,7 +11,7 @@ header {
     .top,
     .bottom {
         @include variable_W_full_H_auto;
-        background: $header_top_BG;
+        background: #585858;
 
         //center
         .center {
@@ -82,7 +82,7 @@ header {
         
         //bottom
         &.bottom {
-            background: $header_bottom_BG;
+            background: #dadada;
 
             //center
             .center {

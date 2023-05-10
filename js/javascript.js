@@ -137,4 +137,19 @@ $(function(){
         $(".filter")
        .removeClass("display");
     })
+
+    //最新公告
+    $(".jumpWindow.news .content .nav li").click(function(){
+        var n = $(this).index();
+
+        $(this)
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+
+        $(".jumpWindow.news .content .changeContent type:eq(n)")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    })
 })

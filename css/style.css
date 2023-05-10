@@ -990,6 +990,124 @@ html body .filter .jumpWindow.plsLogin .content {
 html body .filter .jumpWindow.plsLogin .content p {
   font-weight: bold;
 }
+html body .filter .jumpWindow.news {
+  width: 840px;
+}
+html body .filter .jumpWindow.news.display {
+  display: block;
+}
+html body .filter .jumpWindow.news .content {
+  padding: 10px 15px 20px;
+}
+html body .filter .jumpWindow.news .content .nav {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border-bottom: 1px solid #b9b9b9;
+}
+html body .filter .jumpWindow.news .content .nav li {
+  width: 115px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 15px;
+  position: relative;
+  cursor: pointer;
+}
+html body .filter .jumpWindow.news .content .nav li::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #9b9b9b;
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+html body .filter .jumpWindow.news .content .nav li::after {
+  content: "";
+  width: 1px;
+  height: 15px;
+  background: #b9b9b9;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+html body .filter .jumpWindow.news .content .nav li:hover::before, html body .filter .jumpWindow.news .content .nav li:active::before, html body .filter .jumpWindow.news .content .nav li.active::before {
+  opacity: 1;
+}
+html body .filter .jumpWindow.news .content .nav li p {
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+}
+html body .filter .jumpWindow.news .content .changeContent {
+  width: 100%;
+  height: auto;
+}
+html body .filter .jumpWindow.news .content .changeContent .type {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+html body .filter .jumpWindow.news .content .changeContent .type.active {
+  display: block;
+}
+html body .filter .jumpWindow.news .content .changeContent .type li {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #b9b9b9;
+}
+html body .filter .jumpWindow.news .content .changeContent .type li p {
+  font-size: 15px;
+}
+html body .filter .jumpWindow.news .content .changeContent .type li p.text {
+  color: #000000;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+html body .filter .jumpWindow.news .content .changeContent .type li p.date {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  color: #8f8f8f;
+  margin-left: 20px;
+}
 html body .filter .jumpWindow .title {
   width: 100%;
   height: auto;
