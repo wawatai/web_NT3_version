@@ -1,82 +1,81 @@
 footer {
-    width: 100%;
-    height: auto;
+    @include variable_W_full_H_auto;
 
-    //上部
     .top {
-        width: 100%;
+        @include variable_W_auto_H_full;
         height: 55px;
-
+        @include flex_H1;
+        justify-content: space-between;
+        background: linear-gradient(to right, #adadad 8%, #e0e0e0 25%, #bbbbbb 43%, #8f8f8f 66%, #e0e0e0 79%, #8f8f8f 99%);
+        
         .center {
-            width: 1400px;
+            @include variable_W_1400_H_auto;
             height: 100%;
-            margin: 0 auto;
-            display: flex;
+            @include margin_0_auto;
+            @include flex_H1;
             justify-content: space-between;
 
-            .btnBox {
-                width: auto;
-                height: 100%;
+            ul {
+                @include variable_W_auto_H_full;
+                @include flex_H1;
+                justify-content: flex-start;
 
-                ul {
-                    display: flex;
-                    width: auto;
-                    height: 100%;
+                li {
+                    @include variable_W_full_H_full;
+                    width: 95px;
+                    margin-right: 20px;
 
-                    li {
-                        width: 95px;
-                        height: 100%;
-                        margin-right: 8px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        cursor: pointer;
-                        color: $title_1;
-                        font-weight: bold;
-                        font-size: 14px;
+                    &:hover,&:active,&.active {
 
-                        &:hover,&:active,&.active {
-                            color: $mainFont_2;
+                        a {
+                            background: radial-gradient(circle,  #b3b3b3 -5px , #383838 40px);
+
+                            p {
+                                color: #ffffff
+                            }
+                        }
+                    }
+
+                    a {
+                        @include variable_W_full_H_full;
+                        @include flex_H1;
+                        padding: 0 15px;
+                        background: transparent;
+                        transition: all 0.3s;
+
+                        p {
+                            font-size: 14px;
+                            text-align: center;
+                            font-weight: bold;
+                            white-space: nowrap;
+                            color: #565656;
                         }
                     }
                 }
             }
 
-            p {
+            .copyright {
                 font-size: 14px;
                 font-weight: bold;
-                color: $title_1;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                letter-spacing: 2px;
+                color: #565656
             }
         }
     }
 
-    //下部
-    .footerList {
-        width: 100%;
+    .bottom {
+        @include variable_W_full_H_auto;
         height: 160px;
+        @include flex_H1;
+        background: #8f8f8f;
 
-        .center {
-            width: 1400px;
-            height: 100%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-
-            p {
-                font-size: 14px;
-                font-weight: bold;
-                color: $mainFont_2;
-
-                &:last-child {
-                    margin-top: 20px;
-                }
-            }
+        p {
+            @include variable_W_1400_H_auto;
+            @include margin_0_auto;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 30px;
+            color: #ffffff;
         }
     }
 }

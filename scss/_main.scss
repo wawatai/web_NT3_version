@@ -1,30 +1,24 @@
 html {
-    width: 100%;
-    height: auto;
 
     body {
-        width: 100%;
-        height: 100%;
-        min-width: 1400px;
-        min-height: 768px;
         position: relative;
 
-        @import "./header";
-        @import "./ad";
-        @import "./sideBar";
-        @import "./mainWrap";
-        @import "./footer";
-        @import "./jumpWindow";
-        @import "./gameWrap";
-        @import "./event";
-        @import "./innerPage";
-        @import "./help";
-        @import "./register";
+        @import "./_header.scss";
+        @import "./_mainWrap.scss";
+        @import "./_banner.scss";
+        @import "./_footer.scss";
+        @import "./_aside.scss";
+        @import "./_jumpWindow.scss";
 
+        main {
+            @include variable_W_full_H_auto;
+            padding-top: 120px;
+        }
+
+        //大背景
         .bg {
+            @include variable_W_full_H_full;
             position: absolute;
-            width: 100%;
-            height: 100%;
             top: 0;
             left: 0;
             z-index: -999;
