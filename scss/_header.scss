@@ -20,63 +20,92 @@ header {
             @include margin_0_auto;
             background: #bbbbbb;
 
-            //UnLoginBox
-            .UnLoginBox {
+            ul {
                 @include variable_W_auto_H_full;
                 @include flex_center;
                 justify-content: flex-end;
 
-                li {
-                    @include variable_W_auto_H_full;
-                    @include flex_center;
-                    border-right: solid 1px #000000;
-
-                    //帳號密碼
-                    form {
+                //UnLoginBox
+                &.UnLoginBox {
+                
+                    li {
                         @include variable_W_auto_H_full;
                         @include flex_center;
-                        padding: 0 20px;
+                        border-right: solid 1px #000000;
 
-                        label {
-                            @include header_Input;
-                            margin-right: 10px;
+                        //帳號密碼
+                        form {
+                            @include variable_W_auto_H_full;
+                            @include flex_center;
+                            padding: 0 20px;
+
+                            label {
+                                @include header_Input;
+                                margin-right: 10px;
+                            }
+
+                            a {
+                                @include header_btn;
+                                margin-right: 10px;
+
+                                &:last-child {
+                                    margin: 0;
+                                }
+                            }
                         }
 
-                        a {
-                            @include header_btn;
-                            margin-right: 10px;
+                        //忘記密碼
+                        .forgetBtn {
+                            @include variable_W_auto_H_full;
+                            @include flex_center;
+                            padding: 0 20px;
+                            background: none;
 
-                            &:last-child {
-                                margin: 0;
+                            i {
+                                margin: 0 5px -2px 0;
+                                font-size: 16px;
+                                color: #000000;
+                            }
+
+                            p {
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: #000000;
                             }
                         }
                     }
+                }
 
-                    //忘記密碼
-                    .forgetBtn {
+                //loginBox
+                &.loginBox {
+                   
+                    li {
                         @include variable_W_auto_H_full;
                         @include flex_center;
-                        padding: 0 20px;
-                        background: none;
+                        border-right: solid 1px #000000;
 
-                        i {
-                            margin: 0 5px -2px 0;
-                            font-size: 16px;
-                            color: #000000;
+                        .transferInfo {
+                            display: none;
+                            width: 290px;
+                            height: auto;
+
+                            &.active {
+                                display: block;
+                            }
+
+                            .platform {
+                                width: 100%;
+                                height: auto;
+                            }
                         }
-
-                        p {
-                            font-size: 14px;
-                            font-weight: bold;
-                            color: #000000;
-                        }
-                    }
-
-                    //語言列
-                    .lang {
-                        @include header_lang;
                     }
                 }
+
+                //語言列
+                .lang {
+                    @include header_lang;
+                }
+
             }
         }
         

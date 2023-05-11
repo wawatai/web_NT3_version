@@ -136,8 +136,8 @@ html body header .bottom .center {
   margin: 0 auto;
   background: #bbbbbb;
 }
-html body header .top .center .UnLoginBox,
-html body header .bottom .center .UnLoginBox {
+html body header .top .center ul,
+html body header .bottom .center ul {
   width: auto;
   height: 100%;
   display: -webkit-box;
@@ -153,8 +153,8 @@ html body header .bottom .center .UnLoginBox {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-html body header .top .center .UnLoginBox li,
-html body header .bottom .center .UnLoginBox li {
+html body header .top .center ul.UnLoginBox li,
+html body header .bottom .center ul.UnLoginBox li {
   width: auto;
   height: 100%;
   display: -webkit-box;
@@ -168,8 +168,8 @@ html body header .bottom .center .UnLoginBox li {
           justify-content: center;
   border-right: solid 1px #000000;
 }
-html body header .top .center .UnLoginBox li form,
-html body header .bottom .center .UnLoginBox li form {
+html body header .top .center ul.UnLoginBox li form,
+html body header .bottom .center ul.UnLoginBox li form {
   width: auto;
   height: 100%;
   display: -webkit-box;
@@ -183,8 +183,8 @@ html body header .bottom .center .UnLoginBox li form {
           justify-content: center;
   padding: 0 20px;
 }
-html body header .top .center .UnLoginBox li form label,
-html body header .bottom .center .UnLoginBox li form label {
+html body header .top .center ul.UnLoginBox li form label,
+html body header .bottom .center ul.UnLoginBox li form label {
   width: 150px;
   height: 30px;
   display: -webkit-box;
@@ -202,26 +202,26 @@ html body header .bottom .center .UnLoginBox li form label {
   color: #000000;
   margin-right: 10px;
 }
-html body header .top .center .UnLoginBox li form label:focus,
-html body header .bottom .center .UnLoginBox li form label:focus {
+html body header .top .center ul.UnLoginBox li form label:focus,
+html body header .bottom .center ul.UnLoginBox li form label:focus {
   border: none;
 }
-html body header .top .center .UnLoginBox li form label input,
-html body header .bottom .center .UnLoginBox li form label input {
+html body header .top .center ul.UnLoginBox li form label input,
+html body header .bottom .center ul.UnLoginBox li form label input {
   width: 100%;
   height: 100%;
   background: none;
 }
-html body header .top .center .UnLoginBox li form label i,
-html body header .bottom .center .UnLoginBox li form label i {
+html body header .top .center ul.UnLoginBox li form label i,
+html body header .bottom .center ul.UnLoginBox li form label i {
   margin: 0 5px -2px 0;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   font-size: 14px;
   color: #000000;
 }
-html body header .top .center .UnLoginBox li form a,
-html body header .bottom .center .UnLoginBox li form a {
+html body header .top .center ul.UnLoginBox li form a,
+html body header .bottom .center ul.UnLoginBox li form a {
   width: 70px;
   height: 30px;
   display: -webkit-box;
@@ -238,45 +238,45 @@ html body header .bottom .center .UnLoginBox li form a {
   font-weight: bold;
   margin-right: 10px;
 }
-html body header .top .center .UnLoginBox li form a.loginBtn,
-html body header .bottom .center .UnLoginBox li form a.loginBtn {
+html body header .top .center ul.UnLoginBox li form a.loginBtn,
+html body header .bottom .center ul.UnLoginBox li form a.loginBtn {
   background: #ffe1a8;
   border: solid 1px #000000;
   color: #000000;
 }
-html body header .top .center .UnLoginBox li form a.loginBtn:hover, html body header .top .center .UnLoginBox li form a.loginBtn:active, html body header .top .center .UnLoginBox li form a.loginBtn.active,
-html body header .bottom .center .UnLoginBox li form a.loginBtn:hover,
-html body header .bottom .center .UnLoginBox li form a.loginBtn:active,
-html body header .bottom .center .UnLoginBox li form a.loginBtn.active {
+html body header .top .center ul.UnLoginBox li form a.loginBtn:hover, html body header .top .center ul.UnLoginBox li form a.loginBtn:active, html body header .top .center ul.UnLoginBox li form a.loginBtn.active,
+html body header .bottom .center ul.UnLoginBox li form a.loginBtn:hover,
+html body header .bottom .center ul.UnLoginBox li form a.loginBtn:active,
+html body header .bottom .center ul.UnLoginBox li form a.loginBtn.active {
   border-color: #ffffff;
 }
-html body header .top .center .UnLoginBox li form a.registerBtn,
-html body header .bottom .center .UnLoginBox li form a.registerBtn {
+html body header .top .center ul.UnLoginBox li form a.registerBtn,
+html body header .bottom .center ul.UnLoginBox li form a.registerBtn {
   background: #54a874;
   border: solid 1px #ffffff;
   color: #ffffff;
 }
-html body header .top .center .UnLoginBox li form a.registerBtn:hover, html body header .top .center .UnLoginBox li form a.registerBtn:active, html body header .top .center .UnLoginBox li form a.registerBtn.active,
-html body header .bottom .center .UnLoginBox li form a.registerBtn:hover,
-html body header .bottom .center .UnLoginBox li form a.registerBtn:active,
-html body header .bottom .center .UnLoginBox li form a.registerBtn.active {
+html body header .top .center ul.UnLoginBox li form a.registerBtn:hover, html body header .top .center ul.UnLoginBox li form a.registerBtn:active, html body header .top .center ul.UnLoginBox li form a.registerBtn.active,
+html body header .bottom .center ul.UnLoginBox li form a.registerBtn:hover,
+html body header .bottom .center ul.UnLoginBox li form a.registerBtn:active,
+html body header .bottom .center ul.UnLoginBox li form a.registerBtn.active {
   border-color: #000000;
 }
-html body header .top .center .UnLoginBox li form a.registerBtn i,
-html body header .bottom .center .UnLoginBox li form a.registerBtn i {
+html body header .top .center ul.UnLoginBox li form a.registerBtn i,
+html body header .bottom .center ul.UnLoginBox li form a.registerBtn i {
   color: #ffffff;
 }
-html body header .top .center .UnLoginBox li form a i,
-html body header .bottom .center .UnLoginBox li form a i {
+html body header .top .center ul.UnLoginBox li form a i,
+html body header .bottom .center ul.UnLoginBox li form a i {
   margin: 0 5px -2px 0;
   font-size: 14px;
 }
-html body header .top .center .UnLoginBox li form a:last-child,
-html body header .bottom .center .UnLoginBox li form a:last-child {
+html body header .top .center ul.UnLoginBox li form a:last-child,
+html body header .bottom .center ul.UnLoginBox li form a:last-child {
   margin: 0;
 }
-html body header .top .center .UnLoginBox li .forgetBtn,
-html body header .bottom .center .UnLoginBox li .forgetBtn {
+html body header .top .center ul.UnLoginBox li .forgetBtn,
+html body header .bottom .center ul.UnLoginBox li .forgetBtn {
   width: auto;
   height: 100%;
   display: -webkit-box;
@@ -291,20 +291,50 @@ html body header .bottom .center .UnLoginBox li .forgetBtn {
   padding: 0 20px;
   background: none;
 }
-html body header .top .center .UnLoginBox li .forgetBtn i,
-html body header .bottom .center .UnLoginBox li .forgetBtn i {
+html body header .top .center ul.UnLoginBox li .forgetBtn i,
+html body header .bottom .center ul.UnLoginBox li .forgetBtn i {
   margin: 0 5px -2px 0;
   font-size: 16px;
   color: #000000;
 }
-html body header .top .center .UnLoginBox li .forgetBtn p,
-html body header .bottom .center .UnLoginBox li .forgetBtn p {
+html body header .top .center ul.UnLoginBox li .forgetBtn p,
+html body header .bottom .center ul.UnLoginBox li .forgetBtn p {
   font-size: 14px;
   font-weight: bold;
   color: #000000;
 }
-html body header .top .center .UnLoginBox li .lang,
-html body header .bottom .center .UnLoginBox li .lang {
+html body header .top .center ul.loginBox li,
+html body header .bottom .center ul.loginBox li {
+  width: auto;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: solid 1px #000000;
+}
+html body header .top .center ul.loginBox li .transferInfo,
+html body header .bottom .center ul.loginBox li .transferInfo {
+  display: none;
+  width: 290px;
+  height: auto;
+}
+html body header .top .center ul.loginBox li .transferInfo.active,
+html body header .bottom .center ul.loginBox li .transferInfo.active {
+  display: block;
+}
+html body header .top .center ul.loginBox li .transferInfo .platform,
+html body header .bottom .center ul.loginBox li .transferInfo .platform {
+  width: 100%;
+  height: auto;
+}
+html body header .top .center ul .lang,
+html body header .bottom .center ul .lang {
   width: auto;
   height: 100%;
   font-size: 14px;
@@ -319,8 +349,8 @@ html body header .bottom .center .UnLoginBox li .lang {
   background: none;
   color: #000000;
 }
-html body header .top .center .UnLoginBox li .lang select,
-html body header .bottom .center .UnLoginBox li .lang select {
+html body header .top .center ul .lang select,
+html body header .bottom .center ul .lang select {
   width: auto;
   height: 100%;
   font-size: 14px;
@@ -330,8 +360,8 @@ html body header .bottom .center .UnLoginBox li .lang select {
   background: none;
   color: #000000;
 }
-html body header .top .center .UnLoginBox li .lang i,
-html body header .bottom .center .UnLoginBox li .lang i {
+html body header .top .center ul .lang i,
+html body header .bottom .center ul .lang i {
   position: absolute;
   right: 20px;
   font-size: 14px;
