@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <link rel="shortcut icon" href="./images/NTLOGO_64x64.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/NTLOGO_64x64.ico" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="./js/javascript.js"></script>
+    <script src="../js/javascript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/8858aac5ee.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body class="unlogin">
+<body>
     <!--header-->
     <header>
         <!--top-->
@@ -21,38 +21,165 @@
             <!--center-->
             <div class="center">
                 <!--UnLoginBox-->
-                <ul class="UnLoginBox">
-                    <!--帳號密碼-->
+                <ul class="loginBox">
+                    <!--帳號-->
                     <li>
-                        <form action="">
-                            <label for="">
-                                <!-- <i class="account_ic"></i> -->
-                                <i class="fa-solid fa-user"></i>
-                                <input type="text" placeholder="帳號或手機號碼">
-                            </label>
-                            <label for="">
-                                <!-- <i class="password_ic"></i> -->
-                                <i class="fa-solid fa-lock"></i>
-                                <input type="password" placeholder="密碼">
-                            </label>
-                            <a href="./html/innerIndex.html" class="loginBtn">
-                                <!-- <i class="loginBtn_ic"></i> -->
-                                <p>登入</p>
-                            </a>
-                            <a href="javascript:;" class="registerBtn">
-                                <!-- <i class="registeriBtn_ic"></i> -->
-                                <i class="fa-solid fa-user"></i>
-                                <p>註冊</p>
-                            </a>
-                        </form>
+                        <p class="account">VIP20</p>
+                        <p class="name">userName</p>
                     </li>
-                    <!--忘記密碼-->
+                    <!--餘額-->
                     <li>
-                        <button class="forgetBtn">
-                            <!-- <i class="forget_ic"></i> -->
-                            <i class="fa-regular fa-circle-question"></i>
-                            <p>忘記密碼</p>
-                        </button>
+                       <p class="total">9999</p>
+                       <!-- 平台餘額 -->
+                       <ul class="transferInfo">
+                        <li class="platform">
+                            <div>
+                                <p>BNG娛樂</p>
+                                <p class="money">
+                                    <i class="display"></i>
+                                    <span></span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>pls</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>SimplePlay</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>歐博</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>SG</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>RTG</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>IFUN</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>WM</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>GS</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>必贏</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>36588體育</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>RSG</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="platform">
+                            <div>
+                                <p>PNG</p>
+                                <p class="money">
+                                    <i></i>
+                                    <span>0</span>
+                                </p>
+                            </div>
+                        </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./deposit.html">
+                            <p>存款</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./transfer.html">
+                            <p>轉帳</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./withdraw.html">
+                            <p>提款</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./member.html">
+                            <p>會員中心</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./mail.html">
+                            <p>站內信</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html">
+                            <p>登出</p>
+                        </a>
                     </li>
                     <!--語言列-->
                     <li>
@@ -533,33 +660,58 @@
     </footer>
     <!-- 彈窗 -->
     <div class="filter">
-        <!-- 忘記密碼 -->
-        <div class="jumpWindow fgPW">
+        <!-- 最新公告 -->
+        <div class="jumpWindow news">
             <div class="title">
-                <p>忘記密碼</p>
+                <p>最新公告</p>
                 <!-- <i class="close_ic"></i> -->
                 <i class="fa-solid fa-xmark closeWindow"></i>
             </div>
             <div class="content">
-                <input type="text" placeholder="請輸入您的手機號碼">
-            </div>
-            <div class="btnBox">
-                <button class="closeWindow">重置密碼</button>
-                <p class="remind">我們將發送新的密碼到您的手機，請查收簡訊</p>
-            </div>
-        </div>
-        <!-- 請先登入 -->
-        <div class="jumpWindow plsLogin">
-            <div class="title">
-                <p>提示</p>
-                <!-- <i class="close_ic"></i> -->
-                <i class="fa-solid fa-xmark closeWindow"></i>
-            </div>
-            <div class="content">
-                <p>請先登入</p>
-            </div>
-            <div class="btnBox">
-                <button class="closeWindow">確認</button>
+                <ul class="nav">
+                    <li class="active">
+                        <p>熱門</p>
+                    </li>
+                    <li>
+                        <p>一般</p>
+                    </li>
+                    <li>
+                        <p>存款</p>
+                    </li>
+                </ul>
+                <div class="changeContent">
+                    <ul class="type active">
+                        <li>
+                            <p class="text">公告測試公告測試公告測試公告測試公告測試公告測試公告測試測試公告測試公告測試測試公告測試公告測試</p>
+                            <p class="date">2021/09/26</p>
+                        </li>
+                        <li>
+                            <p class="text">公告測試公告測試</p>
+                            <p class="date">2021/09/26</p>
+                        </li>
+                        <li>
+                            <p class="text">公告測試公告測試公告測試公告測試公告測試公告測試公告測試</p>
+                            <p class="date">2021/09/26</p>
+                        </li>
+                    </ul>
+                    <ul class="type">
+                        <li>
+                            <p class="text">公告測試</p>
+                            <p class="date">2021/09/26</p>
+                        </li>
+                        <li>
+                            <p class="text">公告測試公告測試</p>
+                            <p class="date">2021/09/26</p>
+                        </li>
+                    </ul>
+                    <ul class="type">
+                        <li>
+                            <p class="text">公告測試</p>
+                            <p class="date">2021/09/26</p>
+                        </li>
+                       
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

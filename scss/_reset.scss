@@ -22,11 +22,13 @@ time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
     display: block;
+    box-sizing: border-box;
 }
 
 body {
@@ -65,7 +67,9 @@ button {
 select,input {
     outline: none;
     box-sizing: border-box;
+    border: none;
     font-family: "微軟正黑體";
+    appearance: none;
 }
 
 main {
@@ -75,4 +79,19 @@ main {
 html,body {
     width: 100%;
     height: auto;
+}
+
+i {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    // display: none;
+    // appearance: none;
+    opacity: 0;
 }
